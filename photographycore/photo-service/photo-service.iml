@@ -80,9 +80,5 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.1.5.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.1.5.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.6.2" level="project" />
-    <orderEntry type="module" module-name="photo-beans" />
-    <orderEntry type="module" module-name="photo-dao" />
-    <orderEntry type="module" module-name="photo-service-impl" />
-    <orderEntry type="module" module-name="photo-web" />
   </component>
 </module>

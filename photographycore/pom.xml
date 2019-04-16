@@ -24,34 +24,18 @@
         <module>photo-service-impl</module>
         <module>photo-web</module>
     </modules>
+    <profiles>
+        <profile>
+            <id>develop</id>
+            <properties>
+                <project.profile>development</project.profile>
+            </properties>
+        </profile>
+    </profiles>
 
     <!--依赖-->
     <dependencies>
-        <dependency>
-            <groupId>com.art</groupId>
-            <artifactId>photo-beans</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.art</groupId>
-            <artifactId>photo-dao</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.art</groupId>
-            <artifactId>photo-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.art</groupId>
-            <artifactId>photo-service-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.art</groupId>
-            <artifactId>photo-web</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 
 
