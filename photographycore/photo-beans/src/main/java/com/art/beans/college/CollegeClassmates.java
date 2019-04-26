@@ -1,4 +1,4 @@
-package com.art.beans;
+package com.art.beans.college;
 
 import java.io.Serializable;
 
