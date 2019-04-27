@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class CollegeClassmates implements Serializable{
 
-    private Long id;//ID
+    private Long classmateId;//ID
     private String nickName;//昵称
     private String sex;//性别
     private String phoneNumber;//电话
@@ -20,8 +20,8 @@ public class CollegeClassmates implements Serializable{
 
     //有参构造方法
 
-    public CollegeClassmates(Long id, String nickName, String sex, String phoneNumber, String mailBox, String address) {
-        this.id = id;
+    public CollegeClassmates(Long classmateId, String nickName, String sex, String phoneNumber, String mailBox, String address) {
+        this.classmateId = classmateId;
         this.nickName = nickName;
         this.sex = sex;
         this.phoneNumber = phoneNumber;
@@ -31,12 +31,12 @@ public class CollegeClassmates implements Serializable{
 
     //getter and setter
 
-    public Long getId() {
-        return id;
+    public Long getClassmateId() {
+        return classmateId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setClassmateId(Long classmateId) {
+        this.classmateId = classmateId;
     }
 
     public String getNickName() {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.art.dao.college.CollegeClassmatesDAO">
+    <resultMap id="ResultMap" type="com.art.beans.college.CollegeClassmates" >
+        <id column="CLASSMATE_ID" property="classmateId" /><!--同学ID-->
+        <result column="NICK_NAME"  property="nickName"/><!--昵称-->
+        <result column="SEX"  property="sex"/><!--性别-->
+        <result column="PHONE_NUMBER"  property="phoneNumber"/><!--电话-->
+        <result column="MAIL_BOX"  property="mailBox"/><!--邮箱-->
+        <result column="ADDRESS"  property="address"/><!--地址-->
+    </resultMap>
+    <!--1.主键查询 -->
+    <select id="getKeywordById" resultMap="ResultMap" parameterType="java.util.Map" >
+        SELECT
+        CLASSMATE_ID,
+        NICK_NAME,
+        SEX,
+        PHONE_NUMBER,
+        MAIL_BOX,
+        ADDRESS
+        FROM college_clasmates
+        <where>
+            <if test="classmateId !=null and classmateId!=''">
+                CLASSMATE_ID = #{classmateId}
+            </if>
+        </where>
+    </select>
+
+</mapper>
