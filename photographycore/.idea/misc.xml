@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/photo-service/pom.xml" />
         <option value="$PROJECT_DIR$/photo-service-impl/pom.xml" />
         <option value="$PROJECT_DIR$/photo-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/photo-util/pom.xml" />
       </list>
     </option>
   </component>

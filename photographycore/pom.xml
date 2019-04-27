@@ -23,6 +23,7 @@
         <module>photo-service</module>
         <module>photo-service-impl</module>
         <module>photo-web</module>
+        <module>photo-util</module>
     </modules>
     <profiles>
         <profile>

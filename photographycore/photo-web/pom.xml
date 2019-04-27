@@ -15,6 +15,8 @@
 		<artifactId>photo-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
+
+
 	<!--依赖-->
 	<dependencies>
 		<!--bean依赖-->
@@ -29,6 +31,17 @@
 			<artifactId>photo-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!--util层依赖-->
+		<dependency>
+			<groupId>com.art</groupId>
+			<artifactId>photo-util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
 		<!--阿里dubbo服务-->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -51,8 +64,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 
 	</dependencies>
+
 	<!--编译-->
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>

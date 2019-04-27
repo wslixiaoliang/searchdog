@@ -10,6 +10,7 @@
         <module name="photo-dao" />
         <module name="photo-service" />
         <module name="photo-service-impl" />
+        <module name="photo-util" />
         <module name="photo-web" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="photo-dao" target="1.8" />
       <module name="photo-service" target="1.8" />
       <module name="photo-service-impl" target="1.8" />
+      <module name="photo-util" target="1.8" />
       <module name="photo-web" target="1.8" />
       <module name="photographycore" target="1.8" />
     </bytecodeTargetLevel>
