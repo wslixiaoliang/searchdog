@@ -72,8 +72,6 @@ public class CollegeController {
         queryMap.put("address",address);
 
         return queryMap;
-
-
     }
 
 
