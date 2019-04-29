@@ -18,7 +18,7 @@
         PHONE_NUMBER,
         MAIL_BOX,
         ADDRESS
-        FROM college_clasmates
+        FROM college_classmates
         <where>
             <if test="classmateId !=null and classmateId!=''">
                 CLASSMATE_ID = #{classmateId}

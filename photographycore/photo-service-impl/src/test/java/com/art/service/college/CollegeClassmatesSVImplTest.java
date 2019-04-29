@@ -30,6 +30,9 @@ public class CollegeClassmatesSVImplTest{
 
         for(CollegeClassmates classmate:classmates){
             System.out.println(classmate.getNickName());
+            System.out.println(classmate.getPhoneNumber());
+            System.out.println(classmate.getMailBox());
+            System.out.println(classmate.getAddress());
         }
 
 
