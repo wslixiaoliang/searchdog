@@ -9,7 +9,7 @@ import java.util.Map;
  * 大学同学DAO
  * @author lixiaoliang
  */
-@Mapper
+
 public interface CollegeClassmatesDAO {
 
     /**
@@ -17,5 +17,14 @@ public interface CollegeClassmatesDAO {
      * @param map
      * @return
      */
-    List <CollegeClassmates> getSchoolmates(Map map);
+    List <CollegeClassmates> getSchoolmateById(Map map);
+
+    /**
+     * 条件查询：大学同学
+     * @param map
+     * @return
+     */
+    List<CollegeClassmates> getSchoolmateInfos(Map map);
+
+    List<CollegeClassmates> getSchoolmateInfos1(String sex);
 }

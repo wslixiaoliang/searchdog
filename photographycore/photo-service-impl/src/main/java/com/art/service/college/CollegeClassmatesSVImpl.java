@@ -2,6 +2,7 @@ package com.art.service.college;
 
 import com.art.beans.college.CollegeClassmates;
 import com.art.dao.college.CollegeClassmatesDAO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -19,7 +20,22 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
      * @return
      */
     @Override
-    public List<CollegeClassmates> getSchoolmates(Map map) {
-        return dao.getSchoolmates(map);
+    public List<CollegeClassmates> getSchoolmateById(Map map) {
+        return dao.getSchoolmateById(map);
     }
+
+    /**
+     * 条件查询：大学同学
+     * @param map
+     * @return
+     */
+    @Override
+    public List<CollegeClassmates> getSchoolmateInfos(Map map) {
+        return dao.getSchoolmateInfos(map);
+    }
+
+    public List<CollegeClassmates> getSchoolmateInfos1(@Param("sex") String sex) {
+        return dao.getSchoolmateInfos1(sex);
+    }
+
 }

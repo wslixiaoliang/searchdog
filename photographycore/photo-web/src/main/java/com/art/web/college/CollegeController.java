@@ -39,7 +39,7 @@ public class CollegeController {
             Map<String,Object> queryMap = this.changeBean2Map(collegeClassmates);
             queryMap.put(Constans.START,limit*(page-1));
             queryMap.put(Constans.LIMIT,limit);
-            List<CollegeClassmates> classmateList= collegeClassmatesSV.getSchoolmates(queryMap);
+            List<CollegeClassmates> classmateList= collegeClassmatesSV.getSchoolmateInfos(queryMap);
             result.setReturnCode(Constans.SUCESSS_RETURN_CODE);
             result.setBeans(classmateList);
 

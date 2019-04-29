@@ -21,21 +21,39 @@ public class CollegeClassmatesSVImplTest{
     private ICollegeClassmatesSV collegeClassmatesSV;
     private final Logger logger = Logger.getLogger(CollegeClassmatesSVImplTest.class);
 
+
+    /**
+     * 主键查询
+     */
     @Test
     public void testGetClassmates(){
         long classmateId = 1;
         Map<String,Object> queryMap = new HashMap<>();
         queryMap.put("classmateId",classmateId);
-        List<CollegeClassmates> classmates = collegeClassmatesSV.getSchoolmates(queryMap);
-
+        List<CollegeClassmates> classmates = collegeClassmatesSV.getSchoolmateById(queryMap);
         for(CollegeClassmates classmate:classmates){
             System.out.println(classmate.getNickName());
             System.out.println(classmate.getPhoneNumber());
             System.out.println(classmate.getMailBox());
             System.out.println(classmate.getAddress());
         }
-
-
     }
+    @Test
+    public void testGetSchoolmateInfos(){
+        Map<String,Object> queryMap = new HashMap<>();
+        queryMap.put("nickName","");
+        queryMap.put("sex","女");
+        queryMap.put("phoneNumber","");
+        queryMap.put("mailBox","");
+        queryMap.put("address","");
+        List<CollegeClassmates> classmates = collegeClassmatesSV.getSchoolmateInfos(queryMap);
+        for(CollegeClassmates classmate:classmates){
+            System.out.println(classmate.getNickName());
+            System.out.println(classmate.getPhoneNumber());
+            System.out.println(classmate.getMailBox());
+            System.out.println(classmate.getAddress());
+        }
+    }
+
 
 }

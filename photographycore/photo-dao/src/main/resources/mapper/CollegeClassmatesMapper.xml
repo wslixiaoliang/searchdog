@@ -10,7 +10,7 @@
         <result column="ADDRESS"  property="address"/><!--地址-->
     </resultMap>
     <!--1.主键查询 -->
-    <select id="getSchoolmates" resultMap="ResultMap" parameterType="java.util.Map" >
+    <select id="getSchoolmateById" resultMap="ResultMap" parameterType="java.util.Map" >
         SELECT
         CLASSMATE_ID,
         NICK_NAME,
@@ -22,6 +22,64 @@
         <where>
             <if test="classmateId !=null and classmateId!=''">
                 CLASSMATE_ID = #{classmateId}
+            </if>
+        </where>
+    </select>
+
+    <!--1.条件查询 -->
+    <select id="getSchoolmateInfos" resultMap="ResultMap" parameterType="java.util.Map" >
+        SELECT
+        CLASSMATE_ID,
+        NICK_NAME,
+        SEX,
+        PHONE_NUMBER,
+        MAIL_BOX,
+        ADDRESS
+        FROM college_classmates
+        <where>
+            <if test="nickName !=null and nickName!=''">
+                AND NICK_NAME = #{nickName}
+            </if>
+            <if test="sex !=null and sex!=''">
+                AND SEX = #{sex}
+            </if>
+            <if test="phoneNumber !=null and phoneNumber!=''">
+                AND PHONE_NUMBER = #{phoneNumber}
+            </if>
+            <if test="mailBox !=null and mailBox!=''">
+                AND MAIL_BOX = #{mailBox}
+            </if>
+            <if test="address !=null and address!=''">
+                AND ADDRESS = #{address}
+            </if>
+        </where>
+    </select>
+
+    <!--1.条件查询 -->
+    <select id="getSchoolmateInfos" resultMap="ResultMap" parameterType="java.util.Map" >
+        SELECT
+        CLASSMATE_ID,
+        NICK_NAME,
+        SEX,
+        PHONE_NUMBER,
+        MAIL_BOX,
+        ADDRESS
+        FROM college_classmates
+        <where>
+            <if test="nickName !=null and nickName!=''">
+                AND NICK_NAME = #{nickName}
+            </if>
+            <if test="sex !=null and sex!=''">
+                AND SEX = #{sex}
+            </if>
+            <if test="phoneNumber !=null and phoneNumber!=''">
+                AND PHONE_NUMBER = #{phoneNumber}
+            </if>
+            <if test="mailBox !=null and mailBox!=''">
+                AND MAIL_BOX = #{mailBox}
+            </if>
+            <if test="address !=null and address!=''">
+                AND ADDRESS = #{address}
             </if>
         </where>
     </select>
