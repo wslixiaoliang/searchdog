@@ -1,10 +1,9 @@
-package com.art.serviceimpl.college;
+package com.art.service.college;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.art.beans.college.CollegeClassmates;
-import com.art.dao.CollegeClassmatesDAO;
-import com.art.service.ICollegeClassmatesSV;
+import com.art.dao.college.CollegeClassmatesDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +11,7 @@ import java.util.Map;
 public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
 
     @Autowired
-    private CollegeClassmatesDAO collegeClassmatesDAO;
+    private CollegeClassmatesDAO dao;
 
     /**
      * 条件查询:同学信息
@@ -20,7 +19,7 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
      * @return
      */
     @Override
-    public List<CollegeClassmates> getschoolmates(Map map) {
-        return collegeClassmatesDAO.getschoolmates(map);
+    public List<CollegeClassmates> getSchoolmates(Map map) {
+        return dao.getSchoolmates(map);
     }
 }

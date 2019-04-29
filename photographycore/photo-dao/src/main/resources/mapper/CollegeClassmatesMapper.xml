@@ -10,7 +10,7 @@
         <result column="ADDRESS"  property="address"/><!--地址-->
     </resultMap>
     <!--1.主键查询 -->
-    <select id="getKeywordById" resultMap="ResultMap" parameterType="java.util.Map" >
+    <select id="getSchoolmates" resultMap="ResultMap" parameterType="java.util.Map" >
         SELECT
         CLASSMATE_ID,
         NICK_NAME,

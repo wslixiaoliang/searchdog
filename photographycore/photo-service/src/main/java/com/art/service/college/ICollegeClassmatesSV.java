@@ -1,6 +1,7 @@
 package com.art.service.college;
 
 import com.art.beans.college.CollegeClassmates;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
