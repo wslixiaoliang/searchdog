@@ -48,10 +48,13 @@ public class CollegeClassmatesSVImplTest{
         queryMap.put("address","");
         List<CollegeClassmates> classmates = collegeClassmatesSV.getSchoolmateInfos(queryMap);
         for(CollegeClassmates classmate:classmates){
+            System.out.println(classmate.getClassmateId());
+            System.out.println(classmate.getSex());
             System.out.println(classmate.getNickName());
             System.out.println(classmate.getPhoneNumber());
             System.out.println(classmate.getMailBox());
             System.out.println(classmate.getAddress());
+            System.out.println("=========================");
         }
     }
 
