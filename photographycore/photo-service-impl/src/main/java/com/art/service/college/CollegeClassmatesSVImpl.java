@@ -34,8 +34,5 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
         return dao.getSchoolmateInfos(map);
     }
 
-    public List<CollegeClassmates> getSchoolmateInfos1(@Param("sex") String sex) {
-        return dao.getSchoolmateInfos1(sex);
-    }
 
 }

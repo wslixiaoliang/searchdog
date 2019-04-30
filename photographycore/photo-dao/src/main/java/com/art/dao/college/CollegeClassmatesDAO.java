@@ -26,5 +26,4 @@ public interface CollegeClassmatesDAO {
      */
     List<CollegeClassmates> getSchoolmateInfos(Map map);
 
-    List<CollegeClassmates> getSchoolmateInfos1(String sex);
 }
