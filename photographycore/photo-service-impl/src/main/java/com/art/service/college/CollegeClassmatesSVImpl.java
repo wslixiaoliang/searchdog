@@ -20,7 +20,7 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
      * @return
      */
     @Override
-    public List<CollegeClassmates> getSchoolmateById(Map map) {
+    public CollegeClassmates getSchoolmateById(Map map) {
         return dao.getSchoolmateById(map);
     }
 
@@ -32,6 +32,15 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
     @Override
     public List<CollegeClassmates> getSchoolmateInfos(Map map) {
         return dao.getSchoolmateInfos(map);
+    }
+
+    /**
+     * 新增：大学同学
+     * @param map
+     */
+    @Override
+    public void addClassmates(Map map) {
+        dao.addClassmates(map);
     }
 
 

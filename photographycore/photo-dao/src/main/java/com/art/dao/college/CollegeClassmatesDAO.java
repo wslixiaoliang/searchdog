@@ -1,7 +1,6 @@
 package com.art.dao.college;
 
 import com.art.beans.college.CollegeClassmates;
-import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +16,7 @@ public interface CollegeClassmatesDAO {
      * @param map
      * @return
      */
-    List <CollegeClassmates> getSchoolmateById(Map map);
+    CollegeClassmates getSchoolmateById(Map map);
 
     /**
      * 条件查询：大学同学
@@ -25,5 +24,11 @@ public interface CollegeClassmatesDAO {
      * @return
      */
     List<CollegeClassmates> getSchoolmateInfos(Map map);
+
+    /**
+     * 新增：大学同学
+     * @param map
+     */
+    void addClassmates(Map map);
 
 }

@@ -9,7 +9,7 @@
         <result column="MAIL_BOX"  property="mailBox"/><!--邮箱-->
         <result column="ADDRESS"  property="address"/><!--地址-->
     </resultMap>
-    <!--1.主键查询 -->
+    <!--1.大学同学：主键查询 -->
     <select id="getSchoolmateById" resultMap="ResultMap" parameterType="java.util.Map" >
         SELECT
         CLASSMATE_ID,
@@ -26,7 +26,7 @@
         </where>
     </select>
 
-    <!--1.条件查询 -->
+    <!--2.大学同学：条件查询 -->
     <select id="getSchoolmateInfos" resultMap="ResultMap" parameterType="java.util.Map" >
         SELECT
         CLASSMATE_ID,
@@ -55,4 +55,48 @@
         </where>
     </select>
 
+    <!--3.大学同学：新增-->
+    <insert id="addClassmates" parameterType="java.util.Map">
+      INSERT INTO college_classmates
+      <trim prefix="(" suffix=")" prefixOverrides=",">
+          <if test="classmateId !=null and classmateId!=''">
+            CLASSMATE_ID,
+          </if>
+          <if test="nickName !=null and nickName!=''">
+              NICK_NAME,
+          </if>
+          <if test="sex !=null and sex!=''">
+              SEX,
+          </if>
+          <if test="phoneNumber !=null and phoneNumber!=''">
+              PHONE_NUMBER,
+          </if>
+          <if test="mailBox !=null and mailBox!=''">
+              MAIL_BOX,
+          </if>
+          <if test="address !=null and address!=''">
+              ADDRESS
+          </if>
+      </trim>
+      <trim prefix="values (" suffix=")" prefixOverrides=",">
+          <if test="classmateId !=null and classmateId!=''">
+              #{classmateId,jdbcType=BIGINT},
+          </if>
+          <if test="nickName !=null and nickName!=''">
+              #{nickName,jdbcType=VARCHAR},
+          </if>
+          <if test="sex !=null and sex!=''">
+              #{sex,jdbcType=VARCHAR},
+          </if>
+          <if test="phoneNumber !=null and phoneNumber!=''">
+              #{phoneNumber,jdbcType=VARCHAR},
+          </if>
+          <if test="mailBox !=null and mailBox!=''">
+              #{mailBox,jdbcType=VARCHAR},
+          </if>
+          <if test="address !=null and address!=''">
+              #{address,jdbcType=VARCHAR}
+          </if>
+      </trim>
+    </insert>
 </mapper>

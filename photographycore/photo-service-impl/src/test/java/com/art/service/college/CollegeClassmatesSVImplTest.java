@@ -27,16 +27,15 @@ public class CollegeClassmatesSVImplTest{
      */
     @Test
     public void testGetClassmates(){
-        long classmateId = 1;
+        long classmateId = 9;
         Map<String,Object> queryMap = new HashMap<>();
         queryMap.put("classmateId",classmateId);
-        List<CollegeClassmates> classmates = collegeClassmatesSV.getSchoolmateById(queryMap);
-        for(CollegeClassmates classmate:classmates){
-            System.out.println(classmate.getNickName());
-            System.out.println(classmate.getPhoneNumber());
-            System.out.println(classmate.getMailBox());
-            System.out.println(classmate.getAddress());
-        }
+        CollegeClassmates classmate = collegeClassmatesSV.getSchoolmateById(queryMap);
+        System.out.println(classmate.getNickName());
+        System.out.println(classmate.getSex());
+        System.out.println(classmate.getPhoneNumber());
+        System.out.println(classmate.getMailBox());
+        System.out.println(classmate.getAddress());
     }
     @Test
     public void testGetSchoolmateInfos(){
@@ -58,5 +57,30 @@ public class CollegeClassmatesSVImplTest{
         }
     }
 
+    @Test
+    public void testAddSchoolmates(){
+        long classmateId = 10;
+        String nickName = "王宝康";
+        String sex= "男";
+        String phoneNumber = "15979436659";
+        String mailBox = "76564@qq.com";
+        String address = "西安";
+        Map map = new HashMap();
+        map.put("classmateId",classmateId);
+        map.put("nickName",nickName);
+        map.put("sex",sex);
+        map.put("phoneNumber",phoneNumber);
+        map.put("mailBox",mailBox);
+        map.put("address",address);
+        collegeClassmatesSV.addClassmates(map);
+        Map params = new HashMap();
+        params.put("classmateId",classmateId);
+        CollegeClassmates  classmate = collegeClassmatesSV.getSchoolmateById(params);
+        System.out.println(classmate.getNickName());
+        System.out.println(classmate.getSex());
+        System.out.println(classmate.getPhoneNumber());
+        System.out.println(classmate.getMailBox());
+        System.out.println(classmate.getAddress());
+    }
 
 }

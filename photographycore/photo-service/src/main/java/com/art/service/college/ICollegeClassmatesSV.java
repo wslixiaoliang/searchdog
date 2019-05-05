@@ -17,7 +17,7 @@ public interface ICollegeClassmatesSV  {
      * @param map
      * @return
      */
-    List<CollegeClassmates> getSchoolmateById(Map map);
+    CollegeClassmates getSchoolmateById(Map map);
 
     /**
      * 条件查询：大学同学
@@ -25,5 +25,11 @@ public interface ICollegeClassmatesSV  {
      * @return
      */
     List<CollegeClassmates> getSchoolmateInfos(Map map);
+
+    /**
+     * 新增：大学同学
+     * @param map
+     */
+    void addClassmates(Map map);
 
 }
