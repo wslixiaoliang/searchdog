@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大学同学关系维护页面</title>
+    <!--<script src="jquery/jquery-3.3.1.js" type="text/javascript"></script>-->
+    <link href="./college.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="content">
+    <table>
+        <thead>
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>电话</td>
+            <td>邮箱</td>
+            <td>地址</td>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- ajax加载table-maodl.json数据 -->
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">
+                <button type="button" name="add">增加</button>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+<!-- modal-模态框 begin -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Table</h4>
+            </div>
+            <div class="modal-body">
+                <!-- loading -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" name="ok">确定</button>
+                <button type="button" name="no">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal-模态框 end -->
+</body>
+
+</html>

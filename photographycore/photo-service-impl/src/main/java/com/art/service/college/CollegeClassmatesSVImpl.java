@@ -1,9 +1,9 @@
 package com.art.service.college;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.art.beans.college.CollegeClassmates;
 import com.art.dao.college.CollegeClassmatesDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +12,6 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
 
     @Autowired
     private CollegeClassmatesDAO dao;
-
     /**
      * 主键查询
      * @param map

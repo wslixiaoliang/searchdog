@@ -37,6 +37,10 @@ public class CollegeController {
         try{
             if(null== collegeClassmates) return null;
             Map<String,Object> queryMap = this.changeBean2Map(collegeClassmates);
+            if(page==null  && limit== null ){
+                page = 1;
+                limit  = 10;
+            }
             queryMap.put(Constans.START,limit*(page-1));
             queryMap.put(Constans.LIMIT,limit);
             List<CollegeClassmates> classmateList= collegeClassmatesSV.getSchoolmateInfos(queryMap);
@@ -70,7 +74,6 @@ public class CollegeController {
         queryMap.put("phoneNumber",phoneNumber);
         queryMap.put("mailBox",mailBox);
         queryMap.put("address",address);
-
         return queryMap;
     }
 

@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "微软雅黑";
+    font-size:14px;
+    color: #666;
+}
+.content{
+    width: 900px;
+    margin: 20px auto;
+}
+table{
+    border-collapse: collapse;
+}
+table td{
+    width: 185px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #666;
+}
+button[type=button]{
+    color: #fff;
+    padding: 6px 12px;
+    background: #ddd;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+button[name=change]{
+    background: #eb9316;
+}
+button[name=check]{
+    background:#2aabd2;
+}
+button[name=del]{
+    background: #d90000;
+}
+button[name=add]{
+    background:#419641;
+}
+/*modal-样式 begin*/
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    z-index: 1024;
+    background: rgba(0,0,0,0.55);
+    display: none;
+}
+.modal-dialog{
+    width:600px;
+    margin: 60px auto;
+    position: relative;
+}
+.modal-content{
+    position: relative;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.22);
+    border-radius: 6px;
+    outline:none;
+}
+.modal-header{
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.modal-body{
+    padding: 15px;
+    position: relative;
+}
+.modal-footer{
+    padding: 15px;
+    text-align: right;
+    border:1px solid #e5e5e5;
+}
+button[name=ok]{
+    background:#2d6ca2;
+}
+button[name=no]{
+    background: #d90000;
+}
+button[name=add-ok]{
+    background:#2d6ca2;
+}
+.modal-body div{
+    margin-bottom: 15px;
+}
+.modal-body h4{
+    display: inline-block;
+    margin-right: 15px;
+}
+.modal-body input{
+    width: 80%;
+    padding: 6px 12px;
+    outline: none;
+    border-radius: 4px;
+    border:1px solid #ccc;
+    box-shadow: 2px 2px 4px #ddd;
+}
+/*modal-样式 end*/

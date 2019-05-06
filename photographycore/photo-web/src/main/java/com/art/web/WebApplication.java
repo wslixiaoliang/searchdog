@@ -4,8 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-
-@ComponentScan(basePackages = {"com.art.service"})//扫描service
+@ComponentScan(basePackages = {"com.art.web"})//扫描controller
 @SpringBootApplication
 public class WebApplication {
 
