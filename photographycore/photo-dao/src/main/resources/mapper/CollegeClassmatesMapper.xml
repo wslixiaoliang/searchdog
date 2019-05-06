@@ -9,7 +9,7 @@
         <result column="MAIL_BOX"  property="mailBox"/><!--邮箱-->
         <result column="ADDRESS"  property="address"/><!--地址-->
     </resultMap>
-    <!--1.大学同学：主键查询 -->
+    <!--1.主键查询 -->
     <select id="getSchoolmateById" resultMap="ResultMap" parameterType="java.util.Map" >
         SELECT
         CLASSMATE_ID,
@@ -26,7 +26,7 @@
         </where>
     </select>
 
-    <!--2.大学同学：条件查询 -->
+    <!--2.条件查询 -->
     <select id="getSchoolmateInfos" resultMap="ResultMap" parameterType="java.util.Map" >
         SELECT
         CLASSMATE_ID,
@@ -55,7 +55,7 @@
         </where>
     </select>
 
-    <!--3.大学同学：新增-->
+    <!--3.新增-->
     <insert id="addClassmates" parameterType="java.util.Map">
       INSERT INTO college_classmates
       <trim prefix="(" suffix=")" prefixOverrides=",">
@@ -99,4 +99,16 @@
           </if>
       </trim>
     </insert>
+    <!--4.删除-->
+    <delete id="deleteByClassmatsId" parameterType="java.util.Map">
+        DELETE FROM college_classmates
+        <where>
+            <if test="classmateIds !=null and classmateIds.size()>0">
+                CLASSMATE_ID IN
+                <foreach item="classmateId" collection="classmateIds" open="(" close=")" separator=",">
+                    #{classmateId}
+                </foreach>
+            </if>
+        </where>
+    </delete>
 </mapper>

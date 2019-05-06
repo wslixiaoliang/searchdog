@@ -2,7 +2,6 @@ package com.art.service.college;
 
 import com.art.beans.college.CollegeClassmates;
 import com.art.dao.college.CollegeClassmatesDAO;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -15,7 +14,7 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
     private CollegeClassmatesDAO dao;
 
     /**
-     * 条件查询:同学信息
+     * 主键查询
      * @param map
      * @return
      */
@@ -25,7 +24,7 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
     }
 
     /**
-     * 条件查询：大学同学
+     * 条件查询
      * @param map
      * @return
      */
@@ -35,12 +34,21 @@ public class CollegeClassmatesSVImpl implements ICollegeClassmatesSV{
     }
 
     /**
-     * 新增：大学同学
+     * 新增
      * @param map
      */
     @Override
     public void addClassmates(Map map) {
         dao.addClassmates(map);
+    }
+
+    /**
+     * 删除
+     * @param map
+     */
+    @Override
+    public void deleteByClassmatsId(Map map) {
+        dao.deleteByClassmatsId(map);
     }
 
 

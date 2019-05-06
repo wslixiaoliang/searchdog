@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +39,10 @@ public class CollegeClassmatesSVImplTest{
         System.out.println(classmate.getMailBox());
         System.out.println(classmate.getAddress());
     }
+
+    /**
+     * 条件查询
+     */
     @Test
     public void testGetSchoolmateInfos(){
         Map<String,Object> queryMap = new HashMap<>();
@@ -57,9 +63,12 @@ public class CollegeClassmatesSVImplTest{
         }
     }
 
+    /**
+     * 新增
+     */
     @Test
     public void testAddSchoolmates(){
-        long classmateId = 10;
+        long classmateId = 9;
         String nickName = "王宝康";
         String sex= "男";
         String phoneNumber = "15979436659";
@@ -83,4 +92,22 @@ public class CollegeClassmatesSVImplTest{
         System.out.println(classmate.getAddress());
     }
 
+    /**
+     * 删除
+     */
+    @Test
+    public void testDeleteByClassmatsId(){
+        long clasamateId = 2;
+        List classmateList = new ArrayList();
+        classmateList.add(clasamateId);
+        Map map = new HashMap();
+        map.put("classmateIds",classmateList);
+        collegeClassmatesSV.deleteByClassmatsId(map);
+        Map params = new HashMap();
+        params.put("classmateId",clasamateId);
+        CollegeClassmates classmate = collegeClassmatesSV.getSchoolmateById(params);
+        if(null==classmate){
+            System.out.println("================主键为："+clasamateId+"的数据删除成功====================");
+        }
+    }
 }

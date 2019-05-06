@@ -31,4 +31,10 @@ public interface CollegeClassmatesDAO {
      */
     void addClassmates(Map map);
 
+    /**
+     * 删除
+     * @param map
+     */
+    void deleteByClassmatsId(Map map);
+
 }
