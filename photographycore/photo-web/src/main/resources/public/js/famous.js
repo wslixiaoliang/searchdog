@@ -7,6 +7,7 @@ $(document).ready(function(){
             var str = '' ;
             for(var i=0;i<result.length;i++){
                 str+='<tr>' +
+                    '<td><span>'+result[i].famousId+'</span></td>' +
                     '<td><span>'+result[i].chineseName+'</span></td>' +
                     '<td><span>'+result[i].englishName+'</span></td>' +
                     '<td><span>'+result[i].sex+'</span></td>' +
