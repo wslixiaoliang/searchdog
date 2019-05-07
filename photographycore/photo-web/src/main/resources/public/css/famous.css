@@ -11,6 +11,15 @@ body{
     width: 900px;
     margin: 20px auto;
 }
+.title{
+    width: 900px;
+    margin: 55px auto;
+    font-family: "微软雅黑";
+    font-size: 25px;
+    text-align: center;
+    color:orangered;
+}
+
 table{
     border-collapse: collapse;
 }
@@ -34,10 +43,10 @@ button[name=check]{
     background:#2aabd2;
 }
 button[name=del]{
-    background: #d90000;
+    background:mediumvioletred;
 }
 button[name=add]{
-    background:#419641;
+    background:palevioletred;
 }
 /*modal-样式 begin*/
 .modal{

@@ -1,112 +1,139 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.art.dao.college.CollegeClassmatesDAO">
-    <resultMap id="ResultMap" type="com.art.beans.college.CollegeClassmates" >
-        <id column="CLASSMATE_ID" property="classmateId" /><!--同学ID-->
-        <result column="NICK_NAME"  property="nickName"/><!--昵称-->
+<mapper namespace="com.art.dao.famous.WorldFamousDAO">
+    <resultMap id="ResultMap" type="com.art.beans.college.WorldFamous" >
+        <id column="FAMOUS_ID" property="famousId" /><!--名人ID-->
+        <result column="CHINESE_NAME"  property="chineseName"/><!--中文名-->
+        <result column="ENGLISH_NAME"  property="englishName"/><!--英文名-->
         <result column="SEX"  property="sex"/><!--性别-->
-        <result column="PHONE_NUMBER"  property="phoneNumber"/><!--电话-->
-        <result column="MAIL_BOX"  property="mailBox"/><!--邮箱-->
-        <result column="ADDRESS"  property="address"/><!--地址-->
+        <result column="CAREER"  property="career"/><!--职业-->
+        <result column="ACHIEVEMENT"  property="achievement"/><!--主要成就-->
+        <result column="HONOR"  property="honor"/><!--获得奖项-->
+        <result column="COUNTRY"  property="country"/><!--国籍-->
+        <result column="BIRTH_YEAR"  property="birthYear"/><!--出生年月-->
     </resultMap>
-    <!--1.主键查询 -->
-    <select id="getSchoolmateById" resultMap="ResultMap" parameterType="java.util.Map" >
+    <!--查询基本SQL-->
+    <sql id="baseQuery">
         SELECT
-        CLASSMATE_ID,
-        NICK_NAME,
+        FAMOUS_ID,
+        CHINESE_NAME,
+        ENGLISH_NAME,
         SEX,
-        PHONE_NUMBER,
-        MAIL_BOX,
-        ADDRESS
-        FROM college_classmates
+        CAREER,
+        ACHIEVEMENT,
+        HONOR,
+        COUNTRY,
+        BIRTH_YEAR
+        FROM FAMOUS_OF_WORLD
+    </sql>
+    <!--1.主键查询 -->
+    <select id="getFamousById" resultMap="ResultMap" parameterType="java.util.Map" >
+        <include refid="baseQuery"/>
         <where>
-            <if test="classmateId !=null and classmateId!=''">
-                CLASSMATE_ID = #{classmateId}
+            <if test="famousId !=null and famousId!=''">
+                FAMOUS_ID = #{famousId}
             </if>
         </where>
     </select>
 
     <!--2.条件查询 -->
-    <select id="getSchoolmateInfos" resultMap="ResultMap" parameterType="java.util.Map" >
-        SELECT
-        CLASSMATE_ID,
-        NICK_NAME,
-        SEX,
-        PHONE_NUMBER,
-        MAIL_BOX,
-        ADDRESS
-        FROM college_classmates
+    <select id="getFamousInfos" resultMap="ResultMap" parameterType="java.util.Map" >
+        <include refid="baseQuery"/>
         <where>
-            <if test="nickName !=null and nickName!=''">
-                AND NICK_NAME = #{nickName}
+            <if test="chineseName !=null and chineseName!=''">
+                AND CHINESE_NAME = #{chineseName}
             </if>
             <if test="sex !=null and sex!=''">
                 AND SEX = #{sex}
             </if>
-            <if test="phoneNumber !=null and phoneNumber!=''">
-                AND PHONE_NUMBER = #{phoneNumber}
+            <if test="career !=null and career!=''">
+                AND CAREER = #{career}
             </if>
-            <if test="mailBox !=null and mailBox!=''">
-                AND MAIL_BOX = #{mailBox}
+            <if test="achievement !=null and achievement!=''">
+                AND ACHIEVEMENT = #{achievement}
             </if>
-            <if test="address !=null and address!=''">
-                AND ADDRESS = #{address}
+            <if test="honor !=null and honor!=''">
+                AND HONOR = #{honor}
+            </if>
+            <if test="country !=null and country!=''">
+                AND COUNTRY = #{country}
             </if>
         </where>
+        <if test="null!=start and start!=''">
+            LIMIT #{start},#{limit}
+        </if>
     </select>
 
     <!--3.新增-->
-    <insert id="addClassmates" parameterType="java.util.Map">
-      INSERT INTO college_classmates
+    <insert id="addFamous" parameterType="java.util.Map">
+      INSERT INTO FAMOUS_OF_WORLD
       <trim prefix="(" suffix=")" prefixOverrides=",">
-          <if test="classmateId !=null and classmateId!=''">
-            CLASSMATE_ID,
+          <if test="famousId !=null and famousId!=''">
+              FAMOUS_ID,
           </if>
-          <if test="nickName !=null and nickName!=''">
-              NICK_NAME,
+          <if test="chineseName !=null and chineseName!=''">
+              CHINESE_NAME,
+          </if>
+          <if test="englishName !=null and englishName!=''">
+              ENGLISH_NAME,
           </if>
           <if test="sex !=null and sex!=''">
               SEX,
           </if>
-          <if test="phoneNumber !=null and phoneNumber!=''">
-              PHONE_NUMBER,
+          <if test="career !=null and career!=''">
+              CAREER,
           </if>
-          <if test="mailBox !=null and mailBox!=''">
-              MAIL_BOX,
+          <if test="achievement !=null and achievement!=''">
+              ACHIEVEMENT,
           </if>
-          <if test="address !=null and address!=''">
-              ADDRESS
+          <if test="honor !=null and honor!=''">
+              HONOR,
+          </if>
+          <if test="country !=null and country!=''">
+              COUNTRY,
+          </if>
+          <if test="birthYear !=null and birthYear!=''">
+              BIRTH_YEAR
           </if>
       </trim>
       <trim prefix="values (" suffix=")" prefixOverrides=",">
-          <if test="classmateId !=null and classmateId!=''">
-              #{classmateId,jdbcType=BIGINT},
+          <if test="famousId !=null and famousId!=''">
+              #{famousId,jdbcType=BIGINT},
           </if>
-          <if test="nickName !=null and nickName!=''">
-              #{nickName,jdbcType=VARCHAR},
+          <if test="chineseName !=null and chineseName!=''">
+              #{chineseName,jdbcType=VARCHAR},
+          </if>
+          <if test="englishName !=null and englishName!=''">
+              #{englishName,jdbcType=VARCHAR},
           </if>
           <if test="sex !=null and sex!=''">
               #{sex,jdbcType=VARCHAR},
           </if>
-          <if test="phoneNumber !=null and phoneNumber!=''">
-              #{phoneNumber,jdbcType=VARCHAR},
+          <if test="career !=null and career!=''">
+              #{career,jdbcType=VARCHAR},
           </if>
-          <if test="mailBox !=null and mailBox!=''">
-              #{mailBox,jdbcType=VARCHAR},
+          <if test="achievement !=null and achievement!=''">
+              #{achievement,jdbcType=VARCHAR},
           </if>
-          <if test="address !=null and address!=''">
-              #{address,jdbcType=VARCHAR}
+          <if test="honor !=null and honor!=''">
+              #{honor,jdbcType=VARCHAR}
+          </if>
+          <if test="country !=null and country!=''">
+              #{country,jdbcType=VARCHAR}
+          </if>
+          <if test="birthYear !=null and birthYear!=''">
+              #{birthYear,jdbcType=VARCHAR}
           </if>
       </trim>
     </insert>
     <!--4.删除-->
-    <delete id="deleteByClassmatsId" parameterType="java.util.Map">
-        DELETE FROM college_classmates
+    <delete id="deleteByFamousId" parameterType="java.util.Map">
+        DELETE FROM FAMOUS_OF_WORLD
         <where>
-            <if test="classmateIds !=null and classmateIds.size()>0">
-                CLASSMATE_ID IN
-                <foreach item="classmateId" collection="classmateIds" open="(" close=")" separator=",">
-                    #{classmateId}
+            <if test="famousIds !=null and famousIds.size()>0">
+                FAMOUS_ID IN
+                <foreach item="famousId" collection="famousIds" open="(" close=")" separator=",">
+                    #{famousId}
                 </foreach>
             </if>
         </where>
