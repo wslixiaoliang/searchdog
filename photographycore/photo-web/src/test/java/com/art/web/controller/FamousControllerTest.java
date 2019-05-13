@@ -1,6 +1,6 @@
 package com.art.web.controller;
 
-import com.art.beans.college.WorldFamous;
+import com.art.beans.famous.WorldFamous;
 import com.art.web.WebApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;

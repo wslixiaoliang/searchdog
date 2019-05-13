@@ -1,7 +1,7 @@
 package com.art.service.famous;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.art.beans.college.WorldFamous;
+import com.art.beans.famous.WorldFamous;
 import com.art.dao.famous.WorldFamousDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.art.service.famous;
 
-import com.art.beans.college.WorldFamous;
+import com.art.beans.famous.WorldFamous;
 
 import java.util.List;
 import java.util.Map;

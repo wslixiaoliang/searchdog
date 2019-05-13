@@ -1,7 +1,7 @@
 package com.art.service.famous;
 
 import com.art.ServiceApplication;
-import com.art.beans.college.WorldFamous;
+import com.art.beans.famous.WorldFamous;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

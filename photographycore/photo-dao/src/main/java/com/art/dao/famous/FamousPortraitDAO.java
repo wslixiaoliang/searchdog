@@ -1,6 +1,6 @@
 package com.art.dao.famous;
 
-import com.art.beans.college.FamousPortrait;
+import com.art.beans.famous.FamousPortrait;
 
 import java.util.List;
 /**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.art.dao.famous.WorldFamousDAO">
-    <resultMap id="ResultMap" type="com.art.beans.college.WorldFamous" >
+    <resultMap id="ResultMap" type="com.art.beans.famous.WorldFamous" >
         <id column="FAMOUS_ID" property="famousId" /><!--名人ID-->
         <result column="CHINESE_NAME"  property="chineseName"/><!--中文名-->
         <result column="ENGLISH_NAME"  property="englishName"/><!--英文名-->
