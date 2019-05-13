@@ -1,8 +1,7 @@
-package com.art.web.college;
+package com.art.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.college.WorldFamous;
-import com.art.beans.college.Result;
 import com.art.service.famous.IWorldFamousSV;
 import com.art.util.Constans;
 import org.apache.log4j.Logger;
