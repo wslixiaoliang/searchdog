@@ -1,29 +1,27 @@
-package com.art.web.controller;
+package com.art.web.component;
 
+import com.art.web.controller.PortraitController;
 import org.apache.log4j.Logger;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
 /**
- * 名人肖像：上传下载
- * @author wslixiaoliang
+ * 名人肖像：上传下载组建
+ * @author lixiaoliang
  */
-@RestController
-@RequestMapping(value = "/portrait")
-public class PortraitUpDownLoad {
+@Component
+public class PortraitComponent {
 
-    private final Logger logger = Logger.getLogger(PortraitUpDownLoad.class);
+
+    private final Logger logger = Logger.getLogger(PortraitController.class);
 
     /**
      * 肖像上传
      * @param file
      */
-    @RequestMapping(value = "/upload")
-    public String upload(@RequestParam("file") MultipartFile file){
+    public String upload(MultipartFile file){
 
         try{
             if(file.isEmpty()){
@@ -57,8 +55,7 @@ public class PortraitUpDownLoad {
      * @param response
      * @param fileName
      */
-    @RequestMapping(value = "/download")
-    public void downLoad(HttpServletResponse response,String fileName){
+    public void downLoad(HttpServletResponse response, String fileName){
         if (fileName != null) {
             //设置文件路径
             String realPath = "E:/famous/portrait";
@@ -99,12 +96,6 @@ public class PortraitUpDownLoad {
                 }
             }
         }
-    }
-
-    private void getPortraitInfos(){
-
-
-
     }
 
 }

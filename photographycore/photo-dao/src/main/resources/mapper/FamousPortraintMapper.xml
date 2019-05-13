@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.art.dao.famous.FamousPortraitDAO">
+    <resultMap id="portrait" type="com.art.beans.famous.FamousPortrait">
+        <id column="PORTRAIT_ID" property="portraitId"/><!--肖像ID-->
+        <result column="FAMOUS_ID" property="famousId"/><!--名人ID-->
+        <result column="PORTRAIT_NAME" property="portraitName"/><!--肖像名称-->
+        <result column="CHINESE_NAME"  property="chinessName"/><!--中文名-->
+        <result column="PORTRAIT_LOCATION" property="portraitLocation"/><!--相对位置-->
+        <result column="PORTRAIT_SUMMARY" property="portraitSummary"/><!--简介-->
+
+    </resultMap>
+
+    <!--名人肖像基本查询sql-->
+    <sql id="portraitBaseSql">
+    SELECT
+      a.PORTRAIT_ID,
+      a.FAMOUS_ID,
+      a.PORTRAIT_NAME,
+      a.PORTRAIT_LOCATION,
+      a.PORTRAIT_SUMMARY,
+      b.CHINESE_NAME
+    FROM famous_portrait a,famous_of_world b
+    WHERE a.FAMOUS_ID=b.FAMOUS_ID
+    </sql>
+
+    <!--条件查询-->
+    <select id="getPortraitInfos" resultMap="portrait">
+
+        <include refid="portraitBaseSql" />
+    </select>
+
+    <!--主键查询-->
+    <select id="getPortraitById" resultMap="portrait" parameterType="java.util.Map">
+        <include refid="portraitBaseSql" />
+        <where>
+            <if test="null!=famousId and famousId!=''">
+
+                FAMOUS_ID=#{famousId}
+            </if>
+
+        </where>
+    </select>
+
+
+
+
+
+
+
+
+
+
+</mapper>

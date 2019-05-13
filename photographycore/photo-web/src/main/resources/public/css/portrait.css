@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "微软雅黑";
+    font-size:14px;
+    color: #666;
+}
+.portraits{
+    width: 900px;
+    margin: 20px auto;
+}
+.portrait{
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+}
+.porName{
+    font-family: "微软雅黑";
+    font-size: 25px;
+    text-align: center;
+    color:orangered;
+}
+

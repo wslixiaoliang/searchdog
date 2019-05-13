@@ -1,4 +1,4 @@
-package com.art.util;
+package com.art.util.famous;
 
 /**
  * 常量类
