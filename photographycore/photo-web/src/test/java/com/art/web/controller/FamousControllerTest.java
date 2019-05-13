@@ -1,4 +1,4 @@
-package com.art.web.college;
+package com.art.web.controller;
 
 import com.art.beans.college.WorldFamous;
 import com.art.web.WebApplication;
