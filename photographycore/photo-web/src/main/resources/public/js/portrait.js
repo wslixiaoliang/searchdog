@@ -9,22 +9,26 @@ $(document).ready(function () {
             var portrait = "";
             var portraitName = "";
             var path ="";
+            var firstUrl= "/famous/portrait/downLoad?fileName=";
+            var finalUrl = "";
+            var a = 1;
+            var b = 10;
+            var c = 100;
             if(null!=result){
                 for(var i=0; i<result.length; i++){
-                    path = result[i].finalPath;
-                    portrait = '<tr><td><span><img id="porImg" src= "?" height="100px" width="100px" /></span></td></tr>';
-                    // document.getElementById('porImg').src = path;<!--给肖像路径赋值-->
-                    $("#porImg").attr("src",path);
-
-                    portraitName = '<tr><td><span>'+result[i].chineseName+'</span></td></tr>';
-
-                    $('portrait pict').html(portrait);
-                    $('portrait porName').html(portraitName);
-
+                    var x = "portrait" +(i+a);
+                    var y = "porImg"+(i+b);
+                    var z = "chname"+(i+c);
+                    path = result[i].portraitName;
+                    finalUrl = firstUrl + path;
+                    portrait += '<div id='+x+'><img id='+y+  ' src='+ finalUrl+ ' height="150px" width="150px" border="20px" /></div>'     ;
+                    portraitName += '<p id='+z+'>'+result[i].chineseName+'</p>';
                 }
-
-
             }
+            $("#portraits").html(portrait);
+            $('#'+x).html(portraitName);
+
+
 
 
 

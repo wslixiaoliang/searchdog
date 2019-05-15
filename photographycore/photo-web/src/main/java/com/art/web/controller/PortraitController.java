@@ -20,6 +20,9 @@ public class PortraitController {
     private IFamousPortraitSV sv;
     private final Logger logger = Logger.getLogger(PortraitController.class);
 
+
+
+
     /**
      * 主键查询
      */
