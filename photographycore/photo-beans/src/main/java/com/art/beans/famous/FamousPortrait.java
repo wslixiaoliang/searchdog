@@ -14,21 +14,21 @@ public class FamousPortrait implements Serializable{
     private String portraitLocation;//相对位置
     private String finalPath;//完全路径
     private String portraitSummary;//简介
-    private String chinessName;//中文名
+    private String chineseName;//中文名
 
     //无参构造方法
     public FamousPortrait() {
     }
 
     //有参构造方法
-    public FamousPortrait(long portraitId, long famousId, String portraitName, String portraitLocation, String finalPath, String portraitSummary, String chinessName) {
+    public FamousPortrait(long portraitId, long famousId, String portraitName, String portraitLocation, String finalPath, String portraitSummary, String chineseName) {
         this.portraitId = portraitId;
         this.famousId = famousId;
         this.portraitName = portraitName;
         this.portraitLocation = portraitLocation;
         this.finalPath = finalPath;
         this.portraitSummary = portraitSummary;
-        this.chinessName = chinessName;
+        this.chineseName = chineseName;
     }
 
     //getter and setter
@@ -80,11 +80,11 @@ public class FamousPortrait implements Serializable{
         this.finalPath = finalPath;
     }
 
-    public String getChinessName() {
-        return chinessName;
+    public String getChineseName() {
+        return chineseName;
     }
 
-    public void setChinessName(String chinessName) {
-        this.chinessName = chinessName;
+    public void setChineseName(String chineseName) {
+        this.chineseName = chineseName;
     }
 }

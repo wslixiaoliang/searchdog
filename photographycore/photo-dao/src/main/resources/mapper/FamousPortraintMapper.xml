@@ -5,7 +5,7 @@
         <id column="PORTRAIT_ID" property="portraitId"/><!--肖像ID-->
         <result column="FAMOUS_ID" property="famousId"/><!--名人ID-->
         <result column="PORTRAIT_NAME" property="portraitName"/><!--肖像名称-->
-        <result column="CHINESE_NAME"  property="chinessName"/><!--中文名-->
+        <result column="CHINESE_NAME"  property="chineseName"/><!--中文名-->
         <result column="PORTRAIT_LOCATION" property="portraitLocation"/><!--相对位置-->
         <result column="PORTRAIT_SUMMARY" property="portraitSummary"/><!--简介-->
 
