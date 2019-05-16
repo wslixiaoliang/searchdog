@@ -1,8 +1,8 @@
 package com.art.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.art.beans.famous.WorldFamous;
-import com.art.service.famous.IWorldFamousSV;
+import com.art.beans.famous.Famous;
+import com.art.service.famous.IFamousSV;
 import com.art.util.famous.Constans;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +22,7 @@ import java.util.Map;
 public class FamousController {
 
     @Reference
-    private IWorldFamousSV collegeClassmatesSV;
+    private IFamousSV collegeClassmatesSV;
     private static  final Logger logger = Logger.getLogger(FamousController.class);
 
     /**
@@ -30,8 +30,8 @@ public class FamousController {
      * @param famous
      */
     @RequestMapping(value = "/getWorldFamous",method = RequestMethod.POST)
-    public List<WorldFamous> getWorldFamous(WorldFamous famous){
-        List<WorldFamous> famousList = new ArrayList<>();
+    public List<Famous> getWorldFamous(Famous famous){
+        List<Famous> famousList = new ArrayList<>();
         Integer page =1;
         Integer limit = 10;
         try{
@@ -55,7 +55,7 @@ public class FamousController {
      * @param famous
      * @return
      */
-    private Map<String,Object> changeBean2Map(WorldFamous famous){
+    private Map<String,Object> changeBean2Map(Famous famous){
 
         String chineseName = famous.getChineseName();
         String sex = famous.getSex();

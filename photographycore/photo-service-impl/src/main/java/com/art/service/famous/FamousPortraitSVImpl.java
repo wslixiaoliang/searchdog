@@ -4,7 +4,6 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.art.beans.famous.FamousPortrait;
 import com.art.dao.famous.FamousPortraitDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 import java.util.Map;
 
@@ -26,15 +25,5 @@ public class FamousPortraitSVImpl implements IFamousPortraitSV{
     @Override
     public List<FamousPortrait> getPortraitInfos() {
         return dao.getPortraitInfos();
-    }
-
-    /**
-     * 主键查询
-     * @param map
-     * @return
-     */
-    @Override
-    public FamousPortrait getPortraitById(Map map) {
-        return dao.getPortraitById(map);
     }
 }

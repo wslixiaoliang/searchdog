@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+font-family: "微软雅黑";
+font-size:14px;
+color: #666;
+}
+
+.produdiv{
+    width: 800px;
+    height: 1000px;
+    margin: 200px auto;
+}
+.chname{
+    font-family: "微软雅黑";
+    font-size:14px;
+    color: #666;
+    margin: 20px auto;
+}
+

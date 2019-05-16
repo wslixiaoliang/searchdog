@@ -1,29 +1,28 @@
-package com.art.service.famous;
+package com.art.dao.famous;
 
-import com.art.beans.famous.WorldFamous;
-
+import com.art.beans.famous.Famous;
 import java.util.List;
 import java.util.Map;
 
 /**
- * 世界名人Service
+ * 世界名人DAO
  * @author lixiaoliang
  */
-public interface IWorldFamousSV {
+public interface FamousDAO {
 
     /**
      * 主键查询
      * @param map
      * @return
      */
-    WorldFamous getFamousById(Map map);
+    Famous getFamousById(Map map);
 
     /**
      * 条件查询
      * @param map
      * @return
      */
-    List<WorldFamous> getFamousInfos(Map map);
+    List<Famous> getFamousInfos(Map map);
 
     /**
      * 新增

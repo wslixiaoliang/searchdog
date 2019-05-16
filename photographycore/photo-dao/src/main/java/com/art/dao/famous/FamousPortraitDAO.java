@@ -17,10 +17,4 @@ public interface FamousPortraitDAO {
      */
     List<FamousPortrait> getPortraitInfos();
 
-    /**
-     * 主键查询
-     * @param map
-     * @return
-     */
-    FamousPortrait getPortraitById(Map map);
 }

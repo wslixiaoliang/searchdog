@@ -67,7 +67,7 @@ public class FileDownloadController {
                     fis = new FileInputStream(file);
                     bis = new BufferedInputStream(fis);
                     OutputStream os = response.getOutputStream();
-                    int i = bis.read(buffer);//返回一共读取多少行
+                    int i = bis.read(buffer);//返回一次读取多少行
                     while (i != -1) {
                         os.write(buffer, 0, i);//从0写到i,一次写1024个字节;
                         i = bis.read(buffer);

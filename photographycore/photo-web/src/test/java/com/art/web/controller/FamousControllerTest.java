@@ -1,6 +1,6 @@
 package com.art.web.controller;
 
-import com.art.beans.famous.WorldFamous;
+import com.art.beans.famous.Famous;
 import com.art.web.WebApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,14 +19,14 @@ public class FamousControllerTest {
 
     @Test
     public void test(){
-        WorldFamous famous = new WorldFamous();
+        Famous famous = new Famous();
         famous.setSex("女");
         Integer page = 1;
         Integer limit = 50;
-        List<WorldFamous> list = collegeController.getWorldFamous(famous);
+        List<Famous> list = collegeController.getWorldFamous(famous);
         System.out.println("=====================查询结果如下==============");
         if(!list.isEmpty() && list!=null){
-            for(WorldFamous famous1:list){
+            for(Famous famous1:list){
                 System.out.println(famous1.getFamousId());
                 System.out.println(famous1.getSex());
                 System.out.println(famous1.getChineseName());

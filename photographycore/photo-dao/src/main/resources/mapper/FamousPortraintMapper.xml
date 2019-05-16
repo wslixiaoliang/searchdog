@@ -6,40 +6,33 @@
         <result column="FAMOUS_ID" property="famousId"/><!--名人ID-->
         <result column="PORTRAIT_NAME" property="portraitName"/><!--肖像名称-->
         <result column="CHINESE_NAME"  property="chineseName"/><!--中文名-->
-        <result column="PORTRAIT_LOCATION" property="portraitLocation"/><!--相对位置-->
-        <result column="PORTRAIT_SUMMARY" property="portraitSummary"/><!--简介-->
-
+        <result column="RELATIVE_LOCATION" property="relativeLocation"/><!--相对位置-->
     </resultMap>
 
     <!--名人肖像基本查询sql-->
     <sql id="portraitBaseSql">
     SELECT
       a.PORTRAIT_ID,
-      a.FAMOUS_ID,
       a.PORTRAIT_NAME,
-      a.PORTRAIT_LOCATION,
-      a.PORTRAIT_SUMMARY,
+      a.RELATIVE_LOCATION,
+      b.FAMOUS_ID,
       b.CHINESE_NAME
     FROM famous_portrait a,famous_of_world b
-    WHERE a.FAMOUS_ID=b.FAMOUS_ID
+    WHERE a.FAMOUS_ID = b.FAMOUS_ID
     </sql>
-
     <!--条件查询-->
     <select id="getPortraitInfos" resultMap="portrait">
-
         <include refid="portraitBaseSql" />
+        <if test="null!=chineseName and chineseName!=''">
+            AND b.CHINESE_NAME LIKE concat("%",#{chineseName},"%")
+        </if>
     </select>
-
     <!--主键查询-->
     <select id="getPortraitById" resultMap="portrait" parameterType="java.util.Map">
         <include refid="portraitBaseSql" />
-        <where>
-            <if test="null!=famousId and famousId!=''">
-
-                FAMOUS_ID=#{famousId}
-            </if>
-
-        </where>
+        <if test="null!=famousId and famousId!=''">
+            AND FAMOUS_ID=#{famousId}
+        </if>
     </select>
 
 

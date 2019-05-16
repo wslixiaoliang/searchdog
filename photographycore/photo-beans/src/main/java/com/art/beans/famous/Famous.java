@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 世界名人bean
  */
-public class WorldFamous implements Serializable{
+public class Famous implements Serializable{
 
     private Long famousId;//名人ID
     private String chineseName;//中文名
@@ -19,11 +19,11 @@ public class WorldFamous implements Serializable{
 
 
     //无参构造方法
-    public WorldFamous() {
+    public Famous() {
     }
 
     //有参构造方法
-    public WorldFamous(Long famousId, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
+    public Famous(Long famousId, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
         this.famousId = famousId;
         this.chineseName = chineseName;
         this.englishName = englishName;

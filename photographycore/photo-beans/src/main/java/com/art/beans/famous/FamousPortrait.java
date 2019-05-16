@@ -11,9 +11,8 @@ public class FamousPortrait implements Serializable{
     private long portraitId;//肖像ID
     private long famousId;// 名人ID
     private String portraitName;//肖像名称
-    private String portraitLocation;//相对位置
+    private String relativeLocation;//相对位置
     private String finalPath;//完全路径
-    private String portraitSummary;//简介
     private String chineseName;//中文名
 
     //无参构造方法
@@ -21,13 +20,12 @@ public class FamousPortrait implements Serializable{
     }
 
     //有参构造方法
-    public FamousPortrait(long portraitId, long famousId, String portraitName, String portraitLocation, String finalPath, String portraitSummary, String chineseName) {
+    public FamousPortrait(long portraitId, long famousId, String portraitName, String relativeLocation, String finalPath, String chineseName) {
         this.portraitId = portraitId;
         this.famousId = famousId;
         this.portraitName = portraitName;
-        this.portraitLocation = portraitLocation;
+        this.relativeLocation = relativeLocation;
         this.finalPath = finalPath;
-        this.portraitSummary = portraitSummary;
         this.chineseName = chineseName;
     }
 
@@ -56,20 +54,12 @@ public class FamousPortrait implements Serializable{
         this.portraitName = portraitName;
     }
 
-    public String getPortraitLocation() {
-        return portraitLocation;
+    public String getRelativeLocation() {
+        return relativeLocation;
     }
 
-    public void setPortraitLocation(String portraitLocation) {
-        this.portraitLocation = portraitLocation;
-    }
-
-    public String getPortraitSummary() {
-        return portraitSummary;
-    }
-
-    public void setPortraitSummary(String portraitSummary) {
-        this.portraitSummary = portraitSummary;
+    public void setRelativeLocation(String relativeLocation) {
+        this.relativeLocation = relativeLocation;
     }
 
     public String getFinalPath() {

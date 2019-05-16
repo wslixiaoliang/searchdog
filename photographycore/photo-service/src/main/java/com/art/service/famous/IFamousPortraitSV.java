@@ -16,11 +16,4 @@ public interface IFamousPortraitSV {
      * @return
      */
     List<FamousPortrait> getPortraitInfos();
-
-    /**
-     * 主键查询
-     * @param map
-     * @return
-     */
-    FamousPortrait getPortraitById(Map map);
 }

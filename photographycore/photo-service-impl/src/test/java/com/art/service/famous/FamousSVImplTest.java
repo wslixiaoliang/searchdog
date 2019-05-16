@@ -1,12 +1,11 @@
 package com.art.service.famous;
 
 import com.art.ServiceApplication;
-import com.art.beans.famous.WorldFamous;
+import com.art.beans.famous.Famous;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,20 +15,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ServiceApplication.class)
-public class WorldFamousSVImplTest {
+public class FamousSVImplTest {
 
-    @Autowired
-    private IWorldFamousSV worldFamousSV;
-    private final Logger logger = Logger.getLogger(WorldFamousSVImplTest.class);
+    @Autowired(required = false)
+    private IFamousSV famousSV;
+    private final Logger logger = Logger.getLogger(FamousSVImplTest.class);
     /**
      * 主键查询
      */
     @Test
     public void testGetClassmates(){
-        long classmateId = 9;
+        long famousId = 9;
         Map<String,Object> queryMap = new HashMap<>();
-        queryMap.put("classmateId",classmateId);
-        WorldFamous famous = worldFamousSV.getFamousById(queryMap);
+        queryMap.put("famousId",famousId);
+        Famous famous = famousSV.getFamousById(queryMap);
         System.out.println(famous.getFamousId());
         System.out.println(famous.getChineseName());
         System.out.println(famous.getEnglishName());
@@ -53,8 +52,8 @@ public class WorldFamousSVImplTest {
         queryMap.put("achievement","");
         queryMap.put("honor","");
         queryMap.put("country","");
-        List<WorldFamous> famousList = worldFamousSV.getFamousInfos(queryMap);
-        for(WorldFamous famous:famousList){
+        List<Famous> famousList = famousSV.getFamousInfos(queryMap);
+        for(Famous famous:famousList){
             System.out.println(famous.getFamousId());
             System.out.println(famous.getChineseName());
             System.out.println(famous.getEnglishName());
@@ -94,11 +93,11 @@ public class WorldFamousSVImplTest {
         map.put("country",country);
         map.put("birthYear",birthYear);
 
-        worldFamousSV.addFamous(map);//新增
+        famousSV.addFamous(map);//新增
         //查询是否新增成功
         Map params = new HashMap();
         params.put("famousId",famousId);
-        WorldFamous famous = worldFamousSV.getFamousById(params);
+        Famous famous = famousSV.getFamousById(params);
         System.out.println(famous.getFamousId());
         System.out.println(famous.getChineseName());
         System.out.println(famous.getEnglishName());
@@ -120,10 +119,10 @@ public class WorldFamousSVImplTest {
         famousIdList.add(famousId);
         Map map = new HashMap();
         map.put("famousIds",famousIdList);
-        worldFamousSV.deleteByFamousId(map);
+        famousSV.deleteByFamousId(map);
         Map params = new HashMap();
         params.put("famousId",famousId);
-        WorldFamous famous = worldFamousSV.getFamousById(params);
+        Famous famous = famousSV.getFamousById(params);
         if(null==famous){
             System.out.println("================主键为："+famousId+"的数据删除成功====================");
         }

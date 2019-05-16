@@ -1,8 +1,8 @@
 package com.art.service.famous;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.art.beans.famous.WorldFamous;
-import com.art.dao.famous.WorldFamousDAO;
+import com.art.beans.famous.Famous;
+import com.art.dao.famous.FamousDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Map;
@@ -12,17 +12,17 @@ import java.util.Map;
  * @author lixiaoliang
  */
 @Service
-public class WorldFamousSVImpl implements IWorldFamousSV {
+public class FamousSVImpl implements IFamousSV {
 
     @Autowired
-    private WorldFamousDAO dao;
+    private FamousDAO dao;
     /**
      * 主键查询
      * @param map
      * @return
      */
     @Override
-    public WorldFamous getFamousById(Map map) {
+    public Famous getFamousById(Map map) {
         return dao.getFamousById(map);
     }
 
@@ -32,7 +32,7 @@ public class WorldFamousSVImpl implements IWorldFamousSV {
      * @return
      */
     @Override
-    public List<WorldFamous> getFamousInfos(Map map) {
+    public List<Famous> getFamousInfos(Map map) {
         return dao.getFamousInfos(map);
     }
 
