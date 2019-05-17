@@ -21,12 +21,14 @@ $(document).ready(function () {
                     var z = "chname"+(i+c);
                     path = result[i].portraitName;
                     finalUrl = firstUrl + path;
-                    portrait += '<div id='+x+'><img id='+y+  ' src='+ finalUrl+ ' height="150px" width="150px" border="20px" /></div>'     ;
-                    portraitName += '<p id='+z+'><a href="production.html?famousId=result[i].famousId">'+result[i].chineseName+'</a></p>';
+                    portrait += '<div class='+x+'><img class='+y+  ' src='+ finalUrl+ ' height="150px" width="150px" border="20px" /></div>'     ;
+                    portraitName += '<p class='+z+'><a href='+'"production.html?famousId='+result[i].famousId+'">'+result[i].chineseName+'</a></p>';
+
+                    $(".portraits").html(portrait);
+                    $('.'+x).html(portraitName);
                 }
             }
-            $("#portraits").html(portrait);
-            $('#'+x).html(portraitName);
+
 
 
 

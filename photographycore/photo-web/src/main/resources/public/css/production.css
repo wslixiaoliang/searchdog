@@ -1,23 +1,49 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 
-body{
-font-family: "微软雅黑";
-font-size:14px;
-color: #666;
-}
-
-.produdiv{
-    width: 800px;
+/* 文章总div */
+.proDiv{
+    width: 1200px;
     height: 1000px;
-    margin: 200px auto;
+    margin: auto;
+    color: #666;
 }
-.chname{
+/* 名称div */
+.titleDiv{
+    width: 300px;
+    height: 150px;
+    margin: auto;
+    margin-top:40px;
+    text-align: center;
+}
+
+.pName{
+    font-family: "黑体";
+    font-size: 16px;
+}
+
+.fChineseName{
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+.fEnglishName{
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+.pYear{
+    font-family:"楷体";
+    font-style: oblique;
+    font-size: 14px;
+}
+
+/* 内容div */
+.pContent{
+    width: 800px;
+    height: 800px;
+    margin: auto;
     font-family: "微软雅黑";
     font-size:14px;
-    color: #666;
-    margin: 20px auto;
+    /*text-align: center;*/
 }
+
 

@@ -1,26 +1,32 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
+/*a标签属性设置*/
 a{
    text-decoration: none;
-    color: #666666;
+   color: #666666;
 }
 a:hover{
     color:orangered;
 }
-/*body{*/
-    /*font-family: "微软雅黑";*/
-    /*font-size:14px;*/
-    /*color: #666;*/
-/*}*/
-.portraits{
-    width: 900px;
-    margin: 20px auto;
+/*承载所有图片的大div*/
+#portraits{
+    width: 1200px;
+    height: 1000px;
+    margin-top: 100px;
+    margin-left: 100px;
+    float:left;
 }
-.portrait{
-    width: 150px;
-    height: 150px;
-    margin: 20px auto;
+/*承载一副图片的小div*/
+#portrait{
+    width: 250px;
+    height: 250px;
+    float:left;
+    margin:20px 0;/*div上下间距*/
+    margin:0 50px;/*div左右间距*/
+    text-align: center;
+}
+
+#chname{
+    font-size: 14px;
+    font-family: "微软雅黑";
 }
 

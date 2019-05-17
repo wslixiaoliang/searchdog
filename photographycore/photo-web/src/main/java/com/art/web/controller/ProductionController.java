@@ -35,7 +35,6 @@ public class ProductionController {
             if(StringUtils.isNotEmpty(famousId)){
                 Map<String,Object> map = new HashMap();
                 map.put("famousId",Long.valueOf(famousId));
-                map.put("famousId",1L);
                 productionList = productionSV.getProductionInfos(map);
             }
         }catch(Exception e){
