@@ -13,10 +13,9 @@ a:hover{
     height: 1000px;
     margin-top: 100px;
     margin-left: 100px;
-    float:left;
 }
 /*承载一副图片的小div*/
-#portrait{
+#portrait*{
     width: 250px;
     height: 250px;
     float:left;
@@ -25,7 +24,7 @@ a:hover{
     text-align: center;
 }
 
-#chname{
+#chname*{
     font-size: 14px;
     font-family: "微软雅黑";
 }
