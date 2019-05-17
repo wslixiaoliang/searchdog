@@ -14,10 +14,10 @@ body{
 .title{
     width: 900px;
     margin: 55px auto;
-    font-family: "微软雅黑";
+    font-family: 'Microsoft YaHei';
     font-size: 25px;
     text-align: center;
-    color:orangered;
+    color:#666666;
 }
 
 table{

@@ -6,8 +6,6 @@ $(document).ready(function () {
         type:"post",
         url:"/famous/portrait/getPortraitInfos",
         success:function(result){
-            var portrait = "";
-            var portraitName = "";
             var path ="";
             var firstUrl= "/famous/portrait/downLoad?fileName=";
             var finalUrl = "";
@@ -21,21 +19,38 @@ $(document).ready(function () {
                     var z = "chname"+(i+c);
                     path = result[i].portraitName;
                     finalUrl = firstUrl + path;
-                    portrait += '<div class='+x+'><img class='+y+  ' src='+ finalUrl+ ' height="150px" width="150px" border="20px" /></div>'     ;
-                    portraitName += '<p class='+z+'><a href='+'"production.html?famousId='+result[i].famousId+'">'+result[i].chineseName+'</a></p>';
+                    var famousId = result[i].famousId;
+                    var chineseName = result[i].chineseName;
 
-                    $(".portraits").html(portrait);
-                    $('.'+x).html(portraitName);
+                    <!--div标签设置-->
+                    var portrait = document.createElement("div");
+                    portrait.setAttribute("class",x);
+                    portrait.setAttribute("style","float:left;width:250px;height:250px;margin:20px 0;margin:0 20px;text-align: center");
+
+                    <!--图片标签设置-->
+                    var proImg = document.createElement("img");
+                    proImg.setAttribute("class",y);
+                    proImg.setAttribute("src",finalUrl);
+                    proImg.setAttribute("style","width:150px;height:150px;border:solid 20px #666666");
+
+                    <!--添加到父级标签-->
+                    portrait.appendChild(proImg);
+                    var portraits = document.getElementById("portraits");
+                    portraits.appendChild(portrait);
+
+                    <!--a标签设置-->
+                    var a = document.createElement("a")
+                    a.setAttribute("href","production.html?famousId="+famousId);
+                    a.innerText = chineseName;
+
+                    <!--p标签设置-->
+                    var p = document.createElement("p");
+                    p.setAttribute("class",z);
+                    p.appendChild(a); <!--将a放入p中-->
+                    portrait.appendChild(p);<!--将p放入div中-->
+
                 }
             }
-
-
-
-
-
-
-
-
 
         }
 

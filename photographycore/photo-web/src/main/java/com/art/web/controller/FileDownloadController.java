@@ -55,7 +55,8 @@ public class FileDownloadController {
     public void downLoad(HttpServletResponse response, String fileName){
         if (fileName != null) {
             //设置文件路径
-            String realPath = "E:/famous/portrait";
+//            String realPath = "E:/famous/portrait";
+            String realPath = "/Users/lixiaoliang/wslixiaoliang/portrait";
             File file = new File(realPath , fileName);
             if (file.exists()) {
                 response.setContentType("application/force-download");// 设置强制下载不打开

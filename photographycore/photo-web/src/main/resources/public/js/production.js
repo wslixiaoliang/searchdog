@@ -45,7 +45,7 @@ $(document).ready(function () {
                  $(".fChineseName").html(fChineseName);
                  $(".fEnglishName").html(fEnglishName);
                  $(".pYear").html(pYear);
-                    $(".pContent").html(pContent);
+                 $(".pContent").html(pContent);
              }
          }
 

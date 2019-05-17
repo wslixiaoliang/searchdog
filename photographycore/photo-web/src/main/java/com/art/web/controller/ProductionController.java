@@ -32,11 +32,15 @@ public class ProductionController {
     {
         List<FamousProduction> productionList = new ArrayList<>();
         try{
+            Map<String,Object> map = new HashMap();
             if(StringUtils.isNotEmpty(famousId)){
-                Map<String,Object> map = new HashMap();
                 map.put("famousId",Long.valueOf(famousId));
-                productionList = productionSV.getProductionInfos(map);
+
+            }else{
+                map.put("famousId",null);
             }
+            productionList = productionSV.getProductionInfos(map);
+
         }catch(Exception e){
             e.printStackTrace();
         }
