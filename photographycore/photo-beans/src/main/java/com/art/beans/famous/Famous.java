@@ -16,6 +16,8 @@ public class Famous implements Serializable{
     private String honor;//获得奖项
     private String country;//国籍
     private String birthYear;//出生年月
+    private String portraitName;//肖像名称
+    private String relativeLocation;//相对位置
 
 
     //无参构造方法
@@ -23,7 +25,7 @@ public class Famous implements Serializable{
     }
 
     //有参构造方法
-    public Famous(Long famousId, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
+    public Famous(Long famousId, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear, String portraitName, String relativeLocation) {
         this.famousId = famousId;
         this.chineseName = chineseName;
         this.englishName = englishName;
@@ -33,6 +35,8 @@ public class Famous implements Serializable{
         this.honor = honor;
         this.country = country;
         this.birthYear = birthYear;
+        this.portraitName = portraitName;
+        this.relativeLocation = relativeLocation;
     }
 
     //getter and setter
@@ -106,5 +110,21 @@ public class Famous implements Serializable{
 
     public void setBirthYear(String birthYear) {
         this.birthYear = birthYear;
+    }
+
+    public String getPortraitName() {
+        return portraitName;
+    }
+
+    public void setPortraitName(String portraitName) {
+        this.portraitName = portraitName;
+    }
+
+    public String getRelativeLocation() {
+        return relativeLocation;
+    }
+
+    public void setRelativeLocation(String relativeLocation) {
+        this.relativeLocation = relativeLocation;
     }
 }

@@ -26,7 +26,7 @@ public class FamousController {
     private static  final Logger logger = Logger.getLogger(FamousController.class);
 
     /**
-     * 根据条件查询：大学同学信息
+     * 世界名人：条件查询
      * @param famous
      */
     @RequestMapping(value = "/getWorldFamous",method = RequestMethod.POST)
@@ -39,7 +39,7 @@ public class FamousController {
             Map<String,Object> queryMap = this.changeBean2Map(famous);
             if(page==null  && limit== null ){
                 page = 1;
-                limit  = 10;
+                limit  = 100;
             }
             queryMap.put(Constans.START,limit*(page-1));
             queryMap.put(Constans.LIMIT,limit);

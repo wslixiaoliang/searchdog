@@ -9,6 +9,9 @@
     <link href="../css/famous.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+
+
+<!--名人信息列表查询-->
 <div class="content">
     <div class="title">
         <h1>WELCOME TO THE HALL OF WORLD FAMOUS</h1>
@@ -18,6 +21,7 @@
         <thead>
         <tr>
             <td><b>序号</b></td>
+            <td><b>肖像</b></td>
             <td><b>中文名</b></td>
             <td><b>英文名</b></td>
             <td><b>性别</b></td>
@@ -30,17 +34,19 @@
         </tr>
         </thead>
         <tbody>
-        <!-- ajax加载controller返回的json数据 -->
+        <!-- ajax加载名人信息相关数据 -->
         </tbody>
         <tfoot>
         <tr>
-            <td colspan="10"><!-- 和并列数量为6-->
-                <button type="button" name="add">新增</button>
+            <td colspan="11"><!-- 和并列数量为6-->
+                <button id="create" type="button" name="add">新增</button>
             </td>
         </tr>
         </tfoot>
     </table>
 </div>
+
+
 <!-- modal-模态框 begin -->
 <div class="modal" id="myModal">
     <div class="modal-dialog">

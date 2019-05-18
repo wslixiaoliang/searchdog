@@ -7,12 +7,9 @@ body{
     font-size:14px;
     color: #666;
 }
-.content{
-    width: 900px;
-    margin: 20px auto;
-}
+/*标题样式*/
 .title{
-    width: 900px;
+    width: 980px;
     margin: 55px auto;
     font-family: 'Microsoft YaHei';
     font-size: 25px;
@@ -20,34 +17,68 @@ body{
     color:#666666;
 }
 
+/*图片圆角设置*/
+img{
+    border-radius:50%;
+    width:55px;
+    height:55px;
+}
+
+/*表格div宽度*/
+.content{
+    width: 980px;
+    margin: 20px auto;
+}
+
+/*使表格支持合并单元格*/
 table{
     border-collapse: collapse;
 }
+
+/*字段样式设置*/
 table td{
     width: 185px;
     padding: 6px;
     text-align: center;
     border: 1px solid #666;
 }
+
+#update:hover{
+    background: #eb9316;
+}
+#delete:hover{
+    background:mediumvioletred;
+}
+
+#create:hover{
+    background:palevioletred
+}
+
+
+
+
+
+
+
 button[type=button]{
     color: #fff;
     padding: 6px 12px;
-    background: #ddd;
+    background: #666666;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-button[name=change]{
-    background: #eb9316;
-}
-button[name=check]{
-    background:#2aabd2;
-}
-button[name=del]{
-    background:mediumvioletred;
-}
-button[name=add]{
-    background:palevioletred;
-}
+/*button[name=change]{*/
+    /*background: #eb9316;*/
+/*}*/
+/*button[name=check]{*/
+    /*background:#2aabd2;*/
+/*}*/
+/*button[name=del]{*/
+    /*background:mediumvioletred;*/
+/*}*/
+/*button[name=add]{*/
+    /*background:palevioletred;*/
+/*}*/
 /*modal-样式 begin*/
 .modal{
     position: fixed;
