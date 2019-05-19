@@ -23,7 +23,7 @@ public class FamousPortraitSVImpl implements IFamousPortraitSV{
      * @return
      */
     @Override
-    public List<FamousPortrait> getPortraitInfos() {
-        return dao.getPortraitInfos();
+    public List<FamousPortrait> getPortraitInfos(Map map) {
+        return dao.getPortraitInfos(map);
     }
 }

@@ -15,5 +15,5 @@ public interface IFamousPortraitSV {
      * 查询肖像list
      * @return
      */
-    List<FamousPortrait> getPortraitInfos();
+    List<FamousPortrait> getPortraitInfos(Map map);
 }

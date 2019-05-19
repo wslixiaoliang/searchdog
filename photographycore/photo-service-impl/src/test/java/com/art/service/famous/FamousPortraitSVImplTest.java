@@ -9,7 +9,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 名人肖像SV测试类
@@ -29,7 +32,10 @@ public class FamousPortraitSVImplTest {
      */
     @Test
     public void testGetPortraitInfos(){
-        List<FamousPortrait> portraitList = famousPortraitSV.getPortraitInfos();
+        Map map = new HashMap();
+        String chineseName = "爱因斯坦";
+        map.put("chineseName",chineseName);
+        List<FamousPortrait> portraitList = famousPortraitSV.getPortraitInfos(map);
         if(null!=portraitList && !portraitList.isEmpty()){
             for(FamousPortrait portrait:portraitList){
                 LOGGER.info("---------info-----------"+portrait.getPortraitId()+"--------------------");

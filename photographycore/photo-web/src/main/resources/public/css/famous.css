@@ -47,11 +47,11 @@ table td{
     background: #eb9316;
 }
 #delete:hover{
-    background:mediumvioletred;
+    background:red;
 }
 
 #create:hover{
-    background:palevioletred
+    background:greenyellow;
 }
 
 

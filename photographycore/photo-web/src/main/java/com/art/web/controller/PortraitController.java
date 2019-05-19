@@ -3,10 +3,13 @@ package com.art.web.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.famous.FamousPortrait;
 import com.art.service.famous.IFamousPortraitSV;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 名人肖像Controller
@@ -18,24 +21,18 @@ public class PortraitController {
 
     @Reference
     private IFamousPortraitSV famousPortraitSV;
-    private final Logger logger = Logger.getLogger(PortraitController.class);
+    private final Log logger = LogFactory.getLog(PortraitController.class);
 
     /**
-     * 肖像信息：条件查询
+     * 首页肖像信息：条件查询
      */
     @RequestMapping(value = "/getPortraitInfos")
-    public List<FamousPortrait> getPortraitInfos()
+    public List<FamousPortrait> getPortraitInfos(String chineseName)
     {
-       List<FamousPortrait> portraitList = famousPortraitSV.getPortraitInfos();
-       if(null!=portraitList && !portraitList.isEmpty()){
-           for(FamousPortrait portrait:portraitList){
-               String portraitName = portrait.getPortraitName();
-               String locatin = portrait.getRelativeLocation();
-               String finalPath = locatin+"/"+portraitName;
-               portrait.setFinalPath(finalPath);
-               logger.info("=======================名称为："+portraitName+"的肖像完全路径为："+finalPath);
-           }
-       }
+        Map map = new HashMap();
+        map.put("chineseName",chineseName);
+        List<FamousPortrait> portraitList = famousPortraitSV.getPortraitInfos(map);
+
        return portraitList;
     }
 
