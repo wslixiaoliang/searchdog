@@ -3,25 +3,30 @@
     <resultMap id="famousProduction" type="com.art.beans.famous.FamousProduction">
         <id column="PRODUCTION_ID" property="productionId"/><!--作品ID-->
         <result column="FAMOUS_ID" property="famousId"/><!--名人ID-->
+        <result column="PORTRAIT_NAME" property="portraitName"/><!--肖像名称-->
         <result column="CHINESE_NAME"  property="chineseName"/><!--作者中文名-->
         <result column="ENGLISH_NAME"  property="englishName"/><!--作者英文名-->
         <result column="PRODUCTION_NAME" property="productionName"/><!--作品名称-->
         <result column="PUBLISHED_YEAR" property="publishedYear"/><!--发表年份-->
+        <result column="SUMMARY_INFO" property="summaryInfo"/><!--摘要-->
         <result column="PRODUCTION_CNTT" property="productionContent"/><!--作品内容-->
 
     </resultMap>
     <!--基本查询sql-->
     <sql id="baseSql">
-    SELECT
+      SELECT
       a.PRODUCTION_ID,
       a.PRODUCTION_NAME,
       a.PUBLISHED_YEAR,
+      a.SUMMARY_INFO,
       a.PRODUCTION_CNTT,
       b.FAMOUS_ID,
       b.CHINESE_NAME,
-      b.ENGLISH_NAME
-    FROM famous_production a,famous_of_world b
+      b.ENGLISH_NAME,
+      c.PORTRAIT_NAME
+    FROM famous_production a,famous_of_world b,famous_portrait c
     WHERE a.FAMOUS_ID = b.FAMOUS_ID
+    AND  a.FAMOUS_ID = c.FAMOUS_ID
     </sql>
     <!--条件查询-->
     <select id="getProductionInfos" parameterType="java.util.Map"  resultMap="famousProduction">

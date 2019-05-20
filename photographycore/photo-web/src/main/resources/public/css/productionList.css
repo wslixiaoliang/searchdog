@@ -1,0 +1,11 @@
+
+/* 文章总div */
+#proListDiv{
+    width: 1200px;
+    height: auto;/* 根据内容的高度撑开的 */
+    margin: auto;
+    color: #666;
+}
+
+
+

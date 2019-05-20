@@ -1,41 +1,10 @@
 
 //初始化时加载
 $(document).ready(function () {
-
-     var url = document.URL;
-     var famousId = "";
-     var portraitName = "";
-     var paraString = [];
-     var paraString1 =[];
-     var paraString2 = [];
-     var subStart = 0;
-     var subEnd = 0;
-     var param = "";
-
-
-    //获取名人ID函数
-    function getFamousId(url){
-        subStart = url.indexOf("?") + 1;
-        subEnd = url.length;
-        param = url.substring(subStart,subEnd);
-        paraString = param.split("&");
-        var sfamousId = paraString[0];
-        var sportraitName = paraString[1];
-        paraString1 = sfamousId.split("=");
-        paraString2= sportraitName.split("=");
-        famousId = paraString1[1];
-        portraitName = paraString2[1];
-    }
-
-        getFamousId(url);//函数调用
-        var param = 'famousId='+famousId;
-        console.log("===param参数：====================="+param),
-
         //发送ajax请求，查询作品详情
         $.ajax({
          type: "post",
          url:"/famous/production/getProductionInfos",
-         data:param,
          dataType:"json",
          success:function(result){
              if(null!=result && result.length > 0){
@@ -49,13 +18,13 @@ $(document).ready(function () {
                      var y = "pYear"+i;
                      var z = "pContent" + i ;
                      var firstUrl = "/famous/portrait/downLoad?fileName=";
-                     var finalUrl = firstUrl + portraitName;
+                     var finalUrl = firstUrl + result[i].portraitName;
 
-                     var proDiv = document.getElementById("proDiv");//总div
+                     var proListDiv = document.getElementById("proListDiv");//总div
                      var titleDiv = document.createElement("div");//标题div
                      titleDiv.setAttribute("class",u);
-                     titleDiv.setAttribute("style","width: 300px;height: auto; margin: auto;margin-top:40px;text-align: center;align: center;")
-                     proDiv.appendChild(titleDiv); //标题div加入总div
+                     titleDiv.setAttribute("style","width: 300px;height: auto; margin-left: 200px;margin-top:40px;")
+                     proListDiv.appendChild(titleDiv); //标题div加入总div
                      <!--头像-->
                      var proImg = document.createElement("img");
                      proImg.setAttribute("class",s);
@@ -87,11 +56,11 @@ $(document).ready(function () {
                     pYear.innerText = result[i].publishedYear;
                     titleDiv.appendChild(pYear);
 
-                    var pContent = document.createElement("div");
+                     var pContent = document.createElement("div");
                      pContent.setAttribute("class",z);
-                     pContent.setAttribute("style","width: 800px;height: auto;margin: auto;font-family: \"微软雅黑\";font-size:14px;");
-                     pContent.innerText = result[i].productionContent;
-                     proDiv.appendChild(pContent);//内容div加入总div
+                     pContent.setAttribute("style","width: 600px;height: auto;font-family: \"微软雅黑\";font-size:14px;margin-left: 200px; margin-bottom: 20px;color: #666;");
+                     pContent.innerText = result[i].summaryInfo;
+                     proListDiv.appendChild(pContent);//内容div加入总div
 
 
                  }
