@@ -78,7 +78,7 @@ $(document).ready(function () {
 
                         <!--a标签设置-->
                         var a = document.createElement("a")
-                        a.setAttribute("href", "production.html?famousId=" + famousId);
+                        a.setAttribute("href", 'production.html?famousId=' + famousId + '&portraitName=' + path);
                         a.innerText = chineseName;
 
                         <!--p标签设置-->
