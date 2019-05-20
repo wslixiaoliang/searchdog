@@ -3,8 +3,8 @@
     <resultMap id="famousProduction" type="com.art.beans.famous.FamousProduction">
         <id column="PRODUCTION_ID" property="productionId"/><!--作品ID-->
         <result column="FAMOUS_ID" property="famousId"/><!--名人ID-->
-        <result column="CHINESE_NAME"  property="chineseName"/><!--中文名-->
-        <result column="ENGLISH_NAME"  property="englishName"/><!--英文名-->
+        <result column="CHINESE_NAME"  property="chineseName"/><!--作者中文名-->
+        <result column="ENGLISH_NAME"  property="englishName"/><!--作者英文名-->
         <result column="PRODUCTION_NAME" property="productionName"/><!--作品名称-->
         <result column="PUBLISHED_YEAR" property="publishedYear"/><!--发表年份-->
         <result column="PRODUCTION_CNTT" property="productionContent"/><!--作品内容-->
