@@ -10,6 +10,7 @@ $(document).ready(function () {
              if(null!=result && result.length > 0){
 
                  for(var i=0;i<result.length;i++){
+                     var a = "summary" + i;
                      var s = "pImg"+i;
                      var u = "titleDiv" +i;
                      var v = "pName" + i;
@@ -59,7 +60,15 @@ $(document).ready(function () {
                      var pContent = document.createElement("div");
                      pContent.setAttribute("class",z);
                      pContent.setAttribute("style","width: 600px;height: auto;font-family: \"微软雅黑\";font-size:14px;margin-left: 200px; margin-bottom: 20px;color: #666;");
-                     pContent.innerText = result[i].summaryInfo;
+
+                     //摘要链接
+                     var summary = document.createElement("a")
+                     summary.setAttribute("class",a);
+                     summary.setAttribute("src","production.html");
+                     summary.setAttribute("style","text-decoration: none;color: #666666;font-size: 14px;font-family: \"微软雅黑\";onmouseover=this.style.color='orangered';");
+
+                     summary.innerText = result[i].summaryInfo;
+                     pContent.appendChild(summary);//将摘要链接放入摘要div
                      proListDiv.appendChild(pContent);//内容div加入总div
 
 

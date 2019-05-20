@@ -1,10 +1,9 @@
-
-/* 文章总div */
+/* 文章摘要div */
 #proListDiv{
-    width: 1200px;
-    height: auto;/* 根据内容的高度撑开的 */
-    margin: auto;
-    color: #666;
+width:1200px;
+height:auto;
+margin:auto;
+color:#666;
 }
 
 
