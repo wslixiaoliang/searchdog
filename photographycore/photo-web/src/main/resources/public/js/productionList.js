@@ -20,11 +20,14 @@ $(document).ready(function () {
                      var z = "pContent" + i ;
                      var firstUrl = "/famous/portrait/downLoad?fileName=";
                      var finalUrl = firstUrl + result[i].portraitName;
+                     var productionId = result[i].productionId;
 
                      var proListDiv = document.getElementById("proListDiv");//总div
+                     proListDiv.setAttribute("style","width: 1200px;height: auto;color: #666666;");
+
                      var titleDiv = document.createElement("div");//标题div
                      titleDiv.setAttribute("class",u);
-                     titleDiv.setAttribute("style","width: 300px;height: auto; margin-left: 200px;margin-top:40px;")
+                     titleDiv.setAttribute("style","width: 300px;height: auto; margin-left: 200px;margin-top:40px;");
                      proListDiv.appendChild(titleDiv); //标题div加入总div
                      <!--头像-->
                      var proImg = document.createElement("img");
@@ -62,18 +65,16 @@ $(document).ready(function () {
                      pContent.setAttribute("style","width: 600px;height: auto;font-family: \"微软雅黑\";font-size:14px;margin-left: 200px; margin-bottom: 20px;color: #666;");
 
                      //摘要链接
-                     var summary = document.createElement("a")
+                     var summary = document.createElement("a");
                      summary.setAttribute("class",a);
-                     summary.setAttribute("src","production.html");
-                     summary.setAttribute("style","text-decoration: none;color: #666666;font-size: 14px;font-family: \"微软雅黑\";onmouseover=this.style.color='orangered';");
-
+                     summary.setAttribute("href","production.html?productionId="+productionId);
+                     summary.setAttribute("style","text-decoration:none;color:#666666;font-size:14px;font-family:\"微软雅黑\";");
+                     summary.setAttribute("onmouseover","this.style.color='orangered'");//鼠标移入时相当于a:hover
+                     summary.setAttribute("onmouseout","this.style.color='#666666'");//鼠标移出时
                      summary.innerText = result[i].summaryInfo;
                      pContent.appendChild(summary);//将摘要链接放入摘要div
                      proListDiv.appendChild(pContent);//内容div加入总div
-
-
                  }
-
              }
          }
 

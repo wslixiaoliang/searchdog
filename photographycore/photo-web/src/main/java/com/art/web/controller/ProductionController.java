@@ -28,7 +28,7 @@ public class ProductionController {
      * @return
      */
     @RequestMapping(value = "/getProductionInfos")
-    public List<FamousProduction> getProductionInfos(String famousId)
+    public List<FamousProduction> getProductionInfos(String famousId,String productionId)
     {
         List<FamousProduction> productionList = new ArrayList<>();
         try{
@@ -38,6 +38,11 @@ public class ProductionController {
 
             }else{
                 map.put("famousId",null);
+            }
+            if(StringUtils.isNotEmpty(productionId)){
+                map.put("productionId",Long.valueOf(productionId));
+            }else{
+                map.put("productionId",null);
             }
             productionList = productionSV.getProductionInfos(map);
 

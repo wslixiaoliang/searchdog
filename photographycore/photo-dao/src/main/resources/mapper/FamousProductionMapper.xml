@@ -35,6 +35,10 @@
         <if test="null!=famousId and famousId!=''">
             AND b.FAMOUS_ID = #{famousId}
         </if>
+
+        <if test="null!=productionId and productionId!=''">
+            AND a.PRODUCTION_ID = #{productionId}
+        </if>
         <if test="null!=productionName and productionName!=''">
             AND a.PRODUCTION_NAME LIKE concat("%",#{productionName},"%")
         </if>

@@ -10,26 +10,45 @@ $(document).ready(function () {
      var paraString2 = [];
      var subStart = 0;
      var subEnd = 0;
+     var params = "";
+     var productionId = "";
      var param = "";
 
 
     //获取名人ID函数
-    function getFamousId(url){
-        subStart = url.indexOf("?") + 1;
-        subEnd = url.length;
-        param = url.substring(subStart,subEnd);
-        paraString = param.split("&");
-        var sfamousId = paraString[0];
-        var sportraitName = paraString[1];
-        paraString1 = sfamousId.split("=");
-        paraString2= sportraitName.split("=");
-        famousId = paraString1[1];
-        portraitName = paraString2[1];
+    if( url.indexOf("&") > 0)
+    {
+        //进入多个作品详情页
+        function getFamousId(url){
+            subStart = url.indexOf("?") + 1;
+            subEnd = url.length;
+            params = url.substring(subStart,subEnd);
+            paraString = params.split("&");
+            var sfamousId = paraString[0];
+            var sportraitName = paraString[1];
+            paraString1 = sfamousId.split("=");
+            paraString2= sportraitName.split("=");
+            famousId = paraString1[1];
+            portraitName = paraString2[1];
+        }
+        getFamousId(url);//函数调用
+        param = 'famousId='+famousId;
+        console.log("===param参数：====================="+param);
+
+    }else{
+        //进入单个作品详情页
+        function getFunctionId(url){
+            subStart = url.indexOf("?") + 1;
+            subEnd = url.length;
+            params = url.substring(subStart,subEnd);
+            paraString = params.split("=");
+            productionId = paraString[1];
+        }
+        getFunctionId(url);
+        param =  'productionId='+productionId;
+        console.log("===param参数：====================="+param);
     }
 
-        getFamousId(url);//函数调用
-        var param = 'famousId='+famousId;
-        console.log("===param参数：====================="+param),
 
         //发送ajax请求，查询作品详情
         $.ajax({
@@ -49,7 +68,12 @@ $(document).ready(function () {
                      var y = "pYear"+i;
                      var z = "pContent" + i ;
                      var firstUrl = "/famous/portrait/downLoad?fileName=";
-                     var finalUrl = firstUrl + portraitName;
+                     var finalUrl = "";
+                     if(portraitName!=""){
+                         finalUrl = firstUrl + portraitName;
+                     }else{
+                         finalUrl = firstUrl + result[i].portraitName;
+                     }
 
                      var proDiv = document.getElementById("proDiv");//总div
                      var titleDiv = document.createElement("div");//标题div
@@ -92,8 +116,6 @@ $(document).ready(function () {
                      pContent.setAttribute("style","width: 800px;height: auto;margin: auto;font-family: \"微软雅黑\";font-size:14px;");
                      pContent.innerText = result[i].productionContent;
                      proDiv.appendChild(pContent);//内容div加入总div
-
-
                  }
 
              }
