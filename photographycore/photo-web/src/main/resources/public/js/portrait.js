@@ -26,9 +26,7 @@ $(document).ready(function () {
             cache: false,
             sync:false,
             success: function (result) {
-                var path = "";
                 var firstUrl = "/famous/portrait/downLoad?fileName=";
-                var finalUrl = "";
                 var a = 1;
                 var b = 10;
                 var c = 100;
@@ -37,8 +35,8 @@ $(document).ready(function () {
                         var x = "portrait" + (i + a);
                         var y = "porImg" + (i + b);
                         var z = "chname" + (i + c);
-                        path = result[i].portraitName;
-                        finalUrl = firstUrl + path;
+                        var portraitName = result[i].portraitName;
+                        var finalUrl = firstUrl + portraitName;
                         var famousId = result[i].famousId;
                         var chineseName = result[i].chineseName;
 
@@ -56,7 +54,7 @@ $(document).ready(function () {
 
                         <!--a标签设置-->
                         var a = document.createElement("a")
-                        a.setAttribute("href", 'production.html?famousId=' + famousId + '&portraitName=' + path);
+                        a.setAttribute("href", 'production.html?famousId=' + famousId + '&portraitName=' + portraitName);
                         a.innerText = chineseName;
 
                         <!--p标签设置-->
