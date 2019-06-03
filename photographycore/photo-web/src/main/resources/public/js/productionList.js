@@ -71,6 +71,8 @@ $(document).ready(function () {
                      summary.setAttribute("style","text-decoration:none;color:#666666;font-size:14px;font-family:\"微软雅黑\";");
                      summary.setAttribute("onmouseover","this.style.color='orangered'");//鼠标移入时相当于a:hover
                      summary.setAttribute("onmouseout","this.style.color='#666666'");//鼠标移出时
+                     summary.setAttribute("onmousedown","this.style.color='#666666'");//鼠标按下时
+
                      summary.innerText = result[i].summaryInfo;
                      pContent.appendChild(summary);//将摘要链接放入摘要div
                      proListDiv.appendChild(pContent);//内容div加入总div

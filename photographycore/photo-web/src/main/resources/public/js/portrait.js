@@ -2,7 +2,6 @@
 <!--页面初始化入口-->
 $(document).ready(function () {
 
-
     <!--初始化调用-->
     portraitInfos();
 
@@ -10,23 +9,6 @@ $(document).ready(function () {
     $("#search").on("click", function () {
         portraitInfos();
     });
-
-    // if (isSafari()) {
-    //     $(window).bind("pageshow", function (event) {
-    //         if (event.originalEvent.persisted && $('body').hasClass("no-cache")) {
-    //             document.body.style.display = "none";
-    //             window.location.reload();
-    //         }
-    //     });
-    // }
-    //
-    // function isSafari() {
-    //     if (navigator.userAgent.indexOf("Safari") > -1) {
-    //         return true;
-    //     }
-    //     return false;
-    // }
-
 
 
 });
@@ -44,9 +26,7 @@ $(document).ready(function () {
             cache: false,
             sync:false,
             success: function (result) {
-                var path = "";
                 var firstUrl = "/famous/portrait/downLoad?fileName=";
-                var finalUrl = "";
                 var a = 1;
                 var b = 10;
                 var c = 100;
@@ -55,12 +35,12 @@ $(document).ready(function () {
                         var x = "portrait" + (i + a);
                         var y = "porImg" + (i + b);
                         var z = "chname" + (i + c);
-                        path = result[i].portraitName;
-                        finalUrl = firstUrl + path;
+                        var portraitName = result[i].portraitName;
+                        var finalUrl = firstUrl + portraitName;
                         var famousId = result[i].famousId;
                         var chineseName = result[i].chineseName;
 
-                        <!--div标签设置-->
+                        <!--头像div设置-->
                         var portrait = document.createElement("div");
                         portrait.setAttribute("class", x);
                         portrait.setAttribute("style", "float:left;width:250px;height:250px;margin:20px 0;margin:0 20px;text-align: center");
@@ -70,15 +50,11 @@ $(document).ready(function () {
                         proImg.setAttribute("class", y);
                         proImg.setAttribute("src", finalUrl);
                         proImg.setAttribute("style", "width:150px;height:150px;border:solid 20px #666666");
-
-                        <!--添加到父级标签-->
                         portrait.appendChild(proImg);
-                        var portraits = document.getElementById("portraits");
-                        portraits.appendChild(portrait);
 
                         <!--a标签设置-->
                         var a = document.createElement("a")
-                        a.setAttribute("href", 'production.html?famousId=' + famousId + '&portraitName=' + path);
+                        a.setAttribute("href", 'production.html?famousId=' + famousId + '&portraitName=' + portraitName);
                         a.innerText = chineseName;
 
                         <!--p标签设置-->
@@ -86,7 +62,13 @@ $(document).ready(function () {
                         p.setAttribute("class", z);
                         p.appendChild(a);<!--将a放入p中-->
                         portrait.appendChild(p); <!--将p放入div中-->
+
+                        <!--添加到父级标签-->
+                        var portraits = document.getElementById("portraits");
+                        portraits.appendChild(portrait);
+
                     }
+
                 }
 
             }
