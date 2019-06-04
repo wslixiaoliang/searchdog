@@ -37,6 +37,16 @@ public class FamousSVImpl implements IFamousSV {
     }
 
     /**
+     * count 查询
+     * @param map
+     * @return
+     */
+    @Override
+    public Integer getFamousCount(Map map) {
+        return dao.getFamousCount(map);
+    }
+
+    /**
      * 新增
      * @param map
      */

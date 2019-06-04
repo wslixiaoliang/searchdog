@@ -29,7 +29,7 @@
             b.PORTRAIT_NAME,
             b.RELATIVE_LOCATION
             FROM FAMOUS_OF_WORLD a,FAMOUS_PORTRAIT b
-      WHERE a.FAMOUS_ID=b.FAMOUS_ID;
+            WHERE a.FAMOUS_ID=b.FAMOUS_ID
 
     </sql>
     <!--1.主键查询 -->
@@ -64,13 +64,33 @@
             <if test="country !=null and country!=''">
                 AND COUNTRY = #{country}
             </if>
+            LIMIT #{start},#{limit}
+    </select>
+    <!--3.count查询 -->
+    <select id="getFamousCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+      select count(*) from famous_of_world
+        <if test="chineseName !=null and chineseName!=''">
+            AND CHINESE_NAME = #{chineseName}
+        </if>
+        <if test="sex !=null and sex!=''">
+            AND SEX = #{sex}
+        </if>
+        <if test="career !=null and career!=''">
+            AND CAREER = #{career}
+        </if>
+        <if test="achievement !=null and achievement!=''">
+            AND ACHIEVEMENT = #{achievement}
+        </if>
+        <if test="honor !=null and honor!=''">
+            AND HONOR = #{honor}
+        </if>
+        <if test="country !=null and country!=''">
+            AND COUNTRY = #{country}
+        </if>
 
-            <if test="null!=start and start!=''">
-                LIMIT #{start},#{limit}
-            </if>
     </select>
 
-    <!--3.新增-->
+    <!--4.新增-->
     <insert id="addFamous" parameterType="java.util.Map">
       INSERT INTO FAMOUS_OF_WORLD
       <trim prefix="(" suffix=")" prefixOverrides=",">
@@ -132,7 +152,7 @@
           </if>
       </trim>
     </insert>
-    <!--4.删除-->
+    <!--5.删除-->
     <delete id="deleteByFamousId" parameterType="java.util.Map">
         DELETE FROM FAMOUS_OF_WORLD
         <where>

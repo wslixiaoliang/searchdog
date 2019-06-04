@@ -25,6 +25,12 @@ public interface FamousDAO {
     List<Famous> getFamousInfos(Map map);
 
     /**
+     * count查询
+     * @param map
+     * @return
+     */
+    Integer getFamousCount(Map map);
+    /**
      * 新增
      * @param map
      */

@@ -2,6 +2,7 @@ package com.art.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.famous.Famous;
+import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousSV;
 import com.art.util.famous.Constans;
 import org.apache.log4j.Logger;
@@ -22,32 +23,37 @@ import java.util.Map;
 public class FamousController {
 
     @Reference
-    private IFamousSV collegeClassmatesSV;
+    private IFamousSV famousSV;
     private static  final Logger logger = Logger.getLogger(FamousController.class);
 
     /**
      * 世界名人：条件查询
-     * @param famous
+     * @param page
+     * @param limit
      */
     @RequestMapping(value = "/getWorldFamous",method = RequestMethod.POST)
-    public List<Famous> getWorldFamous(Famous famous){
-        List<Famous> famousList = new ArrayList<>();
-        Integer page =1;
-        Integer limit = 10;
+    public Result getWorldFamous(Famous famous, int page, int limit){
+        Result result = new Result();
+        List<Famous> famousList ;
+        Map<String,Object> queryMap = new HashMap<>();
+        if(null== famous) return result;
+//        queryMap = this.changeBean2Map(famous);
+
         try{
-            if(null== famous) return null;
-            Map<String,Object> queryMap = this.changeBean2Map(famous);
-            if(page==null  && limit== null ){
-                page = 1;
-                limit  = 100;
-            }
             queryMap.put(Constans.START,limit*(page-1));
             queryMap.put(Constans.LIMIT,limit);
-            famousList= collegeClassmatesSV.getFamousInfos(queryMap);
+            famousList= famousSV.getFamousInfos(queryMap);
+            Integer count = famousSV.getFamousCount(queryMap);
+            result.setBeans(famousList);
+            result.setCount(count);
+            result.setReturnCode(Constans.SUCESSS_RETURN_CODE);
+            result.setReturnMessage("查询成功");
         }catch (Exception e){
             logger.info(e.getMessage(),e);
+            result.setReturnCode(Constans.FAILURE_RETURN_CODE);
+            result.setReturnMessage("查询失败");
         }
-        return famousList;
+        return result;
     }
 
     /**

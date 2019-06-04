@@ -26,6 +26,13 @@ public interface IFamousSV {
     List<Famous> getFamousInfos(Map map);
 
     /**
+     * count 查询
+     * @param map
+     * @return
+     */
+    Integer getFamousCount(Map map);
+
+    /**
      * 新增
      * @param map
      */
