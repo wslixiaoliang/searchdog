@@ -20,13 +20,26 @@
     FROM famous_portrait a,famous_of_world b
     WHERE a.FAMOUS_ID = b.FAMOUS_ID
     </sql>
+
     <!--条件查询-->
     <select id="getPortraitInfos" resultMap="portrait">
         <include refid="portraitBaseSql" />
         <if test="null!=chineseName and chineseName!=''">
             AND b.CHINESE_NAME LIKE concat("%",#{chineseName},"%")
         </if>
+        LIMIT #{start},#{limit}
     </select>
+
+    <!--count查询-->
+    <select id="getPortraitCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select count(*) from
+        famous_portrait a,famous_of_world b
+        WHERE a.FAMOUS_ID = b.FAMOUS_ID
+        <if test="null!=chineseName and chineseName!=''">
+            AND b.CHINESE_NAME LIKE concat("%",#{chineseName},"%")
+        </if>
+    </select>
+
     <!--主键查询-->
     <select id="getPortraitById" resultMap="portrait" parameterType="java.util.Map">
         <include refid="portraitBaseSql" />

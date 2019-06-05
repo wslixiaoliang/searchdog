@@ -17,4 +17,10 @@ public interface FamousPortraitDAO {
      */
     List<FamousPortrait> getPortraitInfos(Map map);
 
+    /**
+     * count查询
+     * @return
+     */
+    Integer getPortraitCount(Map map);
+
 }

@@ -26,4 +26,13 @@ public class FamousPortraitSVImpl implements IFamousPortraitSV{
     public List<FamousPortrait> getPortraitInfos(Map map) {
         return dao.getPortraitInfos(map);
     }
+
+    /**
+     * count查询
+     * @return
+     */
+    @Override
+    public Integer getPortraitCount(Map map) {
+        return dao.getPortraitCount(map);
+    }
 }

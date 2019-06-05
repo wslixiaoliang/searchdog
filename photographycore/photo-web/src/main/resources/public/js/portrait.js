@@ -13,16 +13,22 @@ $(document).ready(function () {
 
 });
 
-
-
     <!--首页条件查询入口-->
     function portraitInfos(){
-        var params = $("#chineseName").val();<!--获取搜索关键词-->
-        var param = "chineseName="+params;
+        var page = 1;
+        var limit = 10;
+        var total;
+        var pageCount = 0;
+        var yushu = 0;
+        var chineseName = $("#chineseName").val();<!--获取搜索关键词-->
         $.ajax({
             type: "post",
             url: "/famous/portrait/getPortraitInfos",
-            data: param,
+            data: {
+                "chineseName":chineseName,
+                "page": page,
+                "limit": limit
+            },
             cache: false,
             sync:false,
             success: function (result) {
@@ -30,15 +36,33 @@ $(document).ready(function () {
                 var a = 1;
                 var b = 10;
                 var c = 100;
-                if (null != result) {
-                    for (var i = 0; i < result.length; i++) {
+
+                var list = result.beans;
+                total = result.count;
+                yushu = (total % limit);
+                pageCount = (total - yushu) / limit;
+                if (yushu > 0) {
+                    pageCount += 1;
+                }
+
+                //分页插件调用
+                $(".tcdPageCode").createPage({
+                    pageCount: pageCount,
+                    current: page,
+                    backFn: function () {
+                        portraitInfos(page);
+                    }
+                });
+
+                if (null != list) {
+                    for (var i = 0; i < list.length; i++) {
                         var x = "portrait" + (i + a);
                         var y = "porImg" + (i + b);
                         var z = "chname" + (i + c);
-                        var portraitName = result[i].portraitName;
+                        var portraitName = list[i].portraitName;
                         var finalUrl = firstUrl + portraitName;
-                        var famousId = result[i].famousId;
-                        var chineseName = result[i].chineseName;
+                        var famousId = list[i].famousId;
+                        var chineseName = list[i].chineseName;
 
                         <!--头像div设置-->
                         var portrait = document.createElement("div");

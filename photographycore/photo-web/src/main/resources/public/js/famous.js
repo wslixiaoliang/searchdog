@@ -29,7 +29,7 @@ $(document).ready(function(){
                 $(".tcdPageCode").createPage({
                     pageCount: pageCount,
                     current: page,
-                    backFn: function (page) {
+                    backFn: function () {
                         getDataList(page);
                     }
                 });
