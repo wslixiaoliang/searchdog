@@ -16,7 +16,7 @@ $(document).ready(function () {
     <!--首页条件查询入口-->
     function portraitInfos(){
         var page = 1;
-        var limit = 10;
+        var limit = 12;
         var total;
         var pageCount = 0;
         var yushu = 0;
