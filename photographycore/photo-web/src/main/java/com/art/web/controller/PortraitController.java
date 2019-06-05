@@ -29,19 +29,15 @@ public class PortraitController {
      * 首页肖像信息：条件查询
      */
     @RequestMapping(value = "/getPortraitInfos")
-    public Result getPortraitInfos(String chineseName,Integer page,Integer limit)
+    public Result getPortraitInfos(String chineseName)
     {
         Result result = new Result();
         Map map = new HashMap();
         try{
             map.put("chineseName",chineseName);
-            Integer count = famousPortraitSV.getPortraitCount(map);
-            map.put(Constans.START,limit*(page-1));
-            map.put(Constans.LIMIT,limit);
             List<FamousPortrait> portraitList = famousPortraitSV.getPortraitInfos(map);
             if(null!=portraitList && !portraitList.isEmpty()){
                 result.setBeans(portraitList);
-                result.setCount(count);
                 result.setReturnCode(Constans.SUCESSS_RETURN_CODE);
                 result.setReturnMessage("查询成功");
             }

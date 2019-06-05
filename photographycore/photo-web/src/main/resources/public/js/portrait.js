@@ -4,30 +4,20 @@ $(document).ready(function () {
 
     <!--初始化调用-->
     portraitInfos();
-
     <!--点击事件查询调用-->
     $("#search").on("click", function () {
         portraitInfos();
     });
 
-
 });
-
     <!--首页条件查询入口-->
     function portraitInfos(){
-        var page = 1;
-        var limit = 12;
-        var total;
-        var pageCount = 0;
-        var yushu = 0;
         var chineseName = $("#chineseName").val();<!--获取搜索关键词-->
         $.ajax({
             type: "post",
             url: "/famous/portrait/getPortraitInfos",
             data: {
-                "chineseName":chineseName,
-                "page": page,
-                "limit": limit
+                "chineseName":chineseName
             },
             cache: false,
             sync:false,
@@ -38,22 +28,6 @@ $(document).ready(function () {
                 var c = 100;
 
                 var list = result.beans;
-                total = result.count;
-                yushu = (total % limit);
-                pageCount = (total - yushu) / limit;
-                if (yushu > 0) {
-                    pageCount += 1;
-                }
-
-                //分页插件调用
-                $(".tcdPageCode").createPage({
-                    pageCount: pageCount,
-                    current: page,
-                    backFn: function () {
-                        portraitInfos(page);
-                    }
-                });
-
                 if (null != list) {
                     for (var i = 0; i < list.length; i++) {
                         var x = "portrait" + (i + a);
@@ -98,9 +72,6 @@ $(document).ready(function () {
             }
 
         });
-
-
-
 
     };
 
