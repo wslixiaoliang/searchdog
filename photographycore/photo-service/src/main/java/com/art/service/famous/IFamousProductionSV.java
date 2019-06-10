@@ -10,9 +10,23 @@ import java.util.Map;
  */
 public interface IFamousProductionSV {
     /**
-     * 名人作品：条件查询
+     * 条件查询
      * @param map
      * @return
      */
     List<FamousProduction> getProductionInfos(Map map);
+
+    /**
+     * count查询
+     * @param map
+     * @return
+     */
+    Integer getProductionCount(Map map);
+
+    /**
+     * 主键查询
+     * @param map
+     * @return
+     */
+    FamousProduction getProductionById(Map map);
 }

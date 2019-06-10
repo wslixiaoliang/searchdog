@@ -18,5 +18,17 @@ public interface FamousProductionDAO {
      */
     List<FamousProduction> getProductionInfos(Map map);
 
+    /**
+     * count查询
+     * @param map
+     * @return
+     */
+    Integer getProductionCount(Map map);
 
+    /**
+     * 主键查询
+     * @param map
+     * @return
+     */
+    FamousProduction getProductionById(Map map);
 }

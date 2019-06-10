@@ -24,4 +24,24 @@ public class FamousProductionSVImpl implements IFamousProductionSV{
     public List<FamousProduction> getProductionInfos(Map map) {
         return dao.getProductionInfos(map);
     }
+
+    /**
+     * count查询
+     * @param map
+     * @return
+     */
+    @Override
+    public Integer getProductionCount(Map map) {
+        return dao.getProductionCount(map);
+    }
+
+    /**
+     * 主键查询
+     * @param map
+     * @return
+     */
+    @Override
+    public FamousProduction getProductionById(Map map) {
+        return dao.getProductionById(map);
+    }
 }

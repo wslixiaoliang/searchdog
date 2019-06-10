@@ -10,7 +10,6 @@
         <result column="PUBLISHED_YEAR" property="publishedYear"/><!--发表年份-->
         <result column="SUMMARY_INFO" property="summaryInfo"/><!--摘要-->
         <result column="PRODUCTION_CNTT" property="productionContent"/><!--作品内容-->
-
     </resultMap>
     <!--基本查询sql-->
     <sql id="baseSql">
@@ -28,22 +27,39 @@
     WHERE a.FAMOUS_ID = b.FAMOUS_ID
     AND  a.FAMOUS_ID = c.FAMOUS_ID
     </sql>
-    <!--条件查询-->
+    <!--1.条件查询-->
     <select id="getProductionInfos" parameterType="java.util.Map"  resultMap="famousProduction">
 
         <include refid="baseSql"/>
-        <if test="null!=famousId and famousId!=''">
-            AND b.FAMOUS_ID = #{famousId}
-        </if>
 
-        <if test="null!=productionId and productionId!=''">
-            AND a.PRODUCTION_ID = #{productionId}
-        </if>
         <if test="null!=productionName and productionName!=''">
             AND a.PRODUCTION_NAME LIKE concat("%",#{productionName},"%")
         </if>
         <if test="null!=chineseName and chineseName!=''">
-            AND b.CHINESE_NAME = #{productionName}
+            AND b.CHINESE_NAME = #{chineseName}
+        </if>
+        LIMIT #{start},#{limit}
+    </select>
+
+    <!--2.count查询-->
+    <select id="getProductionCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        SELECT count(*) from famous_production a,famous_of_world b,famous_portrait c
+        WHERE a.FAMOUS_ID = b.FAMOUS_ID
+        AND  a.FAMOUS_ID = c.FAMOUS_ID
+        <if test="null!=productionName and productionName!=''">
+            AND a.PRODUCTION_NAME LIKE concat("%",#{productionName},"%")
+        </if>
+        <if test="null!=chineseName and chineseName!=''">
+            AND b.CHINESE_NAME = #{chineseName}
         </if>
     </select>
+
+    <!--3.主键查询-->
+    <select id="getProductionById" parameterType="java.util.Map" resultMap="famousProduction">
+        <include refid="baseSql"/>
+        <if test="null!=productionId and productionId!=''">
+            AND a.PRODUCTION_ID = #{productionId}
+        </if>
+    </select>
+
 </mapper>

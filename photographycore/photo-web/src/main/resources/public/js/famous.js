@@ -6,8 +6,9 @@ $(document).ready(function(){
     var total;
     var pageCount = 0;
     var yushu = 0;
-    getDataList(page)
-    function getDataList(page) {
+    getDataList(page);//初始化page为1
+    function getDataList(page)//切记此处为动态的page,自动获取点击的page页码
+    {
         $.ajax({
             type: 'post',
             url: '/famous/worldFamous/getWorldFamous',
@@ -24,15 +25,6 @@ $(document).ready(function(){
                 if (yushu > 0) {
                     pageCount += 1;
                 }
-
-                //分页插件调用
-                $(".tcdPageCode").createPage({
-                    pageCount: pageCount,
-                    current: page,
-                    backFn: function () {
-                        getDataList(page);
-                    }
-                });
 
                 for (var i = 0; i < list.length; i++) {
                     var portraitName = list[i].portraitName;
@@ -54,9 +46,19 @@ $(document).ready(function(){
                         '</tr>'
                 }
                 $('table tbody').html(str);
+
+                $(".tcdPageCode").createPage({
+                    pageCount: pageCount,
+                    current: page
+                });
             }
         });
+
     }
+    //回调函数
+    $(".tcdPageCode").createPage({
+        backFn: getDataList
+    });
 
 });
 
