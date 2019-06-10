@@ -21,7 +21,6 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/worldFamous")
 public class FamousController {
-
     @Reference
     private IFamousSV famousSV;
     private static  final Logger logger = Logger.getLogger(FamousController.class);
