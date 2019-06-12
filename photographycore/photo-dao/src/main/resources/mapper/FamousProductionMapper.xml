@@ -54,11 +54,14 @@
         </if>
     </select>
 
-    <!--3.主键查询-->
+    <!--3.单个&多个作品查询-->
     <select id="getProductionById" parameterType="java.util.Map" resultMap="famousProduction">
         <include refid="baseSql"/>
         <if test="null!=productionId and productionId!=''">
             AND a.PRODUCTION_ID = #{productionId}
+        </if>
+        <if test="null!=famousId and famousId!=''">
+            AND a.FAMOUS_ID = #{famousId}
         </if>
     </select>
 

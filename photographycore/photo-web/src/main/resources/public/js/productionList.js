@@ -1,9 +1,9 @@
 
 //初始化时加载
 $(document).ready(function () {
-    //发送ajax请求，查询作品详情
+
     var page = 1;
-    var limit = 5;
+    var limit = 2;
     var total = 0;
     var pageCount = 0;
     getProductionInfos(page);//初始化调用，page默认为1
@@ -28,7 +28,12 @@ $(document).ready(function () {
                 }
                 if (null != result && list.length > 0) {
 
+                    var proListDiv = document.createElement("div");//总div
+                    proListDiv.setAttribute("class","proListDiv");
+                    proListDiv.setAttribute("style", "width: 1200px;height: auto;color: #666666;");
+
                     for (var i = 0; i < list.length; i++) {
+
                         var a = "summary" + i;
                         var s = "pImg" + i;
                         var u = "titleDiv" + i;
@@ -41,37 +46,40 @@ $(document).ready(function () {
                         var finalUrl = firstUrl + list[i].portraitName;
                         var productionId = list[i].productionId;
 
-                        var proListDiv = document.getElementById("proListDiv");//总div
-                        proListDiv.setAttribute("style", "width: 1200px;height: auto;color: #666666;");
-
-                        var titleDiv = document.createElement("div");//标题div
+                        //标题div
+                        var titleDiv = document.createElement("div");
                         titleDiv.setAttribute("class", u);
                         titleDiv.setAttribute("style", "width: 300px;height: auto; margin-left: 200px;margin-top:40px;");
                         proListDiv.appendChild(titleDiv); //标题div加入总div
-                        <!--头像-->
+
+                        //头像
                         var proImg = document.createElement("img");
                         proImg.setAttribute("class", s);
                         proImg.setAttribute("src", finalUrl);
                         proImg.setAttribute("style", "width:55px;height:55px;border-radius:50%;");
                         titleDiv.appendChild(proImg);
+
                         //作品名
                         var pName = document.createElement("p");
                         pName.setAttribute("class", v);
                         pName.setAttribute("style", "font-family: \"黑体\";font-size: 16px;font-weight:bold;");
                         pName.innerText = list[i].productionName;
                         titleDiv.appendChild(pName);
+
                         //作者中文名
                         var fChineseName = document.createElement("p");
                         fChineseName.setAttribute("class", w);
                         fChineseName.setAttribute("style", "font-family: \"微软雅黑\";font-size: 14px;");
                         fChineseName.innerText = list[i].chineseName;
                         titleDiv.appendChild(fChineseName);
+
                         //作者英文名
                         var fEnglishName = document.createElement("p");
                         fEnglishName.setAttribute("class", x);
                         fEnglishName.setAttribute("style", "font-family: \"Microsoft YaHei\";font-size: 14px;");
                         fEnglishName.innerText = list[i].englishName;
                         titleDiv.appendChild(fEnglishName);
+
                         //发表年份
                         var pYear = document.createElement("p");
                         pYear.setAttribute("class", y);
@@ -79,11 +87,12 @@ $(document).ready(function () {
                         pYear.innerText = list[i].publishedYear;
                         titleDiv.appendChild(pYear);
 
+                        //摘要div
                         var pContent = document.createElement("div");
                         pContent.setAttribute("class", z);
                         pContent.setAttribute("style", "width: 600px;height: auto;font-family: \"微软雅黑\";font-size:14px;margin-left: 200px; margin-bottom: 20px;color: #666;");
 
-                        //摘要链接
+                        //摘要内容a连接
                         var summary = document.createElement("a");
                         summary.setAttribute("class", a);
                         summary.setAttribute("href", "production.html?productionId=" + productionId);
@@ -91,15 +100,23 @@ $(document).ready(function () {
                         summary.setAttribute("onmouseover", "this.style.color='orangered'");//鼠标移入时相当于a:hover
                         summary.setAttribute("onmouseout", "this.style.color='#666666'");//鼠标移出时
                         summary.setAttribute("onmousedown", "this.style.color='#666666'");//鼠标按下时
-
                         summary.innerText = list[i].summaryInfo;
-                        pContent.appendChild(summary);//将摘要链接放入摘要div
+
+                        pContent.appendChild(summary);//将摘要a链接放入摘要div
                         proListDiv.appendChild(pContent);//内容div加入总div
                     }
+                    //分页插件div
+                    var tcdPageCode = document.createElement("div");
+                    tcdPageCode.setAttribute("class","tcdPageCode");
+                    proListDiv.appendChild(tcdPageCode);//分页插件div加入总div
+                    $("body").html(proListDiv);//将所有div内容加入body,使用html形式
                 }
+
+                //分页插件调用
                 $(".tcdPageCode").createPage({
                     pageCount: pageCount,
-                    current: page
+                    current: page,
+                    backFn:getProductionInfos
                 });
             }
 
@@ -107,9 +124,9 @@ $(document).ready(function () {
 
     }
     //回调函数
-    $(".tcdPageCode").createPage({
-        backFn:getProductionInfos
-    });
+    // $(".tcdPageCode").createPage({
+    //     backFn:getProductionInfos
+    // });
 
 
 });

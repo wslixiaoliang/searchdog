@@ -56,64 +56,67 @@ $(document).ready(function () {
          url:"/famous/production/getFamousProductionById",
          data:param,
          dataType:"json",
-         success:function(result){
+         success:function(result) {
 
-                 var s = "pImg";
-                 var u = "titleDiv" ;
-                 var v = "pName" ;
-                 var w = "fChineseName" ;
-                 var x = "fEnglishName" ;
-                 var y = "pYear";
-                 var z = "pContent" ;
-                 var firstUrl = "/famous/portrait/downLoad?fileName=";
-                 var finalUrl = "";
-                 if(portraitName!=""){
-                     finalUrl = firstUrl + portraitName;
-                 }else{
-                     finalUrl = firstUrl + result.portraitName;
-                 }
+         for (var i = 0; i < result.length; i++) {
 
-                 var proDiv = document.getElementById("proDiv");//总div
-                 var titleDiv = document.createElement("div");//标题div
-                 titleDiv.setAttribute("class",u);
-                 titleDiv.setAttribute("style","width: 300px;height: auto; margin: auto;margin-top:40px;text-align: center;align: center;")
-                 proDiv.appendChild(titleDiv); //标题div加入总div
-                 <!--头像-->
-                 var proImg = document.createElement("img");
-                 proImg.setAttribute("class",s);
-                 proImg.setAttribute("src", finalUrl);
-                 proImg.setAttribute("style", "width:55px;height:55px;border-radius:50%;");
-                 titleDiv.appendChild(proImg);
-                 //作品名
-                 var pName = document.createElement("p");
-                 pName.setAttribute("class",v);
-                 pName.setAttribute("style","font-family: \"黑体\";font-size: 16px;font-weight:bold;");
-                 pName.innerText = result.productionName;
-                 titleDiv.appendChild(pName);
-                 //作者中文名
-                var fChineseName = document.createElement("p");
-                fChineseName.setAttribute("class",w);
-                fChineseName.setAttribute("style","font-family: \"微软雅黑\";font-size: 14px;");
-                fChineseName.innerText = result.chineseName;
-                titleDiv.appendChild(fChineseName);
-                //作者英文名
-                var fEnglishName = document.createElement("p");
-                fEnglishName.setAttribute("class",x);
-                fEnglishName.setAttribute("style","font-family: \"Microsoft YaHei\";font-size: 14px;");
-                fEnglishName.innerText = result.englishName;
-                titleDiv.appendChild(fEnglishName);
-                //发表年份
-                var pYear = document.createElement("p");
-                pYear.setAttribute("class",y);
-                pYear.setAttribute("style","font-family:\"楷体\";font-style: oblique;font-size: 14px;");
-                pYear.innerText = result.publishedYear;
-                titleDiv.appendChild(pYear);
+             var s = "pImg"+i;
+             var u = "titleDiv"+i;
+             var v = "pName"+i;
+             var w = "fChineseName"+i;
+             var x = "fEnglishName"+i;
+             var y = "pYear"+i;
+             var z = "pContent"+i;
+             var firstUrl = "/famous/portrait/downLoad?fileName=";
+             var finalUrl = "";
+             if (portraitName != "") {
+                 finalUrl = firstUrl + portraitName;
+             } else {
+                 finalUrl = firstUrl + result[i].portraitName;
+             }
 
-                var pContent = document.createElement("div");
-                 pContent.setAttribute("class",z);
-                 pContent.setAttribute("style","width: 800px;height: auto;margin: auto;font-family: \"微软雅黑\";font-size:14px;");
-                 pContent.innerText = result.productionContent;
-                 proDiv.appendChild(pContent);//内容div加入总div
+             var proDiv = document.getElementById("proDiv");//总div
+             var titleDiv = document.createElement("div");//标题div
+             titleDiv.setAttribute("class", u);
+             titleDiv.setAttribute("style", "width: 300px;height: auto; margin: auto;margin-top:40px;text-align: center;align: center;")
+             proDiv.appendChild(titleDiv); //标题div加入总div
+             <!--头像-->
+             var proImg = document.createElement("img");
+             proImg.setAttribute("class", s);
+             proImg.setAttribute("src", finalUrl);
+             proImg.setAttribute("style", "width:55px;height:55px;border-radius:50%;");
+             titleDiv.appendChild(proImg);
+             //作品名
+             var pName = document.createElement("p");
+             pName.setAttribute("class", v);
+             pName.setAttribute("style", "font-family: \"黑体\";font-size: 16px;font-weight:bold;");
+             pName.innerText = result[i].productionName;
+             titleDiv.appendChild(pName);
+             //作者中文名
+             var fChineseName = document.createElement("p");
+             fChineseName.setAttribute("class", w);
+             fChineseName.setAttribute("style", "font-family: \"微软雅黑\";font-size: 14px;");
+             fChineseName.innerText = result[i].chineseName;
+             titleDiv.appendChild(fChineseName);
+             //作者英文名
+             var fEnglishName = document.createElement("p");
+             fEnglishName.setAttribute("class", x);
+             fEnglishName.setAttribute("style", "font-family: \"Microsoft YaHei\";font-size: 14px;");
+             fEnglishName.innerText = result[i].englishName;
+             titleDiv.appendChild(fEnglishName);
+             //发表年份
+             var pYear = document.createElement("p");
+             pYear.setAttribute("class", y);
+             pYear.setAttribute("style", "font-family:\"楷体\";font-style: oblique;font-size: 14px;");
+             pYear.innerText = result[i].publishedYear;
+             titleDiv.appendChild(pYear);
+
+             var pContent = document.createElement("div");
+             pContent.setAttribute("class", z);
+             pContent.setAttribute("style", "width: 800px;height: auto;margin: auto;font-family: \"微软雅黑\";font-size:14px;");
+             pContent.innerText = result[i].productionContent;
+             proDiv.appendChild(pContent);//内容div加入总div
+            }
          }
      });
 });

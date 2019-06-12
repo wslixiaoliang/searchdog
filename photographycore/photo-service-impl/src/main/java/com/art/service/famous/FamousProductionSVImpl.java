@@ -36,12 +36,12 @@ public class FamousProductionSVImpl implements IFamousProductionSV{
     }
 
     /**
-     * 主键查询
+     * 单个&多个作品查询
      * @param map
      * @return
      */
     @Override
-    public FamousProduction getProductionById(Map map) {
+    public List<FamousProduction> getProductionById(Map map) {
         return dao.getProductionById(map);
     }
 }

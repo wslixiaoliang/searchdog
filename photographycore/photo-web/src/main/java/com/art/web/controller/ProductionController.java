@@ -9,6 +9,8 @@ import com.art.util.famous.Constans;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,23 +70,25 @@ public class ProductionController {
     }
 
     /**
-     * 主键查询
+     * 单个 && 多作品查询
      * @param productionId
      * @return
      */
     @RequestMapping(value = "/getFamousProductionById")
-    public FamousProduction getFamousProductionById(String productionId){
-        FamousProduction production = new FamousProduction();
+    public List<FamousProduction> getFamousProductionById(String productionId,String famousId){
+        List<FamousProduction> productions = new ArrayList<>();
         try{
-            if(!StringUtils.isNotEmpty(productionId)){
-                return production;
-            }
             Map map = new HashMap();
-            map.put("productionId",productionId);
-            production = productionSV.getProductionById(map);
+            if(StringUtils.isNotEmpty(productionId)){
+                map.put("productionId",productionId);
+            }
+            if(StringUtils.isNotEmpty(famousId)){
+                map.put("famousId",famousId);
+            }
+            productions = productionSV.getProductionById(map);
         }catch(Exception e){
             logger.info(e.getMessage(),e);
         }
-        return production;
+        return productions;
     }
 }

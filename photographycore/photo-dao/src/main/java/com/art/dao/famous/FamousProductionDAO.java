@@ -26,9 +26,9 @@ public interface FamousProductionDAO {
     Integer getProductionCount(Map map);
 
     /**
-     * 主键查询
+     * 单个&多个作品查询
      * @param map
      * @return
      */
-    FamousProduction getProductionById(Map map);
+    List<FamousProduction> getProductionById(Map map);
 }
