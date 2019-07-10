@@ -3,7 +3,7 @@
 $(document).ready(function () {
 
     var page = 1;
-    var limit = 2;
+    var limit = 5;
     var total = 0;
     var pageCount = 0;
     getProductionInfos(page);//初始化调用，page默认为1

@@ -21,7 +21,7 @@ public class FamousControllerTest {
     @Test
     public void test(){
         Famous famous = new Famous();
-        famous.setSex("女");
+        famous.setChineseName("屠呦呦");
         Integer page = 1;
         Integer limit = 50;
         Result result = collegeController.getWorldFamous(famous,page,limit);

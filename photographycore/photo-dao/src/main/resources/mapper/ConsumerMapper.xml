@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.art.dao.consumer.ConsumerInformationDAO">
+<resultMap id="consumerMap" type="com.art.beans.consumer.ConsumerInformation">
+    <id column="consumer_id" property="consumerId"/><!--用户ID-->
+    <result column="consumer_name" property="consumerName"/><!--名字-->
+    <result column="sex" property="sex"/><!--性别-->
+    <result column="birthday" property="birthday"/><!--生日-->
+    <result column="city" property="city"/><!--归属地市-->
+    <result column="sign" property="sign"/><!--个性签名-->
+    <result column="phone_number" property="phoneNumber"/><!--电话-->
+    <result column="consumer_password" property="consumerPassword"/><!--密码-->
+</resultMap>
+    <!--新增：用户信息-->
+    <insert id="addConsumerInformation" parameterType="java.util.Map">
+        insert into consumer_info
+        <trim prefix="(" suffix=")" prefixOverrides=",">
+            <if test="consumerId !=null and consumerId!=''">
+                consumer_id,
+            </if>
+            <if test="consumerName !=null and consumerName!=''">
+                consumer_name,
+            </if>
+            <if test="sex !=null and sex!=''">
+                sex,
+            </if>
+            <if test="birthday !=null and birthday!=''">
+                birthday,
+            </if>
+            <if test="city !=null and city!=''">
+                city,
+            </if>
+            <if test="sign !=null and sign!=''">
+                sign,
+            </if>
+            <if test="phoneNumber !=null and phoneNumber!=''">
+                phone_number,
+            </if>
+            <if test="consumerPassword !=null and consumerPassword!=''">
+                consumer_password,
+            </if>
+        </trim>
+
+        <trim prefix="values (" suffix=")" prefixOverrides=",">
+            <if test="consumerId !=null and consumerId!=''">
+            #{consumerId,jdbcType=VARCHAR},
+            </if>
+            <if test="consumerName !=null and consumerName!=''">
+                #{consumerName,jdbcType=VARCHAR},
+            </if>
+            <if test="sex !=null and sex!=''">
+                #{sex,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday !=null and birthday!=''">
+                #{birthday,jdbcType=VARCHAR},
+            </if>
+            <if test="city !=null and city!=''">
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="sign !=null and sign!=''">
+                #{sign,jdbcType=VARCHAR},
+            </if>
+            <if test="phoneNumber !=null and phoneNumber!=''">
+                #{phoneNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="consumerPassword !=null and consumerPassword!=''">
+                #{consumerPassword,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <sql id="baseConsumerSql">
+        SELECT
+            CONSUMER_ID,
+            CONSUMER_NAME,
+            CONSUMER_PASSWORD,
+            PHONE_NUMBER,
+            BIRTHDAY,
+            SIGN,
+            SEX,
+            CITY,
+            REGIST_TIME
+        FROM consumer_info
+    </sql>
+    <!--查询：用户信息-->
+    <select id="getConsumerInfos" parameterType="java.util.Map" resultMap="consumerMap">
+      <include refid="baseConsumerSql"/>
+        <where>
+            <if test="consumerName !=null and consumerName!=''">
+                and CONSUMER_NAME = #{consumerName}
+            </if>
+            <if test="sex!=null and sex!=''">
+                and SEX = #{sex}
+            </if>
+            <if test="city !=null and city!=''">
+                and CITY = #{city}
+            </if>
+        </where>
+    </select>
+
+</mapper>

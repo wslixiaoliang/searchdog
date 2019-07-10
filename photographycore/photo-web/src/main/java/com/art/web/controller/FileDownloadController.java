@@ -12,6 +12,10 @@ import java.io.*;
 public class FileDownloadController {
 
     private final Logger logger = Logger.getLogger(PortraitController.class);
+
+    private static final String FAMOUS_PATH  = "/Users/wslixiaoliang/Documents/project/portrait/famous";
+    private static final String CONSUMER_PATH = "/Users/wslixiaoliang/Documents/project/portrait/consumer";
+
     /**
      * 肖像上传
      * @param file
@@ -55,8 +59,10 @@ public class FileDownloadController {
     public void downLoad(HttpServletResponse response, String fileName){
         if (fileName != null) {
             //设置文件路径
-            String realPath = "E:/famous/portrait";
-//            String realPath = "/Users/lixiaoliang/wslixiaoliang/portrait";
+//            String realPath = "E:/famous/portrait";
+            //设置文件路径
+            String realPath = CONSUMER_PATH;
+
             File file = new File(realPath , fileName);
             if (file.exists()) {
                 response.setContentType("application/force-download");// 设置强制下载不打开
@@ -97,7 +103,56 @@ public class FileDownloadController {
     }
 
 
+    /**
+     * 用户头像下载(新建流：从内到外；关闭流时：从外到内)
+     * @param response
+     * @param fileName
+     */
+    @RequestMapping("/consumerDownLoad")
+    public void consumerDownLoad(HttpServletResponse response, String fileName){
+        if (fileName != null) {
 
+            //设置头像路径
+            String realPath = FAMOUS_PATH;
+
+            File file = new File(realPath , fileName);
+            if (file.exists()) {
+                response.setContentType("application/force-download");// 设置强制下载不打开
+                response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);// 设置文件名
+                byte[] buffer = new byte[1024];
+                FileInputStream fis = null;
+                BufferedInputStream bis = null;
+                try {
+                    fis = new FileInputStream(file);
+                    bis = new BufferedInputStream(fis);
+                    OutputStream os = response.getOutputStream();
+                    int i = bis.read(buffer);//返回一次读取多少行
+                    while (i != -1) {
+                        os.write(buffer, 0, i);//从0写到i,一次写1024个字节;
+                        i = bis.read(buffer);
+                    }
+                    logger.info("用户头像名称为："+fileName+"下载成功");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    if (bis != null) {
+                        try {
+                            bis.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    if (fis != null) {
+                        try {
+                            fis.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 
 

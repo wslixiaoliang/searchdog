@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.art.dao.famous.CommentDAO">
+
+    <resultMap id="CommentMap" type="com.art.beans.famous.CommentInformation">
+        <result column="COMMENT_CNTT" property="commentContent"/><!--评论内容-->
+        <result column="COMMENT_TIME" property="commentTime"/><!--评论时间-->
+        <result column="CONSUMER_NAME" property="consumerName"/><!--评论人名字-->
+        <result column="PORTRAIT_NAME" property="consumerPortraitName"/><!--评论人头像-->
+    </resultMap>
+
+    <!--查询：评论信息-->
+    <select id="getCommentInformations" parameterType="java.util.Map" resultMap="CommentMap">
+       SELECT
+           a.COMMENT_CNTT,
+           a.COMMENT_TIME,
+           c.CONSUMER_NAME,
+           d.PORTRAIT_NAME
+       FROM famous_production_comment a,
+            famous_production b,
+            consumer_info c,
+            consumer_portrait d
+       WHERE b.PRODUCTION_ID=#{productionId}
+       AND a.PRODUCTION_ID=b.PRODUCTION_ID
+       AND c.CONSUMER_ID=d.CONSUMER_ID;
+    </select>
+</mapper>

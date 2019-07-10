@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="photo-beans" />
-        <module name="photo-dao" />
+        <module name="photo-web" />
+        <module name="photo-util" />
         <module name="photo-service" />
         <module name="photo-service-impl" />
-        <module name="photo-util" />
-        <module name="photo-web" />
+        <module name="photo-dao" />
+        <module name="photo-beans" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -24,5 +24,15 @@
       <module name="photo-web" target="1.8" />
       <module name="photographycore" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="photo-beans" options="-parameters" />
+      <module name="photo-dao" options="-parameters" />
+      <module name="photo-service" options="-parameters" />
+      <module name="photo-service-impl" options="-parameters" />
+      <module name="photo-util" options="-parameters" />
+      <module name="photo-web" options="-parameters" />
+    </option>
   </component>
 </project>
