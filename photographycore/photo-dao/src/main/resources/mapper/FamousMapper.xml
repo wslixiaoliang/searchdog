@@ -159,7 +159,7 @@
             <if test="famousIds !=null and famousIds.size()>0">
                 FAMOUS_ID IN
                 <foreach item="famousId" collection="famousIds" open="(" close=")" separator=",">
-                    #{famousId}
+                    #{famousIds}
                 </foreach>
             </if>
         </where>

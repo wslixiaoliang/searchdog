@@ -3,6 +3,7 @@
 <mapper namespace="com.art.dao.famous.CommentDAO">
 
     <resultMap id="CommentMap" type="com.art.beans.famous.CommentInformation">
+        <result column="COMMENT_ID" property="commentId"/><!--评论ID-->
         <result column="COMMENT_CNTT" property="commentContent"/><!--评论内容-->
         <result column="COMMENT_TIME" property="commentTime"/><!--评论时间-->
         <result column="CONSUMER_NAME" property="consumerName"/><!--评论人名字-->
@@ -24,4 +25,57 @@
        AND a.PRODUCTION_ID=b.PRODUCTION_ID
        AND c.CONSUMER_ID=d.CONSUMER_ID;
     </select>
+
+
+    <insert id="addCommentInformation" parameterType="java.util.Map">
+
+        insert into famous_production_comment
+
+        <trim prefix="(" suffix=")" prefixOverrides=",">
+            <if test="commentId !=null and commentId!=''">
+                COMMENT_ID,
+            </if>
+            <if test="productionId !=null and productionId!=''">
+                PRODUCTION_ID,
+            </if>
+            <if test="consumerId !=null and consumerId!=''">
+                CONSUMER_ID,
+            </if>
+            <if test="commentContent !=null and commentContent!=''">
+                COMMENT_CNTT,
+            </if>
+            <if test="commentTime !=null and commentTime!=''">
+                COMMENT_TIME
+            </if>
+        </trim>
+
+        <trim prefix="values (" suffix=")" prefixOverrides=",">
+            <if test="commentId !=null and commentId!=0">
+                #{commentId,jdbcType=BIGINT},
+            </if>
+            <if test="productionId !=null and productionId!=0">
+                #{productionId,jdbcType=BIGINT},
+            </if>
+            <if test="consumerId !=null and consumerId!=0">
+                #{consumerId,jdbcType=BIGINT},
+            </if>
+            <if test="commentContent !=null and commentContent!=''">
+                #{commentContent,jdbcType=VARCHAR},
+            </if>
+            <if test="commentTime !=null and commentTime!=''">
+                #{commentTime,jdbcType=TIMESTAMP}
+            </if>
+        </trim>
+    </insert>
+
+    <!--删除：评论信息-->
+    <delete id="deleteCommentInfoById" parameterType="java.util.Map" >
+        delete from famous_production_comment
+        <where>
+            <if test="commentId !=null and commentId!=''">
+                and  COMMENT_ID= #{commentId}
+            </if>
+        </where>
+
+    </delete>
 </mapper>

@@ -12,7 +12,6 @@ import java.io.*;
 public class FileDownloadController {
 
     private final Logger logger = Logger.getLogger(PortraitController.class);
-
     private static final String FAMOUS_PATH  = "/Users/wslixiaoliang/Documents/project/portrait/famous";
     private static final String CONSUMER_PATH = "/Users/wslixiaoliang/Documents/project/portrait/consumer";
 
@@ -61,7 +60,7 @@ public class FileDownloadController {
             //设置文件路径
 //            String realPath = "E:/famous/portrait";
             //设置文件路径
-            String realPath = CONSUMER_PATH;
+            String realPath = FAMOUS_PATH;
 
             File file = new File(realPath , fileName);
             if (file.exists()) {
@@ -113,7 +112,7 @@ public class FileDownloadController {
         if (fileName != null) {
 
             //设置头像路径
-            String realPath = FAMOUS_PATH;
+            String realPath = CONSUMER_PATH;
 
             File file = new File(realPath , fileName);
             if (file.exists()) {

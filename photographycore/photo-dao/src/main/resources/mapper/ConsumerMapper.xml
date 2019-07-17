@@ -37,7 +37,7 @@
                 phone_number,
             </if>
             <if test="consumerPassword !=null and consumerPassword!=''">
-                consumer_password,
+                consumer_password
             </if>
         </trim>
 
@@ -64,11 +64,11 @@
                 #{phoneNumber,jdbcType=VARCHAR},
             </if>
             <if test="consumerPassword !=null and consumerPassword!=''">
-                #{consumerPassword,jdbcType=VARCHAR},
+                #{consumerPassword,jdbcType=VARCHAR}
             </if>
         </trim>
     </insert>
-
+    <!--baseSql-->
     <sql id="baseConsumerSql">
         SELECT
             CONSUMER_ID,
@@ -97,5 +97,16 @@
             </if>
         </where>
     </select>
+
+    <!--删除：评论信息-->
+    <delete id="deleteConsumerInformation" parameterType="java.util.Map" >
+        delete from consumer_info
+        <where>
+            <if test="consumerId !=null and consumerId!=''">
+                and  CONSUMER_ID= #{consumerId}
+            </if>
+        </where>
+
+    </delete>
 
 </mapper>

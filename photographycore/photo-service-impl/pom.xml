@@ -33,6 +33,12 @@
 			<artifactId>photo-dao</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!--util依赖-->
+		<dependency>
+			<groupId>com.art</groupId>
+			<artifactId>photo-util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!--core层启动依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
