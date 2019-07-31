@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +45,7 @@ public class ConsumerInformationSVImplTest {
         String sign = "happy life happy coding";
         String phoneNumber = "12900987769";
         String consumerPassword = "66666666";
+
         map.put("consumerId",consumerId);
         map.put("consumerName",consumerName);
         map.put("sex",sex);
@@ -51,18 +54,22 @@ public class ConsumerInformationSVImplTest {
         map.put("sign",sign);
         map.put("phoneNumber",phoneNumber);
         map.put("consumerPassword",consumerPassword);
+        map.put("registTime","2019-07-17 08:20:59");
 
         //新增
         consumerInformationSV.addConsumerInformation(map);
+
         //查询
         List<ConsumerInformation> list = consumerInformationSV.getConsumerInfos(map);
         for(ConsumerInformation consumer:list){
+            String consumerTime = WslixiaoliangUtil.date2String(consumer.getRegistTime(),Constans.YYYY_MM_DD_HH_MM_SS);
+            String consumerNm = consumer.getConsumerName();
             LOGGER.info("================="+consumer.getConsumerName()+"===============");
         }
 
         //删除
         Map params = new HashMap();
-        params.put("consumerId","2019071611371636849");
+        params.put("consumerId","2019071611462150254");
         consumerInformationSV.deleteConsumerInformation(params);
         consumerInformationSV.deleteConsumerInformation(map);
 

@@ -10,6 +10,7 @@
     <result column="sign" property="sign"/><!--个性签名-->
     <result column="phone_number" property="phoneNumber"/><!--电话-->
     <result column="consumer_password" property="consumerPassword"/><!--密码-->
+    <result column="regist_time" property="registTime"/><!--注册时间-->
 </resultMap>
     <!--新增：用户信息-->
     <insert id="addConsumerInformation" parameterType="java.util.Map">
@@ -37,7 +38,10 @@
                 phone_number,
             </if>
             <if test="consumerPassword !=null and consumerPassword!=''">
-                consumer_password
+                consumer_password,
+            </if>
+            <if test="registTime !=null and registTime!=''">
+                regist_time
             </if>
         </trim>
 
@@ -64,7 +68,10 @@
                 #{phoneNumber,jdbcType=VARCHAR},
             </if>
             <if test="consumerPassword !=null and consumerPassword!=''">
-                #{consumerPassword,jdbcType=VARCHAR}
+                #{consumerPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="registTime !=null and registTime!=''">
+                #{registTime,jdbcType=TIMESTAMP}
             </if>
         </trim>
     </insert>

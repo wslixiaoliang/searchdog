@@ -1,6 +1,7 @@
 package com.art.beans.consumer;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * 用户信息bean
@@ -17,6 +18,7 @@ public class ConsumerInformation implements Serializable {
     private String sign;//个性签名
     private String phoneNumber;//电话/账号
     private String consumerPassword;//密码
+    private Timestamp registTime;//注册时间
 
     //无参构造方法
     public ConsumerInformation() {
@@ -24,7 +26,7 @@ public class ConsumerInformation implements Serializable {
 
     //有参构造方法
 
-    public ConsumerInformation(String consumerId, String consumerName, String sex, String birthday, String city, String sign, String phoneNumber, String consumerPassword) {
+    public ConsumerInformation(String consumerId, String consumerName, String sex, String birthday, String city, String sign, String phoneNumber, String consumerPassword, Timestamp registTime) {
         this.consumerId = consumerId;
         this.consumerName = consumerName;
         this.sex = sex;
@@ -33,7 +35,9 @@ public class ConsumerInformation implements Serializable {
         this.sign = sign;
         this.phoneNumber = phoneNumber;
         this.consumerPassword = consumerPassword;
+        this.registTime = registTime;
     }
+
 
     //getters and setters
 
@@ -99,5 +103,13 @@ public class ConsumerInformation implements Serializable {
 
     public void setConsumerPassword(String consumerPassword) {
         this.consumerPassword = consumerPassword;
+    }
+
+    public Timestamp getRegistTime() {
+        return registTime;
+    }
+
+    public void setRegistTime(Timestamp registTime) {
+        this.registTime = registTime;
     }
 }
