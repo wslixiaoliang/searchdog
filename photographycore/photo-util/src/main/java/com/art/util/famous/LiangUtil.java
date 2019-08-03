@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-public class WslixiaoliangUtil {
+public class LiangUtil {
 
 
     /**
@@ -33,7 +33,7 @@ public class WslixiaoliangUtil {
     }
 
     /**
-     * 分割字符串，以逗号隔开
+     * 分割字符串，以制定分隔符隔开
      * @param str
      * @return
      */
@@ -96,10 +96,10 @@ public class WslixiaoliangUtil {
      * 按照指定的分割符，将字符串str拼接到StringBuilder
      * @param aBuild
      */
-    public static void appandTobuilder(StringBuilder aBuild,String str){
+    public static void appandTobuilder(StringBuilder aBuild,String str,String pattern){
         if(isEmpty(str)) return;
         if( aBuild.length() > 0 ){
-            aBuild.append(",").append(str);
+            aBuild.append(pattern).append(str);
         }else{
             aBuild.append(str);
         }

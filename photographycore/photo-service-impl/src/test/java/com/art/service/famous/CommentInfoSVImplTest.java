@@ -5,7 +5,7 @@ import com.art.beans.famous.CommentInformation;
 import com.art.util.famous.Constans;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.art.util.famous.WslixiaoliangUtil;
+import com.art.util.famous.LiangUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,24 +33,24 @@ public class CommentInfoSVImplTest {
     {
 
         Map<String,Object> params = new HashMap();
-        String nowTime = WslixiaoliangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String nowTime = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
 
         LOGGER.info("=================当前时间：年-月-日 时：分：秒 "+nowTime+"============================");
-        long commentId = WslixiaoliangUtil.getPrimaryKey(nowTime);
+        long commentId = LiangUtil.getPrimaryKey(nowTime);
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
-        String nowTime2 = WslixiaoliangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String nowTime2 = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
         LOGGER.info("=================当前时间：年-月-日 时：分：秒 "+nowTime2+"============================");
-        long productionId = WslixiaoliangUtil.getPrimaryKey(nowTime2);
+        long productionId = LiangUtil.getPrimaryKey(nowTime2);
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
-        String nowTime3 = WslixiaoliangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String nowTime3 = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
         LOGGER.info("=================当前时间：年-月-日 时：分：秒 "+nowTime3+"============================");
-        long consumerId = WslixiaoliangUtil.getPrimaryKey(nowTime3);
+        long consumerId = LiangUtil.getPrimaryKey(nowTime3);
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
         //数据库为dateTime，mapper为TIMSTAMP，Java为String即可；
-        String commentTime = WslixiaoliangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String commentTime = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
 
         params.put("commentId",commentId);
         params.put("productionId",productionId);

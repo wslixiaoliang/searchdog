@@ -3,7 +3,7 @@ package com.art.service.consumer;
 import com.art.ServiceApplication;
 import com.art.beans.consumer.ConsumerInformation;
 import com.art.util.famous.Constans;
-import com.art.util.famous.WslixiaoliangUtil;
+import com.art.util.famous.LiangUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -35,9 +34,9 @@ public class ConsumerInformationSVImplTest {
     public void testConsumerInformation(){
 
         Map map = new HashMap();
-        String nowTime = WslixiaoliangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String nowTime = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
 
-        long consumerId = WslixiaoliangUtil.getPrimaryKey(nowTime);
+        long consumerId = LiangUtil.getPrimaryKey(nowTime);
         String consumerName = "史蒂芬·乔布斯";
         String sex = "男";
         String birthday = "2019-06-18";
@@ -62,7 +61,7 @@ public class ConsumerInformationSVImplTest {
         //查询
         List<ConsumerInformation> list = consumerInformationSV.getConsumerInfos(map);
         for(ConsumerInformation consumer:list){
-            String consumerTime = WslixiaoliangUtil.date2String(consumer.getRegistTime(),Constans.YYYY_MM_DD_HH_MM_SS);
+            String consumerTime = LiangUtil.date2String(consumer.getRegistTime(),Constans.YYYY_MM_DD_HH_MM_SS);
             String consumerNm = consumer.getConsumerName();
             LOGGER.info("================="+consumer.getConsumerName()+"===============");
         }
