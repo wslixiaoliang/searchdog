@@ -1,6 +1,6 @@
-# photocore
-the project is about the world of famous.
+# China-story
+the project is about the famous person of ancient China,
 you can search famous,
-read the production of famous 
-and learn more knowledge about them 
-and you can insight the history about them and so on...  
+read the story of famous, 
+and learn more knowledge about them,
+and you can insight the history about China.  
