@@ -79,6 +79,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!--elastic依赖-->
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>transport</artifactId>
+			<version>6.2.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>

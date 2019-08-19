@@ -25,7 +25,14 @@ public class Constans {
     public static final String YYYY_MM_DD = "yyyy-MM-dd";//年月日
 
 
+    /**
+     * es集群地址
+     */
+    public static final String CLUSTER_ADDRESS = "127.0.0.1:9500,127.0.0.1:9501,127.0.0.1:9502";
 
-
+    /**
+     * es集群名称
+     */
+    public static final String CLUSTER_NAME ="es-wslixiaoliang";
 
 }
