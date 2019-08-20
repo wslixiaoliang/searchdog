@@ -16,6 +16,8 @@ public class Constans {
      */
     public static final String SUCESSS_RETURN_CODE = "0";
     public static final String FAILURE_RETURN_CODE = "-9999";
+    public static final String CREATE_FAILURE_STATUS = "UNCREATED";
+    public static final String DELETE_FAILURE_STATUS = "UNDELETED";
 
     /**
      * 日期格式

@@ -1,6 +1,7 @@
 package com.art.service.elastic;
 
 import com.art.ServiceApplication;
+import com.art.beans.elastic.SearchResult;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,15 +29,24 @@ public class ElasticTest {
     public void testSearch() throws IOException
     {
         Map<String,Object> document = new HashMap<>();
-//        document.put("keywordId","100");
+        document.put("keywordId","100");
         document.put("keywordName","金星移民计划");
-//        document.put("landingTime","2999-10-11");
-        List<Map<String,Object>> response = searchDocumentsSV.searching("photo.search_keyword","search_keyword",document);
+        document.put("landingTime","2999-10-11");
 
-//        searchDocumentsSV.createOrUpdating("photo.search_keyword","search_keyword","100",document);
-//        String response = searchDocumentsSV.searching("photo.search_keyword","search_keyword","100");
-        System.out.println("查询结果如下=================="+response);
-        LOGGER.debug("查询结果如下"+response);
-//        searchDocumentsSV.deleting("photo.search_keyword","search_keyword","KlXlGWwBm_lpTzijdMGf");
+        SearchResult createResult = searchDocumentsSV.createOrUpdating("photo.search_keyword","search_keyword","100",document);//新增/更新
+        SearchResult searchIdResult = searchDocumentsSV.searching("photo.search_keyword","search_keyword","100");//主键查询
+        SearchResult searchResult = searchDocumentsSV.searching("photo.search_keyword","search_keyword",document);//条件查询
+        SearchResult deleteResult = searchDocumentsSV.deleting("photo.search_keyword","search_keyword","100");//删除文档
+
+        System.out.println("新增结果：======================"+createResult);
+        System.out.println("主键查询结果：======================"+searchIdResult);
+        System.out.println("字段查询结果：======================"+searchResult);
+        System.out.println("删除结果：======================"+deleteResult);
+
+        LOGGER.info("新增结果：======================"+createResult);
+        LOGGER.info("主键查询结果：======================"+searchIdResult);
+        LOGGER.info("字段查询结果：======================"+searchResult);
+        LOGGER.info("删除结果：======================"+deleteResult);
+
     }
 }

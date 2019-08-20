@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 前台页面结果集对象
+ * 结果集对象
  * @author wslixiaoliang
  */
 public class Result<T> implements Serializable{

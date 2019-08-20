@@ -1,7 +1,7 @@
 package com.art.service.elastic;
 
+import com.art.beans.elastic.SearchResult;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 public interface ISearchDocumentsSV {
@@ -12,7 +12,7 @@ public interface ISearchDocumentsSV {
      * @param indexType
      * @param id
      */
-    String searching(String indexName,String indexType,String id);
+    SearchResult searching(String indexName,String indexType,String id);
 
 
     /**
@@ -22,7 +22,7 @@ public interface ISearchDocumentsSV {
      * @param termFields
      * @return
      */
-    List<Map<String,Object>> searching(String indexName, String indexType, Map<String,Object> termFields);
+    SearchResult searching(String indexName, String indexType, Map<String,Object> termFields);
 
 
     /**
@@ -32,7 +32,7 @@ public interface ISearchDocumentsSV {
      * @param id
      * @throws IOException
      */
-    void createOrUpdating(String indexName, String indexType, String id, Map<String,Object> document) throws IOException;
+    SearchResult createOrUpdating(String indexName, String indexType, String id, Map<String,Object> document) throws IOException;
 
 
     /**
@@ -41,6 +41,6 @@ public interface ISearchDocumentsSV {
      * @param indexType
      * @param id
      */
-    void deleting(String indexName,String indexType,String id);
+    SearchResult deleting(String indexName,String indexType,String id);
 
 }
