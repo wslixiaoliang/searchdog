@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class FamousProduction implements Serializable {
 
+    private static final long serialVersionUID = -4356991497765224784L;
     private long productionId;//作品ID
     private long famousId;//名人ID
     private String portraitName;//肖像名

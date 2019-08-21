@@ -8,6 +8,7 @@ import java.io.Serializable;
  */
 public class FamousPortrait implements Serializable{
 
+    private static final long serialVersionUID = -7636370179239356829L;
     private long portraitId;//肖像ID
     private long famousId;// 名人ID
     private String portraitName;//肖像名称

@@ -16,7 +16,6 @@ import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -174,7 +173,6 @@ public class SearchDocumentsImpl implements ISearchDocumentsSV
             searchResult.setReturnCode(Constans.FAILURE_RETURN_CODE);
             searchResult.setReturnMsg("删除失败……");
         }
-
         return searchResult;
     }
 

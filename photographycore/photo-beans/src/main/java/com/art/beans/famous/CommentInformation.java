@@ -9,6 +9,7 @@ import java.io.Serializable;
 public class CommentInformation implements Serializable
 {
 
+    private static final long serialVersionUID = -6367242284441943508L;
     private String commentContent;//评论内容
     private String commentTime;//评论时间
     private String consumerName;//评论人名字

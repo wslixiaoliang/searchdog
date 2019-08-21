@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Result<T> implements Serializable{
 
+    private static final long serialVersionUID = 4049838581798497729L;
     private List<T> beans;
     private int count;
     private String returnCode;
