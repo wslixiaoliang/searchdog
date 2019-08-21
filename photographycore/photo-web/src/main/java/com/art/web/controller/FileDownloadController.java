@@ -58,9 +58,9 @@ public class FileDownloadController {
     public void downLoad(HttpServletResponse response, String fileName){
         if (fileName != null) {
             //设置文件路径
-//            String realPath = "E:/famous/portrait";
+            String realPath = "E:/famous/portrait";
             //设置文件路径
-            String realPath = FAMOUS_PATH;
+//            String realPath = FAMOUS_PATH;
 
             File file = new File(realPath , fileName);
             if (file.exists()) {

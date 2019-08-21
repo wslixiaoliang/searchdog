@@ -37,7 +37,16 @@
         </if>
     </select>
 
-
+    <!--多主键查询-->
+    <select id="getfamousListByIds" resultMap="portrait" parameterType="java.util.Map">
+        <include refid="portraitBaseSql" />
+        <if test="null!=famousList and famousList.size()> 0">
+            AND b.FAMOUS_ID IN
+            <foreach collection="famousList" item="famousId" index="index" open="(" separator="," close=")">
+                #{famousId}
+            </foreach>
+        </if>
+    </select>
 
 
 

@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 
 public class ConsumerInformation implements Serializable {
 
+    private static final long serialVersionUID = -8870130587737173056L;
     private String consumerId ;//用户ID
     private String consumerName;//名字/账号
     private String sex ;//性别

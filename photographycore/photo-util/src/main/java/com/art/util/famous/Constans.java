@@ -26,7 +26,6 @@ public class Constans {
     public static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";//年月日 时分秒
     public static final String YYYY_MM_DD = "yyyy-MM-dd";//年月日
 
-
     /**
      * es集群地址
      */
@@ -36,5 +35,16 @@ public class Constans {
      * es集群名称
      */
     public static final String CLUSTER_NAME ="es-wslixiaoliang";
+
+    /**
+     * Portrait Index 字段名称常量
+     */
+    public static final String INDEX_NAME ="photo.famous_portrait";//索引名称
+    public static final String INDEX_TYPE ="famous_portrait";//索引类型
+    public static final String PORTRAIT_ID ="portraitId";//头像ID
+    public static final String PORTRAIT_NAME ="portraitName";//头像名称
+    public static final String FAMOUS_ID ="famousId";//名人ID
+    public static final String CHINESE_NAME ="chineseName";//中文名称
+    public static final String RELATIVE_LOCATION ="relativeLocation";//相对位置
 
 }

@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class Famous implements Serializable{
 
+    private static final long serialVersionUID = -2999449919136712676L;
     private Long famousId;//名人ID
     private String chineseName;//中文名
     private String englishName;//英文名

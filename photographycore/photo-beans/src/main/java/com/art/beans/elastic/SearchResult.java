@@ -1,13 +1,15 @@
 package com.art.beans.elastic;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 /**
  * 搜索引擎结果集
  */
-public class SearchResult {
+public class SearchResult implements Serializable{
 
+    private static final long serialVersionUID = 693213281152163875L;
     private List<Map<String, Object>> documents;//结果集
     private String status;//状态(如:created)
     private int totalCount;//总条数

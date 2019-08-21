@@ -12,7 +12,7 @@ import java.util.Map;
 public interface IFamousSV {
 
     /**
-     * 主键查询
+     * 主键查询(包含多个主键查询多条记录的情况)
      * @param map
      * @return
      */
