@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,7 +27,7 @@ public class ElasticTest {
     @Test
     public void testSearch() throws IOException
     {
-        Map<String,Object> document = new HashMap<>();
+        Map<String, Object> document = new HashMap<>();
         document.put("keywordId","100");
         document.put("keywordName","金星移民计划");
         document.put("landingTime","2999-10-11");
