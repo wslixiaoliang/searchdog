@@ -1,15 +1,15 @@
-package com.art.web.component;
+package com.art.web.component.famous;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousPortrait;
-import com.art.service.elastic.ISearchDocumentsSV;
 import com.art.service.famous.IFamousPortraitSV;
 import com.art.util.famous.Constans;
+import com.art.util.famous.LiangUtil;
+import com.art.web.component.elastic.IndexComponent;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,13 +17,14 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class FamousIndexComponent {
+public class PortraitIndexComponent {
 
+    @Autowired
+    private IndexComponent searchDocumentsComponent;
     @Reference
-    private ISearchDocumentsSV searchDocumentsSV;
-    @Reference
-    private IFamousPortraitSV sv;
-    private static Logger LOGGER  = Logger.getLogger(FamousIndexComponent.class);
+    private IFamousPortraitSV famousPortraitSV;
+    private static Logger LOGGER  = Logger.getLogger(PortraitIndexComponent.class);
+    private static int count = 0;
 
     public SearchResult portraitIndex(List<String> famousIds)
     {
@@ -35,10 +36,14 @@ public class FamousIndexComponent {
             return searchResult;
         }
         for( Map<String,Object> document:documents){
-            if(null!=document && document.containsKey(Constans.FAMOUS_ID)){
-                String famousId = String.valueOf(document.get(Constans.FAMOUS_ID));
-                try{
-                    searchResult = searchDocumentsSV.createOrUpdating(Constans.INDEX_NAME,Constans.INDEX_TYPE,famousId,document);
+            if(null!=document && document.containsKey(Constans.Portrait.FAMOUS_ID)){
+                String famousId = String.valueOf(document.get(Constans.Portrait.FAMOUS_ID));
+                try {
+                    searchResult = searchDocumentsComponent.createOrUpdating(Constans.Portrait.INDEX_NAME,Constans.Portrait.INDEX_TYPE,famousId,document);
+                    if(Constans.SUCESSS_RETURN_CODE.equals(String.valueOf(searchResult.getReturnCode()))){
+                        count++;
+                        searchResult.setTotalCount(count);
+                    }
                 }catch(IOException e){
                     LOGGER.error("新增索引失败：IO异常"+e);
                 }
@@ -59,7 +64,7 @@ public class FamousIndexComponent {
         try{
             if(null!=famousIds && !famousIds.isEmpty()) {
                 famousMap.put("famousList",famousIds);
-                famousPortraitList = sv.getfamousListByIds(famousMap);
+                famousPortraitList = famousPortraitSV.getfamousListByIds(famousMap);
             }
         }catch(Exception e){
             LOGGER.error("查询失败"+e);
@@ -79,11 +84,11 @@ public class FamousIndexComponent {
         }
         for(FamousPortrait portrait :famousPortraitList){
             Map<String,Object> document = new HashMap<>();
-            document.put(Constans.PORTRAIT_ID,String.valueOf(portrait.getPortraitId()));
-            document.put(Constans.PORTRAIT_NAME,String.valueOf(portrait.getPortraitName()));
-            document.put(Constans.FAMOUS_ID,String.valueOf(portrait.getFamousId()));
-            document.put(Constans.CHINESE_NAME,String.valueOf(portrait.getChineseName()));
-            document.put(Constans.RELATIVE_LOCATION,String.valueOf(portrait.getRelativeLocation()));
+            document.put(Constans.Portrait.PORTRAIT_ID, LiangUtil.isNotEmpty(String.valueOf(portrait.getPortraitId()))?String.valueOf(portrait.getPortraitId()):"");
+            document.put(Constans.Portrait.PORTRAIT_NAME,LiangUtil.isNotEmpty(String.valueOf(portrait.getPortraitName()))?String.valueOf(portrait.getPortraitName()):"");
+            document.put(Constans.Portrait.FAMOUS_ID,LiangUtil.isNotEmpty(String.valueOf(portrait.getFamousId()))?String.valueOf(portrait.getFamousId()):"");
+            document.put(Constans.Portrait.CHINESE_NAME,LiangUtil.isNotEmpty(String.valueOf(portrait.getChineseName()))?String.valueOf(portrait.getChineseName()):"");
+            document.put(Constans.Portrait.RELATIVE_LOCATION,LiangUtil.isNotEmpty(String.valueOf(portrait.getRelativeLocation()))?String.valueOf(portrait.getRelativeLocation()):"");
             documents.add(document);
         }
         return documents;

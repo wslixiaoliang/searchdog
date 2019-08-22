@@ -1,4 +1,4 @@
-package com.art.service.elastic;
+package com.art.web.component.elastic;
 
 import com.art.util.famous.Constans;
 import com.art.util.famous.LiangUtil;
@@ -7,18 +7,19 @@ import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import org.springframework.stereotype.Component;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
  * 获取es客户端连接
  */
+@Component
 public class EngineClient {
-
 
     private static final Logger LOGGER = Logger.getLogger(EngineClient.class);
     private static TransportClient client = null;
-
 
     /**
      * 获取客户端连接
@@ -68,6 +69,7 @@ public class EngineClient {
 
     /**
      * 关闭客户端
+     * 此方法系统默认自动调用（静态方法，在类初始化是就会被初始化，在获取连接方法后自动执行）
      */
     public static synchronized void close(){
         if(null!=client){
