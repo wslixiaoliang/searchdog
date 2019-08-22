@@ -63,6 +63,12 @@
         <if test="null!=famousId and famousId!=''">
             AND a.FAMOUS_ID = #{famousId}
         </if>
+        <if test="null!=famousList and famousList.size()>0">
+            AND b.FAMOUS_ID IN
+            <foreach collection="famousList"  item="famousId" index="index" open="(" separator="," close=")">
+                #{famousId}
+            </foreach>
+        </if>
     </select>
 
 </mapper>

@@ -39,12 +39,37 @@ public class Constans {
     /**
      * Portrait Index 字段名称常量
      */
-    public static final String INDEX_NAME ="photo.famous_portrait";//索引名称
-    public static final String INDEX_TYPE ="famous_portrait";//索引类型
-    public static final String PORTRAIT_ID ="portraitId";//头像ID
-    public static final String PORTRAIT_NAME ="portraitName";//头像名称
-    public static final String FAMOUS_ID ="famousId";//名人ID
-    public static final String CHINESE_NAME ="chineseName";//中文名称
-    public static final String RELATIVE_LOCATION ="relativeLocation";//相对位置
+    public interface Portrait
+    {
+        public static final String INDEX_NAME ="world.famous_portrait";//索引名称
+        public static final String INDEX_TYPE ="famous_portrait";//索引类型
+
+        public static final String PORTRAIT_ID ="portraitId";//头像ID
+        public static final String PORTRAIT_NAME ="portraitName";//头像名称
+        public static final String FAMOUS_ID ="famousId";//名人ID
+        public static final String CHINESE_NAME ="chineseName";//中文名称
+        public static final String RELATIVE_LOCATION ="relativeLocation";//相对位置
+    }
+
+
+    /**
+     * Production index 字段名称常量
+     */
+    public interface Production
+    {
+        public static final String INDEX_NAME ="world.famous_producion";//索引名称
+        public static final String INDEX_TYPE ="famous_producion";//索引类型
+
+        public static final String PRODUCTION_ID ="productionId";//作品ID
+        public static final String FAMOUS_ID ="famousId";//名人ID
+        public static final String PORTRAIT_NAME ="portraitName";//头像名称
+        public static final String CHINESE_NAME ="chineseName";//中文名称
+        public static final String ENGLISH_NAME ="englishName";//作者英文名
+        public static final String PRODUCTION_NAME ="productionName";//作品名称
+        public static final String PUBLISHED_YEAR ="publishedYear";//发表年份
+        public static final String SUMMARY_INFO ="summaryInfo";//摘要
+        public static final String PRODUCTION_CNTT ="productionContent";//作品内容
+
+    }
 
 }

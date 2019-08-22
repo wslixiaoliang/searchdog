@@ -1,6 +1,5 @@
-package com.art.service.elastic;
+package com.art.web.component.elastic;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.art.beans.elastic.SearchResult;
 import com.art.util.famous.Constans;
 import com.art.util.famous.LiangUtil;
@@ -14,6 +13,7 @@ import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
+import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +23,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * 搜索引擎 查询基类
  */
-@Service
-public class SearchDocumentsImpl implements ISearchDocumentsSV
+@Component
+public class IndexComponent
 {
-    private static Logger LOGGER = Logger.getLogger(SearchDocumentsImpl.class);
+    private static Logger LOGGER = Logger.getLogger(IndexComponent.class);
 
     /**
      * 根据：索引名称，索引类型，索引ID 查询文档
@@ -34,7 +34,7 @@ public class SearchDocumentsImpl implements ISearchDocumentsSV
      * @param indexType
      * @param id
      */
-    @Override
+
     public SearchResult searching(String indexName,String indexType,String id)
     {
         SearchResult searchResult = new SearchResult();
@@ -62,7 +62,6 @@ public class SearchDocumentsImpl implements ISearchDocumentsSV
         }
         return searchResult;
     }
-
 
     /**
      * 根据：索引名称，索引类型，指定字段 查询文档
@@ -122,7 +121,6 @@ public class SearchDocumentsImpl implements ISearchDocumentsSV
      * @throws IOException
      * 注：如果文档ID存在默认更新文档，若不错在则新增
      */
-    @Override
     public SearchResult createOrUpdating(String indexName, String indexType, String id, Map<String,Object> document) throws IOException
     {
         String status="";
@@ -130,6 +128,7 @@ public class SearchDocumentsImpl implements ISearchDocumentsSV
         try{
             IndexResponse response = EngineClient.getConnection()
                     .prepareIndex(indexName,indexType,id)
+                    .setTimeout(new TimeValue(60, TimeUnit.SECONDS))
                     .setSource(document).get();
             if(LiangUtil.isNotEmpty(String.valueOf(response.status()))){
                 status = String.valueOf(response.status());
@@ -153,13 +152,15 @@ public class SearchDocumentsImpl implements ISearchDocumentsSV
      * @param indexType
      * @param id
      */
-    @Override
     public SearchResult deleting(String indexName,String indexType,String id)
     {
         String status="";
         SearchResult searchResult = new SearchResult();
         try{
-            DeleteResponse response = EngineClient.getConnection().prepareDelete(indexName,indexType,id).get();
+            DeleteResponse response = EngineClient.getConnection()
+                    .prepareDelete(indexName,indexType,id)
+                    .setTimeout(new TimeValue(60,TimeUnit.SECONDS))
+                    .get();
             if(LiangUtil.isNotEmpty(String.valueOf(response.status()))){
                 status = String.valueOf(response.status());
             }

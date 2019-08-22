@@ -1,7 +1,8 @@
-package com.art.service.elastic;
+package com.art.web.elastic;
 
-import com.art.ServiceApplication;
 import com.art.beans.elastic.SearchResult;
+import com.art.web.WebApplication;
+import com.art.web.component.elastic.IndexComponent;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,11 +18,11 @@ import java.util.Map;
  * @author wslixiaoliang
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ServiceApplication.class)
+@SpringBootTest(classes = WebApplication.class)
 public class ElasticTest {
 
     @Autowired(required = false)
-    private ISearchDocumentsSV searchDocumentsSV;
+    private IndexComponent searchDocumentsComponent;
     private static final Logger LOGGER = Logger.getLogger(ElasticTest.class);
 
     @Test
@@ -32,10 +33,10 @@ public class ElasticTest {
         document.put("keywordName","金星移民计划");
         document.put("landingTime","2999-10-11");
 
-        SearchResult createResult = searchDocumentsSV.createOrUpdating("photo.search_keyword","search_keyword","100",document);//新增/更新
-        SearchResult searchIdResult = searchDocumentsSV.searching("photo.search_keyword","search_keyword","100");//主键查询
-        SearchResult searchResult = searchDocumentsSV.searching("photo.search_keyword","search_keyword",document);//条件查询
-        SearchResult deleteResult = searchDocumentsSV.deleting("photo.search_keyword","search_keyword","100");//删除文档
+        SearchResult createResult = searchDocumentsComponent.createOrUpdating("photo.search_keyword","search_keyword","100",document);//新增/更新
+        SearchResult searchIdResult = searchDocumentsComponent.searching("photo.search_keyword","search_keyword","100");//主键查询
+        SearchResult searchResult = searchDocumentsComponent.searching("photo.search_keyword","search_keyword",document);//条件查询
+        SearchResult deleteResult = searchDocumentsComponent.deleting("photo.search_keyword","search_keyword","100");//删除文档
 
         System.out.println("新增结果：======================"+createResult);
         System.out.println("主键查询结果：======================"+searchIdResult);
