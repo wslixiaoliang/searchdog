@@ -58,7 +58,7 @@ public class Constans {
     public interface Production
     {
         public static final String INDEX_NAME ="world.famous_production";//索引名称
-        public static final String INDEX_TYPE ="famous_producion";//索引类型
+        public static final String INDEX_TYPE ="famous_production";//索引类型
 
         public static final String PRODUCTION_ID ="productionId";//作品ID
         public static final String FAMOUS_ID ="famousId";//名人ID
