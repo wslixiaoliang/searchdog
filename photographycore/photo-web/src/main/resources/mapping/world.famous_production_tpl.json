@@ -1,0 +1,191 @@
+/**
+1. 开发环境
+http://127.0.0.1:9200/_template/world.famous_production_tpl/
+**/
+
+{
+  "index_patterns": [
+    "world.famous_production"
+  ],
+  "version": 50001,
+  "settings": {
+    "index.refresh_interval": "5s",
+    "index.number_of_replicas": "0",
+    "index.number_of_shards": "1",
+    "max_result_window": 10000000,
+    "index": {
+      "analysis": {
+	  "filter": {
+			"kms_synonym": {
+				"type": "synonym",
+				"synonyms_path": "kms_syn.txt"
+			}
+		},
+        "analyzer": {
+          "kms_ik_smart": {
+            "type": "custom",
+            "use_smart": "true",
+            "tokenizer": "ik_smart",
+			"filter": [
+				"kms_synonym"
+			]
+          },
+          "kms_ik_max_word": {
+            "type": "custom",
+            "use_smart": "false",
+            "tokenizer": "ik_max_word",
+			"filter": [
+				"kms_synonym"
+			]
+          },
+          "douhao": {
+            "type": "pattern",
+            "pattern": ","
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "famous_production": {
+      "_all": {
+        "enabled": false,
+        "norms": false
+      },
+      "dynamic_date_formats": [
+        "yyyy-MM-dd HH:mm:ss",
+        "yyyy-MM-dd"
+      ],
+      "dynamic_templates": [
+        {
+          "time_fields": {
+            "mapping": {
+              "type": "date"
+            },
+            "match": "publishedYear"
+          }
+        },
+        {
+          "productionId": {
+            "mapping": {
+              "type": "text",
+              "doc_values": false,
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "productionId"
+          }
+        },
+		{
+          "famousId": {
+            "mapping": {
+              "type": "text",
+              "doc_values": false,
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "famousId"
+          }
+        },
+		{
+          "portraitName": {
+            "mapping": {
+              "type": "text",
+              "doc_values": false,
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "portraitName"
+          }
+        },
+		{
+          "englishName": {
+            "mapping": {
+              "type": "text",
+              "doc_values": false,
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "englishName"
+          }
+        },
+        {
+          "chineseName": {
+            "mapping": {
+              "analyzer": "kms_ik_max_word",
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "chineseName"
+          }
+        },
+        {
+          "productionName": {
+            "mapping": {
+              "analyzer": "kms_ik_max_word",
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "productionName"
+          }
+        },
+        {
+          "summaryInfo": {
+            "mapping": {
+              "analyzer": "kms_ik_max_word",
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "summaryInfo"
+          }
+        },
+        {
+          "productionContent": {
+            "mapping": {
+              "analyzer": "kms_ik_max_word",
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "productionContent"
+          }
+        }
+      ]
+    }
+  }
+}
