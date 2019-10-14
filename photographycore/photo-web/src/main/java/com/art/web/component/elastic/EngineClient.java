@@ -1,7 +1,7 @@
 package com.art.web.component.elastic;
 
-import com.art.util.famous.Constans;
-import com.art.util.famous.LiangUtil;
+import com.art.util.Constans;
+import com.art.util.LiangUtil;
 import org.apache.log4j.Logger;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;

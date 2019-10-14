@@ -2,10 +2,10 @@ package com.art.service.famous;
 
 import com.art.ServiceApplication;
 import com.art.beans.famous.CommentInformation;
-import com.art.util.famous.Constans;
+import com.art.util.Constans;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.art.util.famous.LiangUtil;
+import com.art.util.LiangUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

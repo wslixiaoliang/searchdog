@@ -2,8 +2,8 @@ package com.art.service.consumer;
 
 import com.art.ServiceApplication;
 import com.art.beans.consumer.ConsumerInformation;
-import com.art.util.famous.Constans;
-import com.art.util.famous.LiangUtil;
+import com.art.util.Constans;
+import com.art.util.LiangUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;

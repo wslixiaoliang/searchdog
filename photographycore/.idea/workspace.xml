@@ -1,0 +1,1691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="Default" comment="FAMOUS-819 新增搜索引擎底层增删改查接口">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_lingala_zip4j_zip4j_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_lingala_zip4j_zip4j_1_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/consumer/ConsumerInformation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/elastic/SearchResult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/famous/CommentInformation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/famous/Famous.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/famous/FamousPortrait.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/famous/FamousProduction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/famous/Result.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/com/art/dao/consumer/ConsumerInformationDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/com/art/dao/famous/CommentDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/com/art/dao/famous/FamousDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/com/art/dao/famous/FamousPortraitDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/com/art/dao/famous/FamousProductionDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mapper/ConsumerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mapper/FamousMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mapper/FamousPortraintMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mapper/FamousProductionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mybatis/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/ServiceApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/service/consumer/ConsumerInformationSVImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/service/famous/CommentInfoSVImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/service/famous/FamousPortraitSVImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/service/famous/FamousProductionSVImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/service/famous/FamousSVImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/test-classes/com/art/service/consumer/ConsumerInformationSVImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/test-classes/com/art/service/famous/CommentInfoSVImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/test-classes/com/art/service/famous/FamousPortraitSVImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/test-classes/com/art/service/famous/FamousProductionSVImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/test-classes/com/art/service/famous/FamousSVImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service/target/classes/com/art/service/consumer/IConsumerInformationSV.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service/target/classes/com/art/service/famous/ICommentInfoSV.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service/target/classes/com/art/service/famous/IFamousPortraitSV.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service/target/classes/com/art/service/famous/IFamousProductionSV.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service/target/classes/com/art/service/famous/IFamousSV.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/WebApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/component/elastic/EngineClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/component/elastic/IndexComponent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/component/famous/PortraitIndexComponent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/component/famous/ProductionIndexComponent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/controller/FamousController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/controller/FileDownloadController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/controller/PortraitController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/controller/ProductionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/css/famous.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/css/portrait.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/css/production.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/css/productionList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/jquery/jquery-3.3.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/jquery/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/js/famous.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/js/portrait.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/js/production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/js/productionList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/famous.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/portrait.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/production.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/productionList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/page/jquery.page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/static/helloword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/test-classes/com/art/web/component/IndexComponentTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/test-classes/com/art/web/controller/FamousControllerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/target/test-classes/com/art/web/elastic/ElasticTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-service-impl/photo-service-impl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/photo-service-impl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/photo-util.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/photo-util.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/famous/Constans.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/Constans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/famous/LiangUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/photo-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/photo-web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FileDownloadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FileDownloadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/photo-web/target/" />
+    <ignored path="$PROJECT_DIR$/photo-beans/target/" />
+    <ignored path="$PROJECT_DIR$/photo-service/target/" />
+    <ignored path="$PROJECT_DIR$/photo-service-impl/target/" />
+    <ignored path="$PROJECT_DIR$/photo-dao/target/" />
+    <ignored path="$PROJECT_DIR$/demo/target/" />
+    <ignored path="$PROJECT_DIR$/photo-util/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/photographycore$CollegeClassmatesSVImplTest_testGetClassmates.coverage" NAME="CollegeClassmatesSVImplTest.testGetClassmates Coverage Results" MODIFIED="1556525908890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.art.service.college.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="photographycore" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="mapper" />
+        <option value="css" />
+        <option value="Interface" />
+        <option value="Mapper" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getSchoolmates</find>
+      <find>CollegeClassmatesDAO</find>
+      <find>getSchoolmateInfos</find>
+      <find>FamousDAO</find>
+      <find>getFamousById</find>
+      <find>getProductionInfos</find>
+      <find>pageNo</find>
+      <find>var a</find>
+      <find>FamousProductionDAO</find>
+      <find>拼接</find>
+      <find>#428bca</find>
+      <find>CommentDAO</find>
+      <find>isEmpty</find>
+      <find>Constans</find>
+      <find>ConsumerInformationDAO</find>
+      <find>mouse</find>
+      <find>FamousPortraitDAO</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/WslixiaoliangUtil.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/productionList.css" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/famous.css" />
+        <option value="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/consumer/ConsumerInformation.java" />
+        <option value="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/CommentInformation.java" />
+        <option value="$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/famous/CommentDAO.java" />
+        <option value="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/ICommentInfoSV.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/CommentInfoSVImpl.java" />
+        <option value="$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/consumer/ConsumerInformationDAO.java" />
+        <option value="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/consumer/IConsumerInformationSV.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/consumer/ConsumerInformationSVImpl.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousProductionSVImpl.java" />
+        <option value="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/FamousMapper.xml" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/WslixiaoliangUtil.java" />
+        <option value="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/CommentMapper.xml" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" />
+        <option value="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/ConsumerMapper.xml" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java" />
+        <option value="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/consumer/Qqq.java" />
+        <option value="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/consumer/ConsumerInformation.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/famous/WslixiaoliangUtil.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/elastic/client.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/elastic/Client.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/elastic/SearchDocuments.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/elastic/EngineClient.java" />
+        <option value="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/elastic/ISearchDocumentsSV.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/elastic/SearchDocumentsImpl.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/elastic/ElasticTest.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/pom.xml" />
+        <option value="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" />
+        <option value="$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/famous/FamousPortraitDAO.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/mapping/world.famous_portrait_tpl.json" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/mapping/world.famous_production_tpl.json" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/famous/Constans.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FileDownloadController.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/famous/LiangUtil.java" />
+        <option value="$USER_HOME$/Desktop/helloZip.java" />
+        <option value="$PROJECT_DIR$/photo-util/pom.xml" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/FileUtil.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/dateUtil.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/LiangUtil.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/commonUtil.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/StringUtil.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/DateUtil.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../../photography-maven/maven-jars" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../maven/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../photography-maven/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="photo-parent" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="photo-parent" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="21" />
+    <option name="y" value="38" />
+    <option name="width" value="1440" />
+    <option name="height" value="811" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <showMembers ProjectPane="false" />
+      <hideEmptyPackages ProjectPane="false" />
+      <abbreviatePackageNames ProjectPane="true" />
+      <autoscrollToSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="false" />
+      <sortByType ProjectPane="false" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="art" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="art" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="famous.js&#9;FILE&#9;file://E:/photography/photographycore/photo-web/src/main/resources/public/js/famous.js&#10;college&#9;FILE&#9;file://E:/photography/photographycore/photo-beans/src/main/java/com/art/beans/college/CollegeClassmates.java&#10;co&#9;FILE&#9;file://E:/photography/photographycore/photo-beans/src/main/java/com/art/beans/CollegeClassmates.java" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/photo-web/src/main/resources/mapping" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.31669867" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.art.service.college" />
+      <recent name="" />
+      <recent name="com.art" />
+      <recent name="com.art.serviceimpl.college" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/photo-web/src/main/resources/mapping" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\page" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\css" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\js" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\jquery" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\js" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\css" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\modules" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.13649635" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.art.util.CommonUtil" />
+      <module name="photo-util" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.art.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.art.util.FileUtil" />
+      <module name="photo-util" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.art.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.art.util.JsonUtil" />
+      <module name="photo-util" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.art.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FamousControllerTest.testTimeFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photo-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.art.web.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.art.web.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.art.web.controller.FamousControllerTest" />
+      <option name="METHOD_NAME" value="testTimeFormat" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IndexComponentTest.testIndexCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photo-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.art.web.component.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.art.web.component" />
+      <option name="MAIN_CLASS_NAME" value="com.art.web.component.IndexComponentTest" />
+      <option name="METHOD_NAME" value="testIndexCreate" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="photo-service-impl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.art.ServiceApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="photo-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.art.web.WebApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.JsonUtil" />
+      <item itemvalue="Application.FileUtil" />
+      <item itemvalue="JUnit.IndexComponentTest.testIndexCreate" />
+      <item itemvalue="JUnit.FamousControllerTest.testTimeFormat" />
+      <item itemvalue="Spring Boot.WebApplication" />
+      <item itemvalue="Spring Boot.ServiceApplication" />
+      <item itemvalue="Application.CommonUtil" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CommonUtil" />
+        <item itemvalue="Application.FileUtil" />
+        <item itemvalue="Application.JsonUtil" />
+        <item itemvalue="JUnit.FamousControllerTest.testTimeFormat" />
+        <item itemvalue="JUnit.IndexComponentTest.testIndexCreate" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66242bc3-de82-4914-b1cc-25d86da687ee" name="Default" comment="" />
+      <created>1552619848446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1552619848446</updated>
+      <workItem from="1552619850713" duration="2734000" />
+      <workItem from="1552901223640" duration="4047000" />
+      <workItem from="1553000169751" duration="2773000" />
+      <workItem from="1553068982125" duration="4636000" />
+      <workItem from="1553313093870" duration="1219000" />
+      <workItem from="1553324161970" duration="510000" />
+      <workItem from="1553324728611" duration="3577000" />
+      <workItem from="1553516177516" duration="434000" />
+      <workItem from="1553516648234" duration="2764000" />
+      <workItem from="1553520101393" duration="1648000" />
+      <workItem from="1553581592088" duration="2899000" />
+      <workItem from="1553585761895" duration="915000" />
+      <workItem from="1553586709271" duration="2836000" />
+      <workItem from="1555329011786" duration="2302000" />
+      <workItem from="1555331362973" duration="733000" />
+      <workItem from="1555332128265" duration="10904000" />
+      <workItem from="1555381612055" duration="1956000" />
+      <workItem from="1555383672238" duration="14841000" />
+      <workItem from="1555467930631" duration="5794000" />
+      <workItem from="1555483202870" duration="2451000" />
+      <workItem from="1556413932091" duration="2459000" />
+      <workItem from="1556416436153" duration="6447000" />
+      <workItem from="1556500161810" duration="42432000" />
+      <workItem from="1557024683396" duration="7957000" />
+      <workItem from="1557043185819" duration="66901000" />
+      <workItem from="1557713471866" duration="29046000" />
+      <workItem from="1557891736855" duration="101562000" />
+      <workItem from="1558488437676" duration="12817000" />
+      <workItem from="1559528810572" duration="7938000" />
+      <workItem from="1559610376670" duration="22390000" />
+      <workItem from="1559648018767" duration="6263000" />
+      <workItem from="1559697047986" duration="10800000" />
+      <workItem from="1560130315583" duration="56217000" />
+      <workItem from="1560408568477" duration="4243000" />
+      <workItem from="1560962938302" duration="1537000" />
+      <workItem from="1560967616525" duration="8740000" />
+      <workItem from="1561462921546" duration="1238000" />
+      <workItem from="1561535163230" duration="48000" />
+      <workItem from="1561535698948" duration="1635000" />
+      <workItem from="1561641896162" duration="527000" />
+      <workItem from="1561944766524" duration="9870000" />
+      <workItem from="1562584721906" duration="20593000" />
+      <workItem from="1563166150231" duration="30268000" />
+      <workItem from="1564104650749" duration="248000" />
+      <workItem from="1564378880553" duration="9010000" />
+      <workItem from="1564764613311" duration="1465000" />
+      <workItem from="1564768324161" duration="875000" />
+      <workItem from="1564803302383" duration="1843000" />
+      <workItem from="1564817173563" duration="1941000" />
+      <workItem from="1564825533959" duration="81000" />
+      <workItem from="1564830651727" duration="2000" />
+      <workItem from="1565424359078" duration="364000" />
+      <workItem from="1566012616255" duration="13315000" />
+      <workItem from="1566062720678" duration="3076000" />
+      <workItem from="1566181741179" duration="22706000" />
+      <workItem from="1566567732215" duration="5428000" />
+      <workItem from="1566656975325" duration="652000" />
+      <workItem from="1569477808906" duration="519000" />
+      <workItem from="1569738981546" duration="967000" />
+      <workItem from="1570607873267" duration="2846000" />
+      <workItem from="1570633796690" duration="1019000" />
+      <workItem from="1570859742917" duration="16477000" />
+      <workItem from="1571034527045" duration="3023000" />
+    </task>
+    <task id="LOCAL-00001" summary="PHOTO-109 项目初始化">
+      <created>1553517592983</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553517592983</updated>
+    </task>
+    <task id="LOCAL-00002" summary="PHOTO-109 项目初始化">
+      <created>1553517800468</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553517800468</updated>
+    </task>
+    <task id="LOCAL-00003" summary="PHOTO-109 项目初始化">
+      <created>1555384521413</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555384521414</updated>
+    </task>
+    <task id="LOCAL-00004" summary="mysql及mybatis添加-20190428">
+      <created>1556455009795</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556455009795</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加mapper扫描及service扫描">
+      <created>1556527779463</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556527779463</updated>
+    </task>
+    <task id="LOCAL-00006" summary="添加mapper扫描及service扫描">
+      <created>1556541683340</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556541683340</updated>
+    </task>
+    <task id="LOCAL-00007" summary="添加mapper扫描及service扫描">
+      <created>1556548079548</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1556548079548</updated>
+    </task>
+    <task id="LOCAL-00008" summary="添加mapper扫描及service扫描">
+      <created>1557042944076</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1557042944076</updated>
+    </task>
+    <task id="LOCAL-00009" summary="新增接口开发，及mapper编码格式调试">
+      <created>1557051512255</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557051512255</updated>
+    </task>
+    <task id="LOCAL-00010" summary="photo-20190506-college底层删除接口开发及自测">
+      <created>1557126661056</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1557126661056</updated>
+    </task>
+    <task id="LOCAL-00011" summary="photo-新增dubbo服务-20190506">
+      <created>1557151312154</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1557151312154</updated>
+    </task>
+    <task id="LOCAL-00012" summary="FAMOUS-新增jquery页面及样式调整-20190507">
+      <created>1557236019664</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1557236019664</updated>
+    </task>
+    <task id="LOCAL-00013" summary="FAMOUS-新增jquery页面及样式调整-20190507">
+      <created>1557310297371</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1557310297371</updated>
+    </task>
+    <task id="LOCAL-00014" summary="FAMOUS-新增肖像查询接口及上传下载接口">
+      <created>1557753965172</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1557753965172</updated>
+    </task>
+    <task id="LOCAL-00015" summary="FAMOUS-新增肖像查询接口及上传下载接口-20190115">
+      <created>1557891219240</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1557891219240</updated>
+    </task>
+    <task id="LOCAL-00016" summary="FAMOUS-新增肖像查询接口及上传下载接口-20190115">
+      <created>1557920165148</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1557920165148</updated>
+    </task>
+    <task id="LOCAL-00017" summary="FAMOUS-新增名人作品展示页面-20190516">
+      <created>1558014133134</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1558014133134</updated>
+    </task>
+    <task id="LOCAL-00018" summary="FAMOUS-新增名人作品展示页面调试-20190517">
+      <created>1558088108010</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1558088108010</updated>
+    </task>
+    <task id="LOCAL-00019" summary="FAMOUS-名人作品展示页面调试-20190517">
+      <created>1558088355839</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1558088355839</updated>
+    </task>
+    <task id="LOCAL-00020" summary="FAMOUS-名人作品展示页面调试-20190517">
+      <created>1558315091201</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1558315091201</updated>
+    </task>
+    <task id="LOCAL-00021" summary="FAMOUS-作品页面展示多个作品调试-20190520">
+      <created>1558324010901</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1558324010901</updated>
+    </task>
+    <task id="LOCAL-00022" summary="FAMOUS-个人作品页展示多个作品及新增头像调试-20190520">
+      <created>1558352811432</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1558352811432</updated>
+    </task>
+    <task id="LOCAL-00023" summary="FAMOUS-作品展览馆样式调试新增摘要字段-20190520">
+      <created>1558358935796</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1558358935796</updated>
+    </task>
+    <task id="LOCAL-00024" summary="FAMOUS-list页和单个作品详情页样式调试-20190521">
+      <created>1558406622919</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1558406622919</updated>
+    </task>
+    <task id="LOCAL-00025" summary="FAMOUS-appendChild引发的重复内容优化-20190521">
+      <created>1558583625088</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1558583625088</updated>
+    </task>
+    <task id="LOCAL-00026" summary="FAMOUS-zookeeper版本降级优化-20190603">
+      <created>1559530933144</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1559530933144</updated>
+    </task>
+    <task id="LOCAL-00027" summary="FAMOUS-zookeeper版本降级优化-20190603">
+      <created>1559531070130</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1559531070130</updated>
+    </task>
+    <task id="LOCAL-00028" summary="FAMOUS-zookeeper版本降级优化-20190603">
+      <created>1559531512196</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1559531512196</updated>
+    </task>
+    <task id="LOCAL-00029" summary="FAMOUS-jquery.page.js分页插件集成-2019.6.4">
+      <created>1559654216014</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1559654216014</updated>
+    </task>
+    <task id="LOCAL-00030" summary="FAMOUS-jquery.page.js分页插件集成首页-2019.6.5">
+      <created>1559706606985</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1559706606985</updated>
+    </task>
+    <task id="LOCAL-00031" summary="FAMOUS-jquery.page.js分页插件集成首页-2019.6.5">
+      <created>1559724198394</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1559724198394</updated>
+    </task>
+    <task id="LOCAL-00032" summary="FAMOUS-jquery.page.js取消首页分页插件集成-2019.6.5">
+      <created>1559728976041</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1559728976041</updated>
+    </task>
+    <task id="LOCAL-00033" summary="FAMOUS-分页插件优化-2019.6.10">
+      <created>1560171817852</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1560171817852</updated>
+    </task>
+    <task id="LOCAL-00034" summary="FAMOUS-分页插件优化-2019.6.10">
+      <created>1560172346985</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1560172346985</updated>
+    </task>
+    <task id="LOCAL-00035" summary="FAMOUS-首页查询优化-2019.6.12">
+      <created>1560330894389</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1560330894389</updated>
+    </task>
+    <task id="LOCAL-00036" summary="FAMOUS-新增评论查询接口-2019.7.10">
+      <created>1562758136686</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1562758136686</updated>
+    </task>
+    <task id="LOCAL-00037" summary="FAMOUS-711 新增用户信息相关接口-2019.7.17">
+      <created>1563326808726</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1563326808726</updated>
+    </task>
+    <task id="LOCAL-00038" summary="FAMOUS-731 新增评论相关接口">
+      <created>1564579798163</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1564579798163</updated>
+    </task>
+    <task id="LOCAL-00039" summary="FAMOUS-731 新增评论相关接口">
+      <created>1564768471377</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1564768471377</updated>
+    </task>
+    <task id="LOCAL-00040" summary="FAMOUS-731 util工具类修改">
+      <created>1564807261114</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1564807261114</updated>
+    </task>
+    <task id="LOCAL-00041" summary="FAMOUS-819 新增搜索引擎底层增删改查接口">
+      <created>1566227748316</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1566227748316</updated>
+    </task>
+    <task id="LOCAL-00042" summary="FAMOUS-819 新增搜索引擎底层增删改查接口">
+      <created>1566400075061</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1566400075061</updated>
+    </task>
+    <task id="LOCAL-00043" summary="FAMOUS-819 新增搜索引擎底层增删改查接口">
+      <created>1566568476169</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1566568476169</updated>
+    </task>
+    <task id="LOCAL-00044" summary="FAMOUS-819 新增搜索引擎底层增删改查接口">
+      <created>1566576929711</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1566576929711</updated>
+    </task>
+    <task id="LOCAL-00045" summary="FAMOUS-824 新增mapping">
+      <created>1566581770074</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1566581770074</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 25m 02s.xml">
+      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 26m 02s.xml">
+      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 35m 42s.xml">
+      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 39m 49s.xml">
+      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 48m 57s.xml">
+      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FamousControllerTest_testTimeFormat - 2019.10.12 at 14h 48m 10s.xml">
+      <configuration name="FamousControllerTest.testTimeFormat" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FamousControllerTest_testTimeFormat - 2019.10.12 at 14h 55m 14s.xml">
+      <configuration name="FamousControllerTest.testTimeFormat" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FamousControllerTest_testTimeFormat - 2019.10.12 at 15h 02m 40s.xml">
+      <configuration name="FamousControllerTest.testTimeFormat" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FamousControllerTest_testTimeFormat - 2019.10.12 at 15h 03m 33s.xml">
+      <configuration name="FamousControllerTest.testTimeFormat" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FamousControllerTest_testTimeFormat - 2019.10.12 at 15h 05m 11s.xml">
+      <configuration name="FamousControllerTest.testTimeFormat" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="607758000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="21" y="38" width="1440" height="811" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.2739628" />
+      <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Web" order="5" side_tool="true" weight="0.35193133" />
+      <window_info id="Favorites" order="6" side_tool="true" weight="0.35193133" />
+      <window_info id="Designer" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.40921786" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3449235" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.2823366" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32686982" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32825485" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.26746988" />
+      <window_info anchor="bottom" id="Spring" order="10" weight="0.32963988" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" weight="0.41135734" />
+      <window_info anchor="bottom" id="Reviews" order="12" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.51256984" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32823366" />
+      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.51877606" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
+      <window_info anchor="right" id="Maven" order="2" weight="0.3297568" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.24964234" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.24964234" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Module Dependencies" order="6" weight="0.32969153" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32969153" />
+      <window_info anchor="right" id="News Feed" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32969153" />
+      <window_info anchor="right" id="Bean Validation" order="12" weight="0.32969153" />
+      <window_info anchor="right" id="Theme Preview" order="13" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.27038628" />
+      <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Web" order="5" side_tool="true" weight="0.35193133" />
+      <window_info id="Favorites" order="6" side_tool="true" weight="0.35193133" />
+      <window_info id="Designer" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.40921786" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3449235" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" visible="true" weight="0.2823366" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32686982" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32825485" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.26746988" />
+      <window_info anchor="bottom" id="Spring" order="10" weight="0.32963988" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" weight="0.41135734" />
+      <window_info anchor="bottom" id="Reviews" order="12" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.51256984" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32960895" />
+      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.51877606" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
+      <window_info anchor="right" id="Maven" order="2" weight="0.3297568" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.24964234" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.24964234" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Module Dependencies" order="6" weight="0.32969153" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32969153" />
+      <window_info anchor="right" id="News Feed" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32969153" />
+      <window_info anchor="right" id="Bean Validation" order="12" weight="0.32969153" />
+      <window_info anchor="right" id="Theme Preview" order="13" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="me" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="develop" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="me" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="photo-20190506-college底层删除接口开发及自测" />
+    <MESSAGE value="photo-新增dubbo服务-20190506" />
+    <MESSAGE value="FAMOUS-新增jquery页面及样式调整-20190507" />
+    <MESSAGE value="FAMOUS-新增肖像查询接口及上传下载接口" />
+    <MESSAGE value="FAMOUS-新增肖像查询接口及上传下载接口-20190115" />
+    <MESSAGE value="FAMOUS-新增名人作品展示页面-20190516" />
+    <MESSAGE value="FAMOUS-新增名人作品展示页面调试-20190517" />
+    <MESSAGE value="FAMOUS-名人作品展示页面调试-20190517" />
+    <MESSAGE value="FAMOUS-作品页面展示多个作品调试-20190520" />
+    <MESSAGE value="FAMOUS-个人作品页展示多个作品及新增头像调试-20190520" />
+    <MESSAGE value="FAMOUS-作品展览馆样式调试新增摘要字段-20190520" />
+    <MESSAGE value="FAMOUS-list页和单个作品详情页样式调试-20190521" />
+    <MESSAGE value="FAMOUS-appendChild引发的重复内容优化-20190521" />
+    <MESSAGE value="FAMOUS-zookeeper版本降级优化-20190603" />
+    <MESSAGE value="FAMOUS-jquery.page.js分页插件集成-2019.6.4" />
+    <MESSAGE value="FAMOUS-jquery.page.js分页插件集成首页-2019.6.5" />
+    <MESSAGE value="FAMOUS-jquery.page.js取消首页分页插件集成-2019.6.5" />
+    <MESSAGE value="FAMOUS-分页插件优化-2019.6.10" />
+    <MESSAGE value="FAMOUS-首页查询优化-2019.6.12" />
+    <MESSAGE value="FAMOUS-新增评论查询接口-2019.7.10" />
+    <MESSAGE value="FAMOUS-711 新增用户信息相关接口-2019.7.17" />
+    <MESSAGE value="FAMOUS-731 新增评论相关接口" />
+    <MESSAGE value="FAMOUS-731 util工具类修改" />
+    <MESSAGE value="FAMOUS-819 新增搜索引擎底层增删改查接口" />
+    <MESSAGE value="FAMOUS-824 新增mapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="FAMOUS-824 新增mapping" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
+    <state width="436" height="458" key="Git.Branch.Popup@1600.900" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="117" column="55" lean-forward="true" selection-start-line="117" selection-start-column="55" selection-end-line="117" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/consumer/Qqq.java" />
+    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/consumer/ConsumerInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2429#2430#0" expanded="true" />
+            <element signature="e#2462#2463#0" expanded="true" />
+            <element signature="e#2517#2518#0" expanded="true" />
+            <element signature="e#2561#2562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="25" column="69" lean-forward="true" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="89" column="31" lean-forward="true" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famous.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="66" column="50" lean-forward="true" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/org/elasticsearch/elasticsearch/6.4.3/elasticsearch-6.4.3.jar!/org/elasticsearch/client/transport/TransportClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/net/InetAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-761">
+          <caret line="1080" column="74" lean-forward="true" selection-start-line="1080" selection-start-column="74" selection-end-line="1080" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/elastic/EngineClient.java" />
+    <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/org/elasticsearch/elasticsearch/6.4.3/elasticsearch-6.4.3.jar!/org/elasticsearch/client/support/AbstractClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="489" column="66" lean-forward="true" selection-start-line="489" selection-start-column="66" selection-end-line="489" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/org/elasticsearch/elasticsearch/6.4.3/elasticsearch-6.4.3.jar!/org/elasticsearch/action/search/SearchRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="e#2676#2677#0" expanded="true" />
+            <element signature="e#2732#2733#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/org/elasticsearch/elasticsearch/6.4.3/elasticsearch-6.4.3.jar!/org/elasticsearch/action/search/SearchResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/elastic/SearchDocumentsImpl.java" />
+    <entry file="file://$PROJECT_DIR$/photo-service/src/main/java/com/art/service/elastic/ISearchDocumentsSV.java" />
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/elastic/ElasticTest.java" />
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/IFamousPortraitSV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+          <folding>
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/famous/FamousPortraitDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-dao/src/main/resources/mapper/FamousPortraintMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/mapping/world.famous_production_tpl.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/mapping/world.famous_portrait_tpl.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/WebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/development.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/com/alibaba/dubbo/2.5.3/dubbo-2.5.3.jar!/com/alibaba/dubbo/rpc/protocol/ProtocolFilterWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FileDownloadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="258" column="42" selection-start-line="258" selection-start-column="42" selection-end-line="258" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="56" column="56" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="25" column="77" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/org/apache/logging/log4j/log4j-core/2.11.2/log4j-core-2.11.2.jar!/org/apache/logging/log4j/core/util/FileUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/helloZip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="40" selection-start-line="10" selection-start-column="9" selection-end-line="12" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/zip/ZipEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/LiangUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="37" selection-end-line="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/JsonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="74" column="63" lean-forward="true" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/text/DateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="360" column="58" lean-forward="true" selection-start-line="360" selection-start-column="58" selection-end-line="360" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/Constans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>photo-web:Web exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31669867" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31669867" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31669867" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8.0_211</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31669867" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>photo-service-impl</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31669867" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.skyscreamer:jsonassert:1.5.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31669867" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31669867" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

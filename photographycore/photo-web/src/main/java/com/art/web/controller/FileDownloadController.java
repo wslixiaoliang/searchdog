@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @RestController
 @RequestMapping(value = "/portrait")
@@ -58,9 +60,9 @@ public class FileDownloadController {
     public void downLoad(HttpServletResponse response, String fileName){
         if (fileName != null) {
             //设置文件路径
-            String realPath = "E:/famous/portrait";
+//            String realPath = "E:/famous/portrait";
             //设置文件路径
-//            String realPath = FAMOUS_PATH;
+            String realPath = FAMOUS_PATH;
 
             File file = new File(realPath , fileName);
             if (file.exists()) {
@@ -155,6 +157,11 @@ public class FileDownloadController {
 
 
 
-
+    public static String getCurrentTime(String dateFormat)
+    {
+        Date date  = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+        return sdf.format(date);
+    }
 
 }

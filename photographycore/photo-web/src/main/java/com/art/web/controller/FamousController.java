@@ -4,12 +4,12 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.famous.Famous;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousSV;
-import com.art.util.famous.Constans;
+import com.art.util.Constans;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

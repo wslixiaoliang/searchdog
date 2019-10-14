@@ -1,4 +1,4 @@
-package com.art.util.famous;
+package com.art.util;
 
 /**
  * 常量类
@@ -20,11 +20,19 @@ public class Constans {
     public static final String DELETE_FAILURE_STATUS = "UNDELETED";
 
     /**
-     * 日期格式
+     * 标准时间格式
      */
-
-    public static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";//年月日 时分秒
     public static final String YYYY_MM_DD = "yyyy-MM-dd";//年月日
+    public static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";//年月日 时分秒
+    public static final String YYYY_MM_DD_HH_MM_SS_SSS = "yyyy-MM-dd HH:mm:ss.SSS";//年月日 时分秒 毫秒
+
+    /**
+     * String类型时间格式
+     */
+    public static final String YYYYMMDD = "yyyyMMdd";//年月日
+    public static final String YYYYMMDDHHMMSS = "yyyyMMddHHmmss";//年月日 时分秒
+    public static final String YYYYMMDDHHMMSSSSS = "yyyyMMddHHmmssSSS";//年月日 时分秒 毫秒
+
 
     /**
      * es集群地址

@@ -5,7 +5,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.famous.FamousProduction;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousProductionSV;
-import com.art.util.famous.Constans;
+import com.art.util.Constans;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
