@@ -43,7 +43,7 @@ $(document).ready(function(){
                         '<td><span>' + list[i].birthYear + '</span></td>' +
                         '<td><button id="update" type="button" name="change">修改</button>' +
                         '<button id="delete" type="button" name="del">删除</button></td>' +
-                        '</tr>'
+                        '</tr>';
                 }
                 $('table tbody').html(str);
 

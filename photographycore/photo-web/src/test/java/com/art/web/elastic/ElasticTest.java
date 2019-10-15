@@ -29,24 +29,24 @@ public class ElasticTest {
     public void testSearch() throws IOException
     {
         Map<String, Object> document = new HashMap<>();
-        document.put("keywordId","100");
-        document.put("keywordName","金星移民计划");
-        document.put("landingTime","2999-10-11");
+//        document.put("keywordId","100");
+        document.put("chineseName","阿尔伯特");
+//        document.put("landingTime","2999-10-11");
 
-        SearchResult createResult = searchDocumentsComponent.createOrUpdating("photo.search_keyword","search_keyword","100",document);//新增/更新
-        SearchResult searchIdResult = searchDocumentsComponent.searching("photo.search_keyword","search_keyword","100");//主键查询
-        SearchResult searchResult = searchDocumentsComponent.searching("photo.search_keyword","search_keyword",document);//条件查询
-        SearchResult deleteResult = searchDocumentsComponent.deleting("photo.search_keyword","search_keyword","100");//删除文档
+//        SearchResult createResult = searchDocumentsComponent.createOrUpdating("photo.search_keyword","search_keyword","100",document);//新增/更新
+//        SearchResult searchIdResult = searchDocumentsComponent.searching("photo.search_keyword","search_keyword","100");//主键查询
+        SearchResult searchResult = searchDocumentsComponent.searching("world.famous_production","famous_production",document);//条件查询
+//        SearchResult deleteResult = searchDocumentsComponent.deleting("photo.search_keyword","search_keyword","100");//删除文档
 
-        System.out.println("新增结果：======================"+createResult);
-        System.out.println("主键查询结果：======================"+searchIdResult);
-        System.out.println("字段查询结果：======================"+searchResult);
-        System.out.println("删除结果：======================"+deleteResult);
+//        System.out.println("新增结果：======================"+createResult);
+//        System.out.println("主键查询结果：======================"+searchIdResult);
+        System.out.println("字段查询结果：======================"+searchResult.getDocuments());
+//        System.out.println("删除结果：======================"+deleteResult);
 
-        LOGGER.info("新增结果：======================"+createResult);
-        LOGGER.info("主键查询结果：======================"+searchIdResult);
+//        LOGGER.info("新增结果：======================"+createResult);
+//        LOGGER.info("主键查询结果：======================"+searchIdResult);
         LOGGER.info("字段查询结果：======================"+searchResult);
-        LOGGER.info("删除结果：======================"+deleteResult);
+//        LOGGER.info("删除结果：======================"+deleteResult);
 
     }
 }

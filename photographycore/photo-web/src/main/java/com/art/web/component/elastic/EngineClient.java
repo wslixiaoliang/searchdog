@@ -1,7 +1,7 @@
 package com.art.web.component.elastic;
 
 import com.art.util.Constans;
-import com.art.util.LiangUtil;
+import com.art.util.StringUtil;
 import org.apache.log4j.Logger;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
@@ -42,13 +42,13 @@ public class EngineClient {
         //指定es集群
         Settings settings = Settings.builder().put("cluster.name",clusterName).put("client.transport.sniff", true).build();
         client = new PreBuiltTransportClient(settings);
-        if(LiangUtil.isNotEmpty(clusterAddress)){
+        if(StringUtil.isNotEmpty(clusterAddress)){
 
-            String[] addStr = LiangUtil.splitStr(clusterAddress,",");
+            String[] addStr = StringUtil.splitStr(clusterAddress,",");
 
             for(String str:addStr)
             {
-                String[] addressAndPort = LiangUtil.splitStr(str,":");
+                String[] addressAndPort = StringUtil.splitStr(str,":");
                 String address = addressAndPort[0];
                 int port = Integer.parseInt(addressAndPort[1]);
 

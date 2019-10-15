@@ -34,9 +34,8 @@ public class CommonUtil {
      * main方法测试类
      * @param args
      */
-        public static void main(String []args)
+        public static void main(String []args) {
 
-        {
             getPrimaryKey();
 
         }

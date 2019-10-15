@@ -2,7 +2,7 @@ package com.art.web.component.elastic;
 
 import com.art.beans.elastic.SearchResult;
 import com.art.util.Constans;
-import com.art.util.LiangUtil;
+import com.art.util.StringUtil;
 import org.apache.log4j.Logger;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetResponse;
@@ -42,7 +42,7 @@ public class IndexComponent
         Map<String,Object> document;
         List<Map<String,Object>> list = new ArrayList<>();
         try{
-            if(LiangUtil.isNotEmpty(indexName)&& LiangUtil.isNotEmpty(indexType)&&LiangUtil.isNotEmpty(id))
+            if(StringUtil.isNotEmpty(indexName)&& StringUtil.isNotEmpty(indexType)&&StringUtil.isNotEmpty(id))
             {
                 response = EngineClient.getConnection().prepareGet(indexName,indexType,id).execute().actionGet();
             }
@@ -130,7 +130,7 @@ public class IndexComponent
                     .prepareIndex(indexName,indexType,id)
                     .setTimeout(new TimeValue(60, TimeUnit.SECONDS))
                     .setSource(document).get();
-            if(LiangUtil.isNotEmpty(String.valueOf(response.status()))){
+            if(StringUtil.isNotEmpty(String.valueOf(response.status()))){
                 status = String.valueOf(response.status());
             }
             searchResult.setStatus(status);
@@ -161,7 +161,7 @@ public class IndexComponent
                     .prepareDelete(indexName,indexType,id)
                     .setTimeout(new TimeValue(60,TimeUnit.SECONDS))
                     .get();
-            if(LiangUtil.isNotEmpty(String.valueOf(response.status()))){
+            if(StringUtil.isNotEmpty(String.valueOf(response.status()))){
                 status = String.valueOf(response.status());
             }
             searchResult.setStatus(status);

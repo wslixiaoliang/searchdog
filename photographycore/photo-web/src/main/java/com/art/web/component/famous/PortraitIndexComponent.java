@@ -5,7 +5,7 @@ import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousPortrait;
 import com.art.service.famous.IFamousPortraitSV;
 import com.art.util.Constans;
-import com.art.util.LiangUtil;
+import com.art.util.StringUtil;
 import com.art.web.component.elastic.IndexComponent;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,11 +84,11 @@ public class PortraitIndexComponent {
         }
         for(FamousPortrait portrait :famousPortraitList){
             Map<String,Object> document = new HashMap<>();
-            document.put(Constans.Portrait.PORTRAIT_ID, LiangUtil.isNotEmpty(String.valueOf(portrait.getPortraitId()))?String.valueOf(portrait.getPortraitId()):"");
-            document.put(Constans.Portrait.PORTRAIT_NAME,LiangUtil.isNotEmpty(String.valueOf(portrait.getPortraitName()))?String.valueOf(portrait.getPortraitName()):"");
-            document.put(Constans.Portrait.FAMOUS_ID,LiangUtil.isNotEmpty(String.valueOf(portrait.getFamousId()))?String.valueOf(portrait.getFamousId()):"");
-            document.put(Constans.Portrait.CHINESE_NAME,LiangUtil.isNotEmpty(String.valueOf(portrait.getChineseName()))?String.valueOf(portrait.getChineseName()):"");
-            document.put(Constans.Portrait.RELATIVE_LOCATION,LiangUtil.isNotEmpty(String.valueOf(portrait.getRelativeLocation()))?String.valueOf(portrait.getRelativeLocation()):"");
+            document.put(Constans.Portrait.PORTRAIT_ID, StringUtil.isNotEmpty(String.valueOf(portrait.getPortraitId()))?String.valueOf(portrait.getPortraitId()):"");
+            document.put(Constans.Portrait.PORTRAIT_NAME,StringUtil.isNotEmpty(String.valueOf(portrait.getPortraitName()))?String.valueOf(portrait.getPortraitName()):"");
+            document.put(Constans.Portrait.FAMOUS_ID,StringUtil.isNotEmpty(String.valueOf(portrait.getFamousId()))?String.valueOf(portrait.getFamousId()):"");
+            document.put(Constans.Portrait.CHINESE_NAME,StringUtil.isNotEmpty(String.valueOf(portrait.getChineseName()))?String.valueOf(portrait.getChineseName()):"");
+            document.put(Constans.Portrait.RELATIVE_LOCATION,StringUtil.isNotEmpty(String.valueOf(portrait.getRelativeLocation()))?String.valueOf(portrait.getRelativeLocation()):"");
             documents.add(document);
         }
         return documents;

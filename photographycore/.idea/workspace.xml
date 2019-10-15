@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="Default" comment="FAMOUS-819 新增搜索引擎底层增删改查接口">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_lingala_zip4j_zip4j_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_lingala_zip4j_zip4j_1_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/application.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/consumer/ConsumerInformation.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/elastic/SearchResult.class" afterDir="false" />
@@ -50,11 +46,6 @@
       <change afterPath="$PROJECT_DIR$/photo-service/target/classes/com/art/service/famous/IFamousSV.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/FileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/StringUtil.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-web/target/classes/application.properties" afterDir="false" />
@@ -83,28 +74,24 @@
       <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/productionList.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/page/jquery.page.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-web/target/classes/static/helloword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-web/target/test-classes/com/art/web/component/IndexComponentTest.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-web/target/test-classes/com/art/web/controller/FamousControllerTest.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/photo-web/target/test-classes/com/art/web/elastic/ElasticTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_lingala_zip4j_zip4j_1_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-service-impl/photo-service-impl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/photo-service-impl.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/photo-util.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/photo-util.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/famous/Constans.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/Constans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/famous/LiangUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/photo-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/photo-web.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FileDownloadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FileDownloadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/famous.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/famous.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -145,7 +132,25 @@
     <favorites_list name="photographycore" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="93" lean-forward="true" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -196,14 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/WslixiaoliangUtil.java" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" />
-        <option value="$PROJECT_DIR$/photo-service-impl/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/productionList.css" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/famous.css" />
-        <option value="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/consumer/ConsumerInformation.java" />
         <option value="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/CommentInformation.java" />
         <option value="$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/famous/CommentDAO.java" />
         <option value="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/ICommentInfoSV.java" />
@@ -215,9 +212,7 @@
         <option value="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/FamousMapper.xml" />
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/WslixiaoliangUtil.java" />
         <option value="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/CommentMapper.xml" />
-        <option value="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" />
         <option value="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/ConsumerMapper.xml" />
-        <option value="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java" />
         <option value="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/consumer/Qqq.java" />
         <option value="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/consumer/ConsumerInformation.java" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/famous/WslixiaoliangUtil.java" />
@@ -244,9 +239,19 @@
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/LiangUtil.java" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/commonUtil.java" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/JsonUtil.java" />
-        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/StringUtil.java" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/DateUtil.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java" />
+        <option value="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/js/famous.js" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" />
       </list>
     </option>
   </component>
@@ -279,8 +284,7 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="21" />
-    <option name="y" value="38" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="811" />
   </component>
@@ -305,62 +309,6 @@
             <path>
               <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
               <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="art" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-              <item name="photo-util" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="art" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -434,7 +382,7 @@
     </option>
     <option name="contentProportion" value="0.13649635" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -489,6 +437,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ElasticTest.testSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photo-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.art.web.elastic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.art.web.elastic" />
+      <option name="MAIN_CLASS_NAME" value="com.art.web.elastic.ElasticTest" />
+      <option name="METHOD_NAME" value="testSearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FamousControllerTest.testTimeFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="photo-web" />
       <extension name="coverage">
@@ -500,23 +465,6 @@
       <option name="PACKAGE_NAME" value="com.art.web.controller" />
       <option name="MAIN_CLASS_NAME" value="com.art.web.controller.FamousControllerTest" />
       <option name="METHOD_NAME" value="testTimeFormat" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IndexComponentTest.testIndexCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="photo-web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.art.web.component.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.art.web.component" />
-      <option name="MAIN_CLASS_NAME" value="com.art.web.component.IndexComponentTest" />
-      <option name="METHOD_NAME" value="testIndexCreate" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -567,19 +515,19 @@
     <list>
       <item itemvalue="Application.JsonUtil" />
       <item itemvalue="Application.FileUtil" />
-      <item itemvalue="JUnit.IndexComponentTest.testIndexCreate" />
       <item itemvalue="JUnit.FamousControllerTest.testTimeFormat" />
       <item itemvalue="Spring Boot.WebApplication" />
       <item itemvalue="Spring Boot.ServiceApplication" />
       <item itemvalue="Application.CommonUtil" />
+      <item itemvalue="JUnit.ElasticTest.testSearch" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ElasticTest.testSearch" />
         <item itemvalue="Application.CommonUtil" />
         <item itemvalue="Application.FileUtil" />
         <item itemvalue="Application.JsonUtil" />
         <item itemvalue="JUnit.FamousControllerTest.testTimeFormat" />
-        <item itemvalue="JUnit.IndexComponentTest.testIndexCreate" />
       </list>
     </recent_temporary>
   </component>
@@ -655,7 +603,7 @@
       <workItem from="1570607873267" duration="2846000" />
       <workItem from="1570633796690" duration="1019000" />
       <workItem from="1570859742917" duration="16477000" />
-      <workItem from="1571034527045" duration="3023000" />
+      <workItem from="1571034527045" duration="22030000" />
     </task>
     <task id="LOCAL-00001" summary="PHOTO-109 项目初始化">
       <created>1553517592983</created>
@@ -972,28 +920,17 @@
       <option name="project" value="LOCAL" />
       <updated>1566581770074</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="famous-1014 新增工具类方法，并拆解工具类">
+      <created>1571037949756</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1571037949756</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 25m 02s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 26m 02s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 35m 42s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 39m 49s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.08.23 at 23h 48m 57s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FamousControllerTest_testTimeFormat - 2019.10.12 at 14h 48m 10s.xml">
-      <configuration name="FamousControllerTest.testTimeFormat" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FamousControllerTest_testTimeFormat - 2019.10.12 at 14h 55m 14s.xml">
       <configuration name="FamousControllerTest.testTimeFormat" configurationId="JUnit" />
     </history-entry>
@@ -1006,9 +943,27 @@
     <history-entry file="FamousControllerTest_testTimeFormat - 2019.10.12 at 15h 05m 11s.xml">
       <configuration name="FamousControllerTest.testTimeFormat" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ElasticTest_testSearch - 2019.10.15 at 14h 35m 45s.xml">
+      <configuration name="ElasticTest.testSearch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ElasticTest_testSearch - 2019.10.15 at 14h 38m 33s.xml">
+      <configuration name="ElasticTest.testSearch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ElasticTest_testSearch - 2019.10.15 at 14h 41m 04s.xml">
+      <configuration name="ElasticTest.testSearch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ElasticTest_testSearch - 2019.10.15 at 14h 42m 45s.xml">
+      <configuration name="ElasticTest.testSearch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ElasticTest_testSearch - 2019.10.15 at 14h 44m 22s.xml">
+      <configuration name="ElasticTest.testSearch" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ElasticTest_testSearch - 2019.10.15 at 16h 31m 04s.xml">
+      <configuration name="ElasticTest.testSearch" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="607758000" />
+    <option name="totallyTimeSpent" value="626765000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="all">
@@ -1017,9 +972,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="21" y="38" width="1440" height="811" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="811" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.2739628" />
+      <window_info content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" weight="0.35622317" />
       <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1029,8 +985,8 @@
       <window_info id="Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.40921786" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3449235" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.2823366" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34457833" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.24200279" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32686982" />
@@ -1038,13 +994,13 @@
       <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32825485" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.26746988" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.32963988" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" weight="0.41135734" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" weight="0.4742698" />
       <window_info anchor="bottom" id="Reviews" order="12" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.51256984" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32823366" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.51877606" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.2433936" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
       <window_info anchor="right" id="Maven" order="2" weight="0.3297568" />
@@ -1061,7 +1017,7 @@
       <window_info anchor="right" id="Theme Preview" order="13" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.27038628" />
+      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.35622317" />
       <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1071,8 +1027,8 @@
       <window_info id="Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.40921786" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3449235" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" visible="true" weight="0.2823366" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34457833" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.24200279" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32686982" />
@@ -1080,13 +1036,13 @@
       <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32825485" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.26746988" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.32963988" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" weight="0.41135734" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" weight="0.4742698" />
       <window_info anchor="bottom" id="Reviews" order="12" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.51256984" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32960895" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32823366" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.51877606" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.2433936" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
       <window_info anchor="right" id="Maven" order="2" weight="0.3297568" />
@@ -1177,7 +1133,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="photo-20190506-college底层删除接口开发及自测" />
     <MESSAGE value="photo-新增dubbo服务-20190506" />
     <MESSAGE value="FAMOUS-新增jquery页面及样式调整-20190507" />
     <MESSAGE value="FAMOUS-新增肖像查询接口及上传下载接口" />
@@ -1202,7 +1157,8 @@
     <MESSAGE value="FAMOUS-731 util工具类修改" />
     <MESSAGE value="FAMOUS-819 新增搜索引擎底层增删改查接口" />
     <MESSAGE value="FAMOUS-824 新增mapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="FAMOUS-824 新增mapping" />
+    <MESSAGE value="famous-1014 新增工具类方法，并拆解工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="famous-1014 新增工具类方法，并拆解工具类" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
@@ -1217,6 +1173,30 @@
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -1225,91 +1205,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="117" column="55" lean-forward="true" selection-start-line="117" selection-start-column="55" selection-end-line="117" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/consumer/Qqq.java" />
-    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/consumer/ConsumerInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2429#2430#0" expanded="true" />
-            <element signature="e#2462#2463#0" expanded="true" />
-            <element signature="e#2517#2518#0" expanded="true" />
-            <element signature="e#2561#2562#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="25" column="69" lean-forward="true" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="89" column="31" lean-forward="true" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famous.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="66" column="50" lean-forward="true" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/org/elasticsearch/elasticsearch/6.4.3/elasticsearch-6.4.3.jar!/org/elasticsearch/client/transport/TransportClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/net/InetAddress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-761">
           <caret line="1080" column="74" lean-forward="true" selection-start-line="1080" selection-start-column="74" selection-end-line="1080" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1349,13 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/IFamousPortraitSV.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1385,13 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="40" column="34" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
@@ -1479,13 +1364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="25" column="77" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../photography-maven/maven-jars/org/apache/logging/log4j/log4j-core/2.11.2/log4j-core-2.11.2.jar!/org/apache/logging/log4j/core/util/FileUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1568,22 +1446,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="21" column="51" lean-forward="true" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/PortraitIndexComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/elastic/SearchResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="32" column="53" lean-forward="true" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+          <folding>
+            <element signature="e#939#940#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="90" column="76" lean-forward="true" selection-start-line="90" selection-start-column="76" selection-end-line="90" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famous.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="47" column="11" lean-forward="true" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/famous.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="93" lean-forward="true" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

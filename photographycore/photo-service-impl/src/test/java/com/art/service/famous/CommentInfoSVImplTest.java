@@ -2,10 +2,11 @@ package com.art.service.famous;
 
 import com.art.ServiceApplication;
 import com.art.beans.famous.CommentInformation;
+import com.art.util.CommonUtil;
 import com.art.util.Constans;
+import com.art.util.DateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.art.util.LiangUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,24 +34,22 @@ public class CommentInfoSVImplTest {
     {
 
         Map<String,Object> params = new HashMap();
-        String nowTime = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
 
-        LOGGER.info("=================当前时间：年-月-日 时：分：秒 "+nowTime+"============================");
-        long commentId = LiangUtil.getPrimaryKey(nowTime);
+        long commentId = CommonUtil.getPrimaryKey();
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
-        String nowTime2 = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String nowTime2 = DateUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
         LOGGER.info("=================当前时间：年-月-日 时：分：秒 "+nowTime2+"============================");
-        long productionId = LiangUtil.getPrimaryKey(nowTime2);
+        long productionId = CommonUtil.getPrimaryKey();
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
-        String nowTime3 = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String nowTime3 = DateUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
         LOGGER.info("=================当前时间：年-月-日 时：分：秒 "+nowTime3+"============================");
-        long consumerId = LiangUtil.getPrimaryKey(nowTime3);
+        long consumerId = CommonUtil.getPrimaryKey();
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
         //数据库为dateTime，mapper为TIMSTAMP，Java为String即可；
-        String commentTime = LiangUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String commentTime = DateUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
 
         params.put("commentId",commentId);
         params.put("productionId",productionId);
