@@ -1,6 +1,6 @@
 /**
 1. 开发环境
-http://127.0.0.1:9200/_template/world.famous_portrait_tpl/
+http://127.0.0.1:9400/_template/world.famous_portrait_tpl/
 **/
 
 {
@@ -138,6 +138,111 @@ http://127.0.0.1:9200/_template/world.famous_portrait_tpl/
               }
             },
             "match": "chineseName"
+          }
+        },
+        {
+          "englishName": {
+            "mapping": {
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "englishName"
+          }
+        },
+        {
+          "sex": {
+            "mapping": {
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "sex"
+          }
+        },
+        {
+          "career": {
+            "mapping": {
+              "analyzer": "kms_ik_max_word",
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "career"
+          }
+        },
+        {
+          "achievement": {
+            "mapping": {
+              "analyzer": "kms_ik_max_word",
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "achievement"
+          }
+        },
+        {
+          "honor": {
+            "mapping": {
+              "analyzer": "kms_ik_max_word",
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "honor"
+          }
+        },
+        {
+          "country": {
+            "mapping": {
+              "analyzer": "kms_ik_max_word",
+              "doc_values": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "country"
+          }
+        },
+        {
+          "birthYear": {
+            "mapping": {
+              "type": "text",
+              "doc_values": false,
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "match": "birthYear"
           }
         }
       ]

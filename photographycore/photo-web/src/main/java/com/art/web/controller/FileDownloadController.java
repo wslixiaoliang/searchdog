@@ -157,11 +157,6 @@ public class FileDownloadController {
 
 
 
-    public static String getCurrentTime(String dateFormat)
-    {
-        Date date  = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
-        return sdf.format(date);
-    }
+
 
 }

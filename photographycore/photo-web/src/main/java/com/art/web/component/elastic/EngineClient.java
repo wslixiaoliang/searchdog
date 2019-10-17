@@ -1,6 +1,6 @@
 package com.art.web.component.elastic;
 
-import com.art.util.Constans;
+import com.art.util.SearchConstans;
 import com.art.util.StringUtil;
 import org.apache.log4j.Logger;
 import org.elasticsearch.client.transport.TransportClient;
@@ -36,8 +36,8 @@ public class EngineClient {
      */
     private  static TransportClient innitClient()
     {
-        String clusterName = Constans.CLUSTER_NAME;
-        String clusterAddress = Constans.CLUSTER_ADDRESS;
+        String clusterName = SearchConstans.CLUSTER_NAME;
+        String clusterAddress = SearchConstans.CLUSTER_ADDRESS;
 
         //指定es集群
         Settings settings = Settings.builder().put("cluster.name",clusterName).put("client.transport.sniff", true).build();

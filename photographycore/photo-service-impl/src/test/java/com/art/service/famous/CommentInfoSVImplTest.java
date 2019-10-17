@@ -3,7 +3,7 @@ package com.art.service.famous;
 import com.art.ServiceApplication;
 import com.art.beans.famous.CommentInformation;
 import com.art.util.CommonUtil;
-import com.art.util.Constans;
+import com.art.util.SearchConstans;
 import com.art.util.DateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -38,18 +38,18 @@ public class CommentInfoSVImplTest {
         long commentId = CommonUtil.getPrimaryKey();
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
-        String nowTime2 = DateUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String nowTime2 = DateUtil.date2String(new Date(), SearchConstans.YYYY_MM_DD_HH_MM_SS);
         LOGGER.info("=================当前时间：年-月-日 时：分：秒 "+nowTime2+"============================");
         long productionId = CommonUtil.getPrimaryKey();
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
-        String nowTime3 = DateUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String nowTime3 = DateUtil.date2String(new Date(), SearchConstans.YYYY_MM_DD_HH_MM_SS);
         LOGGER.info("=================当前时间：年-月-日 时：分：秒 "+nowTime3+"============================");
         long consumerId = CommonUtil.getPrimaryKey();
         LOGGER.info("=================评论信息ID："+commentId+"============================");
 
         //数据库为dateTime，mapper为TIMSTAMP，Java为String即可；
-        String commentTime = DateUtil.date2String(new Date(), Constans.YYYY_MM_DD_HH_MM_SS);
+        String commentTime = DateUtil.date2String(new Date(), SearchConstans.YYYY_MM_DD_HH_MM_SS);
 
         params.put("commentId",commentId);
         params.put("productionId",productionId);

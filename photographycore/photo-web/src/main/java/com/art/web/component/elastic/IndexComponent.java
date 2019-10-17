@@ -1,12 +1,13 @@
 package com.art.web.component.elastic;
 
 import com.art.beans.elastic.SearchResult;
-import com.art.util.Constans;
+import com.art.util.SearchConstans;
 import com.art.util.StringUtil;
 import org.apache.log4j.Logger;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.common.unit.TimeValue;
@@ -52,12 +53,12 @@ public class IndexComponent
             }
             list.add(document);
             searchResult.setDocuments(list);
-            searchResult.setReturnCode(Constans.SUCESSS_RETURN_CODE);
+            searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             searchResult.setReturnMsg("查询成功……");
 
         }catch(Exception e){
             LOGGER.info(e);
-            searchResult.setReturnCode(Constans.FAILURE_RETURN_CODE);
+            searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             searchResult.setReturnMsg("查询失败……");
         }
         return searchResult;
@@ -86,7 +87,7 @@ public class IndexComponent
                             .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)//查询类型为：精确查询
                             .setQuery(QueryBuilders.matchQuery(fieldName, fieldValue))//设置查询字段
                             .setFrom(0)//设置查询数据的起始位置
-                            .setSize(10)//设置返回数据的最大条数
+                            .setSize(20)//设置返回数据的最大条数
                             .setExplain(true)// 设置是否按查询匹配度排序
                             .setTimeout(new TimeValue(60, TimeUnit.SECONDS))
                             .execute()
@@ -102,17 +103,53 @@ public class IndexComponent
                         documents.add(sourceAsMap);
                     }
                 }
-                searchResult.setReturnCode(Constans.SUCESSS_RETURN_CODE);
+                searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
                 searchResult.setReturnMsg("查询成功……");
             } catch (Exception e) {
-                LOGGER.error(e);
-                searchResult.setReturnCode(Constans.FAILURE_RETURN_CODE);
+                LOGGER.error(e.getMessage(),e);
+                searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
                 searchResult.setReturnMsg("查询失败……");
             }
         }
         searchResult.setDocuments(documents);
         return searchResult;
     }
+
+    /**
+     * 查询所有文档(查询前20条)
+     * @param indexName
+     * @param indexType
+     */
+    public SearchResult searching(String indexName,String indexType)
+    {
+        SearchResult searchResult = new SearchResult();
+        List<Map<String,Object>> documents = new ArrayList<>();
+        try{
+            SearchRequestBuilder searchRequestBuilder=EngineClient.getConnection().prepareSearch(indexName).setTypes(indexType).setSize(20);
+            SearchResponse searchResponse=searchRequestBuilder.setQuery(QueryBuilders.matchAllQuery()).execute().actionGet(); // 查询所有
+
+            SearchHits searchHits=searchResponse.getHits();
+            SearchHit[] hits = searchHits.getHits();
+            searchResult.setTotalCount(hits.length);
+
+            if(hits.length >0){
+                for (SearchHit searchHit : hits) {
+                    Map<String, Object> sourceAsMap = searchHit.getSourceAsMap();
+                    documents.add(sourceAsMap);
+                }
+            }
+            searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
+            searchResult.setReturnMsg("查询成功……");
+        }catch(Exception e){
+            LOGGER.error(e.getMessage(),e);
+            searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
+            searchResult.setReturnMsg("查询失败……");
+        }
+        searchResult.setDocuments(documents);
+        return searchResult;
+
+    }
+
     /**
      * 新增或更新文档
      * @param indexName
@@ -134,13 +171,13 @@ public class IndexComponent
                 status = String.valueOf(response.status());
             }
             searchResult.setStatus(status);
-            searchResult.setReturnCode(Constans.SUCESSS_RETURN_CODE);
+            searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             searchResult.setReturnMsg("新增成功……");
         }catch(Exception e){
             LOGGER.error(e);
-            status = Constans.CREATE_FAILURE_STATUS;
+            status = SearchConstans.CREATE_FAILURE_STATUS;
             searchResult.setStatus(status);
-            searchResult.setReturnCode(Constans.FAILURE_RETURN_CODE);
+            searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             searchResult.setReturnMsg("新增失败……");
         }
         return searchResult;
@@ -165,13 +202,13 @@ public class IndexComponent
                 status = String.valueOf(response.status());
             }
             searchResult.setStatus(status);
-            searchResult.setReturnCode(Constans.SUCESSS_RETURN_CODE);
+            searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             searchResult.setReturnMsg("删除成功……");
         }catch(Exception e){
             LOGGER.error(e);
             e.printStackTrace();
-            searchResult.setStatus(Constans.DELETE_FAILURE_STATUS);
-            searchResult.setReturnCode(Constans.FAILURE_RETURN_CODE);
+            searchResult.setStatus(SearchConstans.DELETE_FAILURE_STATUS);
+            searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             searchResult.setReturnMsg("删除失败……");
         }
         return searchResult;

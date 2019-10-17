@@ -4,7 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.famous.Famous;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousSV;
-import com.art.util.Constans;
+import com.art.util.SearchConstans;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,17 +39,17 @@ public class FamousController {
 //        queryMap = this.changeBean2Map(famous);
 
         try{
-            queryMap.put(Constans.START,limit*(page-1));
-            queryMap.put(Constans.LIMIT,limit);
+            queryMap.put(SearchConstans.START,limit*(page-1));
+            queryMap.put(SearchConstans.LIMIT,limit);
             famousList= famousSV.getFamousInfos(queryMap);
             Integer count = famousSV.getFamousCount(queryMap);
             result.setBeans(famousList);
             result.setCount(count);
-            result.setReturnCode(Constans.SUCESSS_RETURN_CODE);
+            result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             result.setReturnMessage("查询成功");
         }catch (Exception e){
             logger.info(e.getMessage(),e);
-            result.setReturnCode(Constans.FAILURE_RETURN_CODE);
+            result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }
         return result;

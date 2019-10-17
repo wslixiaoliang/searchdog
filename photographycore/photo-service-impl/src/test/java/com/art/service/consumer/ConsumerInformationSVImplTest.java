@@ -3,7 +3,7 @@ package com.art.service.consumer;
 import com.art.ServiceApplication;
 import com.art.beans.consumer.ConsumerInformation;
 import com.art.util.CommonUtil;
-import com.art.util.Constans;
+import com.art.util.SearchConstans;
 import com.art.util.DateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -59,7 +59,7 @@ public class ConsumerInformationSVImplTest {
         //查询
         List<ConsumerInformation> list = consumerInformationSV.getConsumerInfos(map);
         for(ConsumerInformation consumer:list){
-            String consumerTime = DateUtil.date2String(consumer.getRegistTime(),Constans.YYYY_MM_DD_HH_MM_SS);
+            String consumerTime = DateUtil.date2String(consumer.getRegistTime(), SearchConstans.YYYY_MM_DD_HH_MM_SS);
             String consumerNm = consumer.getConsumerName();
             LOGGER.info("================="+consumer.getConsumerName()+"===============");
         }

@@ -30,7 +30,7 @@ public class FamousPortraitSVImpl implements IFamousPortraitSV{
     }
 
     /**
-     * 多主键查询:多个主键查询多条记录
+     * 主键查询:多个主键查询多条记录
      * @param map
      * @return
      */

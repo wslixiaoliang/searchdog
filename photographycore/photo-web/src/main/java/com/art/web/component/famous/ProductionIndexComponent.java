@@ -4,7 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousProduction;
 import com.art.service.famous.IFamousProductionSV;
-import com.art.util.Constans;
+import com.art.util.SearchConstans;
 import com.art.util.StringUtil;
 import com.art.web.component.elastic.IndexComponent;
 import org.apache.log4j.Logger;
@@ -34,10 +34,10 @@ public class ProductionIndexComponent {
             List<Map<String,Object>> documents = this.cfgIndexColumn(productionList);
             if(null!=documents && !documents.isEmpty()){
                 for(Map<String,Object> document:documents){
-                    String id = String.valueOf(document.get(Constans.Production.PRODUCTION_ID));
+                    String id = String.valueOf(document.get(SearchConstans.Production.PRODUCTION_ID));
                     try {
-                        searchResult = indexComponent.createOrUpdating(Constans.Production.INDEX_NAME,Constans.Production.INDEX_TYPE,id,document);
-                        if(null!=searchResult && Constans.SUCESSS_RETURN_CODE.equals(String.valueOf(searchResult.getReturnCode()))){
+                        searchResult = indexComponent.createOrUpdating(SearchConstans.Production.INDEX_NAME, SearchConstans.Production.INDEX_TYPE,id,document);
+                        if(null!=searchResult && SearchConstans.SUCESSS_RETURN_CODE.equals(String.valueOf(searchResult.getReturnCode()))){
                             count++;
                             searchResult.setTotalCount(count);
                         }
@@ -83,16 +83,16 @@ public class ProductionIndexComponent {
         for(FamousProduction production:productionList)
         {
             Map<String,Object> document = new HashMap<>();
-            document.put(Constans.Production.PRODUCTION_ID, StringUtil.isNotEmpty(String.valueOf(production.getProductionId()))?String.valueOf(production.getProductionId()):"");
-            document.put(Constans.Production.FAMOUS_ID, StringUtil.isNotEmpty(String.valueOf(production.getFamousId()))?String.valueOf(production.getFamousId()):"");
-            document.put(Constans.Production.PORTRAIT_NAME, StringUtil.isNotEmpty(String.valueOf(production.getPortraitName()))?String.valueOf(production.getPortraitName()):"");
-            document.put(Constans.Production.CHINESE_NAME, StringUtil.isNotEmpty(String.valueOf(production.getChineseName()))?String.valueOf(production.getChineseName()):"");
-            document.put(Constans.Production.ENGLISH_NAME, StringUtil.isNotEmpty(String.valueOf(production.getEnglishName()))?String.valueOf(production.getEnglishName()):"");
+            document.put(SearchConstans.Production.PRODUCTION_ID, StringUtil.isNotEmpty(String.valueOf(production.getProductionId()))?String.valueOf(production.getProductionId()):"");
+            document.put(SearchConstans.Production.FAMOUS_ID, StringUtil.isNotEmpty(String.valueOf(production.getFamousId()))?String.valueOf(production.getFamousId()):"");
+            document.put(SearchConstans.Production.PORTRAIT_NAME, StringUtil.isNotEmpty(String.valueOf(production.getPortraitName()))?String.valueOf(production.getPortraitName()):"");
+            document.put(SearchConstans.Production.CHINESE_NAME, StringUtil.isNotEmpty(String.valueOf(production.getChineseName()))?String.valueOf(production.getChineseName()):"");
+            document.put(SearchConstans.Production.ENGLISH_NAME, StringUtil.isNotEmpty(String.valueOf(production.getEnglishName()))?String.valueOf(production.getEnglishName()):"");
 
-            document.put(Constans.Production.PRODUCTION_NAME, StringUtil.isNotEmpty(String.valueOf(production.getProductionName()))?String.valueOf(production.getProductionName()):"");
-            document.put(Constans.Production.PUBLISHED_YEAR, StringUtil.isNotEmpty(String.valueOf(production.getPublishedYear()))?String.valueOf(production.getPublishedYear()):"");
-            document.put(Constans.Production.SUMMARY_INFO, StringUtil.isNotEmpty(String.valueOf(production.getSummaryInfo()))?String.valueOf(production.getSummaryInfo()):"");
-            document.put(Constans.Production.PRODUCTION_CNTT, StringUtil.isNotEmpty(String.valueOf(production.getProductionContent()))?String.valueOf(production.getProductionContent()):"");
+            document.put(SearchConstans.Production.PRODUCTION_NAME, StringUtil.isNotEmpty(String.valueOf(production.getProductionName()))?String.valueOf(production.getProductionName()):"");
+            document.put(SearchConstans.Production.PUBLISHED_YEAR, StringUtil.isNotEmpty(String.valueOf(production.getPublishedYear()))?String.valueOf(production.getPublishedYear()):"");
+            document.put(SearchConstans.Production.SUMMARY_INFO, StringUtil.isNotEmpty(String.valueOf(production.getSummaryInfo()))?String.valueOf(production.getSummaryInfo()):"");
+            document.put(SearchConstans.Production.PRODUCTION_CNTT, StringUtil.isNotEmpty(String.valueOf(production.getProductionContent()))?String.valueOf(production.getProductionContent()):"");
             documents.add(document);
         }
         return documents;

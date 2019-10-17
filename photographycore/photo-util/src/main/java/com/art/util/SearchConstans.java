@@ -3,7 +3,7 @@ package com.art.util;
 /**
  * 常量类
  */
-public class Constans {
+public class SearchConstans {
 
     /**
      * 分页常量
@@ -57,6 +57,14 @@ public class Constans {
         public static final String FAMOUS_ID ="famousId";//名人ID
         public static final String CHINESE_NAME ="chineseName";//中文名称
         public static final String RELATIVE_LOCATION ="relativeLocation";//相对位置
+
+        public static final String ENGLISH_NAME ="englishName";//英文名
+        public static final String SEX ="sex";//性别
+        public static final String CAREER ="career";//职业
+        public static final String ACHIEVEMENT ="achievement";//主要成就
+        public static final String HONOR ="honor";//获得奖项
+        public static final String COUNTRY ="country";//国籍
+        public static final String BIRTH_YEAR ="birthYear";//生卒年月
     }
 
 
@@ -77,6 +85,13 @@ public class Constans {
         public static final String PUBLISHED_YEAR ="publishedYear";//发表年份
         public static final String SUMMARY_INFO ="summaryInfo";//摘要
         public static final String PRODUCTION_CNTT ="productionContent";//作品内容
+
+    }
+
+    public interface FamousIndex
+    {
+        public static final String INDEX_NAME = "world.famous_portrait";//索引名称
+        public static final String INDEX_TYPE ="famous_portrait";//索引类型
 
     }
 

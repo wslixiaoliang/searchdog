@@ -5,7 +5,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.famous.FamousProduction;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousProductionSV;
-import com.art.util.Constans;
+import com.art.util.SearchConstans;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,8 +41,8 @@ public class ProductionController {
         List<FamousProduction> productionList ;
         try{
             Map<String,Object> map = new HashMap();
-            map.put(Constans.START,limit*(page-1));
-            map.put(Constans.LIMIT,limit);
+            map.put(SearchConstans.START,limit*(page-1));
+            map.put(SearchConstans.LIMIT,limit);
             if(StringUtils.isNotEmpty(production.getChineseName())){
                 map.put("chineseName",production.getChineseName());
             }else{
@@ -57,13 +57,13 @@ public class ProductionController {
             Integer count = productionSV.getProductionCount(map);
             result.setBeans(productionList);
             result.setCount(count);
-            result.setReturnCode(Constans.SUCESSS_RETURN_CODE);
+            result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             result.setReturnMessage("查询成功");
 
         }catch(Exception e){
             e.printStackTrace();
             logger.info(e.getMessage(),e);
-            result.setReturnCode(Constans.FAILURE_RETURN_CODE);
+            result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }
         return result;

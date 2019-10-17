@@ -42,7 +42,7 @@ public class DateUtil {
      */
     public static Date string2Date(String date)
     {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(Constans.YYYY_MM_DD_HH_MM_SS);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(SearchConstans.YYYY_MM_DD_HH_MM_SS);
         try{
 
             return simpleDateFormat.parse(date);
@@ -51,6 +51,41 @@ public class DateUtil {
 
             return null;
         }
+
+    }
+
+    public static void main (String[] args){
+
+        //String类型时间格式
+        String dataFormat = SearchConstans.YYYYMMDD;
+        String dataFormat1 = SearchConstans.YYYYMMDDHHMMSS;
+        String dataFormat2 = SearchConstans.YYYYMMDDHHMMSSSSS;
+
+        //标准类型时间格式
+        String dataFormat3 = SearchConstans.YYYY_MM_DD;
+        String dataFormat4 = SearchConstans.YYYY_MM_DD_HH_MM_SS;
+        String dataFormat5 = SearchConstans.YYYY_MM_DD_HH_MM_SS_SSS;
+
+
+
+        String finalTime = getCurrentTime(dataFormat);
+        System.out.println("=============================================="+finalTime);
+
+        String finalTime1 = getCurrentTime(dataFormat1);
+        System.out.println("=============================================="+finalTime1);
+
+        String finalTime2 = getCurrentTime(dataFormat2);
+        System.out.println("=============================================="+finalTime2);
+
+
+        String finalTime3 = getCurrentTime(dataFormat3);
+        System.out.println("=============================================="+finalTime3);
+
+        String finalTime4 = getCurrentTime(dataFormat4);
+        System.out.println("=============================================="+finalTime4);
+
+        String finalTime5 = getCurrentTime(dataFormat5);
+        System.out.println("=============================================="+finalTime5);
 
     }
 }
