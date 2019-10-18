@@ -1,7 +1,7 @@
 /**
- * 首页-名人展示
+ * 首页-名人搜素主页面
  */
-$(document).ready(function (){// innitSearch();//初始化搜索框
+$(document).ready(function (){
 
     <!--页面初始化-->
     portraitInfos();
@@ -41,7 +41,8 @@ $(document).ready(function (){// innitSearch();//初始化搜索框
                     var chineseName = list[i].chineseName;
 
                    str += '<div class='+x+' style=" width:250px; height:250px; margin:20px 0; margin:0 20px; text-align:center; float:left">'+
-                           '<img class='+y+' src='+finalUrl+' style="width:150px;height:150px;border:solid 20px #666666">'+
+                          '<a href="famousDetail.html?famousId='+ famousId + '&portraitName=' + portraitName+'">'+
+                          '<img class='+y+' src='+finalUrl+' style="width:150px;height:150px;border:solid 20px #666666"></a>'+
                                 '<p class='+z+'>'+
                                     '<a href="production.html?famousId=' + famousId + '&portraitName=' + portraitName+'">'+chineseName+'</a>'+
                                 '</p>'+

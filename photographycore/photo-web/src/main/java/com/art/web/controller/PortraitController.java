@@ -37,7 +37,7 @@ public class PortraitController {
      * 首页肖像信息：条件查询
      */
     @RequestMapping(value = "/getPortraitInfos")
-    public Result getPortraitInfos(String chineseName)
+    public Result getPortraitInfos(String chineseName,String famousId)
     {
         Result result = new Result();
         Map<String,Object> fields = new HashMap();
@@ -45,8 +45,10 @@ public class PortraitController {
             if(StringUtil.isNotEmpty(chineseName)){
                 fields.put("chineseName",chineseName);
             }
+            if(StringUtil.isNotEmpty(famousId)){
+                fields.put("famousId",famousId);
+            }
 
-//            List<FamousPortrait> portraitList = famousPortraitSV.getPortraitInfos(map);
 
             //调用搜索引擎
             SearchResult searchResult = famousIndexComponent.searchFamousInfo(fields);
