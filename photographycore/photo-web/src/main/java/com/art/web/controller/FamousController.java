@@ -1,15 +1,16 @@
 package com.art.web.controller;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.art.beans.famous.Famous;
+import com.art.beans.elastic.SearchResult;
+import com.art.beans.famous.FamousPortrait;
 import com.art.beans.famous.Result;
-import com.art.service.famous.IFamousSV;
 import com.art.util.SearchConstans;
+import com.art.web.component.famous.SearchFamousComponent;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,34 +22,29 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/worldFamous")
 public class FamousController {
-    @Reference
-    private IFamousSV famousSV;
-    private static  final Logger logger = Logger.getLogger(FamousController.class);
+    @Autowired
+    private SearchFamousComponent searchFamousComponent;
+    private static final Logger logger = Logger.getLogger(FamousController.class);
 
     /**
      * 世界名人：条件查询
      * @param page
      * @param limit
      */
-    @RequestMapping(value = "/getWorldFamous",method = RequestMethod.POST)
-    public Result getWorldFamous(Famous famous, int page, int limit){
+    @RequestMapping(value = "/getWorldFamous", method = RequestMethod.POST)
+    public Result getWorldFamous(int page, int limit) {
         Result result = new Result();
-        List<Famous> famousList ;
-        Map<String,Object> queryMap = new HashMap<>();
-        if(null== famous) return result;
-//        queryMap = this.changeBean2Map(famous);
+        List<FamousPortrait> famousList;
 
-        try{
-            queryMap.put(SearchConstans.START,limit*(page-1));
-            queryMap.put(SearchConstans.LIMIT,limit);
-            famousList= famousSV.getFamousInfos(queryMap);
-            Integer count = famousSV.getFamousCount(queryMap);
+        try {
+            SearchResult searchResult = searchFamousComponent.searchFamousInfo(new HashMap<>(),page,limit);
+            famousList = map2Bean(searchResult.getDocuments());
             result.setBeans(famousList);
-            result.setCount(count);
+            result.setCount(searchResult.getTotalCount());
             result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             result.setReturnMessage("查询成功");
-        }catch (Exception e){
-            logger.info(e.getMessage(),e);
+        } catch (Exception e) {
+            logger.info(e.getMessage(), e);
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }
@@ -56,29 +52,35 @@ public class FamousController {
     }
 
     /**
-     * bean 转化城 map
-     * @param famous
+     * Map转bean
+     *
+     * @param documents
      * @return
      */
-    private Map<String,Object> changeBean2Map(Famous famous){
+    private List<FamousPortrait> map2Bean(List<Map<String, Object>> documents) {
 
-        String chineseName = famous.getChineseName();
-        String sex = famous.getSex();
-        String career = famous.getCareer();
-        String achievement = famous.getAchievement();
-        String honor = famous.getHonor();
-        String country = famous.getCountry();
+        List<FamousPortrait> famousList = new ArrayList<>();
+        if (null == documents && documents.size() == 0) {
+            return famousList;
+        }
+        for (Map<String, Object> document : documents) {
+            String portraitId = String.valueOf(document.get("portraitId"));
+            String portraitName = String.valueOf(document.get("portraitName"));
+            String relativeLocation = String.valueOf(document.get("relativeLocation"));
+            String famousId = String.valueOf(document.get("famousId"));
+            String chineseName = String.valueOf(document.get("chineseName"));
+            String englishName = String.valueOf(document.get("englishName"));
+            String sex = String.valueOf(document.get("sex"));
+            String career = String.valueOf(document.get("career"));
+            String achievement = String.valueOf(document.get("achievement"));
+            String honor = String.valueOf(document.get("honor"));
+            String country = String.valueOf(document.get("country"));
+            String birthYear = String.valueOf(document.get("birthYear"));
+            FamousPortrait famousPortrait = new FamousPortrait(Long.valueOf(portraitId), portraitName, relativeLocation, Long.valueOf(famousId), chineseName, englishName, sex, career, achievement, honor, country, birthYear);
+            famousList.add(famousPortrait);
+        }
+        return famousList;
 
-        Map<String,Object> queryMap = new HashMap<>();
-        queryMap.put("chineseName",chineseName);
-        queryMap.put("sex",sex);
-        queryMap.put("career",career);
-        queryMap.put("achievement",achievement);
-        queryMap.put("honor",honor);
-        queryMap.put("country",country);
-        return queryMap;
     }
-
-
 
 }

@@ -3,7 +3,7 @@ package com.art.web.component;
 import com.art.beans.elastic.SearchResult;
 import com.art.web.WebApplication;
 import com.art.web.component.famous.ProductionIndexComponent;
-import com.art.web.component.famous.FamousIndexComponent;
+import com.art.web.component.famous.IndexFamousComponent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.List;
 public class IndexComponentTest {
 
     @Autowired
-    private FamousIndexComponent famousIndexComponent;
+    private IndexFamousComponent indexFamousComponent;
     @Autowired
     private ProductionIndexComponent productionIndexComponent;
 
@@ -29,7 +29,7 @@ public class IndexComponentTest {
         for (String id : famousIds) {
             famousList.add(id);
         }
-        SearchResult searchResult = famousIndexComponent.indexFamous(famousList);
+        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);
 //        SearchResult searchResult = productionIndexComponent.productionIndex(famousList);
         System.out.println("新增文档结果==========================结果状态：" + searchResult.getStatus() + " ====成功条数：" + searchResult.getTotalCount() + " ====结果信息：" + searchResult.getReturnMsg());
         System.out.println("" + searchResult.getStatus());

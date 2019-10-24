@@ -7,7 +7,8 @@ import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousPortraitSV;
 import com.art.util.SearchConstans;
 import com.art.util.StringUtil;
-import com.art.web.component.famous.FamousIndexComponent;
+import com.art.web.component.famous.IndexFamousComponent;
+import com.art.web.component.famous.SearchFamousComponent;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class PortraitController {
     @Reference
     private IFamousPortraitSV famousPortraitSV;
     @Autowired
-    FamousIndexComponent famousIndexComponent;
+    SearchFamousComponent searchFamousComponent;
     private final Log logger = LogFactory.getLog(PortraitController.class);
 
     /**
@@ -41,6 +42,7 @@ public class PortraitController {
     {
         Result result = new Result();
         Map<String,Object> fields = new HashMap();
+
         try{
             if(StringUtil.isNotEmpty(chineseName)){
                 fields.put("chineseName",chineseName);
@@ -49,9 +51,8 @@ public class PortraitController {
                 fields.put("famousId",famousId);
             }
 
-
             //调用搜索引擎
-            SearchResult searchResult = famousIndexComponent.searchFamousInfo(fields);
+            SearchResult searchResult = searchFamousComponent.searchFamousInfo(fields,0,0);
             List<Map<String,Object>> documents =searchResult.getDocuments();
             List<FamousPortrait> portraitList= map2Bean(documents);
 

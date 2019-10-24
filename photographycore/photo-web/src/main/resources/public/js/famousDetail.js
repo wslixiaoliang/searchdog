@@ -64,7 +64,7 @@ function getFamousDetail(famousId) {
                     var proImg = document.createElement("img");
                     proImg.setAttribute("class", "portrait");
                     proImg.setAttribute("src", finalUrl);
-                    proImg.setAttribute("style", "width:55px;height:55px;border-radius:50%;");
+                    proImg.setAttribute("style", "width:100px;height:100px;border-radius:50%;");
                     detailDiv.appendChild(proImg);
 
                     //中文名
@@ -123,11 +123,6 @@ function getFamousDetail(famousId) {
                     honor.innerText = list[i].honor;
                     detailDiv.appendChild(honor);
                 }
-
-
-
-
-
 
             }
         }

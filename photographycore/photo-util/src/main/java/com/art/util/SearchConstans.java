@@ -10,6 +10,7 @@ public class SearchConstans {
      */
     public static final String START = "start";
     public static final String LIMIT = "limit";
+    public static final String PAGE = "page";
 
     /**
      * 返回编码

@@ -1,7 +1,6 @@
 package com.art.service.famous;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.art.beans.famous.Famous;
 import com.art.beans.famous.FamousPortrait;
 import com.art.dao.famous.FamousPortraitDAO;
 import org.springframework.beans.factory.annotation.Autowired;

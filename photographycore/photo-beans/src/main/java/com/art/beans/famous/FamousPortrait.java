@@ -12,7 +12,6 @@ public class FamousPortrait implements Serializable{
     private long portraitId;//肖像ID
     private String portraitName;//肖像名称
     private String relativeLocation;//相对位置
-
     private long famousId;// 名人ID
     private String chineseName;//中文名
     private String englishName;//英文名
@@ -22,6 +21,7 @@ public class FamousPortrait implements Serializable{
     private String honor;//获得奖项
     private String country;//国籍
     private String birthYear;//出生年月
+
 
     //无参构造方法
     public FamousPortrait() {

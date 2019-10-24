@@ -10,21 +10,24 @@ import com.art.web.component.elastic.IndexComponent;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 新增名人索引
+ * @author wslixiaoliang
+ */
 @Component
-public class FamousIndexComponent {
+public class IndexFamousComponent {
 
     @Autowired
-    private IndexComponent searchDocumentsComponent;
+    private IndexComponent indexFamousComponent;
     @Reference
     private IFamousPortraitSV famousPortraitSV;
-    private static Logger LOGGER  = Logger.getLogger(FamousIndexComponent.class);
+    private static Logger LOGGER  = Logger.getLogger(IndexFamousComponent.class);
     private static int count = 0;
 
     public SearchResult indexFamous(List<String> famousIds)
@@ -40,7 +43,7 @@ public class FamousIndexComponent {
             if(null!=document && document.containsKey(SearchConstans.Portrait.FAMOUS_ID)){
                 String famousId = String.valueOf(document.get(SearchConstans.Portrait.FAMOUS_ID));
                 try {
-                    searchResult = searchDocumentsComponent.createOrUpdating(SearchConstans.Portrait.INDEX_NAME, SearchConstans.Portrait.INDEX_TYPE,famousId,document);
+                    searchResult = indexFamousComponent.createOrUpdating(SearchConstans.Portrait.INDEX_NAME, SearchConstans.Portrait.INDEX_TYPE,famousId,document);
                     if(SearchConstans.SUCESSS_RETURN_CODE.equals(String.valueOf(searchResult.getReturnCode()))){
                         count++;
                         searchResult.setTotalCount(count);
@@ -104,22 +107,5 @@ public class FamousIndexComponent {
         return documents;
     }
 
-    /**
-     * 查询索引
-     * @param fields
-     * @return
-     */
-    public SearchResult searchFamousInfo(Map<String,Object> fields){
-
-        SearchResult searchResult;
-        String indexName = SearchConstans.FamousIndex.INDEX_NAME;
-        String indexType = SearchConstans.FamousIndex.INDEX_TYPE;
-        if(null!=fields && fields.size() >0){
-            searchResult = searchDocumentsComponent.searching(indexName,indexType,fields);
-        }else{
-            searchResult = searchDocumentsComponent.searching(indexName,indexType);
-        }
-        return searchResult;
-    }
 
 }

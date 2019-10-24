@@ -1,8 +1,7 @@
 package com.art.web.controller;
 
-import com.art.beans.famous.Famous;
+import com.art.beans.famous.FamousPortrait;
 import com.art.beans.famous.Result;
-import com.art.util.SearchConstans;
 import com.art.web.WebApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,20 +18,17 @@ public class FamousControllerTest {
     @Autowired
     private FamousController collegeController;
 
-    @Autowired
-    private FileDownloadController fileDownloadController;
-
     @Test
     public void test(){
-        Famous famous = new Famous();
+        FamousPortrait famous = new FamousPortrait();
         famous.setChineseName("屠呦呦");
         Integer page = 1;
         Integer limit = 50;
-        Result result = collegeController.getWorldFamous(famous,page,limit);
+        Result result = collegeController.getWorldFamous(page,limit);
         System.out.println("=====================查询结果如下==============");
-        List<Famous> list = result.getBeans();
+        List<FamousPortrait> list = result.getBeans();
         if(result!=null){
-            for(Famous famous1:list){
+            for(FamousPortrait famous1:list){
                 System.out.println(famous1.getFamousId());
                 System.out.println(famous1.getSex());
                 System.out.println(famous1.getChineseName());

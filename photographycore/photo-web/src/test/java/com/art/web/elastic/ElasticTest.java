@@ -3,6 +3,7 @@ package com.art.web.elastic;
 import com.art.beans.elastic.SearchResult;
 import com.art.web.WebApplication;
 import com.art.web.component.elastic.IndexComponent;
+import com.art.web.component.elastic.SearchComponent;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +23,7 @@ import java.util.Map;
 public class ElasticTest {
 
     @Autowired(required = false)
-    private IndexComponent searchDocumentsComponent;
+    private SearchComponent searchDocumentsComponent;
     private static final Logger LOGGER = Logger.getLogger(ElasticTest.class);
 
     @Test
