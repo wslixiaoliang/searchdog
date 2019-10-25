@@ -30,7 +30,7 @@ public class SearchComponent {
     /**
      * 搜索引擎：统一查询接口
      * @param params 封装基本参数 例如：索引名称，索引类型，索引文档ID
-     * @param termFields 精确匹配字段，即要搜索的索引字段
+     * @param termFields 精确匹配字段
      * @param page 分页参数（当前页数）
      * @param limit 每页数据条数
      * @return
@@ -49,15 +49,19 @@ public class SearchComponent {
             searchResult = searching(indexName,indexType,docId);
         }
         if(null!=termFields && termFields.size()>0){
-            searchResult = searching(indexName,indexType,termFields);
+           if(0==page && 0==limit){
+               searchResult = searching(indexName,indexType,termFields);
+           }else{
+               searchResult = searching(indexName,indexType,termFields,page,limit);
+           }
         }
-        if(termFields.size()==0 && 0!=page && 0!=limit){
-            searchResult = searching(indexName,indexType,page,limit);
+        if(termFields.size()==0){
+            if(0==page && 0==limit){
+                searchResult = searching(indexName,indexType);
+            }else{
+                searchResult = searching(indexName,indexType,page,limit);
+            }
         }
-        if(termFields.size()==0 && 0==page && 0==limit){
-            searchResult = searching(indexName,indexType);
-        }
-
         return searchResult;
 
     }
@@ -131,6 +135,64 @@ public class SearchComponent {
                     searchHits.getTotalHits();
                     SearchHit[] hits = searchHits.getHits();
                     searchResult.setTotalCount(hits.length);
+
+                    //处理查询结果（循环放入listMap）
+                    for (SearchHit searchHit : hits) {
+                        Map<String, Object> sourceAsMap = searchHit.getSourceAsMap();
+                        documents.add(sourceAsMap);
+                    }
+                }
+                searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
+                searchResult.setReturnMsg("查询成功……");
+            } catch (Exception e) {
+                LOGGER.error(e.getMessage(),e);
+                searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
+                searchResult.setReturnMsg("查询失败……");
+            }
+        }
+        searchResult.setDocuments(documents);
+        return searchResult;
+    }
+
+    /**
+     * 精确匹配查询：指定字段分页查询
+     * @param indexName
+     * @param indexType
+     * @param termFields
+     * @return
+     */
+    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields,int page,int limit)
+    {
+        SearchResult searchResult = new SearchResult();
+        List<Map<String, Object>> documents = new ArrayList<>();
+        SearchResponse response;
+        if (null != termFields && termFields.size() > 0)
+        {
+            try {
+                for (Map.Entry<String, Object> entry : termFields.entrySet()) {
+
+                    SearchRequestBuilder searchRequestBuilder = EngineClient.getConnection().prepareSearch(indexName).setTypes(indexType)
+                            .setQuery(QueryBuilders.matchAllQuery());
+
+                    long totalHits = searchRequestBuilder.get().getHits().getTotalHits();//总条数
+                    final int  start = (page-1)*limit;
+
+                    String fieldName = entry.getKey();
+                    String fieldValue = String.valueOf(entry.getValue());
+                    response = EngineClient.getConnection().prepareSearch(indexName)
+                            .setTypes(indexType)
+                            .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)//查询类型为：精确查询
+                            .setQuery(QueryBuilders.matchQuery(fieldName, fieldValue))//设置查询字段
+                            .setFrom(start)//设置查询数据的起始位置
+                            .setSize(limit)//设置返回数据的最大条数
+                            .setExplain(true)// 设置是否按查询匹配度排序
+                            .setTimeout(new TimeValue(60, TimeUnit.SECONDS))
+                            .execute()
+                            .actionGet();
+                    SearchHits searchHits = response.getHits();
+                    searchHits.getTotalHits();
+                    SearchHit[] hits = searchHits.getHits();
+                    searchResult.setTotalCount(Integer.parseInt(String.valueOf(totalHits)));
 
                     //处理查询结果（循环放入listMap）
                     for (SearchHit searchHit : hits) {

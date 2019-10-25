@@ -2,92 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="FAMOUS-819 新增搜索引擎底层增删改查接口">
-      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/consumer/ConsumerInformation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/elastic/SearchResult.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/famous/FamousPortrait.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/famous/FamousProduction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-beans/target/classes/com/art/beans/famous/Result.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-beans/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-beans/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/com/art/dao/consumer/ConsumerInformationDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/com/art/dao/famous/FamousPortraitDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/com/art/dao/famous/FamousProductionDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mapper/FamousPortraintMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mapper/FamousProductionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/target/classes/mybatis/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/ServiceApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/service/famous/FamousPortraitSVImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/classes/com/art/service/famous/FamousProductionSVImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service-impl/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service/target/classes/com/art/service/famous/IFamousPortraitSV.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service/target/classes/com/art/service/famous/IFamousProductionSV.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/DeleteComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchFamousComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/WebApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/component/elastic/EngineClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/component/elastic/IndexComponent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/component/famous/ProductionIndexComponent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/controller/FamousController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/controller/FileDownloadController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/controller/PortraitController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/com/art/web/controller/ProductionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/css/famous.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/css/portrait.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/css/production.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/css/productionList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/jquery/jquery-3.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/jquery/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/js/famous.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/js/portrait.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/js/production.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/js/productionList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/famous.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/portrait.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/production.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/modules/productionList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/public/page/jquery.page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/target/classes/static/helloword.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/CommentInformation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/Famous.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousPortrait.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousPortrait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/famous/CommentDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/famous/FamousDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-dao/target/classes/mapper/CommentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-dao/target/classes/mapper/ConsumerMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-dao/target/classes/mapper/FamousMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/consumer/ConsumerInformationSVImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/CommentInfoSVImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousSVImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/consumer/ConsumerInformationSVImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/FamousSVImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/consumer/IConsumerInformationSV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/ICommentInfoSV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/IFamousSV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/ConsumerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/FamousMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/FamousIndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/IndexFamousComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/famousDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/famousDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -288,7 +209,17 @@
     <panes>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -581,14 +512,7 @@
       <workItem from="1571621012069" duration="2828000" />
       <workItem from="1571709029094" duration="3099000" />
       <workItem from="1571738191357" duration="27818000" />
-      <workItem from="1571924586288" duration="6785000" />
-    </task>
-    <task id="LOCAL-00001" summary="PHOTO-109 项目初始化">
-      <created>1553517592983</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1553517592983</updated>
+      <workItem from="1571924586288" duration="10142000" />
     </task>
     <task id="LOCAL-00002" summary="PHOTO-109 项目初始化">
       <created>1553517800468</created>
@@ -926,7 +850,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571377865774</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="FAMOUS-1025 搜索接口统一优化，统一入口">
+      <created>1571933526563</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1571933526563</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -962,7 +893,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="706500000" />
+    <option name="totallyTimeSpent" value="709857000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="all">
@@ -998,7 +929,7 @@
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32823366" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.42280945" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.5730181" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
       <window_info anchor="right" id="Maven" order="2" weight="0.3297568" />
@@ -1015,7 +946,7 @@
       <window_info anchor="right" id="Theme Preview" order="13" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.34191704" />
+      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.34191704" />
       <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1040,7 +971,7 @@
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32823366" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="17" visible="true" weight="0.5146036" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.42280945" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
       <window_info anchor="right" id="Maven" order="2" weight="0.3297568" />
@@ -1131,7 +1062,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-新增肖像查询接口及上传下载接口-20190115" />
     <MESSAGE value="FAMOUS-新增名人作品展示页面-20190516" />
     <MESSAGE value="FAMOUS-新增名人作品展示页面调试-20190517" />
     <MESSAGE value="FAMOUS-名人作品展示页面调试-20190517" />
@@ -1156,7 +1086,8 @@
     <MESSAGE value="FAMOUS-1015 前端搜索接口及搜索样式改造" />
     <MESSAGE value="FAMOUS-1017 前端搜索正式接入搜索引擎" />
     <MESSAGE value="FAMOUS-1017 点击头像新增人物简介" />
-    <option name="LAST_COMMIT_MESSAGE" value="FAMOUS-1017 点击头像新增人物简介" />
+    <MESSAGE value="FAMOUS-1025 搜索接口统一优化，统一入口" />
+    <option name="LAST_COMMIT_MESSAGE" value="FAMOUS-1025 搜索接口统一优化，统一入口" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
@@ -1351,16 +1282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/DeleteComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="48" lean-forward="true" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1482,16 +1403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchFamousComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1506,6 +1417,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/DeleteComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="38" column="48" lean-forward="true" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
