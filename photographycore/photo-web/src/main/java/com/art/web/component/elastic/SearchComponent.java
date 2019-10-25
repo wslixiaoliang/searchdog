@@ -35,7 +35,7 @@ public class SearchComponent {
      * @param limit 每页数据条数
      * @return
      */
-    public SearchResult searching(Map<String,Object> params, Map<String,Object> termFields,int page,int limit)
+    public SearchResult searching(Map<String,Object> params, Map<String,Object> termFields,int page,int limit)throws Exception
     {
         SearchResult searchResult = new SearchResult();
 
@@ -59,6 +59,7 @@ public class SearchComponent {
             if(0==page && 0==limit){
                 searchResult = searching(indexName,indexType);
             }else{
+
                 searchResult = searching(indexName,indexType,page,limit);
             }
         }
@@ -75,15 +76,17 @@ public class SearchComponent {
      * @param docId
      */
 
-    public SearchResult searching(String indexName, String indexType, String docId)
-    {
+    public SearchResult searching(String indexName, String indexType, String docId) throws Exception{
+
         SearchResult searchResult = new SearchResult();
         GetResponse response =null;
         Map<String,Object> document;
         List<Map<String,Object>> list = new ArrayList<>();
+
         try{
-            if(StringUtil.isNotEmpty(indexName)&& StringUtil.isNotEmpty(indexType)&&StringUtil.isNotEmpty(docId))
-            {
+            if(StringUtil.isNotEmpty(indexName)&& StringUtil.isNotEmpty(indexType)&&StringUtil.isNotEmpty(docId)) {
+
+
                 response = EngineClient.getConnection().prepareGet(indexName,indexType,docId).execute().actionGet();
             }
             document = response.getSourceAsMap();
@@ -110,19 +113,23 @@ public class SearchComponent {
      * @param termFields
      * @return
      */
-    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields)
+    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields)throws Exception
     {
         SearchResult searchResult = new SearchResult();
         List<Map<String, Object>> documents = new ArrayList<>();
-        SearchResponse response;
+
+        //初始化：搜索对象
+        SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
+        SearchResponse searchResponse;
         if (null != termFields && termFields.size() > 0)
         {
             try {
                 for (Map.Entry<String, Object> entry : termFields.entrySet()) {
                     String fieldName = entry.getKey();
                     String fieldValue = String.valueOf(entry.getValue());
-                    response = EngineClient.getConnection().prepareSearch(indexName)
-                            .setTypes(indexType)
+
+                    //执行搜索
+                    searchResponse = searchRequestBuilder
                             .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)//查询类型为：精确查询
                             .setQuery(QueryBuilders.matchQuery(fieldName, fieldValue))//设置查询字段
                             .setFrom(0)//设置查询数据的起始位置
@@ -131,7 +138,9 @@ public class SearchComponent {
                             .setTimeout(new TimeValue(60, TimeUnit.SECONDS))
                             .execute()
                             .actionGet();
-                    SearchHits searchHits = response.getHits();
+
+                    //解析返回结果
+                    SearchHits searchHits = searchResponse.getHits();
                     searchHits.getTotalHits();
                     SearchHit[] hits = searchHits.getHits();
                     searchResult.setTotalCount(hits.length);
@@ -160,27 +169,30 @@ public class SearchComponent {
      * @param indexType
      * @param termFields
      * @return
+     * 注：setFetchSource()，必选返回字段，忽略字段；addStoredField() 排序字段
+     *
      */
-    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields,int page,int limit)
+    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields,int page,int limit)throws Exception
     {
         SearchResult searchResult = new SearchResult();
         List<Map<String, Object>> documents = new ArrayList<>();
-        SearchResponse response;
+        SearchResponse searchResponse;
         if (null != termFields && termFields.size() > 0)
         {
             try {
                 for (Map.Entry<String, Object> entry : termFields.entrySet()) {
 
-                    SearchRequestBuilder searchRequestBuilder = EngineClient.getConnection().prepareSearch(indexName).setTypes(indexType)
-                            .setQuery(QueryBuilders.matchAllQuery());
+                    //初始化：搜索对象
+                    SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
 
-                    long totalHits = searchRequestBuilder.get().getHits().getTotalHits();//总条数
+                    long totalHits = searchRequestBuilder.setQuery(QueryBuilders.matchAllQuery()).get().getHits().getTotalHits();//总条数
                     final int  start = (page-1)*limit;
 
                     String fieldName = entry.getKey();
                     String fieldValue = String.valueOf(entry.getValue());
-                    response = EngineClient.getConnection().prepareSearch(indexName)
-                            .setTypes(indexType)
+
+                    //执行搜索
+                    searchResponse = searchRequestBuilder
                             .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)//查询类型为：精确查询
                             .setQuery(QueryBuilders.matchQuery(fieldName, fieldValue))//设置查询字段
                             .setFrom(start)//设置查询数据的起始位置
@@ -189,7 +201,9 @@ public class SearchComponent {
                             .setTimeout(new TimeValue(60, TimeUnit.SECONDS))
                             .execute()
                             .actionGet();
-                    SearchHits searchHits = response.getHits();
+
+                    //搜索结果解析
+                    SearchHits searchHits = searchResponse.getHits();
                     searchHits.getTotalHits();
                     SearchHit[] hits = searchHits.getHits();
                     searchResult.setTotalCount(Integer.parseInt(String.valueOf(totalHits)));
@@ -222,8 +236,11 @@ public class SearchComponent {
         SearchResult searchResult = new SearchResult();
         List<Map<String,Object>> documents = new ArrayList<>();
         try{
-            SearchRequestBuilder searchRequestBuilder=EngineClient.getConnection().prepareSearch(indexName).setTypes(indexType).setSize(20);
-            SearchResponse searchResponse=searchRequestBuilder.setQuery(QueryBuilders.matchAllQuery()).execute().actionGet(); // 查询所有
+            //初始化：搜索对象
+            SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
+
+            //执行搜索
+            SearchResponse searchResponse = searchRequestBuilder.setSize(20).setQuery(QueryBuilders.matchAllQuery()).execute().actionGet(); // 查询所有
 
             SearchHits searchHits=searchResponse.getHits();
             SearchHit[] hits = searchHits.getHits();
@@ -254,18 +271,26 @@ public class SearchComponent {
      * @param limit
      * @return
      */
-    public SearchResult searching(String indexName,String indexType ,int page,int limit)
+    public SearchResult searching(String indexName,String indexType ,int page,int limit) throws Exception
     {
         SearchResult searchResult = new SearchResult();
         List<Map<String,Object>> documents = new ArrayList<>();
-        SearchRequestBuilder searchRequestBuilder = EngineClient.getConnection().prepareSearch(indexName).setTypes(indexType)
-                .setQuery(QueryBuilders.matchAllQuery());
 
-        long totalHits = searchRequestBuilder.get().getHits().getTotalHits();//总条数
+        //初始化：搜索对象
+        SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
+
+        //查询文档总数量
+        long totalHits = searchRequestBuilder
+                .setQuery(QueryBuilders.matchAllQuery())
+                .get().getHits()
+                .getTotalHits();//总条数
         final int  start = (page-1)*limit;
 
-        searchRequestBuilder.setFrom(start).setSize(limit);
-        SearchResponse searchResponse = searchRequestBuilder.get();
+        //执行：分页查询操作
+        SearchResponse searchResponse = searchRequestBuilder
+                .setFrom(start)
+                .setSize(limit)
+                .get();
         SearchHits searchHits = searchResponse.getHits();
         SearchHit[] hits = searchHits.getHits();
         searchResult.setTotalCount(Integer.parseInt(String.valueOf(totalHits)));
@@ -280,5 +305,18 @@ public class SearchComponent {
         return searchResult;
 
     }
+
+    /**
+     * 静态内部类：构造搜索对象 SearchRequestBuilder
+     */
+    public static class SearchrequestFactory{
+
+            public static SearchRequestBuilder build(String indexName, String indexType) throws Exception{
+
+                return EngineClient.getConnection().prepareSearch(indexName).setTypes(indexType);
+            }
+    }
+
+
 
 }

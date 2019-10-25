@@ -36,7 +36,12 @@ public class ElasticTest {
 
 //        SearchResult createResult = searchDocumentsComponent.createOrUpdating("photo.search_keyword","search_keyword","100",document);//新增/更新
 //        SearchResult searchIdResult = searchDocumentsComponent.searching("photo.search_keyword","search_keyword","100");//主键查询
-        SearchResult searchResult = searchDocumentsComponent.searching("world.famous_production","famous_production",document);//条件查询
+        SearchResult searchResult = null;//条件查询
+        try {
+            searchResult = searchDocumentsComponent.searching("world.famous_production","famous_production",document);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 //        SearchResult deleteResult = searchDocumentsComponent.deleting("photo.search_keyword","search_keyword","100");//删除文档
 
 //        System.out.println("新增结果：======================"+createResult);

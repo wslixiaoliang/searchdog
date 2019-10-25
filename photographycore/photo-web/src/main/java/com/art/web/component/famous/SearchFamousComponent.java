@@ -19,7 +19,7 @@ public class SearchFamousComponent
      * @param fields
      * @return
      */
-    public SearchResult searchFamousInfo(Map<String,Object> fields,int page ,int limit)
+    public SearchResult searchFamousInfo(Map<String,Object> fields,int page ,int limit) throws Exception
     {
         //索引名称和索引类型
         String indexName = SearchConstans.FamousIndex.INDEX_NAME;
