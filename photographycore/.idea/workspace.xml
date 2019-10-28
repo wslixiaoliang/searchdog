@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="FAMOUS-819 新增搜索引擎底层增删改查接口">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -117,7 +118,6 @@
         <option value="$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/CommentInfoSVImplTest.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/productionList.css" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/portrait.css" />
@@ -156,6 +156,7 @@
         <option value="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java" />
         <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/ServiceApplication.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" />
       </list>
     </option>
   </component>
@@ -207,19 +208,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,84 +284,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.art.util.CommonUtil" />
-      <module name="photo-util" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.art.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.art.util.FileUtil" />
-      <module name="photo-util" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.art.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JsonUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.art.util.JsonUtil" />
-      <module name="photo-util" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.art.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ElasticTest.testSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="photo-web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.art.web.elastic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.art.web.elastic" />
-      <option name="MAIN_CLASS_NAME" value="com.art.web.elastic.ElasticTest" />
-      <option name="METHOD_NAME" value="testSearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IndexComponentTest.testIndexCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="photo-web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.art.web.component.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.art.web.component" />
-      <option name="MAIN_CLASS_NAME" value="com.art.web.component.IndexComponentTest" />
-      <option name="METHOD_NAME" value="testIndexCreate" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -417,23 +332,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.JsonUtil" />
-      <item itemvalue="Application.FileUtil" />
-      <item itemvalue="Application.CommonUtil" />
-      <item itemvalue="JUnit.ElasticTest.testSearch" />
-      <item itemvalue="JUnit.IndexComponentTest.testIndexCreate" />
       <item itemvalue="Spring Boot.WebApplication" />
       <item itemvalue="Spring Boot.ServiceApplication" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.IndexComponentTest.testIndexCreate" />
-        <item itemvalue="JUnit.ElasticTest.testSearch" />
-        <item itemvalue="Application.CommonUtil" />
-        <item itemvalue="Application.FileUtil" />
-        <item itemvalue="Application.JsonUtil" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -516,14 +417,8 @@
       <workItem from="1572227411632" duration="535000" />
       <workItem from="1572228574503" duration="3389000" />
       <workItem from="1572233038423" duration="3180000" />
-      <workItem from="1572239756413" duration="316000" />
-    </task>
-    <task id="LOCAL-00004" summary="mysql及mybatis添加-20190428">
-      <created>1556455009795</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1556455009795</updated>
+      <workItem from="1572239756413" duration="2888000" />
+      <workItem from="1572274232276" duration="186000" />
     </task>
     <task id="LOCAL-00005" summary="添加mapper扫描及service扫描">
       <created>1556527779463</created>
@@ -861,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571999942811</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="FAMOUS-1028 新增回车搜索功能">
+      <created>1572240226710</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1572240226711</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -897,7 +799,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="723197000" />
+    <option name="totallyTimeSpent" value="725955000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="all">
@@ -908,7 +810,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="811" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.37553647" />
+      <window_info content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.2167382" />
       <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -923,7 +825,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32684284" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.33240613" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32825485" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.26703754" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.32963988" />
@@ -1066,7 +968,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-名人作品展示页面调试-20190517" />
     <MESSAGE value="FAMOUS-作品页面展示多个作品调试-20190520" />
     <MESSAGE value="FAMOUS-个人作品页展示多个作品及新增头像调试-20190520" />
     <MESSAGE value="FAMOUS-作品展览馆样式调试新增摘要字段-20190520" />
@@ -1091,7 +992,8 @@
     <MESSAGE value="FAMOUS-1025 搜索接口统一优化，统一入口" />
     <MESSAGE value="FAMOUS-1025 新增精确匹配，分页查询底层接口" />
     <MESSAGE value="FAMOUS-1025 新增搜索对象初始化静态内部类" />
-    <option name="LAST_COMMIT_MESSAGE" value="FAMOUS-1025 新增搜索对象初始化静态内部类" />
+    <MESSAGE value="FAMOUS-1028 新增回车搜索功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="FAMOUS-1028 新增回车搜索功能" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
@@ -1422,8 +1324,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="-12">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
           </folding>
@@ -1432,8 +1334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="285">
+          <caret line="19" column="90" lean-forward="true" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
