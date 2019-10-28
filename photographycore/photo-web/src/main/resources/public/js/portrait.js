@@ -3,16 +3,39 @@
  */
 $(document).ready(function (){
 
-    <!--页面初始化-->
+    <!--页面初始化搜索-->
     portraitInfos();
-    <!--点击搜索-->
+
+    <!--按下回车键搜索-->
+    pressEnterSearch();
+
+    <!--点击按钮搜索-->
+    buttionSearch();
+});
+
+/**
+ * 按下回车键：搜索（与点击按钮搜索功能相同）
+ */
+function pressEnterSearch(){
+    $("#chineseName").keypress(function(event) {
+        if (event.keyCode == 13) {
+            portraitInfos();
+        }
+    });
+}
+
+/**
+ * 点击按钮：搜索
+ */
+function buttionSearch() {
+
     $("#search").click(function(){
         portraitInfos();
     });
+}
 
-});
 
-    <!--首页条件查询入口-->
+    <!--首页搜索入口-->
     function portraitInfos(){
         var chineseName = $("#chineseName").val();<!--获取搜索关键词-->
         $.ajax({
