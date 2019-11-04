@@ -96,4 +96,11 @@ public class SearchConstans {
 
     }
 
+    public interface ProductonIndex
+    {
+        public static final String INDEX_NAME = "world.famous_production";//索引名称
+        public static final String INDEX_TYPE ="famous_production";//索引类型
+
+    }
+
 }

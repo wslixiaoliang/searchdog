@@ -2,14 +2,18 @@ package com.art.web.controller;
 
 import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.art.beans.elastic.SearchResult;
+import com.art.beans.famous.FamousPortrait;
 import com.art.beans.famous.FamousProduction;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousProductionSV;
 import com.art.util.SearchConstans;
+import com.art.web.component.famous.SearchFamousComponent;
+import com.art.web.component.famous.SearchProductionComponent;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,6 +29,8 @@ public class ProductionController {
 
     @Reference
     private IFamousProductionSV productionSV;
+    @Autowired
+    SearchProductionComponent searchProductionComponent;
     private final Logger logger = Logger.getLogger(ProductionController.class);
 
     /**
@@ -40,21 +46,21 @@ public class ProductionController {
         Result result = new Result();
         List<FamousProduction> productionList ;
         try{
-            Map<String,Object> map = new HashMap();
-            map.put(SearchConstans.START,limit*(page-1));
-            map.put(SearchConstans.LIMIT,limit);
+            Map<String,Object> fields = new HashMap();
+
             if(StringUtils.isNotEmpty(production.getChineseName())){
-                map.put("chineseName",production.getChineseName());
-            }else{
-                map.put("chineseName","");
+                fields.put("chineseName",production.getChineseName());
             }
             if(StringUtils.isNotEmpty(production.getProductionName())){
-                map.put("productionName",production.getProductionName());
-            }else{
-                map.put("productionName","");
+                fields.put("productionName",production.getProductionName());
             }
-            productionList = productionSV.getProductionInfos(map);
-            Integer count = productionSV.getProductionCount(map);
+
+            //调用搜索引擎
+            SearchResult searchResult = searchProductionComponent.searchProductions(fields,page,limit);
+            List<Map<String,Object>> documents =searchResult.getDocuments();
+            int count = searchResult.getTotalCount();
+            productionList= map2Bean(documents);
+
             result.setBeans(productionList);
             result.setCount(count);
             result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
@@ -68,6 +74,38 @@ public class ProductionController {
         }
         return result;
     }
+
+
+    private List<FamousProduction> map2Bean(List<Map<String,Object>> documents){
+
+        List<FamousProduction> productionList = new ArrayList<>();
+
+        if(null==documents && documents.size()==0){
+            return productionList;
+        }
+
+        for(Map<String,Object> document:documents){
+
+            long famousId  = Long.parseLong(String.valueOf(document.get("famousId")));//名人ID
+            long productionId  = Long.parseLong(String.valueOf(document.get("productionId")));//作品ID
+
+            String portraitName = String.valueOf(document.get("portraitName"));//肖像名称
+            String chineseName = String.valueOf(document.get("chineseName"));//中文名
+            String englishName = String.valueOf(document.get("englishName"));//英文名
+
+            String productionName = String.valueOf(document.get("productionName"));//作品名称
+            String publishedYear = String.valueOf(document.get("publishedYear"));//发表年份
+            String summaryInfo = String.valueOf(document.get("summaryInfo"));//作品摘要
+            String productionContent = String.valueOf(document.get("productionContent"));//作品内容
+
+            FamousProduction production = new FamousProduction(productionId, famousId, portraitName, chineseName, englishName, productionName, publishedYear, summaryInfo, productionContent);
+            productionList.add(production);
+
+        }
+        return productionList;
+    }
+
+
 
     /**
      * 单个 && 多作品查询

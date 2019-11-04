@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="FAMOUS-819 新增搜索引擎底层增删改查接口">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,7 +51,7 @@
     <favorites_list name="photographycore" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -73,7 +76,6 @@
       <find>getProductionInfos</find>
       <find>pageNo</find>
       <find>var a</find>
-      <find>FamousProductionDAO</find>
       <find>拼接</find>
       <find>#428bca</find>
       <find>CommentDAO</find>
@@ -90,6 +92,9 @@
       <find>includes</find>
       <find>build</find>
       <find>chineseName</find>
+      <find>FamousProductionDAO</find>
+      <find>proDiv</find>
+      <find>productionSV</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -106,7 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Desktop/helloZip.java" />
         <option value="$PROJECT_DIR$/photo-util/pom.xml" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/FileUtil.java" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/dateUtil.java" />
@@ -119,9 +123,7 @@
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" />
         <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/productionList.css" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/portrait.css" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/css/famous.css" />
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/FamousIndexComponet.java" />
         <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java" />
@@ -143,12 +145,10 @@
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/DeleteComponent.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/IndexComponent.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" />
-        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" />
         <option value="$PROJECT_DIR$/photo-service-impl/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousSVImpl.java" />
         <option value="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/IFamousSV.java" />
         <option value="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/controller/FamousControllerTest.java" />
-        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" />
@@ -157,6 +157,11 @@
         <option value="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/ServiceApplication.java" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" />
         <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" />
+        <option value="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java" />
+        <option value="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" />
       </list>
     </option>
   </component>
@@ -208,9 +213,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="photographycore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="photographycore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,13 +438,12 @@
       <workItem from="1572233038423" duration="3180000" />
       <workItem from="1572239756413" duration="2888000" />
       <workItem from="1572274232276" duration="186000" />
-    </task>
-    <task id="LOCAL-00005" summary="添加mapper扫描及service扫描">
-      <created>1556527779463</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1556527779463</updated>
+      <workItem from="1572274422957" duration="235000" />
+      <workItem from="1572312800071" duration="345000" />
+      <workItem from="1572402683384" duration="17212000" />
+      <workItem from="1572509938928" duration="4232000" />
+      <workItem from="1572832547909" duration="3177000" />
+      <workItem from="1572869520321" duration="3406000" />
     </task>
     <task id="LOCAL-00006" summary="添加mapper扫描及service扫描">
       <created>1556541683340</created>
@@ -763,7 +781,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572240226711</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="FAMOUS-1028 新增网站汉语名称">
+      <created>1572274557847</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1572274557848</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -799,7 +824,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="725955000" />
+    <option name="totallyTimeSpent" value="754562000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="all">
@@ -810,7 +835,50 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="811" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.2167382" />
+      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.31688127" />
+      <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Web" order="5" side_tool="true" weight="0.35193133" />
+      <window_info id="Favorites" order="6" side_tool="true" weight="0.35193133" />
+      <window_info id="Designer" order="7" />
+      <window_info anchor="bottom" id="Thumbnails" weight="0.32962447" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.40890124" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2364395" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.24200279" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32684284" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.33240613" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32825485" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.26703754" />
+      <window_info anchor="bottom" id="Spring" order="10" weight="0.32963988" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" weight="0.4742698" />
+      <window_info anchor="bottom" id="Reviews" order="12" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.51256984" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32823366" />
+      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.5646732" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
+      <window_info anchor="right" id="Maven" order="2" visible="true" weight="0.22317597" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.24964234" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.24964234" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Module Dependencies" order="6" weight="0.32969153" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32969153" />
+      <window_info anchor="right" id="News Feed" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32969153" />
+      <window_info anchor="right" id="Bean Validation" order="12" weight="0.32969153" />
+      <window_info anchor="right" id="Theme Preview" order="13" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.31688127" />
       <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -835,52 +903,10 @@
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32823366" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.5730181" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.7538248" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
       <window_info anchor="right" id="Maven" order="2" weight="0.22317597" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.24964234" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.24964234" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Module Dependencies" order="6" weight="0.32969153" />
-      <window_info anchor="right" id="Database" order="7" weight="0.32969153" />
-      <window_info anchor="right" id="News Feed" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Capture Analysis" order="10" />
-      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32969153" />
-      <window_info anchor="right" id="Bean Validation" order="12" weight="0.32969153" />
-      <window_info anchor="right" id="Theme Preview" order="13" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" x="559" y="72" width="481" height="716" id="Project" order="0" visible="true" weight="0.34191704" />
-      <window_info id="Structure" order="1" sideWeight="0.4944134" weight="0.24964234" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Web" order="5" side_tool="true" weight="0.35193133" />
-      <window_info id="Favorites" order="6" side_tool="true" weight="0.35193133" />
-      <window_info id="Designer" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.40890124" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34353268" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.24200279" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32684284" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.33333334" />
-      <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32825485" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.26703754" />
-      <window_info anchor="bottom" id="Spring" order="10" weight="0.32963988" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" weight="0.4742698" />
-      <window_info anchor="bottom" id="Reviews" order="12" />
-      <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.51256984" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32823366" />
-      <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.5730181" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="1" weight="0.2744216" />
-      <window_info anchor="right" id="Maven" order="2" weight="0.3297568" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.24964234" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.24964234" />
       <window_info anchor="right" id="Palette" order="5" />
@@ -968,7 +994,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-作品页面展示多个作品调试-20190520" />
     <MESSAGE value="FAMOUS-个人作品页展示多个作品及新增头像调试-20190520" />
     <MESSAGE value="FAMOUS-作品展览馆样式调试新增摘要字段-20190520" />
     <MESSAGE value="FAMOUS-list页和单个作品详情页样式调试-20190521" />
@@ -993,7 +1018,8 @@
     <MESSAGE value="FAMOUS-1025 新增精确匹配，分页查询底层接口" />
     <MESSAGE value="FAMOUS-1025 新增搜索对象初始化静态内部类" />
     <MESSAGE value="FAMOUS-1028 新增回车搜索功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="FAMOUS-1028 新增回车搜索功能" />
+    <MESSAGE value="FAMOUS-1028 新增网站汉语名称" />
+    <option name="LAST_COMMIT_MESSAGE" value="FAMOUS-1028 新增网站汉语名称" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
@@ -1004,79 +1030,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famousDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="72" lean-forward="true" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="32" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="179" selection-start-line="15" selection-start-column="179" selection-end-line="15" selection-end-column="179" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famous.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/famousDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="42" column="47" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/elastic/SearchResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#939#940#0" expanded="true" />
-            <element signature="e#1308#1309#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/Famous.java" />
-    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousPortrait.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photo-service-impl/src/test/java/com/art/service/famous/FamousSVImplTest.java" />
     <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/WebApplication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1112,23 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="76" column="14" lean-forward="true" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="55" column="66" lean-forward="true" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photo-service-impl/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1159,9 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo-dao/src/main/resources/mapper/FamousProductionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1182,13 +1115,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="45" column="64" lean-forward="true" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1213,16 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="118" column="52" selection-start-line="118" selection-start-column="44" selection-end-line="118" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="54" column="91" lean-forward="true" selection-start-line="54" selection-start-column="91" selection-end-line="54" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1281,26 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchFamousComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="21" column="104" lean-forward="true" selection-start-line="21" selection-start-column="104" selection-end-line="21" selection-end-column="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1589">
-          <caret line="193" column="26" selection-start-line="193" selection-start-column="26" selection-end-line="193" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -1322,26 +1218,163 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/mapping/world.famous_production_tpl.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/mapping/world.famous_portrait_tpl.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3106">
+          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/static/helloword.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-dao/src/main/resources/mapper/FamousProductionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/IFamousProductionSV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousProductionSVImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="975">
+          <caret line="65" column="90" selection-start-line="65" selection-start-column="79" selection-end-line="65" selection-end-column="90" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="90" lean-forward="true" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
+        <state relative-caret-position="435">
+          <caret line="29" column="81" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousPortrait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="98" column="35" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousProduction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="212" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="212" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="78" column="18" lean-forward="true" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchFamousComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="9" column="60" lean-forward="true" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
