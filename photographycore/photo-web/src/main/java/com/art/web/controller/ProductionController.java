@@ -3,12 +3,10 @@ package com.art.web.controller;
 import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.elastic.SearchResult;
-import com.art.beans.famous.FamousPortrait;
 import com.art.beans.famous.FamousProduction;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousProductionSV;
 import com.art.util.SearchConstans;
-import com.art.web.component.famous.SearchFamousComponent;
 import com.art.web.component.famous.SearchProductionComponent;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,22 +35,21 @@ public class ProductionController {
      * 名人作品：条件查询
      * @param page
      * @param limit
-     * @param production
+     * @param productionContent
      * @return
      */
     @RequestMapping(value = "/getProductionInfos")
-    public Result getProductionInfos(Integer page, Integer limit, FamousProduction production)
+    public Result getProductionInfos(Integer page, Integer limit, String productionContent)
     {
         Result result = new Result();
         List<FamousProduction> productionList ;
         try{
             Map<String,Object> fields = new HashMap();
 
-            if(StringUtils.isNotEmpty(production.getChineseName())){
-                fields.put("chineseName",production.getChineseName());
-            }
-            if(StringUtils.isNotEmpty(production.getProductionName())){
-                fields.put("productionName",production.getProductionName());
+            if(StringUtils.isNotEmpty(productionContent)){
+//                fields.put("productionContent",productionContent);
+                fields.put("chineseName",productionContent);
+
             }
 
             //调用搜索引擎

@@ -6,21 +6,24 @@
     <script src="../jquery/jquery-3.3.1.js" type="text/javascript"></script><!--jquery核心文件-->
     <script src="../page/jquery.page.js" type="text/javascript"></script><!--jquery分页插件-->
     <script src="../js/productionList.js" type="text/javascript"></script>
-<!--    <script src="../css/productionList.css" type="text/javascript"></script>-->
-    <style type="text/css">
-        a{ text-decoration:none;}
-        a:hover{ text-decoration:none;}
-        .tcdPageCode{padding: 15px 20px;text-align: center;color: #ccc;text-align:center;}
-        .tcdPageCode a{display: inline-block;color: black;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
-        .tcdPageCode a:hover{text-decoration: none;border: 1px solid black;}
-        .tcdPageCode span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: black;	border: 1px solid black;border-radius: 4px;vertical-align: middle;}
-        .tcdPageCode span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
-    </style>
+    <link href="../css/productionList.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <div id="productListDiv" style="width: 1200px;height: 1000px;margin:0 auto">
 
+<!--导航栏-->
+<div id="navigator" style="width:500px;height: 20px;margin-left: 60px;margin-top:100px">
 
-    </div>
+</div>
+<!--logo-->
+<p id="logohanzi" style="font-family: 'Microsoft YaHei';color: #666666;font-size: 30px;text-align: center">世界名人展览馆</p>
+<p id="logo" style="font-family: 'Microsoft YaHei';color: #666666;font-size: 35px;font-style: oblique;text-align: center">world famous exhibition center</p>
+<!--搜索框-->
+<div id="box" style="width: 400px;height: 100px;margin: auto;font-family: 'Microsoft YaHei';color: #666666;padding-top: 30px">
+    <input id="productionContent" type="text" name="search" placeholder="请输入关键字搜索"style="font-size:16px;width: 300px;border: 1px solid #e2e2e2;height: 37px;float: left;background-repeat: no-repeat;background-size: 40px;background-position:5px center;padding:0 0 0 20px">
+    <button id="search" style="font-size:16px;width:78px;height:40px;float:right;background: #666666;color: white;text-align: center;border: 1px solid #e2e2e2;cursor:pointer">搜索</button>
+</div>
+<div id="productListDiv" style="width: 1200px;height: 1000px;margin:0 auto">
+
+</div>
 </body>
 </html>
