@@ -83,7 +83,6 @@
                         var finalUrl = firstUrl + list[i].portraitName;
                         var productionId = list[i].productionId;
 
-
                         str += '<div class="proDiv"'+i+' style="width:1000px;height:180px;color: #666666;margin-left:240px">' +
                                         '<div class='+u+' style="width:160px;height:150px;float:left;margin-right:20px">' +
                                             '<img class='+s+' style=" width:55px; height:55px; border-radius:50%" src='+finalUrl+'>' +
@@ -93,14 +92,13 @@
                                             '<p class='+v+' style=" font-family:\'微软雅黑\'; font-size:14px">'+list[i].productionName+'</p>' +
                                         '</div>' +
                                         '<div class='+z+' style="width:600px;height:150px;float:left;color:#666;margin-top:30px">' +
-                                            '<a class='+a+' style="text-decoration:none;color:#666666;font-size:16px;font-family:\'微软雅黑\'; href="production.html?productionId='+productionId+'" onmouseover="this.style.color=\'black\'" onmouseout="this.style.color=\'#666666\'" onmousedown="this.style.color=\'#666666\'">'+list[i].summaryInfo+'</a>' +
+                                            '<a class='+a+' href="production.html?productionId='+productionId+'" style="text-decoration:none;color:#666666;font-size:16px;font-family:\'微软雅黑\'" onmouseover="this.style.color=\'black\'" onmouseout="this.style.color=\'#666666\'" onmousedown="this.style.color=\'#666666\'">'+list[i].summaryInfo+'</a>' +
                                         '</div>' +
                               '</div>';
                         }
 
                     var listDiv = str+'<div class="tcdPageCode"></div>';
                     $("#productListDiv").html(listDiv);//将所有div内容加入body,使用html形式
-
                 }
 
                 //分页插件调用
