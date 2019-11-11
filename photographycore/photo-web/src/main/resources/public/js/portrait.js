@@ -65,7 +65,8 @@ function buttionSearch() {
 
                    str += '<div class='+x+' style=" width:250px; height:250px; margin:20px 0; margin:0 20px; text-align:center; float:left">'+
                           '<a href="famousDetail.html?famousId='+ famousId + '&portraitName=' + portraitName+'">'+
-                          '<img class='+y+' src='+finalUrl+' style="width:150px;height:150px;border:solid 20px #666666"></a>'+
+                            '<img class='+y+' src='+finalUrl+' style="width:150px;height:150px;border:solid 20px #666666">' +
+                          '</a>'+
                                 '<p class='+z+'>'+
                                     '<a href="production.html?famousId=' + famousId + '&portraitName=' + portraitName+'">'+chineseName+'</a>'+
                                 '</p>'+

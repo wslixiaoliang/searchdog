@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1108 全文搜索样式修改">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1108 字符串拼接样式修复">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-beans/photo-beans.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-beans/photo-beans.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-dao/photo-dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-dao/photo-dao.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/photo-service-impl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/photo-service-impl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service/photo-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service/photo-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/photo-util.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/photo-util.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/photo-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/photo-web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/css/productionList.css" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/css/productionList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photographycore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/photographycore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,7 +130,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31669867" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -276,7 +267,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@76355f8b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a2029ab3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5f113638" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -387,14 +378,7 @@
       <workItem from="1573142415818" duration="107000" />
       <workItem from="1573183639727" duration="617000" />
       <workItem from="1573201481640" duration="1025000" />
-      <workItem from="1573214617082" duration="2840000" />
-    </task>
-    <task id="LOCAL-00009" summary="新增接口开发，及mapper编码格式调试">
-      <created>1557051512255</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1557051512255</updated>
+      <workItem from="1573214617082" duration="20290000" />
     </task>
     <task id="LOCAL-00010" summary="photo-20190506-college底层删除接口开发及自测">
       <created>1557126661056</created>
@@ -732,7 +716,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573142506847</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="production-1108 字符串拼接样式修复">
+      <created>1573218217609</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1573218217610</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -834,7 +825,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-appendChild引发的重复内容优化-20190521" />
     <MESSAGE value="FAMOUS-zookeeper版本降级优化-20190603" />
     <MESSAGE value="FAMOUS-jquery.page.js分页插件集成-2019.6.4" />
     <MESSAGE value="FAMOUS-jquery.page.js分页插件集成首页-2019.6.5" />
@@ -859,7 +849,8 @@
     <MESSAGE value="production-1104 新增文章全文搜索功能后台搜索接口" />
     <MESSAGE value="production-1105 新增文章全文搜索功能前台页面" />
     <MESSAGE value="production-1108 全文搜索样式修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1108 全文搜索样式修改" />
+    <MESSAGE value="production-1108 字符串拼接样式修复" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1108 字符串拼接样式修复" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />

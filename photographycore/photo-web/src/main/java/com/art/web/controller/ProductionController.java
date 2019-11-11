@@ -47,8 +47,10 @@ public class ProductionController {
             Map<String,Object> fields = new HashMap();
 
             if(StringUtils.isNotEmpty(productionContent)){
-//                fields.put("productionContent",productionContent);
-                fields.put("chineseName",productionContent);
+
+//                fields.put("chineseName",productionContent);
+                fields.put("productionName",productionContent);
+                fields.put("summaryInfo",productionContent);
 
             }
 

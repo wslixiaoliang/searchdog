@@ -8,11 +8,17 @@ import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
+import org.elasticsearch.common.text.Text;
 import org.elasticsearch.common.unit.TimeValue;
+import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
+import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
+import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.springframework.stereotype.Component;
+
+import javax.swing.text.Highlighter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +32,7 @@ import java.util.concurrent.TimeUnit;
 public class SearchComponent {
 
     private static final Logger LOGGER = Logger.getLogger(SearchComponent.class);
+    private HighlightBuilder.Field highlightBuilder;
 
     /**
      * 搜索引擎：统一查询接口
@@ -180,40 +187,54 @@ public class SearchComponent {
         if (null != termFields && termFields.size() > 0)
         {
             try {
-                for (Map.Entry<String, Object> entry : termFields.entrySet()) {
-
-                    //初始化：搜索对象
+                    //初始化：查询对象
                     SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
 
                     long totalHits = searchRequestBuilder.setQuery(QueryBuilders.matchAllQuery()).get().getHits().getTotalHits();//总条数
                     final int  start = (page-1)*limit;
 
-                    String fieldName = entry.getKey();
-                    String fieldValue = String.valueOf(entry.getValue());
+                    //组装查询条件
+                    BoolQueryBuilder builder = getQueryBuder(termFields);
+                    //配置高亮属性
+                    HighlightBuilder highlightBuilder = getHightBuilder(termFields);
+
+
+                    searchRequestBuilder
+                            .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)//查询类型为：精确查询
+                            .setQuery(builder)//设置查询字段
+                            .setFrom(start)//设置分页参数
+                            .setSize(limit)
+                            .highlighter(highlightBuilder)//设置高亮
+                            .setExplain(true)// 设置是否按查询匹配度排序
+                            .setTimeout(new TimeValue(60, TimeUnit.SECONDS));
 
                     //执行搜索
-                    searchResponse = searchRequestBuilder
-                            .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)//查询类型为：精确查询
-                            .setQuery(QueryBuilders.matchQuery(fieldName, fieldValue))//设置查询字段
-                            .setFrom(start)//设置查询数据的起始位置
-                            .setSize(limit)//设置返回数据的最大条数
-                            .setExplain(true)// 设置是否按查询匹配度排序
-                            .setTimeout(new TimeValue(60, TimeUnit.SECONDS))
-                            .execute()
-                            .actionGet();
+                    searchResponse = searchRequestBuilder.get();
 
                     //搜索结果解析
                     SearchHits searchHits = searchResponse.getHits();
                     searchHits.getTotalHits();
                     SearchHit[] hits = searchHits.getHits();
                     searchResult.setTotalCount(Integer.parseInt(String.valueOf(totalHits)));
-
+                    Map<String, Object> source;
                     //处理查询结果（循环放入listMap）
                     for (SearchHit searchHit : hits) {
-                        Map<String, Object> sourceAsMap = searchHit.getSourceAsMap();
-                        documents.add(sourceAsMap);
+
+                        //获取高亮字段
+                        Map<String, HighlightField> highlightFields = searchHit.getHighlightFields();
+                        HighlightField nameField = highlightFields.get("chineseName");
+                        HighlightField contentField = highlightFields.get("productionName");
+                        HighlightField titleField = highlightFields.get("summaryInfo");
+
+                        source = searchHit.getSourceAsMap();
+
+                        //高亮替换
+                        putHightConten(nameField,source,"chineseName");
+                        putHightConten(titleField,source,"summaryInfo");
+                        putHightConten(contentField,source,"productionName");
+
+                        documents.add(source);
                     }
-                }
                 searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
                 searchResult.setReturnMsg("查询成功……");
             } catch (Exception e) {
@@ -225,6 +246,73 @@ public class SearchComponent {
         searchResult.setDocuments(documents);
         return searchResult;
     }
+
+    /**
+     * 组装查询条件
+     * @param termFields
+     * @return
+     */
+    private BoolQueryBuilder getQueryBuder(Map<String,Object> termFields){
+
+        BoolQueryBuilder builder = QueryBuilders.boolQuery();
+
+        if(null==termFields ||termFields.size()==0){
+            return builder;
+        }
+        for(Map.Entry<String,Object> entry:termFields.entrySet()){
+            String fieldName = entry.getKey();
+            String fieldValue = String.valueOf(entry.getValue());
+            builder.must(QueryBuilders.termQuery(fieldName,fieldValue));
+        }
+        return builder;
+
+    }
+
+    /**
+     * 组装高亮查询器
+     * @param termFields
+     * @return
+     */
+    private HighlightBuilder getHightBuilder(Map<String,Object> termFields){
+
+        HighlightBuilder highlightBuilder = new HighlightBuilder(); //生成高亮查询器
+        if(null==termFields ||termFields.size()==0){
+            return highlightBuilder;
+        }
+
+        for(Map.Entry<String,Object> entry:termFields.entrySet()){
+            String fieldName = entry.getKey();
+            highlightBuilder.field(fieldName); //高亮查询字段
+        }
+
+        highlightBuilder.requireFieldMatch(false);//如果要多个字段高亮,这项要为false
+        highlightBuilder.preTags("<span style=\"color:red\">");//高亮设置
+        highlightBuilder.postTags("</span>");
+        //下面这两项,如果你要高亮如文字内容等有很多字的字段,必须配置,不然会导致高亮不全,文章内容缺失等
+        highlightBuilder.fragmentSize(800000); //最大高亮分片数
+        highlightBuilder.numOfFragments(0); //从第一个分片获取高亮片段
+        return highlightBuilder;
+    }
+
+    /**
+     * 高亮内容替换
+     * @param contentField
+     * @param source
+     */
+    private void putHightConten(HighlightField contentField,Map<String, Object> source,String key){
+
+        if(contentField!=null){
+            Text[] fragments = contentField.fragments();
+            String name = "";
+            for (Text text : fragments) {
+                name+=text;
+            }
+            source.put(key, name);//高亮字段替换掉原本的内容
+        }
+    }
+
+
+
 
     /**
      * 全量查询：指定返回文档数量
