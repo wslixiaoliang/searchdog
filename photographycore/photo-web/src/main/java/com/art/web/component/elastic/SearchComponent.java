@@ -262,7 +262,7 @@ public class SearchComponent {
         for(Map.Entry<String,Object> entry:termFields.entrySet()){
             String fieldName = entry.getKey();
             String fieldValue = String.valueOf(entry.getValue());
-            builder.must(QueryBuilders.termQuery(fieldName,fieldValue));
+            builder.should(QueryBuilders.termQuery(fieldName,fieldValue));
         }
         return builder;
 
