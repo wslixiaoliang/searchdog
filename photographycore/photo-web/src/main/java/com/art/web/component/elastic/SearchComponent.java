@@ -187,7 +187,7 @@ public class SearchComponent {
         if (null != termFields && termFields.size() > 0)
         {
             try {
-                    //初始化：查询对象
+                    //初始化：查询对象（查询count）
                     SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
 
                     long totalHits = searchRequestBuilder.setQuery(QueryBuilders.matchAllQuery()).get().getHits().getTotalHits();//总条数
@@ -197,8 +197,7 @@ public class SearchComponent {
                     BoolQueryBuilder builder = getQueryBuder(termFields);
                     //配置高亮属性
                     HighlightBuilder highlightBuilder = getHightBuilder(termFields);
-
-
+                    //封装查询对象
                     searchRequestBuilder
                             .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)//查询类型为：精确查询
                             .setQuery(builder)//设置查询字段
@@ -210,31 +209,11 @@ public class SearchComponent {
 
                     //执行搜索
                     searchResponse = searchRequestBuilder.get();
-
-                    //搜索结果解析
-                    SearchHits searchHits = searchResponse.getHits();
-                    searchHits.getTotalHits();
-                    SearchHit[] hits = searchHits.getHits();
+                    //存入数据总数量
                     searchResult.setTotalCount(Integer.parseInt(String.valueOf(totalHits)));
-                    Map<String, Object> source;
-                    //处理查询结果（循环放入listMap）
-                    for (SearchHit searchHit : hits) {
+                    //处理搜索结果
+                    configSearchResponse(searchResponse, documents);
 
-                        //获取高亮字段
-                        Map<String, HighlightField> highlightFields = searchHit.getHighlightFields();
-                        HighlightField nameField = highlightFields.get("chineseName");
-                        HighlightField contentField = highlightFields.get("productionName");
-                        HighlightField titleField = highlightFields.get("summaryInfo");
-
-                        source = searchHit.getSourceAsMap();
-
-                        //高亮替换
-                        putHightConten(nameField,source,"chineseName");
-                        putHightConten(titleField,source,"summaryInfo");
-                        putHightConten(contentField,source,"productionName");
-
-                        documents.add(source);
-                    }
                 searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
                 searchResult.setReturnMsg("查询成功……");
             } catch (Exception e) {
@@ -267,6 +246,7 @@ public class SearchComponent {
         return builder;
 
     }
+
 
     /**
      * 组装高亮查询器
@@ -308,6 +288,35 @@ public class SearchComponent {
                 name+=text;
             }
             source.put(key, name);//高亮字段替换掉原本的内容
+        }
+    }
+
+    /**
+     * 搜索结果处理
+     * @param searchResponse
+     * @param documents
+     */
+    private void configSearchResponse(SearchResponse searchResponse,List<Map<String, Object>> documents){
+        //搜索结果解析
+        SearchHits searchHits = searchResponse.getHits();
+        searchHits.getTotalHits();
+        SearchHit[] hits = searchHits.getHits();
+        Map<String, Object> source;
+
+        //处理查询结果（循环放入listMap）
+        for (SearchHit searchHit : hits) {
+            //获取高亮字段
+            Map<String, HighlightField> highlightFields = searchHit.getHighlightFields();
+            HighlightField nameField = highlightFields.get("chineseName");
+            HighlightField contentField = highlightFields.get("productionName");
+            HighlightField titleField = highlightFields.get("summaryInfo");
+
+            source = searchHit.getSourceAsMap();
+            //高亮替换
+            putHightConten(nameField,source,"chineseName");
+            putHightConten(titleField,source,"summaryInfo");
+            putHightConten(contentField,source,"productionName");
+            documents.add(source);
         }
     }
 

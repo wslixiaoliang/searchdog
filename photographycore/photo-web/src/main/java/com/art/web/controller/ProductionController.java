@@ -48,7 +48,7 @@ public class ProductionController {
 
             if(StringUtils.isNotEmpty(productionContent)){
 
-//                fields.put("chineseName",productionContent);
+                fields.put("chineseName",productionContent);
                 fields.put("productionName",productionContent);
                 fields.put("summaryInfo",productionContent);
 
