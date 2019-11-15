@@ -216,13 +216,13 @@ public class SearchComponent {
                     //处理搜索结果
                     configSearchResponse(searchResponse,documents,KEYWORD);
 
-                searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
-                searchResult.setReturnMsg("查询成功……");
-            } catch (Exception e) {
-                LOGGER.error(e.getMessage(),e);
-                searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
-                searchResult.setReturnMsg("查询失败……");
-            }
+                    searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
+                    searchResult.setReturnMsg("查询成功……");
+                } catch (Exception e) {
+                    LOGGER.error(e.getMessage(),e);
+                    searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
+                    searchResult.setReturnMsg("查询失败……");
+                }
         }
         searchResult.setDocuments(documents);
         return searchResult;
@@ -287,7 +287,7 @@ public class SearchComponent {
     private void configSearchResponse(SearchResponse searchResponse,List<Map<String, Object>> documents,String searchKeyword){
         //搜索结果解析
         SearchHits searchHits = searchResponse.getHits();
-        searchHits.getTotalHits();
+//        searchHits.getTotalHits();
         SearchHit[] hits = searchHits.getHits();
         Map<String, Object> source;
 
@@ -305,7 +305,7 @@ public class SearchComponent {
             //高亮替换
             putHightConten(chineseName,source,"chineseName",searchKeyword);
             putHightConten(productionName,source,"productionName",searchKeyword);
-            putHightConten(productionName,source,"summaryInfo",searchKeyword);//静态摘要，从摘要字段获取
+            putHightConten(summaryInfo,source,"summaryInfo",searchKeyword);//静态摘要，从摘要字段获取
             putHightConten(productionContent,source,"productionContent",searchKeyword);//动态摘要，从文章内容获取，若不为空则覆盖静态摘要
 
             documents.add(source);
@@ -327,7 +327,7 @@ public class SearchComponent {
             }
 
             if("productionContent".equalsIgnoreCase(key)){
-                String summaryInfo = configSummaryInfo(content,searchKeyword);
+                String summaryInfo = configSummaryInfo(content,searchKeyword);//动态摘要替换静态摘要
                 if(StringUtil.isNotEmpty(summaryInfo)){
                     source.put("summaryInfo", summaryInfo);
                 }
@@ -347,6 +347,7 @@ public class SearchComponent {
     private String configSummaryInfo(String content,String searchKeyword){
 
         String summaryInfo = "";
+        String leftString ="";
 
         if(StringUtil.isEmpty(content)){
             return summaryInfo;
@@ -354,32 +355,28 @@ public class SearchComponent {
 
         //第一次出现搜索关键词的位置
         int keyword = content.indexOf(searchKeyword);
-
         int length = searchKeyword.length();
-        //截取开始到关键词处的子串
-        String contentLeft = content.substring(0,keyword+length);
 
-        //获取从keyword,向左第一次出现逗号的位置
+        String contentLeft = content.substring(0,keyword+length+8); //截取开始到关键词处的子串
+        int leftDouhao = contentLeft.lastIndexOf("，");//获取从keyword,向左第一次出现逗号的位置
+        int leftJuhao = contentLeft.lastIndexOf("。");//获取从keyword,向左第一次出现句号的位置
 
-        int  left = 0;
-        int leftDouhao = contentLeft.lastIndexOf("，");
-
-        int leftJuhao = contentLeft.lastIndexOf("。");
-
-        if(leftDouhao<0 ||leftJuhao <0){
-            left = 0;
+        if(leftDouhao>0 && leftJuhao>0){
+            if(leftDouhao>leftJuhao){
+                leftString = contentLeft.substring(leftDouhao+1,keyword+length+8);//截取逗号到关键词处的左侧字符串（逗号距离关键词较近）
+            }else{
+                leftString = contentLeft.substring(leftJuhao+1,keyword+length+8); //截取句号到关键词处的左侧字符串（句号距离关键词较近）
+            }
+        }else{
+            leftString = contentLeft;
         }
 
-        //截取逗号到关键词处的左侧字符串，
-        String leftString = contentLeft.substring(left+1,keyword+6);
-
         //截取右侧的字符串
-        String rightString = content.substring(keyword+6,keyword+160);
+        String rightString = content.substring(keyword+length+8,keyword+180);
 
+        //合并最终摘要
         summaryInfo = leftString+rightString+"……";
-
         return summaryInfo;
-
     }
 
 

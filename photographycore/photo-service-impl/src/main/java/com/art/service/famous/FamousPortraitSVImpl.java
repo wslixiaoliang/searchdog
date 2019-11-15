@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Map;
 
-
 /**
  * 世界名人肖像SV实现
  * @author wslixiaoliang

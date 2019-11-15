@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1112 底层搜索优化，查询结果解析拆分单独方法">
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1115 底层搜索优化，添加动态摘要">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,9 +65,6 @@
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -148,7 +146,7 @@
     </option>
     <option name="contentProportion" value="0.13649635" />
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceApplication">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -243,7 +241,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@15319637" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c85da6cb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e98275b7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -364,14 +362,7 @@
       <workItem from="1573611018673" duration="7890000" />
       <workItem from="1573703346767" duration="18030000" />
       <workItem from="1573782213266" duration="210000" />
-      <workItem from="1573782450818" duration="797000" />
-    </task>
-    <task id="LOCAL-00013" summary="FAMOUS-新增jquery页面及样式调整-20190507">
-      <created>1557310297371</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1557310297371</updated>
+      <workItem from="1573782450818" duration="11946000" />
     </task>
     <task id="LOCAL-00014" summary="FAMOUS-新增肖像查询接口及上传下载接口">
       <created>1557753965172</created>
@@ -709,7 +700,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573550537769</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="production-1115 底层搜索优化，添加动态摘要">
+      <created>1573783322277</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1573783322277</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -805,7 +803,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-jquery.page.js取消首页分页插件集成-2019.6.5" />
     <MESSAGE value="FAMOUS-分页插件优化-2019.6.10" />
     <MESSAGE value="FAMOUS-首页查询优化-2019.6.12" />
     <MESSAGE value="FAMOUS-新增评论查询接口-2019.7.10" />
@@ -830,7 +827,8 @@
     <MESSAGE value="production-1111 底层搜索增加高亮查询" />
     <MESSAGE value="production-1112 底层搜索优化多字段匹配shoud查询" />
     <MESSAGE value="production-1112 底层搜索优化，查询结果解析拆分单独方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1112 底层搜索优化，查询结果解析拆分单独方法" />
+    <MESSAGE value="production-1115 底层搜索优化，添加动态摘要" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1115 底层搜索优化，添加动态摘要" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />

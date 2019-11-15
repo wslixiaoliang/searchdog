@@ -83,7 +83,7 @@
                         var finalUrl = firstUrl + list[i].portraitName;
                         var productionId = list[i].productionId;
 
-                        str += '<div class="proDiv"'+i+' style="width:1000px;height:180px;color: #666666;margin-left:240px">' +
+                        str += '<div class="proDiv"'+i+' style="width:1000px;height:180px;color: #666666;margin-left:220px">' +
                                         '<div class='+u+' style="width:160px;height:150px;float:left;margin-right:20px">' +
                                             '<img class='+s+' style=" width:55px; height:55px; border-radius:50%" src='+finalUrl+'>' +
                                             '<p class='+w+' style=" font-family:\'微软雅黑\'; font-size:14px">'+list[i].chineseName+'</p>' +

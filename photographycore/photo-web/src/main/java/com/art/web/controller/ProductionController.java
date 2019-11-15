@@ -42,12 +42,11 @@ public class ProductionController {
     public Result getProductionInfos(Integer page, Integer limit, String productionContent)
     {
         Result result = new Result();
-        List<FamousProduction> productionList ;
+        List<FamousProduction> productionList;
         try{
             Map<String,Object> fields = new HashMap();
 
             if(StringUtils.isNotEmpty(productionContent)){
-
                 fields.put("chineseName",productionContent);
                 fields.put("productionName",productionContent);
                 fields.put("summaryInfo",productionContent);
