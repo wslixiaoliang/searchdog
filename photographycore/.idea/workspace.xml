@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1112 底层搜索优化多字段匹配shoud查询">
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1112 底层搜索优化，查询结果解析拆分单独方法">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/EngineClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
@@ -25,9 +26,11 @@
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
     <expand />
     <select />
   </component>
@@ -50,36 +53,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>getSchoolmates</find>
-      <find>CollegeClassmatesDAO</find>
-      <find>getSchoolmateInfos</find>
-      <find>getFamousById</find>
-      <find>getProductionInfos</find>
-      <find>pageNo</find>
-      <find>var a</find>
-      <find>拼接</find>
-      <find>#428bca</find>
-      <find>CommentDAO</find>
-      <find>isEmpty</find>
-      <find>Constans</find>
-      <find>ConsumerInformationDAO</find>
-      <find>mouse</find>
-      <find>FamousPortraitDAO</find>
-      <find>getCurrentTime</find>
-      <find>FamousDAO</find>
-      <find>limit</find>
-      <find>getFamousInfos</find>
-      <find>searchFamousInfo</find>
-      <find>includes</find>
-      <find>build</find>
-      <find>chineseName</find>
-      <find>FamousProductionDAO</find>
-      <find>proDiv</find>
-      <find>productionSV</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -133,7 +106,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31669867" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -175,7 +148,7 @@
     </option>
     <option name="contentProportion" value="0.13649635" />
   </component>
-  <component name="RunManager" selected="Spring Boot.WebApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -265,12 +238,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1b69295e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@15319637" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1b69295e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1734836e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@15319637" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c85da6cb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -386,14 +359,12 @@
       <workItem from="1573527519899" duration="867000" />
       <workItem from="1573529068810" duration="1210000" />
       <workItem from="1573531881871" duration="3505000" />
-      <workItem from="1573540467872" duration="1929000" />
-    </task>
-    <task id="LOCAL-00012" summary="FAMOUS-新增jquery页面及样式调整-20190507">
-      <created>1557236019664</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1557236019664</updated>
+      <workItem from="1573540467872" duration="2010000" />
+      <workItem from="1573562291349" duration="1411000" />
+      <workItem from="1573611018673" duration="7890000" />
+      <workItem from="1573703346767" duration="18030000" />
+      <workItem from="1573782213266" duration="210000" />
+      <workItem from="1573782450818" duration="797000" />
     </task>
     <task id="LOCAL-00013" summary="FAMOUS-新增jquery页面及样式调整-20190507">
       <created>1557310297371</created>
@@ -731,7 +702,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573532104904</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="production-1112 底层搜索优化，查询结果解析拆分单独方法">
+      <created>1573550537769</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1573550537769</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -765,12 +743,6 @@
     <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 20h 20m 53s.xml">
       <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
     </history-entry>
-  </component>
-  <component name="TodoView" selected-index="3">
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -833,7 +805,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-jquery.page.js分页插件集成首页-2019.6.5" />
     <MESSAGE value="FAMOUS-jquery.page.js取消首页分页插件集成-2019.6.5" />
     <MESSAGE value="FAMOUS-分页插件优化-2019.6.10" />
     <MESSAGE value="FAMOUS-首页查询优化-2019.6.12" />
@@ -858,15 +829,12 @@
     <MESSAGE value="production-1108 字符串拼接样式修复" />
     <MESSAGE value="production-1111 底层搜索增加高亮查询" />
     <MESSAGE value="production-1112 底层搜索优化多字段匹配shoud查询" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1112 底层搜索优化多字段匹配shoud查询" />
+    <MESSAGE value="production-1112 底层搜索优化，查询结果解析拆分单独方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1112 底层搜索优化，查询结果解析拆分单独方法" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
     <state width="436" height="458" key="Git.Branch.Popup@1600.900" />
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/photographycore$IndexComponentTest_testIndexCreate.ic" NAME="IndexComponentTest.testIndexCreate Coverage Results" MODIFIED="1572947179988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

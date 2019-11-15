@@ -19,7 +19,7 @@ public class SearchProductionComponent {
      * @param fields
      * @return
      */
-    public SearchResult searchProductions(Map<String,Object> fields, int page , int limit) throws Exception {
+    public SearchResult searchProductions(Map<String,Object> fields,int page,int limit) throws Exception {
         String indexName = SearchConstans.Production.INDEX_NAME;//索引名称
         String indexType = SearchConstans.Production.INDEX_TYPE;//和索引类型
         Map<String,Object> params = new HashMap<>();

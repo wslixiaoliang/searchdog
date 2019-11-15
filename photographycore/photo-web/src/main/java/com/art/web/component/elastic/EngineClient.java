@@ -8,7 +8,6 @@ import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.stereotype.Component;
-
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 

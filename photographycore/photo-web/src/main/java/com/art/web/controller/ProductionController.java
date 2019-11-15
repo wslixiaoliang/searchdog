@@ -51,7 +51,7 @@ public class ProductionController {
                 fields.put("chineseName",productionContent);
                 fields.put("productionName",productionContent);
                 fields.put("summaryInfo",productionContent);
-
+                fields.put("productionContent",productionContent);
             }
 
             //调用搜索引擎

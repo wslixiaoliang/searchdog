@@ -17,7 +17,6 @@ import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.springframework.stereotype.Component;
-
 import javax.swing.text.Highlighter;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +31,12 @@ import java.util.concurrent.TimeUnit;
 public class SearchComponent {
 
     private static final Logger LOGGER = Logger.getLogger(SearchComponent.class);
-    private HighlightBuilder.Field highlightBuilder;
+    private static  String KEYWORD = "";
+    //多字段 "查询策略" 枚举
+    public static enum MultiType{
 
+        BEST,MOST,CROSS
+    }
     /**
      * 搜索引擎：统一查询接口
      * @param params 封装基本参数 例如：索引名称，索引类型，索引文档ID
@@ -189,7 +192,6 @@ public class SearchComponent {
             try {
                     //初始化：查询对象（查询count）
                     SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
-
                     long totalHits = searchRequestBuilder.setQuery(QueryBuilders.matchAllQuery()).get().getHits().getTotalHits();//总条数
                     final int  start = (page-1)*limit;
 
@@ -212,7 +214,7 @@ public class SearchComponent {
                     //存入数据总数量
                     searchResult.setTotalCount(Integer.parseInt(String.valueOf(totalHits)));
                     //处理搜索结果
-                    configSearchResponse(searchResponse, documents);
+                    configSearchResponse(searchResponse,documents,KEYWORD);
 
                 searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
                 searchResult.setReturnMsg("查询成功……");
@@ -240,8 +242,8 @@ public class SearchComponent {
         }
         for(Map.Entry<String,Object> entry:termFields.entrySet()){
             String fieldName = entry.getKey();
-            String fieldValue = String.valueOf(entry.getValue());
-            builder.should(QueryBuilders.termQuery(fieldName,fieldValue));
+            KEYWORD = String.valueOf(entry.getValue());
+            builder.should(QueryBuilders.termQuery(fieldName,KEYWORD));
         }
         return builder;
 
@@ -268,35 +270,21 @@ public class SearchComponent {
         highlightBuilder.requireFieldMatch(false);//如果要多个字段高亮,这项要为false
         highlightBuilder.preTags("<span style=\"color:red\">");//高亮设置
         highlightBuilder.postTags("</span>");
+
         //下面这两项,如果你要高亮如文字内容等有很多字的字段,必须配置,不然会导致高亮不全,文章内容缺失等
         highlightBuilder.fragmentSize(800000); //最大高亮分片数
         highlightBuilder.numOfFragments(0); //从第一个分片获取高亮片段
         return highlightBuilder;
     }
 
-    /**
-     * 高亮内容替换
-     * @param contentField
-     * @param source
-     */
-    private void putHightConten(HighlightField contentField,Map<String, Object> source,String key){
 
-        if(contentField!=null){
-            Text[] fragments = contentField.fragments();
-            String name = "";
-            for (Text text : fragments) {
-                name+=text;
-            }
-            source.put(key, name);//高亮字段替换掉原本的内容
-        }
-    }
 
     /**
      * 搜索结果处理
      * @param searchResponse
      * @param documents
      */
-    private void configSearchResponse(SearchResponse searchResponse,List<Map<String, Object>> documents){
+    private void configSearchResponse(SearchResponse searchResponse,List<Map<String, Object>> documents,String searchKeyword){
         //搜索结果解析
         SearchHits searchHits = searchResponse.getHits();
         searchHits.getTotalHits();
@@ -307,19 +295,92 @@ public class SearchComponent {
         for (SearchHit searchHit : hits) {
             //获取高亮字段
             Map<String, HighlightField> highlightFields = searchHit.getHighlightFields();
-            HighlightField nameField = highlightFields.get("chineseName");
-            HighlightField contentField = highlightFields.get("productionName");
-            HighlightField titleField = highlightFields.get("summaryInfo");
+            HighlightField chineseName = highlightFields.get("chineseName");
+            HighlightField productionName = highlightFields.get("productionName");
+            HighlightField summaryInfo = highlightFields.get("summaryInfo");
+            HighlightField productionContent = highlightFields.get("productionContent");
 
             source = searchHit.getSourceAsMap();
+
             //高亮替换
-            putHightConten(nameField,source,"chineseName");
-            putHightConten(titleField,source,"summaryInfo");
-            putHightConten(contentField,source,"productionName");
+            putHightConten(chineseName,source,"chineseName",searchKeyword);
+            putHightConten(productionName,source,"productionName",searchKeyword);
+            putHightConten(productionName,source,"summaryInfo",searchKeyword);//静态摘要，从摘要字段获取
+            putHightConten(productionContent,source,"productionContent",searchKeyword);//动态摘要，从文章内容获取，若不为空则覆盖静态摘要
+
             documents.add(source);
         }
     }
 
+    /**
+     * 高亮内容替换
+     * @param contentField
+     * @param source
+     */
+    private void putHightConten(HighlightField contentField,Map<String, Object> source,String key,String searchKeyword){
+
+        if(contentField!=null){
+            Text[] fragments = contentField.fragments();//获取高亮分片
+            String content = "";
+            for (Text text : fragments) {
+                content+=text;
+            }
+
+            if("productionContent".equalsIgnoreCase(key)){
+                String summaryInfo = configSummaryInfo(content,searchKeyword);
+                if(StringUtil.isNotEmpty(summaryInfo)){
+                    source.put("summaryInfo", summaryInfo);
+                }
+            }
+            source.put(key, content);//高亮字段替换掉原本的内容
+        }
+
+    }
+
+
+    /**
+     * 动态摘要算法
+     * 摘要截取原则：
+     * 1、根据读者习惯：摘要开头尽量具有完整语义，结尾可以不完整，用……代替
+     * 2、选取评分较高的段落，合成最后的摘要；
+     */
+    private String configSummaryInfo(String content,String searchKeyword){
+
+        String summaryInfo = "";
+
+        if(StringUtil.isEmpty(content)){
+            return summaryInfo;
+        }
+
+        //第一次出现搜索关键词的位置
+        int keyword = content.indexOf(searchKeyword);
+
+        int length = searchKeyword.length();
+        //截取开始到关键词处的子串
+        String contentLeft = content.substring(0,keyword+length);
+
+        //获取从keyword,向左第一次出现逗号的位置
+
+        int  left = 0;
+        int leftDouhao = contentLeft.lastIndexOf("，");
+
+        int leftJuhao = contentLeft.lastIndexOf("。");
+
+        if(leftDouhao<0 ||leftJuhao <0){
+            left = 0;
+        }
+
+        //截取逗号到关键词处的左侧字符串，
+        String leftString = contentLeft.substring(left+1,keyword+6);
+
+        //截取右侧的字符串
+        String rightString = content.substring(keyword+6,keyword+160);
+
+        summaryInfo = leftString+rightString+"……";
+
+        return summaryInfo;
+
+    }
 
 
 
