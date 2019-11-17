@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1115 底层搜索优化，添加动态摘要">
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1115 底层搜索优化，添加动态摘要优化">
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portraitProduction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousPortraitSVImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/production.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portraitProduction.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
@@ -94,7 +97,7 @@
     <property name="SearchEverywhereHistoryKey" value="famous.js&#9;FILE&#9;file://E:/photography/photographycore/photo-web/src/main/resources/public/js/famous.js&#10;college&#9;FILE&#9;file://E:/photography/photographycore/photo-beans/src/main/java/com/art/beans/college/CollegeClassmates.java&#10;co&#9;FILE&#9;file://E:/photography/photographycore/photo-beans/src/main/java/com/art/beans/CollegeClassmates.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -107,6 +110,13 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\jquery" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\js" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\css" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\modules" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\templates" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.art.service.college" />
       <recent name="" />
@@ -114,18 +124,11 @@
       <recent name="com.art.serviceimpl.college" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/modules" />
+      <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/js" />
       <recent name="$PROJECT_DIR$/photo-web/src/main/resources/mapping" />
       <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\page" />
       <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\css" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\js" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\modules" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\jquery" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\js" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\css" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\modules" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -236,12 +239,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@15319637" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@28272c59" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@15319637" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e98275b7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@28272c59" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@de7c92e5" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -362,14 +365,8 @@
       <workItem from="1573611018673" duration="7890000" />
       <workItem from="1573703346767" duration="18030000" />
       <workItem from="1573782213266" duration="210000" />
-      <workItem from="1573782450818" duration="11946000" />
-    </task>
-    <task id="LOCAL-00014" summary="FAMOUS-新增肖像查询接口及上传下载接口">
-      <created>1557753965172</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1557753965172</updated>
+      <workItem from="1573782450818" duration="13105000" />
+      <workItem from="1573957840046" duration="16591000" />
     </task>
     <task id="LOCAL-00015" summary="FAMOUS-新增肖像查询接口及上传下载接口-20190115">
       <created>1557891219240</created>
@@ -707,7 +704,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573783322277</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="production-1115 底层搜索优化，添加动态摘要优化">
+      <created>1573797432793</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1573797432793</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -803,7 +807,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-分页插件优化-2019.6.10" />
     <MESSAGE value="FAMOUS-首页查询优化-2019.6.12" />
     <MESSAGE value="FAMOUS-新增评论查询接口-2019.7.10" />
     <MESSAGE value="FAMOUS-711 新增用户信息相关接口-2019.7.17" />
@@ -828,7 +831,8 @@
     <MESSAGE value="production-1112 底层搜索优化多字段匹配shoud查询" />
     <MESSAGE value="production-1112 底层搜索优化，查询结果解析拆分单独方法" />
     <MESSAGE value="production-1115 底层搜索优化，添加动态摘要" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1115 底层搜索优化，添加动态摘要" />
+    <MESSAGE value="production-1115 底层搜索优化，添加动态摘要优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1115 底层搜索优化，添加动态摘要优化" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />

@@ -192,11 +192,11 @@ public class SearchComponent {
             try {
                     //初始化：查询对象（查询count）
                     SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
-                    long totalHits = searchRequestBuilder.setQuery(QueryBuilders.matchAllQuery()).get().getHits().getTotalHits();//总条数
-                    final int  start = (page-1)*limit;
-
                     //组装查询条件
                     BoolQueryBuilder builder = getQueryBuder(termFields);
+                    long totalHits = searchRequestBuilder.setQuery(builder).get().getHits().getTotalHits();//总条数必须带上查询条件，否则分页就不准
+                    final int  start = (page-1)*limit;
+
                     //配置高亮属性
                     HighlightBuilder highlightBuilder = getHightBuilder(termFields);
                     //封装查询对象
@@ -287,7 +287,6 @@ public class SearchComponent {
     private void configSearchResponse(SearchResponse searchResponse,List<Map<String, Object>> documents,String searchKeyword){
         //搜索结果解析
         SearchHits searchHits = searchResponse.getHits();
-//        searchHits.getTotalHits();
         SearchHit[] hits = searchHits.getHits();
         Map<String, Object> source;
 
@@ -334,7 +333,6 @@ public class SearchComponent {
             }
             source.put(key, content);//高亮字段替换掉原本的内容
         }
-
     }
 
 
