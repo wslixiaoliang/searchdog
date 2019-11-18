@@ -100,13 +100,13 @@ $(document).ready(function () {
              var pName = document.createElement("p");
              pName.setAttribute("class", v);
              pName.setAttribute("style", "font-family: \"黑体\";font-size: 16px;font-weight:bold;");
-             pName.innerText = result[i].productionName;
+             pName.innerHTML = result[i].productionName;
              titleDiv.appendChild(pName);
              //作者中文名
              var fChineseName = document.createElement("p");
              fChineseName.setAttribute("class", w);
              fChineseName.setAttribute("style", "font-family: \"微软雅黑\";font-size: 14px;");
-             fChineseName.innerText = result[i].chineseName;
+             fChineseName.innerHTML = result[i].chineseName;
              titleDiv.appendChild(fChineseName);
              //作者英文名
              var fEnglishName = document.createElement("p");
@@ -124,7 +124,7 @@ $(document).ready(function () {
              var pContent = document.createElement("div");
              pContent.setAttribute("class", z);
              pContent.setAttribute("style", "width: 800px;height: auto;margin: auto;font-family: \"微软雅黑\";font-size:14px;");
-             pContent.innerText = result[i].productionContent;
+             pContent.innerHTML = result[i].productionContent;
              proDiv.appendChild(pContent);//内容div加入总div
             }
          }

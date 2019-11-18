@@ -169,7 +169,7 @@ public class ProductionController {
 
         if(content.indexOf(searchkeyword)>=0){
 
-            finalConten=content.replace(searchkeyword,highLightContent);
+            finalConten=content.replaceAll(searchkeyword,highLightContent);
 
         }else{
             return content;
