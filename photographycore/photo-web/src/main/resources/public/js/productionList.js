@@ -92,7 +92,7 @@
                                             '<p class='+v+' style=" font-family:\'微软雅黑\'; font-size:14px">'+list[i].productionName+'</p>' +
                                         '</div>' +
                                         '<div class='+z+' style="width:600px;height:150px;float:left;color:#666;margin-top:30px">' +
-                                            '<a class='+a+' href="production.html?productionId='+productionId+'" style="text-decoration:none;color:#666666;font-size:16px;font-family:\'微软雅黑\'" onmouseover="this.style.color=\'black\'" onmouseout="this.style.color=\'#666666\'" onmousedown="this.style.color=\'#666666\'">'+list[i].summaryInfo+'</a>' +
+                                            '<a class='+a+' href="production.html?productionId='+productionId+'&productionContent='+productionContent+'" style="text-decoration:none;color:#666666;font-size:16px;font-family:\'微软雅黑\'" onmouseover="this.style.color=\'black\'" onmouseout="this.style.color=\'#666666\'" onmousedown="this.style.color=\'#666666\'">'+list[i].summaryInfo+'</a>' +
                                         '</div>' +
                               '</div>';
                         }

@@ -12,11 +12,12 @@ $(document).ready(function () {
      var subEnd = 0;
      var params = "";
      var productionId = "";
-     var param = "";
+     var searchkeyword = "";
+     var param = {};
 
 
     //获取名人ID函数
-    if( url.indexOf("&") > 0)
+    if( url.indexOf("famousId") > 0)
     {
         //进入多个作品详情页
         function getFamousId(url){
@@ -32,7 +33,9 @@ $(document).ready(function () {
             portraitName = paraString2[1];
         }
         getFamousId(url);//函数调用
-        param = 'famousId='+famousId;
+        param = {
+            "famousId":famousId
+        };
         console.log("===param参数：====================="+param);
 
     }else{
@@ -41,11 +44,18 @@ $(document).ready(function () {
             subStart = url.indexOf("?") + 1;
             subEnd = url.length;
             params = url.substring(subStart,subEnd);
-            paraString = params.split("=");
-            productionId = paraString[1];
+            paraString = params.split("&");
+
+            paraString1 = paraString[0].split("=");
+            paraString2= paraString[1].split("=");
+            productionId = paraString1[1];
+            searchkeyword = decodeURI(paraString2[1]);
         }
         getFunctionId(url);
-        param =  'productionId='+productionId;
+        param =  {
+            "productionId":productionId,
+            "searchkeyword":searchkeyword
+        };
         console.log("===param参数：====================="+param);
     }
 

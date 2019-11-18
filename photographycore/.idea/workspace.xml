@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1115 底层搜索优化，添加动态摘要优化">
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portraitProduction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionDetail.html" afterDir="false" />
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1115 底层搜索分页优化">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/portrait.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/css/production.css" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/css/production.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/production.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portraitProduction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/production.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/production.html" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -107,7 +105,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31669867" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -366,14 +364,7 @@
       <workItem from="1573703346767" duration="18030000" />
       <workItem from="1573782213266" duration="210000" />
       <workItem from="1573782450818" duration="13105000" />
-      <workItem from="1573957840046" duration="16591000" />
-    </task>
-    <task id="LOCAL-00015" summary="FAMOUS-新增肖像查询接口及上传下载接口-20190115">
-      <created>1557891219240</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1557891219240</updated>
+      <workItem from="1573957840046" duration="26358000" />
     </task>
     <task id="LOCAL-00016" summary="FAMOUS-新增肖像查询接口及上传下载接口-20190115">
       <created>1557920165148</created>
@@ -711,7 +702,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573797432793</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="production-1115 底层搜索分页优化">
+      <created>1574001769456</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1574001769456</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -807,7 +805,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-首页查询优化-2019.6.12" />
     <MESSAGE value="FAMOUS-新增评论查询接口-2019.7.10" />
     <MESSAGE value="FAMOUS-711 新增用户信息相关接口-2019.7.17" />
     <MESSAGE value="FAMOUS-731 新增评论相关接口" />
@@ -832,7 +829,8 @@
     <MESSAGE value="production-1112 底层搜索优化，查询结果解析拆分单独方法" />
     <MESSAGE value="production-1115 底层搜索优化，添加动态摘要" />
     <MESSAGE value="production-1115 底层搜索优化，添加动态摘要优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1115 底层搜索优化，添加动态摘要优化" />
+    <MESSAGE value="production-1115 底层搜索分页优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1115 底层搜索分页优化" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />

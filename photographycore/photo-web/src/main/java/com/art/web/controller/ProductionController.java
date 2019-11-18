@@ -7,6 +7,7 @@ import com.art.beans.famous.FamousProduction;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousProductionSV;
 import com.art.util.SearchConstans;
+import com.art.util.StringUtil;
 import com.art.web.component.famous.SearchProductionComponent;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,7 +112,7 @@ public class ProductionController {
      * @return
      */
     @RequestMapping(value = "/getFamousProductionById")
-    public List<FamousProduction> getFamousProductionById(String productionId,String famousId){
+    public List<FamousProduction> getFamousProductionById(String productionId,String famousId,String searchkeyword){
         List<FamousProduction> productions = new ArrayList<>();
         try{
             Map map = new HashMap();
@@ -122,9 +123,58 @@ public class ProductionController {
                 map.put("famousId",famousId);
             }
             productions = productionSV.getProductionById(map);
+            if(null!=productions && productions.size()==1){
+                replaceHighLightContent(productions,searchkeyword);
+            }
         }catch(Exception e){
             logger.info(e.getMessage(),e);
         }
         return productions;
+    }
+
+    /**
+     * 详情页高亮替换
+     * @param productions
+     * @param searchkeyword
+     * @return
+     */
+    private List<FamousProduction> replaceHighLightContent(List<FamousProduction> productions,String searchkeyword){
+
+        if(StringUtil.isEmpty(searchkeyword)){
+            return  productions;
+        }
+        for(FamousProduction production :productions){
+            String productionName = replaceHighLightContent(production.getProductionName(),searchkeyword);
+            String chineseName = replaceHighLightContent(production.getChineseName(),searchkeyword);
+            String productionContent = replaceHighLightContent(production.getProductionContent(),searchkeyword);
+
+            production.setProductionName(productionName);
+            production.setChineseName(chineseName);
+            production.setProductionContent(productionContent);
+        }
+        return productions;
+
+    }
+
+    /**
+     * 高亮替换
+     * @param content
+     * @param searchkeyword
+     * @return
+     */
+    private String replaceHighLightContent(String content,String searchkeyword){
+
+        String highLightContent = "<span style=\"color:red\">"+searchkeyword+"</span>";
+        String finalConten = "";
+
+        if(content.indexOf(searchkeyword)>=0){
+
+            finalConten=content.replace(searchkeyword,highLightContent);
+
+        }else{
+            return content;
+        }
+        return finalConten;
+
     }
 }
