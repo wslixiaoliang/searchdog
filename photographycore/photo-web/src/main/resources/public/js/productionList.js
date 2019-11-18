@@ -83,15 +83,15 @@
                         var finalUrl = firstUrl + list[i].portraitName;
                         var productionId = list[i].productionId;
 
-                        str += '<div class="proDiv"'+i+' style="width:1000px;height:180px;color: #666666;margin-left:220px">' +
-                                        '<div class='+u+' style="width:160px;height:150px;float:left;margin-right:20px">' +
+                        str += '<div class="proDiv"'+i+' style="width:1000px;height:170px;color: #666666;margin-left:230px">' +
+                                        '<div class='+u+' style="width:150px;height:155px;float:left;margin-right:10px">' +
                                             '<img class='+s+' style=" width:55px; height:55px; border-radius:50%" src='+finalUrl+'>' +
                                             '<p class='+w+' style=" font-family:\'微软雅黑\'; font-size:14px">'+list[i].chineseName+'</p>' +
                                             '<p class='+x+' style=" font-family:\'Microsoft YaHei\'; font-size:14px ">'+list[i].englishName+'</p>' +
                                             '<p class='+y+' style=" font-family:\'楷体\'; font-style:oblique; font-size:14px">'+list[i].publishedYear+'</p>' +
                                             '<p class='+v+' style=" font-family:\'微软雅黑\'; font-size:14px">'+list[i].productionName+'</p>' +
                                         '</div>' +
-                                        '<div class='+z+' style="width:600px;height:150px;float:left;color:#666;margin-top:30px">' +
+                                        '<div class='+z+' style="width:600px;height:150px;float:left;color:#666;margin-top:20px">' +
                                             '<a class='+a+' href="production.html?productionId='+productionId+'&productionContent='+productionContent+'" style="text-decoration:none;color:#666666;font-size:16px;font-family:\'微软雅黑\'" onmouseover="this.style.color=\'black\'" onmouseout="this.style.color=\'#666666\'" onmousedown="this.style.color=\'#666666\'">'+list[i].summaryInfo+'</a>' +
                                         '</div>' +
                               '</div>';

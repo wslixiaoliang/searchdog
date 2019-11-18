@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1115 底层搜索文章内容高亮优化">
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1115 底层搜索文章内容高亮优化：innerText-innerHtml优化（高亮标签被当成字符串显示，显示内容修改成innerHtml后，高亮展示正常）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/production.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famous.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famous.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/portrait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/production.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/production.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -143,7 +146,7 @@
     </option>
     <option name="contentProportion" value="0.13649635" />
   </component>
-  <component name="RunManager" selected="Spring Boot.WebApplication">
+  <component name="RunManager" selected="Spring Boot.ServiceApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -233,12 +236,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@28272c59" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d6d29c6a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@28272c59" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@de7c92e5" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d6d29c6a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d9c4ae61" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -360,14 +363,8 @@
       <workItem from="1573703346767" duration="18030000" />
       <workItem from="1573782213266" duration="210000" />
       <workItem from="1573782450818" duration="13105000" />
-      <workItem from="1573957840046" duration="30435000" />
-    </task>
-    <task id="LOCAL-00017" summary="FAMOUS-新增名人作品展示页面-20190516">
-      <created>1558014133134</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1558014133134</updated>
+      <workItem from="1573957840046" duration="35325000" />
+      <workItem from="1574066780297" duration="3630000" />
     </task>
     <task id="LOCAL-00018" summary="FAMOUS-新增名人作品展示页面调试-20190517">
       <created>1558088108010</created>
@@ -705,40 +702,15 @@
       <option name="project" value="LOCAL" />
       <updated>1574046153151</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="production-1115 底层搜索文章内容高亮优化：innerText-innerHtml优化（高亮标签被当成字符串显示，显示内容修改成innerHtml后，高亮展示正常）">
+      <created>1574052298359</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1574052298359</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 17h 06m 36s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 17h 08m 54s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 17h 23m 34s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 17h 31m 04s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 17h 36m 45s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 17h 38m 49s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 17h 46m 35s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 17h 46m 37s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 20h 01m 53s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexComponentTest_testIndexCreate - 2019.11.05 at 20h 20m 53s.xml">
-      <configuration name="IndexComponentTest.testIndexCreate" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -801,7 +773,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-711 新增用户信息相关接口-2019.7.17" />
     <MESSAGE value="FAMOUS-731 新增评论相关接口" />
     <MESSAGE value="FAMOUS-731 util工具类修改" />
     <MESSAGE value="FAMOUS-819 新增搜索引擎底层增删改查接口" />
@@ -826,7 +797,8 @@
     <MESSAGE value="production-1115 底层搜索优化，添加动态摘要优化" />
     <MESSAGE value="production-1115 底层搜索分页优化" />
     <MESSAGE value="production-1115 底层搜索文章内容高亮优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1115 底层搜索文章内容高亮优化" />
+    <MESSAGE value="production-1115 底层搜索文章内容高亮优化：innerText-innerHtml优化（高亮标签被当成字符串显示，显示内容修改成innerHtml后，高亮展示正常）" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1115 底层搜索文章内容高亮优化：innerText-innerHtml优化（高亮标签被当成字符串显示，显示内容修改成innerHtml后，高亮展示正常）" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
