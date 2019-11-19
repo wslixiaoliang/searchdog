@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1118 添加版权信息，调整全文搜搜页面头像和摘要的样式；">
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousPortrait.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousPortrait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousProduction.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/FamousProduction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/CommonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/IndexFamousComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/IndexFamousComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/ProductionIndexComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/IndexProductionComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchFamousComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchFamousComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchProductionComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/FamousController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/ProductionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famous.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/famous.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/elastic/ElasticTest.java" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -252,7 +240,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d6d29c6a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f5d07864" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d9c4ae61" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -375,14 +363,7 @@
       <workItem from="1573782213266" duration="210000" />
       <workItem from="1573782450818" duration="13105000" />
       <workItem from="1573957840046" duration="35325000" />
-      <workItem from="1574066780297" duration="18188000" />
-    </task>
-    <task id="LOCAL-00020" summary="FAMOUS-名人作品展示页面调试-20190517">
-      <created>1558315091201</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1558315091201</updated>
+      <workItem from="1574066780297" duration="21883000" />
     </task>
     <task id="LOCAL-00021" summary="FAMOUS-作品页面展示多个作品调试-20190520">
       <created>1558324010901</created>
@@ -720,7 +701,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574081650566</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；">
+      <created>1574158703482</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1574158703482</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -784,7 +772,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-731 util工具类修改" />
     <MESSAGE value="FAMOUS-819 新增搜索引擎底层增删改查接口" />
     <MESSAGE value="FAMOUS-824 新增mapping" />
     <MESSAGE value="famous-1014 新增工具类方法，并拆解工具类" />
@@ -809,7 +796,8 @@
     <MESSAGE value="production-1115 底层搜索文章内容高亮优化" />
     <MESSAGE value="production-1115 底层搜索文章内容高亮优化：innerText-innerHtml优化（高亮标签被当成字符串显示，显示内容修改成innerHtml后，高亮展示正常）" />
     <MESSAGE value="production-1118 添加版权信息，调整全文搜搜页面头像和摘要的样式；" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1118 添加版权信息，调整全文搜搜页面头像和摘要的样式；" />
+    <MESSAGE value="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />

@@ -28,8 +28,9 @@ public class FamousPortrait implements Serializable{
     }
 
     //有参构造方法
-    public FamousPortrait( String portraitName,String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
+    public FamousPortrait(String portraitName,long famousId,String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
         this.portraitName = portraitName;
+        this.famousId = famousId;
         this.chineseName = chineseName;
         this.englishName = englishName;
         this.sex = sex;
@@ -40,7 +41,6 @@ public class FamousPortrait implements Serializable{
         this.birthYear = birthYear;
     }
 
-
     //有参构造方法
     public FamousPortrait(long famousId,String portraitName,String chineseName){
         this.famousId = famousId;
@@ -49,9 +49,11 @@ public class FamousPortrait implements Serializable{
     }
 
     //有参构造方法
-    public FamousPortrait(long portraitId, String portraitName, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
+    public FamousPortrait(long portraitId, String portraitName, String relativeLocation, long famousId, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
         this.portraitId = portraitId;
         this.portraitName = portraitName;
+        this.relativeLocation = relativeLocation;
+        this.famousId = famousId;
         this.chineseName = chineseName;
         this.englishName = englishName;
         this.sex = sex;

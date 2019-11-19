@@ -27,8 +27,8 @@ public class FamousController {
     private SearchFamousComponent searchFamousComponent;
     private static final Logger logger = Logger.getLogger(FamousController.class);
 
-    private static final String INCLUDES=  "portraitName,chineseName,createTime,englishName,sex,career,achievement,honor,country,birthYear";
-    private static final String EXCLUDES = "portraitId,famousId,relativeLocation";
+    private static final String INCLUDES=  "famousId,portraitName,chineseName,createTime,englishName,sex,career,achievement,honor,country,birthYear";
+    private static final String EXCLUDES = "portraitId,relativeLocation";
 
     /**
      * 管理页面：条件查询
@@ -72,6 +72,7 @@ public class FamousController {
             return famousList;
         }
         for (Map<String, Object> document : documents) {
+            long famousId = Long.parseLong(String.valueOf(document.get("famousId")));
             String portraitName = String.valueOf(document.get("portraitName"));
             String chineseName = String.valueOf(document.get("chineseName"));
             String englishName = String.valueOf(document.get("englishName"));
@@ -81,7 +82,7 @@ public class FamousController {
             String honor = String.valueOf(document.get("honor"));
             String country = String.valueOf(document.get("country"));
             String birthYear = String.valueOf(document.get("birthYear"));
-            FamousPortrait famousPortrait = new FamousPortrait(portraitName, chineseName, englishName, sex, career, achievement, honor, country, birthYear);
+            FamousPortrait famousPortrait = new FamousPortrait(portraitName,famousId,chineseName, englishName, sex, career, achievement, honor, country, birthYear);
             famousList.add(famousPortrait);
         }
         return famousList;
