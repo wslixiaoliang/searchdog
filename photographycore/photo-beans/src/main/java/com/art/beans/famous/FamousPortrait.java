@@ -28,11 +28,30 @@ public class FamousPortrait implements Serializable{
     }
 
     //有参构造方法
-    public FamousPortrait(long portraitId, String portraitName, String relativeLocation, long famousId, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
+    public FamousPortrait( String portraitName,String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
+        this.portraitName = portraitName;
+        this.chineseName = chineseName;
+        this.englishName = englishName;
+        this.sex = sex;
+        this.career = career;
+        this.achievement = achievement;
+        this.honor = honor;
+        this.country = country;
+        this.birthYear = birthYear;
+    }
+
+
+    //有参构造方法
+    public FamousPortrait(long famousId,String portraitName,String chineseName){
+        this.famousId = famousId;
+        this.portraitName = portraitName;
+        this.chineseName = chineseName;
+    }
+
+    //有参构造方法
+    public FamousPortrait(long portraitId, String portraitName, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
         this.portraitId = portraitId;
         this.portraitName = portraitName;
-        this.relativeLocation = relativeLocation;
-        this.famousId = famousId;
         this.chineseName = chineseName;
         this.englishName = englishName;
         this.sex = sex;

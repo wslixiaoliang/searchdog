@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousProduction;
 import com.art.service.famous.IFamousProductionSV;
+import com.art.util.DateUtil;
 import com.art.util.SearchConstans;
 import com.art.util.StringUtil;
 import com.art.web.component.elastic.IndexComponent;
@@ -17,13 +18,13 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class ProductionIndexComponent {
+public class IndexProductionComponent {
 
     @Autowired
     private IndexComponent indexComponent;
     @Reference
     private IFamousProductionSV famousProductionSV;
-    private static final Logger LOGGER = Logger.getLogger(ProductionIndexComponent.class);
+    private static final Logger LOGGER = Logger.getLogger(IndexProductionComponent.class);
     private static int count = 0;
 
     public SearchResult productionIndex(List<String> famousList)
@@ -90,7 +91,7 @@ public class ProductionIndexComponent {
             document.put(SearchConstans.Production.PORTRAIT_NAME, StringUtil.isNotEmpty(String.valueOf(production.getPortraitName()))?String.valueOf(production.getPortraitName()):"");
             document.put(SearchConstans.Production.CHINESE_NAME, StringUtil.isNotEmpty(String.valueOf(production.getChineseName()))?String.valueOf(production.getChineseName()):"");
             document.put(SearchConstans.Production.ENGLISH_NAME, StringUtil.isNotEmpty(String.valueOf(production.getEnglishName()))?String.valueOf(production.getEnglishName()):"");
-
+            document.put(SearchConstans.Production.CREATE_TIME, DateUtil.getCurrentTime("yyyy-MM-dd HH:mm:ss"));
             document.put(SearchConstans.Production.PRODUCTION_NAME, StringUtil.isNotEmpty(String.valueOf(production.getProductionName()))?String.valueOf(production.getProductionName()):"");
             document.put(SearchConstans.Production.PUBLISHED_YEAR, StringUtil.isNotEmpty(String.valueOf(production.getPublishedYear()))?String.valueOf(production.getPublishedYear()):"");
             document.put(SearchConstans.Production.SUMMARY_INFO, StringUtil.isNotEmpty(String.valueOf(production.getSummaryInfo()))?String.valueOf(production.getSummaryInfo()):"");

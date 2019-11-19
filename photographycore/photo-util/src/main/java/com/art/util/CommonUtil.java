@@ -31,6 +31,19 @@ public class CommonUtil {
         }
 
     /**
+     * 组装：必返回字段，忽略字段
+     * @return
+     */
+    public static String[] includesOrExcludes(String fieldString){
+
+        String[] fields  = new String[10];
+        if(StringUtil.isNotEmpty(fieldString)){
+            fields = StringUtil.splitStr(fieldString,",");
+        }
+        return fields;
+    }
+
+    /**
      * main方法测试类
      * @param args
      */

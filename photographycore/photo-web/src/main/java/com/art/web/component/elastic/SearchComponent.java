@@ -45,7 +45,7 @@ public class SearchComponent {
      * @param limit 每页数据条数
      * @return
      */
-    public SearchResult searching(Map<String,Object> params, Map<String,Object> termFields,int page,int limit)throws Exception
+    public SearchResult searching(Map<String,Object> params, Map<String,Object> termFields,String includes[],String excludes[],int page,int limit)throws Exception
     {
         SearchResult searchResult = new SearchResult();
 
@@ -60,9 +60,9 @@ public class SearchComponent {
         }
         if(null!=termFields && termFields.size()>0){
            if(0==page && 0==limit){
-               searchResult = searching(indexName,indexType,termFields);
+               searchResult = searching(indexName,indexType,termFields,includes,excludes);
            }else{
-               searchResult = searching(indexName,indexType,termFields,page,limit);
+               searchResult = searching(indexName,indexType,termFields,includes,excludes,page,limit);
            }
         }
         if(termFields.size()==0){
@@ -70,14 +70,12 @@ public class SearchComponent {
                 searchResult = searching(indexName,indexType);
             }else{
 
-                searchResult = searching(indexName,indexType,page,limit);
+                searchResult = searching(indexName,indexType,includes,excludes,page,limit);
             }
         }
         return searchResult;
 
     }
-
-
 
     /**
      * 精确匹配查询：根据文档Id查询
@@ -85,7 +83,6 @@ public class SearchComponent {
      * @param indexType
      * @param docId
      */
-
     public SearchResult searching(String indexName, String indexType, String docId) throws Exception{
 
         SearchResult searchResult = new SearchResult();
@@ -95,8 +92,6 @@ public class SearchComponent {
 
         try{
             if(StringUtil.isNotEmpty(indexName)&& StringUtil.isNotEmpty(indexType)&&StringUtil.isNotEmpty(docId)) {
-
-
                 response = EngineClient.getConnection().prepareGet(indexName,indexType,docId).execute().actionGet();
             }
             document = response.getSourceAsMap();
@@ -117,13 +112,13 @@ public class SearchComponent {
     }
 
     /**
-     * 精确匹配查询：指定字段
+     * 精确匹配查询：指定字段，不分页（首页条件查询）
      * @param indexName
      * @param indexType
      * @param termFields
      * @return
      */
-    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields)throws Exception
+    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields,String[] includes,String[] excludes)throws Exception
     {
         SearchResult searchResult = new SearchResult();
         List<Map<String, Object>> documents = new ArrayList<>();
@@ -144,6 +139,7 @@ public class SearchComponent {
                             .setQuery(QueryBuilders.matchQuery(fieldName, fieldValue))//设置查询字段
                             .setFrom(0)//设置查询数据的起始位置
                             .setSize(20)//设置返回数据的最大条数
+                            .setFetchSource(includes,excludes)//需要返回的字段，不需要返回的字段
                             .setExplain(true)// 设置是否按查询匹配度排序
                             .setTimeout(new TimeValue(60, TimeUnit.SECONDS))
                             .execute()
@@ -174,7 +170,7 @@ public class SearchComponent {
     }
 
     /**
-     * 精确匹配查询：指定字段分页查询
+     * 精确匹配查询：指定字段，分页查询
      * @param indexName
      * @param indexType
      * @param termFields
@@ -182,7 +178,7 @@ public class SearchComponent {
      * 注：setFetchSource()，必选返回字段，忽略字段；addStoredField() 排序字段
      *
      */
-    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields,int page,int limit)throws Exception
+    public SearchResult searching(String indexName, String indexType, Map<String,Object> termFields,String includes[],String excludes[],int page,int limit)throws Exception
     {
         SearchResult searchResult = new SearchResult();
         List<Map<String, Object>> documents = new ArrayList<>();
@@ -205,6 +201,7 @@ public class SearchComponent {
                             .setQuery(builder)//设置查询字段
                             .setFrom(start)//设置分页参数
                             .setSize(limit)
+                            .setFetchSource(includes,excludes)//需要返回的字段，不需要返回的字段
                             .highlighter(highlightBuilder)//设置高亮
                             .setExplain(true)// 设置是否按查询匹配度排序
                             .setTimeout(new TimeValue(60, TimeUnit.SECONDS));
@@ -380,7 +377,7 @@ public class SearchComponent {
 
 
     /**
-     * 全量查询：指定返回文档数量
+     * 全量查询：指定返回文档数量(首页全量)
      * @param indexName
      * @param indexType
      */
@@ -417,14 +414,14 @@ public class SearchComponent {
     }
 
     /**
-     * 全量查询：分页查询
+     * 全量查询：分页查询（维护页面）
      * @param indexName
      * @param indexType
      * @param page
      * @param limit
      * @return
      */
-    public SearchResult searching(String indexName,String indexType ,int page,int limit) throws Exception
+    public SearchResult searching(String indexName,String indexType ,String includes[],String excludes[],int page,int limit) throws Exception
     {
         SearchResult searchResult = new SearchResult();
         List<Map<String,Object>> documents = new ArrayList<>();
@@ -443,6 +440,7 @@ public class SearchComponent {
         SearchResponse searchResponse = searchRequestBuilder
                 .setFrom(start)
                 .setSize(limit)
+                .setFetchSource(includes,excludes)
                 .get();
         SearchHits searchHits = searchResponse.getHits();
         SearchHit[] hits = searchHits.getHits();
@@ -469,7 +467,5 @@ public class SearchComponent {
                 return EngineClient.getConnection().prepareSearch(indexName).setTypes(indexType);
             }
     }
-
-
 
 }

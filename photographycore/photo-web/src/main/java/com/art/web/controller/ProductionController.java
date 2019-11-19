@@ -6,6 +6,7 @@ import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousProduction;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousProductionSV;
+import com.art.util.CommonUtil;
 import com.art.util.SearchConstans;
 import com.art.util.StringUtil;
 import com.art.web.component.famous.SearchProductionComponent;
@@ -28,34 +29,41 @@ public class ProductionController {
 
     @Reference
     private IFamousProductionSV productionSV;
+
     @Autowired
     SearchProductionComponent searchProductionComponent;
-    private final Logger logger = Logger.getLogger(ProductionController.class);
 
+    private final Logger logger = Logger.getLogger(ProductionController.class);
+    private static final String INCLUDES=  "productionId,portraitName,chineseName,englishName,productionName,publishedYear,summaryInfo,productionContent";
+    private static final String EXCLUDES = "famousId,createTime";
     /**
      * 名人作品：条件查询
      * @param page
      * @param limit
-     * @param productionContent
+     * @param searchKeyword
      * @return
      */
     @RequestMapping(value = "/getProductionInfos")
-    public Result getProductionInfos(Integer page, Integer limit, String productionContent)
+    public Result getProductionInfos(Integer page, Integer limit, String searchKeyword)
     {
         Result result = new Result();
         List<FamousProduction> productionList;
         try{
-            Map<String,Object> fields = new HashMap();
-
-            if(StringUtils.isNotEmpty(productionContent)){
-                fields.put("chineseName",productionContent);
-                fields.put("productionName",productionContent);
-                fields.put("summaryInfo",productionContent);
-                fields.put("productionContent",productionContent);
+            Map<String,Object> termFields = new HashMap();
+            if(StringUtils.isNotEmpty(searchKeyword)){
+                termFields.put("chineseName",searchKeyword);
+                termFields.put("productionName",searchKeyword);
+                termFields.put("summaryInfo",searchKeyword);
+                termFields.put("productionContent",searchKeyword);
             }
 
+            //需要返回的字段
+            String includes[] = CommonUtil.includesOrExcludes(INCLUDES);
+            //不需要返回的字段
+            String excludes[] = CommonUtil.includesOrExcludes(EXCLUDES);
+
             //调用搜索引擎
-            SearchResult searchResult = searchProductionComponent.searchProductions(fields,page,limit);
+            SearchResult searchResult = searchProductionComponent.searchProductions(termFields,includes,excludes,page,limit);
             List<Map<String,Object>> documents =searchResult.getDocuments();
             int count = searchResult.getTotalCount();
             productionList= map2Bean(documents);
@@ -74,7 +82,11 @@ public class ProductionController {
         return result;
     }
 
-
+    /**
+     * 查询结果map转换成bean
+     * @param documents
+     * @return
+     */
     private List<FamousProduction> map2Bean(List<Map<String,Object>> documents){
 
         List<FamousProduction> productionList = new ArrayList<>();
@@ -82,12 +94,9 @@ public class ProductionController {
         if(null==documents && documents.size()==0){
             return productionList;
         }
-
         for(Map<String,Object> document:documents){
-
-            long famousId  = Long.parseLong(String.valueOf(document.get("famousId")));//名人ID
+//            long famousId  = Long.parseLong(String.valueOf(document.get("famousId")));//名人ID
             long productionId  = Long.parseLong(String.valueOf(document.get("productionId")));//作品ID
-
             String portraitName = String.valueOf(document.get("portraitName"));//肖像名称
             String chineseName = String.valueOf(document.get("chineseName"));//中文名
             String englishName = String.valueOf(document.get("englishName"));//英文名
@@ -96,15 +105,11 @@ public class ProductionController {
             String publishedYear = String.valueOf(document.get("publishedYear"));//发表年份
             String summaryInfo = String.valueOf(document.get("summaryInfo"));//作品摘要
             String productionContent = String.valueOf(document.get("productionContent"));//作品内容
-
-            FamousProduction production = new FamousProduction(productionId, famousId, portraitName, chineseName, englishName, productionName, publishedYear, summaryInfo, productionContent);
+            FamousProduction production = new FamousProduction(productionId, portraitName, chineseName, englishName, productionName, publishedYear, summaryInfo, productionContent);
             productionList.add(production);
-
         }
         return productionList;
     }
-
-
 
     /**
      * 单个 && 多作品查询
@@ -133,7 +138,7 @@ public class ProductionController {
     }
 
     /**
-     * 详情页高亮替换
+     * 全文搜索：详情页内容，高亮替换
      * @param productions
      * @param searchkeyword
      * @return
@@ -168,13 +173,10 @@ public class ProductionController {
         String finalConten = "";
 
         if(content.indexOf(searchkeyword)>=0){
-
             finalConten=content.replaceAll(searchkeyword,highLightContent);
-
         }else{
             return content;
         }
         return finalConten;
-
     }
 }

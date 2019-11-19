@@ -59,6 +59,7 @@ public class SearchConstans {
         public static final String CHINESE_NAME ="chineseName";//中文名称
         public static final String RELATIVE_LOCATION ="relativeLocation";//相对位置
 
+        public static final String CREATE_TIME ="createTime";//索引更新时间
         public static final String ENGLISH_NAME ="englishName";//英文名
         public static final String SEX ="sex";//性别
         public static final String CAREER ="career";//职业
@@ -77,6 +78,7 @@ public class SearchConstans {
         public static final String INDEX_NAME ="world.famous_production";//索引名称
         public static final String INDEX_TYPE ="famous_production";//索引类型
 
+        public static final String CREATE_TIME ="createTime";//索引更新时间
         public static final String PRODUCTION_ID ="productionId";//作品ID
         public static final String FAMOUS_ID ="famousId";//名人ID
         public static final String PORTRAIT_NAME ="portraitName";//头像名称

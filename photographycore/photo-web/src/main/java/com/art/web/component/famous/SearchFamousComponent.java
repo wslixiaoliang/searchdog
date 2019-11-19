@@ -19,7 +19,7 @@ public class SearchFamousComponent
      * @param fields
      * @return
      */
-    public SearchResult searchFamousInfo(Map<String,Object> fields,int page ,int limit) throws Exception
+    public SearchResult searchFamousInfo(Map<String,Object> fields,String includes[],String excludes[],int page ,int limit) throws Exception
     {
         //索引名称和索引类型
         String indexName = SearchConstans.Portrait.INDEX_NAME;
@@ -27,9 +27,7 @@ public class SearchFamousComponent
         Map<String,Object> params = new HashMap<>();
         params.put("indexName",indexName);
         params.put("indexType",indexType);
-        SearchResult searchResult = searchDocumentsComponent.searching(params,fields,page,limit);
-
-        return searchResult;
+        return searchDocumentsComponent.searching(params,fields,includes,excludes,page,limit);
     }
 
 

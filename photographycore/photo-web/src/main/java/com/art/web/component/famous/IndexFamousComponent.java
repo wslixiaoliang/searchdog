@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousPortrait;
 import com.art.service.famous.IFamousPortraitSV;
+import com.art.util.DateUtil;
 import com.art.util.SearchConstans;
 import com.art.util.StringUtil;
 import com.art.web.component.elastic.IndexComponent;
@@ -94,6 +95,7 @@ public class IndexFamousComponent {
             document.put(SearchConstans.Portrait.CHINESE_NAME,StringUtil.isNotEmpty(famous.getChineseName())?famous.getChineseName():"");
             document.put(SearchConstans.Portrait.RELATIVE_LOCATION,StringUtil.isNotEmpty(famous.getRelativeLocation())?famous.getRelativeLocation():"");
 
+            document.put(SearchConstans.Portrait.CREATE_TIME, DateUtil.getCurrentTime("yyyy-MM-dd HH:mm:ss"));
             document.put(SearchConstans.Portrait.ENGLISH_NAME, StringUtil.isNotEmpty(famous.getEnglishName())?famous.getEnglishName():"");
             document.put(SearchConstans.Portrait.SEX,StringUtil.isNotEmpty(famous.getSex())?famous.getSex():"");
             document.put(SearchConstans.Portrait.CAREER,StringUtil.isNotEmpty(famous.getCareer())?famous.getCareer():"");

@@ -23,9 +23,8 @@ public class FamousProduction implements Serializable {
     }
 
     //有参构造方法
-    public FamousProduction(long productionId, long famousId, String portraitName, String chineseName, String englishName, String productionName, String publishedYear, String summaryInfo, String productionContent) {
+    public FamousProduction(long productionId, String portraitName, String chineseName, String englishName, String productionName, String publishedYear, String summaryInfo, String productionContent) {
         this.productionId = productionId;
-        this.famousId = famousId;
         this.portraitName = portraitName;
         this.chineseName = chineseName;
         this.englishName = englishName;

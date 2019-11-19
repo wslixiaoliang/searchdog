@@ -3,6 +3,7 @@ package com.art.web.controller;
 import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousPortrait;
 import com.art.beans.famous.Result;
+import com.art.util.CommonUtil;
 import com.art.util.SearchConstans;
 import com.art.web.component.famous.SearchFamousComponent;
 import org.apache.log4j.Logger;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 世界名人Controller
+ * 名人维护页：Controller
  * @author lixiaoliang
  */
 @RestController
@@ -26,8 +27,11 @@ public class FamousController {
     private SearchFamousComponent searchFamousComponent;
     private static final Logger logger = Logger.getLogger(FamousController.class);
 
+    private static final String INCLUDES=  "portraitName,chineseName,createTime,englishName,sex,career,achievement,honor,country,birthYear";
+    private static final String EXCLUDES = "portraitId,famousId,relativeLocation";
+
     /**
-     * 世界名人：条件查询
+     * 管理页面：条件查询
      * @param page
      * @param limit
      */
@@ -36,8 +40,13 @@ public class FamousController {
         Result result = new Result();
         List<FamousPortrait> famousList;
 
+        //需要返回的字段
+        String includes[] = CommonUtil.includesOrExcludes(INCLUDES);
+        //不需要返回的字段
+        String excludes[] = CommonUtil.includesOrExcludes(EXCLUDES);
+
         try {
-            SearchResult searchResult = searchFamousComponent.searchFamousInfo(new HashMap<>(),page,limit);
+            SearchResult searchResult = searchFamousComponent.searchFamousInfo(new HashMap<>(),includes,excludes,page,limit);
             famousList = map2Bean(searchResult.getDocuments());
             result.setBeans(famousList);
             result.setCount(searchResult.getTotalCount());
@@ -53,7 +62,6 @@ public class FamousController {
 
     /**
      * Map转bean
-     *
      * @param documents
      * @return
      */
@@ -64,10 +72,7 @@ public class FamousController {
             return famousList;
         }
         for (Map<String, Object> document : documents) {
-            String portraitId = String.valueOf(document.get("portraitId"));
             String portraitName = String.valueOf(document.get("portraitName"));
-            String relativeLocation = String.valueOf(document.get("relativeLocation"));
-            String famousId = String.valueOf(document.get("famousId"));
             String chineseName = String.valueOf(document.get("chineseName"));
             String englishName = String.valueOf(document.get("englishName"));
             String sex = String.valueOf(document.get("sex"));
@@ -76,7 +81,7 @@ public class FamousController {
             String honor = String.valueOf(document.get("honor"));
             String country = String.valueOf(document.get("country"));
             String birthYear = String.valueOf(document.get("birthYear"));
-            FamousPortrait famousPortrait = new FamousPortrait(Long.valueOf(portraitId), portraitName, relativeLocation, Long.valueOf(famousId), chineseName, englishName, sex, career, achievement, honor, country, birthYear);
+            FamousPortrait famousPortrait = new FamousPortrait(portraitName, chineseName, englishName, sex, career, achievement, honor, country, birthYear);
             famousList.add(famousPortrait);
         }
         return famousList;

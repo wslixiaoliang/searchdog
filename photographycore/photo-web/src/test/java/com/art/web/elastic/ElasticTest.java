@@ -38,7 +38,7 @@ public class ElasticTest {
 //        SearchResult searchIdResult = searchDocumentsComponent.searching("photo.search_keyword","search_keyword","100");//主键查询
         SearchResult searchResult = null;//条件查询
         try {
-            searchResult = searchDocumentsComponent.searching("world.famous_production","famous_production",document);
+//            searchResult = searchDocumentsComponent.searching("world.famous_production","famous_production",document);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -5,6 +5,7 @@ import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousPortrait;
 import com.art.beans.famous.Result;
 import com.art.service.famous.IFamousPortraitSV;
+import com.art.util.CommonUtil;
 import com.art.util.SearchConstans;
 import com.art.util.StringUtil;
 import com.art.web.component.famous.IndexFamousComponent;
@@ -32,7 +33,10 @@ public class PortraitController {
     private IFamousPortraitSV famousPortraitSV;
     @Autowired
     SearchFamousComponent searchFamousComponent;
+
     private final Log logger = LogFactory.getLog(PortraitController.class);
+    private static final String INCLUDES=  "famousId,portraitName,chineseName";
+    private static final String EXCLUDES = "createTime,relativeLocation,englishName,sex,career,achievement,honor,country,birthYear";
 
     /**
      * 首页肖像信息：条件查询
@@ -51,8 +55,13 @@ public class PortraitController {
                 fields.put("famousId",famousId);
             }
 
+            //需要返回的字段
+            String includes[] = CommonUtil.includesOrExcludes(INCLUDES);
+            //不需要返回的字段
+            String excludes[] = CommonUtil.includesOrExcludes(EXCLUDES);
+
             //调用搜索引擎
-            SearchResult searchResult = searchFamousComponent.searchFamousInfo(fields,0,0);
+            SearchResult searchResult = searchFamousComponent.searchFamousInfo(fields,includes,excludes,0,0);
             List<Map<String,Object>> documents =searchResult.getDocuments();
             List<FamousPortrait> portraitList= map2Bean(documents);
 
@@ -81,23 +90,12 @@ public class PortraitController {
             return famousList;
         }
         for(Map<String,Object> document:documents){
-            String portraitId = String.valueOf(document.get("portraitId"));
             String portraitName = String.valueOf(document.get("portraitName"));
-            String relativeLocation= String.valueOf(document.get("relativeLocation"));
             String famousId= String.valueOf(document.get("famousId"));
             String chineseName= String.valueOf(document.get("chineseName"));
-            String englishName= String.valueOf(document.get("englishName"));
-            String sex= String.valueOf(document.get("sex"));
-            String career= String.valueOf(document.get("career"));
-            String achievement= String.valueOf(document.get("achievement"));
-            String honor= String.valueOf(document.get("honor"));
-            String country= String.valueOf(document.get("country"));
-            String birthYear= String.valueOf(document.get("birthYear"));
-            FamousPortrait famousPortrait = new FamousPortrait(Long.valueOf(portraitId),portraitName,relativeLocation,Long.valueOf(famousId),chineseName,englishName,sex,career,achievement,honor,country,birthYear);
+            FamousPortrait famousPortrait = new FamousPortrait(Long.valueOf(famousId),portraitName,chineseName);
             famousList.add(famousPortrait);
         }
         return famousList;
-
-
     }
 }
