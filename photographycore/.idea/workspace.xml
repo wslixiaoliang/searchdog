@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；">
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/css/suggest.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/suggest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,7 +93,7 @@
     <property name="SearchEverywhereHistoryKey" value="famous.js&#9;FILE&#9;file://E:/photography/photographycore/photo-web/src/main/resources/public/js/famous.js&#10;college&#9;FILE&#9;file://E:/photography/photographycore/photo-beans/src/main/java/com/art/beans/college/CollegeClassmates.java&#10;co&#9;FILE&#9;file://E:/photography/photographycore/photo-beans/src/main/java/com/art/beans/CollegeClassmates.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/photo-web/src/main/resources/public/modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/photo-web/src/main/resources/public/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -104,13 +106,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\jquery" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\js" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\css" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\modules" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\templates" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.art.service.college" />
       <recent name="" />
@@ -118,11 +113,18 @@
       <recent name="com.art.serviceimpl.college" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/modules" />
+      <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/css" />
       <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/js" />
+      <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/modules" />
       <recent name="$PROJECT_DIR$/photo-web/src/main/resources/mapping" />
       <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\page" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\jquery" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\js" />
       <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\css" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\modules" />
+      <recent name="E:\photography\photographycore\photo-web\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -143,7 +145,7 @@
     </option>
     <option name="contentProportion" value="0.13649635" />
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceApplication">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -238,7 +240,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d90269a1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d6b333b0" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1389db4b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -363,14 +365,7 @@
       <workItem from="1573957840046" duration="35325000" />
       <workItem from="1574066780297" duration="23295000" />
       <workItem from="1574390291076" duration="1970000" />
-      <workItem from="1575253084383" duration="1656000" />
-    </task>
-    <task id="LOCAL-00022" summary="FAMOUS-个人作品页展示多个作品及新增头像调试-20190520">
-      <created>1558352811432</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1558352811432</updated>
+      <workItem from="1575253084383" duration="17476000" />
     </task>
     <task id="LOCAL-00023" summary="FAMOUS-作品展览馆样式调试新增摘要字段-20190520">
       <created>1558358935796</created>
@@ -708,7 +703,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574162901540</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；">
+      <created>1575339001721</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1575339001722</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
