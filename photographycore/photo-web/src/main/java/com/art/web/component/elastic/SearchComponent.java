@@ -274,8 +274,6 @@ public class SearchComponent {
         return highlightBuilder;
     }
 
-
-
     /**
      * 搜索结果处理
      * @param searchResponse
@@ -297,12 +295,11 @@ public class SearchComponent {
             HighlightField productionContent = highlightFields.get("productionContent");
 
             source = searchHit.getSourceAsMap();
-
             //高亮替换
-            putHightConten(chineseName,source,"chineseName",searchKeyword);
-            putHightConten(productionName,source,"productionName",searchKeyword);
-            putHightConten(summaryInfo,source,"summaryInfo",searchKeyword);//静态摘要，从摘要字段获取
-            putHightConten(productionContent,source,"productionContent",searchKeyword);//动态摘要，从文章内容获取，若不为空则覆盖静态摘要
+            putHightContent(chineseName,source,"chineseName",searchKeyword);
+            putHightContent(productionName,source,"productionName",searchKeyword);
+            putHightContent(summaryInfo,source,"summaryInfo",searchKeyword);//静态摘要，从摘要字段获取
+            putHightContent(productionContent,source,"productionContent",searchKeyword);//动态摘要，从文章内容获取，若不为空则覆盖静态摘要
 
             documents.add(source);
         }
@@ -313,7 +310,7 @@ public class SearchComponent {
      * @param contentField
      * @param source
      */
-    private void putHightConten(HighlightField contentField,Map<String, Object> source,String key,String searchKeyword){
+    private void putHightContent(HighlightField contentField,Map<String, Object> source,String key,String searchKeyword){
 
         if(contentField!=null){
             Text[] fragments = contentField.fragments();//获取高亮分片

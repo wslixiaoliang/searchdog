@@ -29,8 +29,8 @@ public class IndexComponentTest {
         for (String id : famousIds) {
             famousList.add(id);
         }
-        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);
-//        SearchResult searchResult = indexProductionComponent.productionIndex(famousList);
+//        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);
+        SearchResult searchResult = indexProductionComponent.productionIndex(famousList);
         System.out.println("新增文档结果==========================结果状态：" + searchResult.getStatus() + " ====成功条数：" + searchResult.getTotalCount() + " ====结果信息：" + searchResult.getReturnMsg());
         System.out.println("" + searchResult.getStatus());
     }
