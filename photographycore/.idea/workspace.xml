@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；">
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/css/suggest.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/suggest.js" afterDir="false" />
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1203 前段页面新增搜索提示词；">
+      <change afterPath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/Suggestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/famous/FamousSuggestionsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/FamousSuggestionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousSuggestionSVImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/IFamousSuggestionSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/IndexSuggestionComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/mapping/famous.suggestion_tpl.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,10 +52,10 @@
         <option value="FxmlFile" />
         <option value="mapper" />
         <option value="css" />
-        <option value="Interface" />
         <option value="Mapper" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -93,7 +99,7 @@
     <property name="SearchEverywhereHistoryKey" value="famous.js&#9;FILE&#9;file://E:/photography/photographycore/photo-web/src/main/resources/public/js/famous.js&#10;college&#9;FILE&#9;file://E:/photography/photographycore/photo-beans/src/main/java/com/art/beans/college/CollegeClassmates.java&#10;co&#9;FILE&#9;file://E:/photography/photographycore/photo-beans/src/main/java/com/art/beans/CollegeClassmates.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/photo-web/src/main/resources/public/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/photo-web/src/main/resources/mapping" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -113,11 +119,11 @@
       <recent name="com.art.serviceimpl.college" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/photo-web/src/main/resources/mapping" />
+      <recent name="$PROJECT_DIR$/photo-dao/src/main/resources/mapper" />
       <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/css" />
       <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/js" />
       <recent name="$PROJECT_DIR$/photo-web/src/main/resources/public/modules" />
-      <recent name="$PROJECT_DIR$/photo-web/src/main/resources/mapping" />
-      <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\photography\photographycore\photo-web\src\main\resources\public\jquery" />
@@ -145,7 +151,7 @@
     </option>
     <option name="contentProportion" value="0.13649635" />
   </component>
-  <component name="RunManager" selected="Spring Boot.WebApplication">
+  <component name="RunManager" selected="JUnit.IndexComponentTest.testIndexCreate">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -365,14 +371,7 @@
       <workItem from="1573957840046" duration="35325000" />
       <workItem from="1574066780297" duration="23295000" />
       <workItem from="1574390291076" duration="1970000" />
-      <workItem from="1575253084383" duration="17476000" />
-    </task>
-    <task id="LOCAL-00023" summary="FAMOUS-作品展览馆样式调试新增摘要字段-20190520">
-      <created>1558358935796</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1558358935796</updated>
+      <workItem from="1575253084383" duration="29161000" />
     </task>
     <task id="LOCAL-00024" summary="FAMOUS-list页和单个作品详情页样式调试-20190521">
       <created>1558406622919</created>
@@ -710,7 +709,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575339001722</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="production-1203 前段页面新增搜索提示词；">
+      <created>1575383760108</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1575383760109</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -774,7 +780,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-819 新增搜索引擎底层增删改查接口" />
     <MESSAGE value="FAMOUS-824 新增mapping" />
     <MESSAGE value="famous-1014 新增工具类方法，并拆解工具类" />
     <MESSAGE value="FAMOUS-1015 前端搜索接口及搜索样式改造" />
@@ -799,11 +804,33 @@
     <MESSAGE value="production-1115 底层搜索文章内容高亮优化：innerText-innerHtml优化（高亮标签被当成字符串显示，显示内容修改成innerHtml后，高亮展示正常）" />
     <MESSAGE value="production-1118 添加版权信息，调整全文搜搜页面头像和摘要的样式；" />
     <MESSAGE value="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；" />
+    <MESSAGE value="production-1203 前段页面新增搜索提示词；" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1203 前段页面新增搜索提示词；" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
     <state width="436" height="458" key="Git.Branch.Popup@1600.900" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/photographycore$IndexComponentTest_testIndexCreate.ic" NAME="IndexComponentTest.testIndexCreate Coverage Results" MODIFIED="1572947179988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

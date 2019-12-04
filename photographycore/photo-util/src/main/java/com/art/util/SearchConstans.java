@@ -91,5 +91,17 @@ public class SearchConstans {
 
     }
 
+    /**
+     * 搜索提示词
+     */
+    public interface Suggestions
+    {
+        public static final String INDEX_NAME = "famous.suggestion_words";
+        public static final String INDEX_TYPE = "suggestion_words";
+        public static final String SUGGESTION_ID ="suggestionId";//提示词ID
+        public static final String SUGGESTION_NAME = "suggestionName";//提示词名称
+        public static final String CLICK_TIMES ="clickTimes";//搜索次数
+    }
+
 
 }
