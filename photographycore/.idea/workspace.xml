@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1203 前段页面新增搜索提示词；">
-      <change afterPath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/Suggestion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/src/main/java/com/art/dao/famous/FamousSuggestionsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-dao/src/main/resources/mapper/FamousSuggestionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service-impl/src/main/java/com/art/service/famous/FamousSuggestionSVImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-service/src/main/java/com/art/service/famous/IFamousSuggestionSV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/IndexSuggestionComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/resources/mapping/famous.suggestion_tpl.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/SuggestResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchSuggestionComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/SuggestionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -151,7 +147,7 @@
     </option>
     <option name="contentProportion" value="0.13649635" />
   </component>
-  <component name="RunManager" selected="JUnit.IndexComponentTest.testIndexCreate">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -241,12 +237,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d90269a1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3a4c844a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d90269a1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1389db4b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3a4c844a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bb29bba5" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -371,14 +367,8 @@
       <workItem from="1573957840046" duration="35325000" />
       <workItem from="1574066780297" duration="23295000" />
       <workItem from="1574390291076" duration="1970000" />
-      <workItem from="1575253084383" duration="29161000" />
-    </task>
-    <task id="LOCAL-00024" summary="FAMOUS-list页和单个作品详情页样式调试-20190521">
-      <created>1558406622919</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1558406622919</updated>
+      <workItem from="1575253084383" duration="43091000" />
+      <workItem from="1576036061785" duration="7368000" />
     </task>
     <task id="LOCAL-00025" summary="FAMOUS-appendChild引发的重复内容优化-20190521">
       <created>1558583625088</created>
@@ -716,7 +706,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575383760109</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="production-1203 前段页面新增搜索提示词；">
+      <created>1575450672738</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1575450672738</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

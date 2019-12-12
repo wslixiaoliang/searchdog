@@ -5,18 +5,22 @@
     var pageCount = 0;
     var searchKeywords ="";
     var autoComplete="";
-    var suggest = ['爱因','爱因斯','爱因斯坦'];
+    var suggest = [];
+
 
     // 初始化时加载
     $(document).ready(function() {
-        getSuggestion(suggest);//搜索提示词
+        getSuggestionWords();//查询搜索提示词
+        getSuggestion(suggest);
+        getSuggestion(suggest);//展示搜索提示词
         getProductionInfos(page);//初始化页面，page默认为1
         searchProductionInfos();//点击按钮搜索
         pressEnterSearch();//按下回车键：搜索
     });
 
+
     /**
-     * 点击按钮：搜索
+     * 点击按钮搜索
      */
     function searchProductionInfos() {
 
@@ -38,6 +42,28 @@
     }
 
 
+    /**
+     * 查询搜索提示词
+     */
+    function getSuggestionWords(){
+        searchKeywords =$("#searchKeyword").val();
+        if(searchKeywords){
+            $.ajax({
+                type: "post",
+                url: "/famous/suggest/getSuggestions",
+                dataType: "json",
+                data:{
+                    "suggestionName":searchKeywords
+                },
+                success: function (result) {
+                    if(result.suggestions){
+                        suggest = result.suggestions;
+                    }
+                }
+            })
+            getSuggestion(suggest);
+        }
+    }
 
 
     /**
@@ -46,7 +72,7 @@
      */
     function getProductionInfos(page) //动态page，自动获取点击的page页码
     {
-        searchKeywords = $("#searchKeyword").val();<!--获取搜索关键词-->
+        searchKeywords =$("#searchKeyword").val();<!--获取搜索关键词-->
         $.ajax({
             type: "post",
             url: "/famous/production/getProductionInfos",
@@ -117,7 +143,7 @@
     }
 
     /**
-     * 搜索提示词
+     * 展示搜索提示词
      * @author wslixiaoliang
      */
     function getSuggestion(suggest)

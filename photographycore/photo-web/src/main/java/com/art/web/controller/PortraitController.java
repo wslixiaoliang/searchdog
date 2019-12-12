@@ -71,7 +71,7 @@ public class PortraitController {
                 result.setReturnMessage("查询成功");
             }
         }catch(Exception e){
-            logger.info(e.getMessage(),e);
+            logger.error(e.getMessage(),e);
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }

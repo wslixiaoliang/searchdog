@@ -22,7 +22,7 @@
 
     <!--搜索 div-->
     <div id="box" style="width: 400px;height: 100px;margin: auto;font-family: 'Microsoft YaHei';color: #666666;padding-top: 30px">
-        <input id="searchKeyword" onkeyup="autoComplete.start(event)" type="text" name="search" placeholder="全文搜索……"style="font-size:16px;width: 300px;border: 1px solid #e2e2e2;height: 37px;float: left;background-repeat: no-repeat;background-size: 40px;background-position:5px center;padding:0 0 0 20px">
+        <input id="searchKeyword" onkeyup="autoComplete.start(event)" onmousedown="getSuggestionWords()" type="text" name="search" placeholder="全文搜索……" style="font-size:16px;width: 300px;border: 1px solid #e2e2e2;height: 37px;float: left;background-repeat: no-repeat;background-size: 40px;background-position:5px center;padding:0 0 0 20px;" >
         <button id="search" style="font-size:16px;width:78px;height:40px;float:right;background: #666666;color: white;text-align: center;border: 1px solid #e2e2e2;cursor:pointer">搜索</button>
     </div>
     <!--搜索提示词 div-->
