@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1203 前段页面新增搜索提示词；">
-      <change afterPath="$PROJECT_DIR$/photo-beans/src/main/java/com/art/beans/famous/SuggestResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/famous/SearchSuggestionComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/SuggestionController.java" afterDir="false" />
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1212 搜索提示词返回结果集优化，新建suggestResult对象封装搜索提示词结果集；">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/controller/PortraitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/modules/productionList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -368,14 +363,7 @@
       <workItem from="1574066780297" duration="23295000" />
       <workItem from="1574390291076" duration="1970000" />
       <workItem from="1575253084383" duration="43091000" />
-      <workItem from="1576036061785" duration="7368000" />
-    </task>
-    <task id="LOCAL-00025" summary="FAMOUS-appendChild引发的重复内容优化-20190521">
-      <created>1558583625088</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1558583625088</updated>
+      <workItem from="1576036061785" duration="10967000" />
     </task>
     <task id="LOCAL-00026" summary="FAMOUS-zookeeper版本降级优化-20190603">
       <created>1559530933144</created>
@@ -713,7 +701,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575450672738</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="production-1212 搜索提示词返回结果集优化，新建suggestResult对象封装搜索提示词结果集；">
+      <created>1576132742891</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1576132742892</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -777,7 +772,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-824 新增mapping" />
     <MESSAGE value="famous-1014 新增工具类方法，并拆解工具类" />
     <MESSAGE value="FAMOUS-1015 前端搜索接口及搜索样式改造" />
     <MESSAGE value="FAMOUS-1017 前端搜索正式接入搜索引擎" />
@@ -802,7 +796,8 @@
     <MESSAGE value="production-1118 添加版权信息，调整全文搜搜页面头像和摘要的样式；" />
     <MESSAGE value="production-1119 搜索底层优化，新增优先必返回字段inludes和忽略字段excludes；" />
     <MESSAGE value="production-1203 前段页面新增搜索提示词；" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1203 前段页面新增搜索提示词；" />
+    <MESSAGE value="production-1212 搜索提示词返回结果集优化，新建suggestResult对象封装搜索提示词结果集；" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1212 搜索提示词返回结果集优化，新建suggestResult对象封装搜索提示词结果集；" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
