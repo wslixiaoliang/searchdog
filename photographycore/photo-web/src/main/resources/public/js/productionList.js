@@ -10,8 +10,8 @@
 
     // 初始化时加载
     $(document).ready(function() {
-        getSuggestionWords();//查询搜索提示词
-        getSuggestion(suggest);
+        // getSuggestionWords();//查询搜索提示词
+        pressSpaceSearch();
         getSuggestion(suggest);//展示搜索提示词
         getProductionInfos(page);//初始化页面，page默认为1
         searchProductionInfos();//点击按钮搜索
@@ -37,6 +37,18 @@
         $("#searchKeyword").keypress(function(event) {
             if (event.keyCode == 13) {
                 getProductionInfos(page);
+            }
+        });
+    }
+
+
+    /**
+     * 按下空格键：搜索（与点击Enter搜索功能相同）
+     */
+    function pressSpaceSearch(){
+        $("#searchKeyword").keypress(function(event) {
+            if (event.keyCode == 32) {
+                getSuggestionWords();
             }
         });
     }
@@ -143,7 +155,7 @@
     }
 
     /**
-     * 展示搜索提示词
+     * 搜索提示词，下拉列表展示
      * @author wslixiaoliang
      */
     function getSuggestion(suggest)

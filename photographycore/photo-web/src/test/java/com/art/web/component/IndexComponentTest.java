@@ -26,23 +26,23 @@ public class IndexComponentTest {
 
     @Test
     public void testIndexCreate() {
-//        String famous = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16";
-//
-//        String[] famousIds = famous.split(",");
-//        List<String> famousList = new ArrayList<>();
-//        for (String id : famousIds) {
-//            famousList.add(id);
-//        }
-//        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);
+        String famous = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16";
+
+        String[] famousIds = famous.split(",");
+        List<String> famousList = new ArrayList<>();
+        for (String id : famousIds) {
+            famousList.add(id);
+        }
+        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);
 //        SearchResult searchResult = indexProductionComponent.productionIndex(famousList);
 
-        String suggestion = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16";
-        String[] suggestions = suggestion.split(",");
-        List<String> suggestionList = new ArrayList<>();
-        for (String id : suggestions) {
-            suggestionList.add(id);
-        }
-        SearchResult searchResult = indexSuggestionComponent.indexSuggestions(suggestionList);
+//        String suggestion = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16";
+//        String[] suggestions = suggestion.split(",");
+//        List<String> suggestionList = new ArrayList<>();
+//        for (String id : suggestions) {
+//            suggestionList.add(id);
+//        }
+//        SearchResult searchResult = indexSuggestionComponent.indexSuggestions(suggestionList);
         System.out.println("新增文档结果==========================结果状态：" + searchResult.getStatus() + " ====成功条数：" + searchResult.getTotalCount() + " ====结果信息：" + searchResult.getReturnMsg());
         System.out.println("" + searchResult.getStatus());
     }
