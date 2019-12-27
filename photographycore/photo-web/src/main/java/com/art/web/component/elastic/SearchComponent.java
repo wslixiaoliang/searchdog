@@ -339,7 +339,7 @@ public class SearchComponent {
     private String configSummaryInfo(String content,String searchKeyword){
 
         String summaryInfo = "";
-        String leftString ="";
+        String leftString = "";
 
         if(StringUtil.isEmpty(content)){
             return summaryInfo;
@@ -353,14 +353,15 @@ public class SearchComponent {
         int leftDouhao = contentLeft.lastIndexOf("，");//获取从keyword,向左第一次出现逗号的位置
         int leftJuhao = contentLeft.lastIndexOf("。");//获取从keyword,向左第一次出现句号的位置
 
-        if(leftDouhao>0 && leftJuhao>0){
+        //只要找到逗号或者句号满足一个就行了
+        if(leftDouhao>0 || leftJuhao>0){
             if(leftDouhao>leftJuhao){
                 leftString = contentLeft.substring(leftDouhao+1,keyword+length+8);//截取逗号到关键词处的左侧字符串（逗号距离关键词较近）
             }else{
                 leftString = contentLeft.substring(leftJuhao+1,keyword+length+8); //截取句号到关键词处的左侧字符串（句号距离关键词较近）
             }
         }else{
-            leftString = contentLeft;
+            leftString = contentLeft.substring(keyword+length+8,keyword+length+8+10);//两个符号都找不到则默认截取关键词向左10个字符
         }
 
         //截取右侧的字符串

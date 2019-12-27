@@ -1,82 +1,68 @@
 
-    var page = 1;
-    var limit = 5;
-    var total = 0;
-    var pageCount = 0;
-    var searchKeywords ="";
-    var autoComplete="";
-    var suggest = [];
+            var page = 1;
+            var limit = 5;
+            var total = 0;
+            var pageCount = 0;
+            var searchKeywords ="";
+            var autoComplete="";
+            var suggest = [];
 
 
-    // 初始化时加载
-    $(document).ready(function() {
-        // getSuggestionWords();//查询搜索提示词
-        pressSpaceSearch();
-        getSuggestion(suggest);//展示搜索提示词
-        getProductionInfos(page);//初始化页面，page默认为1
-        searchProductionInfos();//点击按钮搜索
-        pressEnterSearch();//按下回车键：搜索
-    });
-
-
-    /**
-     * 点击按钮搜索
-     */
-    function searchProductionInfos() {
-
-        $("#search").click(function () {
-            getProductionInfos(page);
-        });
-    }
-
-
-    /**
-     * 按下回车键：搜索（与点击按钮搜索功能相同）
-     */
-    function pressEnterSearch(){
-        $("#searchKeyword").keypress(function(event) {
-            if (event.keyCode == 13) {
-                getProductionInfos(page);
-            }
-        });
-    }
-
-
-    /**
-     * 按下空格键：搜索（与点击Enter搜索功能相同）
-     */
-    function pressSpaceSearch(){
-        $("#searchKeyword").keypress(function(event) {
-            if (event.keyCode == 32) {
+            // 初始化时加载
+            $(document).ready(function() {
                 getSuggestionWords();
+                // pressSpaceSearch();//查询搜索提示词
+                getSuggestion(suggest);//展示搜索提示词
+                getProductionInfos(page);//初始化页面，page默认为1
+                searchProductionInfos();//点击按钮搜索
+                pressEnterSearch();//按下回车键：搜索
+            });
+
+
+            /**
+             * 点击按钮搜索
+             */
+            function searchProductionInfos() {
+                $("#search").click(function () {
+                    getProductionInfos(page);
+                });
             }
-        });
-    }
 
 
-    /**
-     * 查询搜索提示词
-     */
-    function getSuggestionWords(){
-        searchKeywords =$("#searchKeyword").val();
-        if(searchKeywords){
-            $.ajax({
-                type: "post",
-                url: "/famous/suggest/getSuggestions",
-                dataType: "json",
-                data:{
-                    "suggestionName":searchKeywords
-                },
-                success: function (result) {
-                    if(result.suggestions){
-                        suggest = result.suggestions;
+            /**
+             * 按下回车键：搜索（与点击按钮搜索功能相同）
+             */
+            function pressEnterSearch(){
+                $("#searchKeyword").keypress(function(event) {
+                    if (event.keyCode == 13) {
+                        getProductionInfos(page);
                     }
-                }
-            })
-            getSuggestion(suggest);
-        }
-    }
+                });
+            }
 
+
+            /**
+             * 查询搜索提示词
+             */
+            function getSuggestionWords() {
+                searchKeywords = $("#searchKeyword").val();
+                if (searchKeywords) {
+                $.ajax({
+                    type: "post",
+                    url: "/famous/suggest/getSuggestions",
+                    dataType: "json",
+                    data: {
+                        "suggestionName": searchKeywords
+                    },
+                    success: function (result) {
+                        if (result.suggestions) {
+                            suggest = result.suggestions;
+                        }
+                    }
+                });
+            }
+            getSuggestion(suggest);
+     }
 
     /**
      * 搜索主入口

@@ -26,23 +26,22 @@ public class IndexComponentTest {
 
     @Test
     public void testIndexCreate() {
-        String famous = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16";
-
+        String famous = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17";
         String[] famousIds = famous.split(",");
         List<String> famousList = new ArrayList<>();
         for (String id : famousIds) {
             famousList.add(id);
         }
-        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);
-//        SearchResult searchResult = indexProductionComponent.productionIndex(famousList);
+//        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);//名人索引
+        SearchResult searchResult = indexProductionComponent.productionIndex(famousList);//作品索引
 
-//        String suggestion = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16";
+//        String suggestion = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17";
 //        String[] suggestions = suggestion.split(",");
 //        List<String> suggestionList = new ArrayList<>();
 //        for (String id : suggestions) {
 //            suggestionList.add(id);
 //        }
-//        SearchResult searchResult = indexSuggestionComponent.indexSuggestions(suggestionList);
+//        SearchResult searchResult = indexSuggestionComponent.indexSuggestions(suggestionList);//搜索提示词索引
         System.out.println("新增文档结果==========================结果状态：" + searchResult.getStatus() + " ====成功条数：" + searchResult.getTotalCount() + " ====结果信息：" + searchResult.getReturnMsg());
         System.out.println("" + searchResult.getStatus());
     }
