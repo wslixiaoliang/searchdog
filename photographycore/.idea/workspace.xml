@@ -237,11 +237,6 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@616c6430" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f11ee43b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@616c6430" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c5a771d4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
@@ -371,14 +366,7 @@
       <workItem from="1576036061785" duration="12521000" />
       <workItem from="1576338629228" duration="6034000" />
       <workItem from="1576477046393" duration="1829000" />
-      <workItem from="1576634131226" duration="23358000" />
-    </task>
-    <task id="LOCAL-00029" summary="FAMOUS-jquery.page.js分页插件集成-2019.6.4">
-      <created>1559654216014</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1559654216014</updated>
+      <workItem from="1576634131226" duration="23577000" />
     </task>
     <task id="LOCAL-00030" summary="FAMOUS-jquery.page.js分页插件集成首页-2019.6.5">
       <created>1559706606985</created>
@@ -716,7 +704,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577450988834</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="production-1227 搜索提示词摘要优化；">
+      <created>1577669678507</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1577669678507</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
