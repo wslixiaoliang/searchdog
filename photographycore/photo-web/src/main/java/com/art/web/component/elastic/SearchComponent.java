@@ -388,7 +388,7 @@ public class SearchComponent {
             SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
 
             //执行搜索
-            SearchResponse searchResponse = searchRequestBuilder.setSize(20).setQuery(QueryBuilders.matchAllQuery()).execute().actionGet(); // 查询所有
+            SearchResponse searchResponse = searchRequestBuilder.setSize(16).setQuery(QueryBuilders.matchAllQuery()).execute().actionGet(); // 查询所有
 
             SearchHits searchHits=searchResponse.getHits();
             SearchHit[] hits = searchHits.getHits();

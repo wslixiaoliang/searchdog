@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1218 搜索提示词前台展示优化；">
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1227 搜索提示词摘要优化；">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/java/com/art/web/component/elastic/SearchComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/main/resources/public/js/productionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-web/src/test/java/com/art/web/component/IndexComponentTest.java" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -239,6 +237,11 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@616c6430" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f11ee43b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@616c6430" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c5a771d4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
@@ -368,14 +371,7 @@
       <workItem from="1576036061785" duration="12521000" />
       <workItem from="1576338629228" duration="6034000" />
       <workItem from="1576477046393" duration="1829000" />
-      <workItem from="1576634131226" duration="22383000" />
-    </task>
-    <task id="LOCAL-00028" summary="FAMOUS-zookeeper版本降级优化-20190603">
-      <created>1559531512196</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1559531512196</updated>
+      <workItem from="1576634131226" duration="23358000" />
     </task>
     <task id="LOCAL-00029" summary="FAMOUS-jquery.page.js分页插件集成-2019.6.4">
       <created>1559654216014</created>
@@ -713,7 +709,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576639276710</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="production-1227 搜索提示词摘要优化；">
+      <created>1577450988834</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1577450988834</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -777,7 +780,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FAMOUS-1015 前端搜索接口及搜索样式改造" />
     <MESSAGE value="FAMOUS-1017 前端搜索正式接入搜索引擎" />
     <MESSAGE value="FAMOUS-1017 点击头像新增人物简介" />
     <MESSAGE value="FAMOUS-1025 搜索接口统一优化，统一入口" />
@@ -802,7 +804,8 @@
     <MESSAGE value="production-1203 前段页面新增搜索提示词；" />
     <MESSAGE value="production-1212 搜索提示词返回结果集优化，新建suggestResult对象封装搜索提示词结果集；" />
     <MESSAGE value="production-1218 搜索提示词前台展示优化；" />
-    <option name="LAST_COMMIT_MESSAGE" value="production-1218 搜索提示词前台展示优化；" />
+    <MESSAGE value="production-1227 搜索提示词摘要优化；" />
+    <option name="LAST_COMMIT_MESSAGE" value="production-1227 搜索提示词摘要优化；" />
   </component>
   <component name="WindowStateProjectService">
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" />
