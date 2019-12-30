@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="photo-beans" />
-        <module name="photo-dao" />
+        <module name="photo-web" />
+        <module name="photo-util" />
         <module name="photo-service" />
         <module name="photo-service-impl" />
-        <module name="photo-util" />
-        <module name="photo-web" />
+        <module name="photo-dao" />
+        <module name="photo-beans" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
