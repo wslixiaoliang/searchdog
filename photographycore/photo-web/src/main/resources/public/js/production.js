@@ -88,7 +88,7 @@ $(document).ready(function () {
              var proDiv = document.getElementById("proDiv");//总div
              var titleDiv = document.createElement("div");//标题div
              titleDiv.setAttribute("class", u);
-             titleDiv.setAttribute("style", "width: 300px;height: auto; margin: auto;margin-top:40px;text-align: center;align: center;")
+             titleDiv.setAttribute("style", "width: 300px;height: auto; margin: auto;margin-top:40px;text-align: center;")
              proDiv.appendChild(titleDiv); //标题div加入总div
              <!--头像-->
              var proImg = document.createElement("img");
@@ -120,10 +120,10 @@ $(document).ready(function () {
              pYear.setAttribute("style", "font-family:\"楷体\";font-style: oblique;font-size: 14px;");
              pYear.innerText = result[i].publishedYear;
              titleDiv.appendChild(pYear);
-
+             //文章内容
              var pContent = document.createElement("div");
              pContent.setAttribute("class", z);
-             pContent.setAttribute("style", "width: 800px;height: auto;margin: auto;font-family: \"微软雅黑\";font-size:14px;");
+             pContent.setAttribute("style", "width: 800px;height: auto;margin: auto;font-family: \"微软雅黑\";font-size:14px;line-height:180%;");
              pContent.innerHTML = result[i].productionContent;
              proDiv.appendChild(pContent);//内容div加入总div
             }

@@ -35,8 +35,8 @@ public class PortraitController {
     SearchFamousComponent searchFamousComponent;
 
     private final Log logger = LogFactory.getLog(PortraitController.class);
-    private static final String INCLUDES=  "famousId,portraitName,chineseName";
-    private static final String EXCLUDES = "createTime,relativeLocation,englishName,sex,career,achievement,honor,country,birthYear";
+    private static final String INCLUDES=  "famousId,portraitName,chineseName,englishName,achievement,birthYear,summaryInfo";
+    private static final String EXCLUDES = "createTime,relativeLocation,sex,career,honor,country,honor";
 
     /**
      * 首页肖像信息：条件查询
@@ -90,10 +90,16 @@ public class PortraitController {
             return famousList;
         }
         for(Map<String,Object> document:documents){
+            //点击图片查询作者详情使用：famousId
+            String famousId = String.valueOf(document.get("famousId"));
             String portraitName = String.valueOf(document.get("portraitName"));
-            String famousId= String.valueOf(document.get("famousId"));
             String chineseName= String.valueOf(document.get("chineseName"));
-            FamousPortrait famousPortrait = new FamousPortrait(Long.valueOf(famousId),portraitName,chineseName);
+            String englishName= String.valueOf(document.get("englishName"));
+            String achievement= String.valueOf(document.get("achievement"));
+            String birthYear= String.valueOf(document.get("birthYear"));
+            String summaryInfo= String.valueOf(document.get("summaryInfo"));
+
+            FamousPortrait famousPortrait = new FamousPortrait(Long.valueOf(famousId),portraitName,chineseName,englishName,achievement,birthYear,summaryInfo);
             famousList.add(famousPortrait);
         }
         return famousList;

@@ -67,6 +67,7 @@ public class SearchConstans {
         public static final String HONOR ="honor";//获得奖项
         public static final String COUNTRY ="country";//国籍
         public static final String BIRTH_YEAR ="birthYear";//生卒年月
+        public static final String SUMMARY_INFO ="summaryInfo";//简介
     }
 
 

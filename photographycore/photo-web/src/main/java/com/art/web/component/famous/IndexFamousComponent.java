@@ -103,7 +103,7 @@ public class IndexFamousComponent {
             document.put(SearchConstans.Portrait.HONOR,StringUtil.isNotEmpty(famous.getHonor())?famous.getHonor():"");
             document.put(SearchConstans.Portrait.COUNTRY,StringUtil.isNotEmpty(famous.getCountry())?famous.getCountry():"");
             document.put(SearchConstans.Portrait.BIRTH_YEAR,StringUtil.isNotEmpty(famous.getBirthYear())?famous.getBirthYear():"");
-
+            document.put(SearchConstans.Portrait.SUMMARY_INFO,StringUtil.isNotEmpty(famous.getSummaryInfo())?famous.getSummaryInfo():"");
             documents.add(document);
         }
         return documents;

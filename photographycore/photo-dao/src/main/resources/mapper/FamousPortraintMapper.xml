@@ -14,6 +14,7 @@
         <result column="HONOR"  property="honor"/><!--获得奖项-->
         <result column="COUNTRY"  property="country"/><!--国籍-->
         <result column="BIRTH_YEAR"  property="birthYear"/><!--出生年月-->
+        <result column="SUMMARY_INFO"  property="summaryInfo"/><!--简介-->
 
     </resultMap>
 
@@ -31,7 +32,8 @@
         b.ACHIEVEMENT,
         b.HONOR,
         b.COUNTRY,
-        b.BIRTH_YEAR
+        b.BIRTH_YEAR,
+        b.SUMMARY_INFO
     FROM famous_portrait a,famous_of_world b
     WHERE a.FAMOUS_ID = b.FAMOUS_ID
     </sql>

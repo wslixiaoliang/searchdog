@@ -21,6 +21,7 @@ public class FamousPortrait implements Serializable{
     private String honor;//获得奖项
     private String country;//国籍
     private String birthYear;//出生年月
+    private String summaryInfo;//简介
 
 
     //无参构造方法
@@ -42,14 +43,18 @@ public class FamousPortrait implements Serializable{
     }
 
     //有参构造方法
-    public FamousPortrait(long famousId,String portraitName,String chineseName){
+    public FamousPortrait(long famousId,String portraitName,String chineseName,String englishName,String achievement,String birthYear,String summaryInfo){
         this.famousId = famousId;
         this.portraitName = portraitName;
         this.chineseName = chineseName;
+        this.englishName = englishName;
+        this.achievement = achievement;
+        this.birthYear = birthYear;
+        this.summaryInfo = summaryInfo;
     }
 
     //有参构造方法
-    public FamousPortrait(long portraitId, String portraitName, String relativeLocation, long famousId, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {
+    public FamousPortrait(long portraitId, String portraitName, String relativeLocation, long famousId, String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear, String summaryInfo) {
         this.portraitId = portraitId;
         this.portraitName = portraitName;
         this.relativeLocation = relativeLocation;
@@ -62,6 +67,7 @@ public class FamousPortrait implements Serializable{
         this.honor = honor;
         this.country = country;
         this.birthYear = birthYear;
+        this.summaryInfo = summaryInfo;
     }
 
     //getter and setter
@@ -71,6 +77,14 @@ public class FamousPortrait implements Serializable{
 
     public long getPortraitId() {
         return portraitId;
+    }
+
+    public String getSummaryInfo() {
+        return summaryInfo;
+    }
+
+    public void setSummaryInfo(String summaryInfo) {
+        this.summaryInfo = summaryInfo;
     }
 
     public void setPortraitId(long portraitId) {

@@ -27,13 +27,14 @@ public class IndexComponentTest {
     @Test
     public void testIndexCreate() {
         String famous = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17";
+//        String famous = "1";
         String[] famousIds = famous.split(",");
         List<String> famousList = new ArrayList<>();
         for (String id : famousIds) {
             famousList.add(id);
         }
-//        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);//名人索引
-        SearchResult searchResult = indexProductionComponent.productionIndex(famousList);//作品索引
+        SearchResult searchResult = indexFamousComponent.indexFamous(famousList);//名人索引
+//        SearchResult searchResult = indexProductionComponent.productionIndex(famousList);//作品索引
 
 //        String suggestion = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17";
 //        String[] suggestions = suggestion.split(",");
