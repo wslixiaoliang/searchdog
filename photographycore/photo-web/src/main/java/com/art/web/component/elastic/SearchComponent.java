@@ -204,7 +204,7 @@ public class SearchComponent {
                             .setFetchSource(includes,excludes)//需要返回的字段，不需要返回的字段
                             .highlighter(highlightBuilder)//设置高亮
                             .setExplain(true)// 设置是否按查询匹配度排序
-                            .setTimeout(new TimeValue(60, TimeUnit.SECONDS));
+                            .setTimeout(new TimeValue(100, TimeUnit.SECONDS));
 
                     //执行搜索
                     searchResponse = searchRequestBuilder.get();
@@ -283,7 +283,6 @@ public class SearchComponent {
         //搜索结果解析
         SearchHits searchHits = searchResponse.getHits();
         SearchHit[] hits = searchHits.getHits();
-        Map<String, Object> source;
 
         //处理查询结果（循环放入listMap）
         for (SearchHit searchHit : hits) {
@@ -294,12 +293,20 @@ public class SearchComponent {
             HighlightField summaryInfo = highlightFields.get("summaryInfo");
             HighlightField productionContent = highlightFields.get("productionContent");
 
-            source = searchHit.getSourceAsMap();
-            //高亮替换
-            putHightContent(chineseName,source,"chineseName",searchKeyword);
-            putHightContent(productionName,source,"productionName",searchKeyword);
-            putHightContent(summaryInfo,source,"summaryInfo",searchKeyword);//静态摘要，从摘要字段获取
-            putHightContent(productionContent,source,"productionContent",searchKeyword);//动态摘要，从文章内容获取，若不为空则覆盖静态摘要
+            Map<String, Object> source = searchHit.getSourceAsMap();
+            //高亮字段替换
+            if(null!=chineseName){
+                putHightContent(chineseName,source,"chineseName",searchKeyword);
+            }
+            if(null!=productionName){
+                putHightContent(productionName,source,"productionName",searchKeyword);
+            }
+            if(null!=summaryInfo){
+                putHightContent(summaryInfo,source,"summaryInfo",searchKeyword);//静态摘要，从摘要字段获取
+            }
+            if(null!=productionContent){
+                putHightContent(productionContent,source,"productionContent",searchKeyword);//动态摘要，从文章内容获取，若不为空则覆盖静态摘要
+            }
 
             documents.add(source);
         }
@@ -361,7 +368,9 @@ public class SearchComponent {
                 leftString = contentLeft.substring(leftJuhao+1,keyword+length+8); //截取句号到关键词处的左侧字符串（句号距离关键词较近）
             }
         }else{
-            leftString = contentLeft.substring(keyword+length+8,keyword+length+8+10);//两个符号都找不到则默认截取关键词向左10个字符
+//            leftString = contentLeft.substring(keyword+length+8,keyword+length+8+10);//两个符号都找不到则默认截取关键词向左10个字符
+            //
+            leftString = contentLeft;
         }
 
         //截取右侧的字符串
