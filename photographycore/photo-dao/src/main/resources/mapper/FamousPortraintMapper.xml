@@ -44,6 +44,19 @@
         <if test="null!=chineseName and chineseName!=''">
             AND b.CHINESE_NAME LIKE concat("%",#{chineseName},"%")
         </if>
+        <if test="null!=englishName and englishName!=''">
+            AND b.ENGLISH_NAME LIKE concat("%",#{englishName},"%")
+        </if>
+        <if test="null!=country and country!=''">
+            AND b.COUNTRY LIKE concat("%",#{country},"%")
+        </if>
+        <if test="null!=career and career!=''">
+            AND b.CAREER LIKE concat("%",#{career},"%")
+        </if>
+        <if test="null!=sex and sex!=''">
+            AND b.SEX = #{sex}
+        </if>
+        limit #{start},#{limit}
     </select>
 
     <!--主键查询-->
@@ -64,12 +77,26 @@
             </foreach>
         </if>
     </select>
-
-
-
-
-
-
+    <!--count查询-->
+    <select id="getFamousCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select count(*) from famous_of_world a
+        where 1=1
+        <if test="null!=chineseName and chineseName!=''">
+            AND a.CHINESE_NAME LIKE concat("%",#{chineseName},"%")
+        </if>
+        <if test="null!=englishName and englishName!=''">
+            AND a.ENGLISH_NAME LIKE concat("%",#{englishName},"%")
+        </if>
+        <if test="null!=country and country!=''">
+            AND a.COUNTRY LIKE concat("%",#{country},"%")
+        </if>
+        <if test="null!=career and career!=''">
+            AND a.CAREER LIKE concat("%",#{career},"%")
+        </if>
+        <if test="null!=sex and sex!=''">
+            AND a.SEX = #{sex}
+        </if>
+    </select>
 
 
 </mapper>

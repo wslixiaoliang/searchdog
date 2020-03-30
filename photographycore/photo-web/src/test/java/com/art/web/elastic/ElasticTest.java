@@ -55,4 +55,25 @@ public class ElasticTest {
 //        LOGGER.info("删除结果：======================"+deleteResult);
 
     }
+
+    @Test
+    public void getRoudam(){
+            long pnc = 0;
+            for(int i=1;i<=3;i++){
+                for(int j=1;j<=3;j++){
+                    for(int k=1;k<=3;k++){
+                        if(i!=j && i!=k && j!=k){
+                            pnc++;
+                            StringBuffer num = new StringBuffer();
+                            num.append(i);
+                            num.append(j);
+                            num.append(k);
+                            num.append(" ");
+                            System.out.print(num);
+                        }
+                    }
+                }
+            }
+            System.out.println("\n" + "随机组合数的个数为： "+ pnc );
+    }
 }

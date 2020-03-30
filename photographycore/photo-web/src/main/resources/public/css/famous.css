@@ -155,4 +155,59 @@ button[name=add-ok]{
     border:1px solid #ccc;
     box-shadow: 2px 2px 4px #ddd;
 }
-/*modal-样式 end*/
+
+
+
+button{
+    cursor: pointer;
+}
+
+select{
+
+}
+
+
+/**searchForm*/
+.column-3 > div {
+    display: inline-block;
+    width: 33%;
+    margin-bottom: 20px;
+    color: grey;
+}
+
+.column-3 label {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    float: left;
+    text-align: right;
+    width: 32%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 6px;
+    /*color:  #409eff;*/
+    padding: 0px 0px;
+}
+.column-3 input {
+    height: 30px;
+    line-height: 30px;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid #dadada;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+.column-3 select {
+    height: 31px;
+    width: 60%;
+    cursor: pointer;
+    font-size: 12px;
+    color: grey;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #dadada;
+    margin-left: 5px;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}

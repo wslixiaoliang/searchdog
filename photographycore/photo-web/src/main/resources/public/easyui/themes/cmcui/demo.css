@@ -1,0 +1,61 @@
+/* ----------------------------------
+date: 2016-02
+description: demo
+Created & Modified by zms.
+-------------------------------------*/
+body {
+	padding: 10px;
+}
+h4 {
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+.description {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	color: #777;
+	border-bottom: solid 1px #eee;
+}
+.body-header {
+	height: 50px;
+	line-height: 45px;
+	font-size: 14px;
+	color: #ddd;
+	background: #282341;
+	border-bottom: solid 1px #fff;
+}
+.body-header h2 {
+	padding-left: 20px;
+	font-size: 18px;
+	color: #fff;
+}
+.welcome-page {
+	padding: 20px;
+	display: block;
+}
+.welcome-page b {
+	color: #e2726f;
+	margin-bottom: 10px;
+	display: block;
+}
+.welcome-page ul {
+	margin-bottom: 20px;
+}
+.welcome-page ul li {
+	height: 26px;
+	line-height: 26px;
+	color: #666;
+	list-style: inside;
+}
+.index-west {
+	width: 240px; 
+	background: #f4f4f9;
+}
+.index-south {
+	height: 24px;
+	line-height: 24px;
+	color: #999;
+	background: #f4f4f9; 
+	padding: 2px 5px; 
+	vertical-align: middle;
+}

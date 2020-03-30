@@ -24,23 +24,23 @@ public class FamousControllerTest {
         famous.setChineseName("屠呦呦");
         Integer page = 1;
         Integer limit = 50;
-        Result result = collegeController.getWorldFamous(page,limit);
+//        Result result = collegeController.getWorldFamous(page,limit);
         System.out.println("=====================查询结果如下==============");
-        List<FamousPortrait> list = result.getBeans();
-        if(result!=null){
-            for(FamousPortrait famous1:list){
-                System.out.println(famous1.getFamousId());
-                System.out.println(famous1.getSex());
-                System.out.println(famous1.getChineseName());
-                System.out.println(famous1.getEnglishName());
-                System.out.println(famous1.getCareer());
-                System.out.println(famous1.getHonor());
-                System.out.println(famous1.getAchievement());
-                System.out.println(famous1.getCountry());
-                System.out.println(famous1.getBirthYear());
-                System.out.println("=========================");
-            }
-        }
+//        List<FamousPortrait> list = result.getBeans();
+//        if(result!=null){
+//            for(FamousPortrait famous1:list){
+//                System.out.println(famous1.getFamousId());
+//                System.out.println(famous1.getSex());
+//                System.out.println(famous1.getChineseName());
+//                System.out.println(famous1.getEnglishName());
+//                System.out.println(famous1.getCareer());
+//                System.out.println(famous1.getHonor());
+//                System.out.println(famous1.getAchievement());
+//                System.out.println(famous1.getCountry());
+//                System.out.println(famous1.getBirthYear());
+//                System.out.println("=========================");
+////            }
+//        }
     }
 }
 

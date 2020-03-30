@@ -31,4 +31,10 @@ public interface IFamousPortraitSV {
      */
     List<FamousPortrait> getPortraitInfos(Map map);
 
+    /**
+     * 查询 名人总数据条数
+     * @return
+     */
+    Integer getFamousCount(Map map);
+
 }

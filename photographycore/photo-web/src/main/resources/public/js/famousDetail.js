@@ -77,7 +77,7 @@ function getFamousDetail(famousId) {
                     //英文名
                     var englishName = document.createElement("p");
                     englishName.setAttribute("class", "englishName");
-                    englishName.setAttribute("style", "font-family: \"微软雅黑\";font-size: 14px;");
+                    englishName.setAttribute("style", "font-family: \"Microsoft YaHei\";font-size: 14px;");
                     englishName.innerText = list[i].englishName;
                     detailDiv.appendChild(englishName);
 

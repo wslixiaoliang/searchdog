@@ -1,11 +1,15 @@
 package com.art.web.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.beans.elastic.SearchResult;
 import com.art.beans.famous.FamousPortrait;
 import com.art.beans.famous.Result;
+import com.art.service.famous.IFamousPortraitSV;
 import com.art.util.CommonUtil;
 import com.art.util.SearchConstans;
+import com.art.util.StringUtil;
 import com.art.web.component.famous.SearchFamousComponent;
+//import jdk.nashorn.internal.ir.annotations.Reference;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,31 +29,25 @@ import java.util.Map;
 public class FamousController {
     @Autowired
     private SearchFamousComponent searchFamousComponent;
+    @Reference
+    private IFamousPortraitSV famousPortraitSV;
     private static final Logger logger = Logger.getLogger(FamousController.class);
-
-    private static final String INCLUDES=  "famousId,portraitName,chineseName,createTime,englishName,sex,career,achievement,honor,country,birthYear";
-    private static final String EXCLUDES = "portraitId,relativeLocation";
-
     /**
      * 管理页面：条件查询
-     * @param page
-     * @param limit
      */
     @RequestMapping(value = "/getWorldFamous", method = RequestMethod.POST)
-    public Result getWorldFamous(int page, int limit) {
+    public Result getWorldFamous(String  chineseName,String  englishName,String  country,String  career,String  sex,int  page,int  limit) {
+
         Result result = new Result();
         List<FamousPortrait> famousList;
-
-        //需要返回的字段
-        String includes[] = CommonUtil.includesOrExcludes(INCLUDES);
-        //不需要返回的字段
-        String excludes[] = CommonUtil.includesOrExcludes(EXCLUDES);
+        Map<String,Object> params = new HashMap<>();
+        getParams (chineseName,englishName,country,career,sex,page ,limit,params);
 
         try {
-            SearchResult searchResult = searchFamousComponent.searchFamousInfo(new HashMap<>(),includes,excludes,page,limit);
-            famousList = map2Bean(searchResult.getDocuments());
+            famousList = famousPortraitSV.getPortraitInfos(params);
             result.setBeans(famousList);
-            result.setCount(searchResult.getTotalCount());
+            int count = famousPortraitSV.getFamousCount(params);
+            result.setCount(count);
             result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             result.setReturnMessage("查询成功");
         } catch (Exception e) {
@@ -87,6 +85,64 @@ public class FamousController {
         }
         return famousList;
 
+    }
+
+
+    /**
+     * 组装params入参
+     * @param chineseName
+     * @param englishName
+     * @param country
+     * @param career
+     * @param sex
+     * @param params
+     */
+    private void getParams (String  chineseName,String  englishName,String country,String  career,String  sex,int page,int limit,Map<String,Object> params){
+        if(StringUtil.isNotEmpty(chineseName)){
+            params.put("chineseName",chineseName);
+        }
+        if(StringUtil.isNotEmpty(englishName)){
+            params.put("englishName",englishName);
+        }
+        if(StringUtil.isNotEmpty(country)){
+            params.put("country",country);
+        }
+        if(StringUtil.isNotEmpty(career)){
+            params.put("career",career);
+        }
+        if(0!=page){
+            params.put("start",(page-1)*limit);
+        }
+        if(0!=limit){
+            params.put("limit",limit);
+        }
+
+        if(!"0".equalsIgnoreCase(sex)) {
+            String finalSex = getChinesenage(sex);
+            params.put("sex",finalSex);
+        }
+    }
+
+    /**
+     * 性别翻译
+     * @param sex
+     * @return
+     */
+    private String getChinesenage(String sex){
+
+        String finalSex = "";
+        if(StringUtil.isNotEmpty(sex)){
+            if("1".equalsIgnoreCase(sex)){
+                finalSex = "男";
+            }
+            if("2".equalsIgnoreCase(sex)){
+                finalSex = "女";
+            }
+            if("3".equalsIgnoreCase(sex)){
+                finalSex = "其他";
+            }
+        }
+        return finalSex;
     }
 
 }
