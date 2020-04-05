@@ -119,7 +119,7 @@ function getFamousDetail(famousId) {
                     //作者简介
                     var summaryInfo = document.createElement("div");
                     summaryInfo.setAttribute("class", "summaryInfo");
-                    summaryInfo.setAttribute("style", "width: 700px;height: auto;margin: 0 auto;font-family: \"微软雅黑\";font-size:14px;line-height:40px;");
+                    summaryInfo.setAttribute("style", "width: 700px;height: auto;margin: 0 auto;font-family: \"微软雅黑\";font-size:14px;line-height:40px;text-align: left !important;");
                     summaryInfo.innerHTML = list[i].summaryInfo;
                     detailDiv.appendChild(summaryInfo);//作者简介
 

@@ -48,14 +48,10 @@ public class CommonUtil {
      * @param args
      */
         public static void main(String []args) {
-
-            getPrimaryKey();
+            long primaryKey = getPrimaryKey();
+            System.out.println("================="+primaryKey);
 
         }
-
-
-
-
     }
 
 
