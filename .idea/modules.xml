@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/photo-beans/photo-beans.iml" filepath="$PROJECT_DIR$/photo-beans/photo-beans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/photo-dao/photo-dao.iml" filepath="$PROJECT_DIR$/photo-dao/photo-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/photo-service/photo-service.iml" filepath="$PROJECT_DIR$/photo-service/photo-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/photo-service-impl/photo-service-impl.iml" filepath="$PROJECT_DIR$/photo-service-impl/photo-service-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/photo-util/photo-util.iml" filepath="$PROJECT_DIR$/photo-util/photo-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/photo-web/photo-web.iml" filepath="$PROJECT_DIR$/photo-web/photo-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/photography.iml" filepath="$PROJECT_DIR$/.idea/photography.iml" />
+    </modules>
+  </component>
+</project>
