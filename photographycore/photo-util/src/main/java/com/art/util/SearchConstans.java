@@ -69,7 +69,6 @@ public class SearchConstans {
         public static final String SUMMARY_INFO ="summaryInfo";//简介
     }
 
-
     /**
      * Production index 字段名称常量
      */
