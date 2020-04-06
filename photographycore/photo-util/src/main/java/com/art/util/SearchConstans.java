@@ -34,7 +34,6 @@ public class SearchConstans {
     public static final String YYYYMMDDHHMMSS = "yyyyMMddHHmmss";//年月日 时分秒
     public static final String YYYYMMDDHHMMSSSSS = "yyyyMMddHHmmssSSS";//年月日 时分秒 毫秒
 
-
     /**
      * es集群地址
      */
