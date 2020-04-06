@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1227 搜索提示词摘要优化；">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
@@ -61,6 +60,9 @@
       <GitPushTagMode />
     </option>
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="cb66926d-c3bb-47b3-a2b5-75ee93be8ed2" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -105,7 +107,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31669867" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -363,14 +365,7 @@
       <workItem from="1576338629228" duration="6034000" />
       <workItem from="1576477046393" duration="1829000" />
       <workItem from="1576634131226" duration="23577000" />
-      <workItem from="1586165774799" duration="978000" />
-    </task>
-    <task id="LOCAL-00031" summary="FAMOUS-jquery.page.js分页插件集成首页-2019.6.5">
-      <created>1559724198394</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1559724198394</updated>
+      <workItem from="1586165774799" duration="2407000" />
     </task>
     <task id="LOCAL-00032" summary="FAMOUS-jquery.page.js取消首页分页插件集成-2019.6.5">
       <created>1559728976041</created>
@@ -708,7 +703,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586166792077</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="production-1227 搜索提示词摘要优化；">
+      <created>1586166936108</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1586166936108</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -800,10 +802,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="production-1227 搜索提示词摘要优化；" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="238" y="31" key="CommitChangelistDialog2" timestamp="1586166791729">
+    <state x="238" y="31" key="CommitChangelistDialog2" timestamp="1586166935987">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state x="238" y="31" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1586166791729" />
+    <state x="238" y="31" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1586166935987" />
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" timestamp="1586164438298" />
     <state width="436" height="458" key="Git.Branch.Popup@1600.900" timestamp="1586164438298" />
     <state width="1097" height="390" key="GridCell.Tab.0.bottom" timestamp="1586166740734">
@@ -878,14 +880,21 @@
     <state width="1097" height="390" key="GridCell.Tab.2.right/0.23.1440.822@0.23.1440.822" timestamp="1586164695188" />
     <state width="1097" height="390" key="GridCell.Tab.2.right/0.23.1440.823@0.23.1440.823" timestamp="1586166740738" />
     <state width="1097" height="390" key="GridCell.Tab.2.right/0.23.1440.825@0.23.1440.825" timestamp="1586165692774" />
+    <state x="221" y="67" key="SettingsEditor" timestamp="1586172817655">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="221" y="67" key="SettingsEditor/0.23.1440.823@0.23.1440.823" timestamp="1586167673475" />
+    <state x="221" y="67" key="SettingsEditor/0.23.1440.825@0.23.1440.825" timestamp="1586167116410" />
+    <state x="221" y="67" key="SettingsEditor/0.23.1440.826@0.23.1440.826" timestamp="1586172817655" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1586166320695">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.823@0.23.1440.823" timestamp="1586166320695" />
-    <state x="320" y="157" key="Vcs.Push.Dialog.v2" timestamp="1586166870824">
+    <state x="320" y="157" key="Vcs.Push.Dialog.v2" timestamp="1586167229237">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
-    <state x="320" y="157" key="Vcs.Push.Dialog.v2/0.23.1440.823@0.23.1440.823" timestamp="1586166870824" />
+    <state x="320" y="157" key="Vcs.Push.Dialog.v2/0.23.1440.823@0.23.1440.823" timestamp="1586167229237" />
+    <state x="320" y="157" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1586167125896" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/photographycore$IndexComponentTest_testIndexCreate.ic" NAME="IndexComponentTest.testIndexCreate Coverage Results" MODIFIED="1572947179988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
