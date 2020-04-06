@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1227 搜索提示词摘要优化；">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo-util/src/main/java/com/art/util/SearchConstans.java" afterDir="false" />
-    </list>
+    <list default="true" id="66242bc3-de82-4914-b1cc-25d86da687ee" name="wslixiaoliang" comment="production-1227 搜索提示词摘要优化；" />
     <list id="249ad0d0-a6a2-4647-b8c6-57110ec77c56" name="New changelist" comment="New changelist" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,13 +364,7 @@
       <workItem from="1576477046393" duration="1829000" />
       <workItem from="1576634131226" duration="23577000" />
       <workItem from="1586165774799" duration="2407000" />
-    </task>
-    <task id="LOCAL-00032" summary="FAMOUS-jquery.page.js取消首页分页插件集成-2019.6.5">
-      <created>1559728976041</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1559728976041</updated>
+      <workItem from="1586183730141" duration="375000" />
     </task>
     <task id="LOCAL-00033" summary="FAMOUS-分页插件优化-2019.6.10">
       <created>1560171817852</created>
@@ -712,7 +702,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586166936108</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="production-1227 搜索提示词摘要优化；">
+      <created>1586184063122</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1586184063123</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -804,37 +801,41 @@
     <option name="LAST_COMMIT_MESSAGE" value="production-1227 搜索提示词摘要优化；" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="238" y="31" key="CommitChangelistDialog2" timestamp="1586183864998">
+    <state x="238" y="31" key="CommitChangelistDialog2" timestamp="1586184062865">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="238" y="31" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1586166935987" />
-    <state x="238" y="31" key="CommitChangelistDialog2/0.23.1440.825@0.23.1440.825" timestamp="1586183864998" />
+    <state x="238" y="31" key="CommitChangelistDialog2/0.23.1440.825@0.23.1440.825" timestamp="1586184062865" />
+    <state x="138" y="87" key="DiffContextDialog" timestamp="1586184014033">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state x="138" y="87" key="DiffContextDialog/0.23.1440.825@0.23.1440.825" timestamp="1586184014033" />
     <state width="436" height="458" key="Git.Branch.Popup/1600.900" timestamp="1586164438298" />
     <state width="436" height="458" key="Git.Branch.Popup@1600.900" timestamp="1586164438298" />
-    <state width="1398" height="220" key="GridCell.Tab.0.bottom" timestamp="1586183906048">
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom" timestamp="1586184098680">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1097" height="390" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1586164695184" />
     <state width="1097" height="390" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1586166740734" />
-    <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1586183906048" />
-    <state width="1398" height="220" key="GridCell.Tab.0.center" timestamp="1586183906047">
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1586184098680" />
+    <state width="1398" height="220" key="GridCell.Tab.0.center" timestamp="1586184098679">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1097" height="390" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1586164695183" />
     <state width="1097" height="390" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1586166740734" />
-    <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1586183906047" />
-    <state width="1398" height="220" key="GridCell.Tab.0.left" timestamp="1586183906047">
+    <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1586184098679" />
+    <state width="1398" height="220" key="GridCell.Tab.0.left" timestamp="1586184098679">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1097" height="390" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1586164695182" />
     <state width="1097" height="390" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1586166740733" />
-    <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1586183906047" />
-    <state width="1398" height="220" key="GridCell.Tab.0.right" timestamp="1586183906048">
+    <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1586184098679" />
+    <state width="1398" height="220" key="GridCell.Tab.0.right" timestamp="1586184098680">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1097" height="390" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1586164695184" />
     <state width="1097" height="390" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1586166740734" />
-    <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1586183906048" />
+    <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1586184098680" />
     <state width="1097" height="390" key="GridCell.Tab.1.bottom" timestamp="1586183710636">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
@@ -894,11 +895,11 @@
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.823@0.23.1440.823" timestamp="1586166320695" />
     <state width="500" height="447" key="SwitcherDM/0.23.1440.825@0.23.1440.825" timestamp="1586183674800" />
-    <state x="320" y="157" key="Vcs.Push.Dialog.v2" timestamp="1586167229237">
-      <screen x="0" y="23" width="1440" height="823" />
+    <state x="320" y="157" key="Vcs.Push.Dialog.v2" timestamp="1586184066455">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="320" y="157" key="Vcs.Push.Dialog.v2/0.23.1440.823@0.23.1440.823" timestamp="1586167229237" />
-    <state x="320" y="157" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1586167125896" />
+    <state x="320" y="157" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1586184066455" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/photographycore$IndexComponentTest_testIndexCreate.ic" NAME="IndexComponentTest.testIndexCreate Coverage Results" MODIFIED="1572947179988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
