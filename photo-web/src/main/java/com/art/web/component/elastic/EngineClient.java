@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
+ */
+
 package com.art.web.component.elastic;
 
 import com.art.util.SearchConstans;
@@ -13,6 +17,7 @@ import java.net.UnknownHostException;
 
 /**
  * 获取es客户端连接
+ * @author wslixiaoliang
  */
 @Component
 public class EngineClient {

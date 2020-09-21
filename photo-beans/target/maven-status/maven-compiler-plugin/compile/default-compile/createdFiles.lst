@@ -1,0 +1,7 @@
+com/art/beans/consumer/ConsumerInformation.class
+com/art/beans/famous/FamousPortrait.class
+com/art/beans/famous/SuggestResult.class
+com/art/beans/elastic/SearchResult.class
+com/art/beans/famous/Result.class
+com/art/beans/famous/FamousProduction.class
+com/art/beans/famous/Suggestion.class

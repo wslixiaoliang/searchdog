@@ -1,0 +1,74 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.art.dao.famous.FamousProductionDAO">
+    <resultMap id="famousProduction" type="com.art.beans.famous.FamousProduction">
+        <id column="PRODUCTION_ID" property="productionId"/><!--作品ID-->
+        <result column="FAMOUS_ID" property="famousId"/><!--名人ID-->
+        <result column="PORTRAIT_NAME" property="portraitName"/><!--肖像名称-->
+        <result column="CHINESE_NAME"  property="chineseName"/><!--作者中文名-->
+        <result column="ENGLISH_NAME"  property="englishName"/><!--作者英文名-->
+        <result column="PRODUCTION_NAME" property="productionName"/><!--作品名称-->
+        <result column="PUBLISHED_YEAR" property="publishedYear"/><!--发表年份-->
+        <result column="SUMMARY_INFO" property="summaryInfo"/><!--摘要-->
+        <result column="PRODUCTION_CNTT" property="productionContent"/><!--作品内容-->
+    </resultMap>
+    <!--基本查询sql-->
+    <sql id="baseSql">
+      SELECT
+      a.PRODUCTION_ID,
+      a.PRODUCTION_NAME,
+      a.PUBLISHED_YEAR,
+      a.SUMMARY_INFO,
+      a.PRODUCTION_CNTT,
+      b.FAMOUS_ID,
+      b.CHINESE_NAME,
+      b.ENGLISH_NAME,
+      c.PORTRAIT_NAME
+    FROM famous_production a,famous_of_world b,famous_portrait c
+    WHERE a.FAMOUS_ID = b.FAMOUS_ID
+    AND  a.FAMOUS_ID = c.FAMOUS_ID
+    </sql>
+    <!--1.条件查询-->
+    <select id="getProductionInfos" parameterType="java.util.Map"  resultMap="famousProduction">
+
+        <include refid="baseSql"/>
+
+        <if test="null!=productionName and productionName!=''">
+            AND a.PRODUCTION_NAME LIKE concat("%",#{productionName},"%")
+        </if>
+        <if test="null!=chineseName and chineseName!=''">
+            AND b.CHINESE_NAME = #{chineseName}
+        </if>
+        LIMIT #{start},#{limit}
+    </select>
+
+    <!--2.count查询-->
+    <select id="getProductionCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        SELECT count(*) from famous_production a,famous_of_world b,famous_portrait c
+        WHERE a.FAMOUS_ID = b.FAMOUS_ID
+        AND  a.FAMOUS_ID = c.FAMOUS_ID
+        <if test="null!=productionName and productionName!=''">
+            AND a.PRODUCTION_NAME LIKE concat("%",#{productionName},"%")
+        </if>
+        <if test="null!=chineseName and chineseName!=''">
+            AND b.CHINESE_NAME = #{chineseName}
+        </if>
+    </select>
+
+    <!--3.单个&多个作品查询-->
+    <select id="getProductionById" parameterType="java.util.Map" resultMap="famousProduction">
+        <include refid="baseSql"/>
+        <if test="null!=productionId and productionId!=''">
+            AND a.PRODUCTION_ID = #{productionId}
+        </if>
+        <if test="null!=famousId and famousId!=''">
+            AND a.FAMOUS_ID = #{famousId}
+        </if>
+        <if test="null!=famousList and famousList.size()>0">
+            AND b.FAMOUS_ID IN
+            <foreach collection="famousList"  item="famousId" index="index" open="(" separator="," close=")">
+                #{famousId}
+            </foreach>
+        </if>
+    </select>
+
+</mapper>

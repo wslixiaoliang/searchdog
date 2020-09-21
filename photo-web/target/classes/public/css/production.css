@@ -1,0 +1,16 @@
+
+/* 文章总div */
+#proDiv{
+    width: 1200px;
+    height: auto;/* 根据内容的高度撑开的 */
+    margin: auto;
+    color: #666;
+}
+
+#proDiv.span{
+    color:red;
+    background-color: yellow;
+}
+
+
+

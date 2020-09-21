@@ -1,5 +1,8 @@
-package com.art.web.component.elastic;
+/*
+ * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
+ */
 
+package com.art.web.component.elastic;
 
 import com.art.beans.elastic.SearchResult;
 import com.art.util.SearchConstans;
@@ -11,6 +14,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 搜索引擎，删除基类
+ * @author wslixiaoliang
+ */
 @Component
 public class DeleteComponent {
 
