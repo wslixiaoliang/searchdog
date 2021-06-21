@@ -1,3 +1,7 @@
+/*
+ * Copyright © 2016-2021 Liang Searching Group. All rights reserved.
+ */
+
 package com.art.beans.famous;
 
 import java.io.Serializable;
