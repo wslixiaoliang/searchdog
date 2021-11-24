@@ -5,15 +5,13 @@
 package com.art.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.art.beans.elastic.SearchResult;
-import com.art.beans.famous.FamousPortrait;
-import com.art.beans.famous.Result;
-import com.art.service.famous.IFamousPortraitSV;
-import com.art.util.CommonUtil;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
+import com.art.elastic.service.IFamousPortraitSV;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.FamousPortrait;
+import com.art.elastic.vo.Result;
 import com.art.web.component.famous.SearchFamousComponent;
-//import jdk.nashorn.internal.ir.annotations.Reference;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +26,7 @@ import java.util.Map;
  * 名人维护页：Controller
  * @author lixiaoliang
  */
+@Slf4j
 @RestController
 @RequestMapping(value = "/worldFamous")
 public class FamousController {
@@ -35,12 +34,11 @@ public class FamousController {
     private SearchFamousComponent searchFamousComponent;
     @Reference
     private IFamousPortraitSV famousPortraitSV;
-    private static final Logger logger = Logger.getLogger(FamousController.class);
     /**
      * 管理页面：条件查询
      */
     @RequestMapping(value = "/getWorldFamous", method = RequestMethod.POST)
-    public Result getWorldFamous(String  chineseName,String  englishName,String  country,String  career,String  sex,int  page,int  limit) {
+    public Result getWorldFamous(String  chineseName, String  englishName, String  country, String  career, String  sex, int  page, int  limit) {
 
         Result result = new Result();
         List<FamousPortrait> famousList;
@@ -55,7 +53,7 @@ public class FamousController {
             result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             result.setReturnMessage("查询成功");
         } catch (Exception e) {
-            logger.info(e.getMessage(), e);
+            log.info("查询失败:{}",e.getMessage());
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }

@@ -4,10 +4,10 @@
 
 package com.art.web.component.elastic;
 
-import com.art.beans.elastic.SearchResult;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
-import org.apache.log4j.Logger;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.SearchResult;
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
@@ -21,7 +21,7 @@ import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.springframework.stereotype.Component;
-import javax.swing.text.Highlighter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -32,13 +32,12 @@ import java.util.concurrent.TimeUnit;
  * @author wslixiaoliang
  */
 @Component
+@Slf4j
 public class SearchComponent {
 
-    private static final Logger LOGGER = Logger.getLogger(SearchComponent.class);
     private static  String KEYWORD = "";
     //多字段 "查询策略" 枚举
     public static enum MultiType{
-
         BEST,MOST,CROSS
     }
     /**
@@ -49,7 +48,7 @@ public class SearchComponent {
      * @param limit 每页数据条数
      * @return
      */
-    public SearchResult searching(Map<String,Object> params, Map<String,Object> termFields,String includes[],String excludes[],int page,int limit)throws Exception
+    public SearchResult searching(Map<String,Object> params, Map<String,Object> termFields, String includes[], String excludes[], int page, int limit)throws Exception
     {
         SearchResult searchResult = new SearchResult();
 
@@ -73,7 +72,6 @@ public class SearchComponent {
             if(0==page && 0==limit){
                 searchResult = searching(indexName,indexType);
             }else{
-
                 searchResult = searching(indexName,indexType,includes,excludes,page,limit);
             }
         }
@@ -93,7 +91,6 @@ public class SearchComponent {
         GetResponse response =null;
         Map<String,Object> document;
         List<Map<String,Object>> list = new ArrayList<>();
-
         try{
             if(StringUtil.isNotEmpty(indexName)&& StringUtil.isNotEmpty(indexType)&&StringUtil.isNotEmpty(docId)) {
                 response = EngineClient.getConnection().prepareGet(indexName,indexType,docId).execute().actionGet();
@@ -105,12 +102,12 @@ public class SearchComponent {
             list.add(document);
             searchResult.setDocuments(list);
             searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
-            searchResult.setReturnMsg("查询成功……");
-
+            searchResult.setReturnMsg("查询成功");
+            log.info("查询成功");
         }catch(Exception e){
-            LOGGER.info(e);
+            log.error("查询失败:{}",e.getMessage());
             searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
-            searchResult.setReturnMsg("查询失败……");
+            searchResult.setReturnMsg("查询失败");
         }
         return searchResult;
     }
@@ -164,7 +161,7 @@ public class SearchComponent {
                 searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
                 searchResult.setReturnMsg("查询成功……");
             } catch (Exception e) {
-                LOGGER.error(e.getMessage(),e);
+                System.out.println(e.getMessage());
                 searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
                 searchResult.setReturnMsg("查询失败……");
             }
@@ -220,7 +217,7 @@ public class SearchComponent {
                     searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
                     searchResult.setReturnMsg("查询成功……");
                 } catch (Exception e) {
-                    LOGGER.error(e.getMessage(),e);
+                    System.out.println(e.getMessage());
                     searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
                     searchResult.setReturnMsg("查询失败……");
                 }
@@ -399,10 +396,8 @@ public class SearchComponent {
         try{
             //初始化：搜索对象
             SearchRequestBuilder searchRequestBuilder = SearchrequestFactory.build(indexName,indexType);
-
             //执行搜索
             SearchResponse searchResponse = searchRequestBuilder.setSize(16).setQuery(QueryBuilders.matchAllQuery()).execute().actionGet(); // 查询所有
-
             SearchHits searchHits=searchResponse.getHits();
             SearchHit[] hits = searchHits.getHits();
             searchResult.setTotalCount(hits.length);
@@ -414,9 +409,10 @@ public class SearchComponent {
                 }
             }
             searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
-            searchResult.setReturnMsg("查询成功……");
+            searchResult.setReturnMsg("查询成功");
         }catch(Exception e){
-            LOGGER.error(e.getMessage(),e);
+
+            System.out.println(e.getMessage());
             searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             searchResult.setReturnMsg("查询失败……");
         }

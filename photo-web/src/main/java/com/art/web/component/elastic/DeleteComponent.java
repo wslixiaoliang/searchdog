@@ -4,14 +4,13 @@
 
 package com.art.web.component.elastic;
 
-import com.art.beans.elastic.SearchResult;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
-import org.apache.log4j.Logger;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.SearchResult;
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.common.unit.TimeValue;
 import org.springframework.stereotype.Component;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -19,9 +18,8 @@ import java.util.concurrent.TimeUnit;
  * @author wslixiaoliang
  */
 @Component
+@Slf4j
 public class DeleteComponent {
-
-    private static final Logger LOGGER = Logger.getLogger(DeleteComponent.class);
 
     /**
      * 删除文档
@@ -43,13 +41,13 @@ public class DeleteComponent {
             }
             searchResult.setStatus(status);
             searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
-            searchResult.setReturnMsg("删除成功……");
+            searchResult.setReturnMsg("文档删除成功");
+            log.info("文档删除成功……");
         }catch(Exception e){
-            LOGGER.error(e);
-            e.printStackTrace();
+            log.error("文档删除失败: {}",e.getMessage());
             searchResult.setStatus(SearchConstans.DELETE_FAILURE_STATUS);
             searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
-            searchResult.setReturnMsg("删除失败……");
+            searchResult.setReturnMsg("文档删除失败");
         }
         return searchResult;
     }

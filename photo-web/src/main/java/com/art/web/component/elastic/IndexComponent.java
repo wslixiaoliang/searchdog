@@ -4,10 +4,10 @@
 
 package com.art.web.component.elastic;
 
-import com.art.beans.elastic.SearchResult;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
-import org.apache.log4j.Logger;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.SearchResult;
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.common.unit.TimeValue;
 import org.springframework.stereotype.Component;
@@ -19,12 +19,9 @@ import java.util.concurrent.TimeUnit;
  * 搜索引擎 索引基类
  * @author wslixiaoliang
  */
-
 @Component
-public class IndexComponent
-{
-
-    private static final Logger LOGGER = Logger.getLogger(IndexComponent.class);
+@Slf4j
+public class IndexComponent {
     /**
      * 指定文档Id:新增或更新文档
      * @param indexName
@@ -47,13 +44,14 @@ public class IndexComponent
             }
             searchResult.setStatus(status);
             searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
-            searchResult.setReturnMsg("新增成功……");
+            searchResult.setReturnMsg("文档新增成功");
+            log.info("文档新增成功");
         }catch(Exception e){
-            LOGGER.error(e);
+            log.error("文档新增失败: {}",e.getMessage());
             status = SearchConstans.CREATE_FAILURE_STATUS;
             searchResult.setStatus(status);
             searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
-            searchResult.setReturnMsg("新增失败……");
+            searchResult.setReturnMsg("文档新增失败");
         }
         return searchResult;
     }

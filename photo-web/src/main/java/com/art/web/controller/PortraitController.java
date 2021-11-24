@@ -5,15 +5,15 @@
 package com.art.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.art.beans.elastic.SearchResult;
-import com.art.beans.famous.FamousPortrait;
-import com.art.beans.famous.Result;
-import com.art.service.famous.IFamousPortraitSV;
-import com.art.util.CommonUtil;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
-import com.art.web.component.famous.IndexFamousComponent;
+import com.art.elastic.service.IFamousPortraitSV;
+import com.art.elastic.util.CommonUtil;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.FamousPortrait;
+import com.art.elastic.vo.Result;
+import com.art.elastic.vo.SearchResult;
 import com.art.web.component.famous.SearchFamousComponent;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +29,7 @@ import java.util.Map;
  * 名人肖像Controller
  * @author wslixiaoliang
  */
+@Slf4j
 @RestController
 @RequestMapping(value = "/portrait")
 public class PortraitController {
@@ -37,8 +38,6 @@ public class PortraitController {
     private IFamousPortraitSV famousPortraitSV;
     @Autowired
     SearchFamousComponent searchFamousComponent;
-
-    private final Log logger = LogFactory.getLog(PortraitController.class);
     private static final String INCLUDES=  "famousId,portraitName,chineseName,englishName,achievement,birthYear,summaryInfo";
     private static final String EXCLUDES = "createTime,relativeLocation,sex,career,honor,country,honor";
 
@@ -46,7 +45,7 @@ public class PortraitController {
      * 首页肖像信息：条件查询
      */
     @RequestMapping(value = "/getPortraitInfos")
-    public Result getPortraitInfos(String chineseName,String famousId)
+    public Result getPortraitInfos(String chineseName, String famousId)
     {
         Result result = new Result();
         Map<String,Object> fields = new HashMap();
@@ -75,7 +74,7 @@ public class PortraitController {
                 result.setReturnMessage("查询成功");
             }
         }catch(Exception e){
-            logger.error(e.getMessage(),e);
+            log.error("查询失败:{}",e.getMessage());
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }
@@ -102,7 +101,6 @@ public class PortraitController {
             String achievement= String.valueOf(document.get("achievement"));
             String birthYear= String.valueOf(document.get("birthYear"));
             String summaryInfo= String.valueOf(document.get("summaryInfo"));
-
             FamousPortrait famousPortrait = new FamousPortrait(Long.valueOf(famousId),portraitName,chineseName,englishName,achievement,birthYear,summaryInfo);
             famousList.add(famousPortrait);
         }

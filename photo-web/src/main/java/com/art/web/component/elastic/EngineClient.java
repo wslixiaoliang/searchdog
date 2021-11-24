@@ -4,9 +4,9 @@
 
 package com.art.web.component.elastic;
 
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
-import org.apache.log4j.Logger;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
@@ -20,9 +20,8 @@ import java.net.UnknownHostException;
  * @author wslixiaoliang
  */
 @Component
+@Slf4j
 public class EngineClient {
-
-    private static final Logger LOGGER = Logger.getLogger(EngineClient.class);
     private static TransportClient client = null;
 
     /**
@@ -33,38 +32,28 @@ public class EngineClient {
         return innitClient();
     }
 
-
     /**
      * 初始化客户端
      * @return
      */
-    private  static TransportClient innitClient()
-    {
+    private static TransportClient innitClient() {
         String clusterName = SearchConstans.CLUSTER_NAME;
         String clusterAddress = SearchConstans.CLUSTER_ADDRESS;
-
         //指定es集群
         Settings settings = Settings.builder().put("cluster.name",clusterName).put("client.transport.sniff", true).build();
         client = new PreBuiltTransportClient(settings);
         if(StringUtil.isNotEmpty(clusterAddress)){
-
             String[] addStr = StringUtil.splitStr(clusterAddress,",");
-
-            for(String str:addStr)
-            {
+            for(String str:addStr) {
                 String[] addressAndPort = StringUtil.splitStr(str,":");
                 String address = addressAndPort[0];
                 int port = Integer.parseInt(addressAndPort[1]);
-
                 try{
                     //创建访问es服务器的客户端
                     client.addTransportAddresses(new TransportAddress(InetAddress.getByName(address),port));
-
-                    LOGGER.info("客户端："+str+"连接成功");
-
+                    log.info("客户端：{} "+str+"连接成功");
                 }catch(UnknownHostException e){
-
-                    LOGGER.error("客户端连接失败",e);
+                    log.error("客户端连接失败:{} "+e.getMessage());
                 }
             }
         }

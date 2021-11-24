@@ -6,14 +6,15 @@ package com.art.web.controller;
 
 import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.art.beans.elastic.SearchResult;
-import com.art.beans.famous.FamousProduction;
-import com.art.beans.famous.Result;
-import com.art.service.famous.IFamousProductionSV;
-import com.art.util.CommonUtil;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
+import com.art.elastic.service.IFamousProductionSV;
+import com.art.elastic.util.CommonUtil;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.FamousProduction;
+import com.art.elastic.vo.Result;
+import com.art.elastic.vo.SearchResult;
 import com.art.web.component.famous.SearchProductionComponent;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,17 +28,15 @@ import java.util.Map;
  * 名人作品controller
  * @author wslixiaoliang
  */
+@Slf4j
 @RestController
 @RequestMapping(value = "/production")
 public class ProductionController {
 
     @Reference
     private IFamousProductionSV productionSV;
-
     @Autowired
     SearchProductionComponent searchProductionComponent;
-
-    private final Logger logger = Logger.getLogger(ProductionController.class);
     private static final String INCLUDES=  "productionId,portraitName,chineseName,englishName,productionName,publishedYear,summaryInfo,productionContent";
     private static final String EXCLUDES = "famousId,createTime";
     /**
@@ -78,8 +77,7 @@ public class ProductionController {
             result.setReturnMessage("查询成功");
 
         }catch(Exception e){
-            e.printStackTrace();
-            logger.info(e.getMessage(),e);
+            log.error("查询失败:{}",e.getMessage());
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }
@@ -136,7 +134,7 @@ public class ProductionController {
                 replaceHighLightContent(productions,searchkeyword);
             }
         }catch(Exception e){
-            logger.info(e.getMessage(),e);
+            log.error("查询失败:{}",e.getMessage());
         }
         return productions;
     }
@@ -156,7 +154,6 @@ public class ProductionController {
             String productionName = replaceHighLightContent(production.getProductionName(),searchkeyword);
             String chineseName = replaceHighLightContent(production.getChineseName(),searchkeyword);
             String productionContent = replaceHighLightContent(production.getProductionContent(),searchkeyword);
-
             production.setProductionName(productionName);
             production.setChineseName(chineseName);
             production.setProductionContent(productionContent);

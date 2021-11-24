@@ -5,13 +5,14 @@
 package com.art.web.component.famous;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.art.beans.elastic.SearchResult;
-import com.art.beans.famous.FamousProduction;
-import com.art.service.famous.IFamousProductionSV;
-import com.art.util.DateUtil;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
+import com.art.elastic.service.IFamousProductionSV;
+import com.art.elastic.util.DateUtil;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.FamousProduction;
+import com.art.elastic.vo.SearchResult;
 import com.art.web.component.elastic.IndexComponent;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,14 +23,16 @@ import java.util.List;
 import java.util.Map;
 
 @Component
+@Slf4j
 public class IndexProductionComponent {
 
     @Autowired
     private IndexComponent indexComponent;
+
     @Reference
     private IFamousProductionSV famousProductionSV;
-    private static final Logger LOGGER = Logger.getLogger(IndexProductionComponent.class);
-    private static int count = 0;
+
+    private static Integer count = 0;
 
     public SearchResult productionIndex(List<String> famousList)
     {
@@ -48,7 +51,7 @@ public class IndexProductionComponent {
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
-                        LOGGER.error("新增失败……"+e);
+                        log.error("新增失败:{}",e.getMessage());
                     }
                 }
             }
@@ -68,10 +71,8 @@ public class IndexProductionComponent {
         param.put("famousList",famousList);
         try{
             productionList = famousProductionSV.getProductionById(param);
-
-
         }catch(Exception e){
-            LOGGER.error(e);
+            log.error("查询失败:{}",e.getMessage());
         }
         return productionList;
     }

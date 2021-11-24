@@ -4,23 +4,23 @@
 
 package com.art.web.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
+@Slf4j
 @RestController
 @RequestMapping(value = "/portrait")
 public class FileDownloadController {
 
-    private final Logger logger = Logger.getLogger(PortraitController.class);
     private static final String FAMOUS_PATH  = "/Users/wslixiaoliang/Documents/project/portrait/famous";
     private static final String CONSUMER_PATH = "/Users/wslixiaoliang/Documents/project/portrait/consumer";
-
+    private static final String MESSAGE_SUCCESS="上传成功";
+    private static final String MESSAGE_FAILURE="上传失败";
     /**
      * 肖像上传
      * @param file
@@ -28,15 +28,16 @@ public class FileDownloadController {
     @RequestMapping("/upload")
     public String upload(MultipartFile file){
 
+
         try{
             if(file.isEmpty()){
                 return "上传文件为空";
             }
             String fileName = file.getOriginalFilename();
-            logger.info("上传肖像名称为："+fileName);
+            log.info("上传肖像名称为：{}"+fileName);
             // 获取文件的后缀名abc.png
             String suffixName = fileName.substring(fileName.lastIndexOf("."));//包含"."
-            logger.info("文件的后缀名为："+suffixName);
+            log.info("文件的后缀名为：{}"+suffixName);
             //设置文件的存储路径
             String filedPath = "E:\\famous\\portrait";
             String path = filedPath + suffixName;
@@ -46,13 +47,13 @@ public class FileDownloadController {
                 portrait.getParentFile().mkdirs();
             }
             file.transferTo(portrait);//写入文件
-            return "上传成功";
+            return MESSAGE_SUCCESS;
         }catch (IllegalStateException e) {
-            e.printStackTrace();
+            log.error("上传失败:{}",e.getMessage());
         }catch(IOException e){
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
-        return "上传失败";
+        return MESSAGE_FAILURE;
     }
 
     /**
@@ -84,22 +85,22 @@ public class FileDownloadController {
                         os.write(buffer, 0, i);//从0写到i,一次写1024个字节;
                         i = bis.read(buffer);
                     }
-                    logger.info("肖像名称为："+fileName+"下载成功");
+                    log.info("肖像名称为:{}"+fileName+"下载成功");
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    log.error("肖像下载失败:{}",e.getMessage());
                 } finally {
                     if (bis != null) {
                         try {
                             bis.close();
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            log.error(e.getMessage());
                         }
                     }
                     if (fis != null) {
                         try {
                             fis.close();
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            log.error(e.getMessage());
                         }
                     }
                 }
@@ -136,22 +137,22 @@ public class FileDownloadController {
                         os.write(buffer, 0, i);//从0写到i,一次写1024个字节;
                         i = bis.read(buffer);
                     }
-                    logger.info("用户头像名称为："+fileName+"下载成功");
+                    log.info("用户头像名称为:{}"+fileName+"下载成功");
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    log.error("用户头像下载失败:{}",e.getMessage());
                 } finally {
                     if (bis != null) {
                         try {
                             bis.close();
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            log.error(e.getMessage());
                         }
                     }
                     if (fis != null) {
                         try {
                             fis.close();
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            log.error(e.getMessage());
                         }
                     }
                 }

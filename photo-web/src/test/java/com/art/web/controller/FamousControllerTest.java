@@ -1,15 +1,13 @@
 package com.art.web.controller;
 
-import com.art.beans.famous.FamousPortrait;
-import com.art.beans.famous.Result;
-import com.art.util.StringUtil;
+import com.art.elastic.vo.FamousPortrait;
+import com.art.elastic.util.StringUtil;
 import com.art.web.WebApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;

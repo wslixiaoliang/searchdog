@@ -1,6 +1,6 @@
 package com.art.web.component;
 
-import com.art.beans.elastic.SearchResult;
+import com.art.elastic.vo.SearchResult;
 import com.art.web.WebApplication;
 import com.art.web.component.famous.IndexProductionComponent;
 import com.art.web.component.famous.IndexFamousComponent;

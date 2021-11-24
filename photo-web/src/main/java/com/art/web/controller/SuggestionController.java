@@ -4,14 +4,14 @@
 
 package com.art.web.controller;
 
-import com.art.beans.elastic.SearchResult;
-import com.art.beans.famous.Result;
-import com.art.beans.famous.SuggestResult;
-import com.art.beans.famous.Suggestion;
-import com.art.util.CommonUtil;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
+import com.art.elastic.util.CommonUtil;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.SearchResult;
+import com.art.elastic.vo.SuggestResult;
+import com.art.elastic.vo.Suggestion;
 import com.art.web.component.famous.SearchSuggestionComponent;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +26,13 @@ import java.util.Map;
  * 搜索提示词controller
  * @author wslixiaoliang
  */
+@Slf4j
 @RestController
 @RequestMapping(value = "/suggest")
 public class SuggestionController {
 
     @Autowired
     SearchSuggestionComponent searchSuggestionComponent;
-    private final Log LOGGER = LogFactory.getLog(PortraitController.class);
     private static final String INCLUDES=  "suggestionId,suggestionName,clickTimes";
     private static final String EXCLUDES = "createTime";
 
@@ -58,12 +58,13 @@ public class SuggestionController {
                 result.setSuggestions(strings);//list转array
                 result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
                 result.setReturnMessage("查询成功");
+                log.info("查询成功");
             }else{
                 result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
                 result.setReturnMessage("查询失败");
             }
         } catch (Exception e) {
-            LOGGER.error("查询失败",e);
+            log.error("查询失败:{}",e.getMessage());
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }

@@ -5,34 +5,34 @@
 package com.art.web.component.famous;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.art.beans.elastic.SearchResult;
-import com.art.beans.famous.FamousPortrait;
-import com.art.service.famous.IFamousPortraitSV;
-import com.art.util.DateUtil;
-import com.art.util.SearchConstans;
-import com.art.util.StringUtil;
+import com.art.elastic.service.IFamousPortraitSV;
+import com.art.elastic.util.DateUtil;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.util.StringUtil;
+import com.art.elastic.vo.FamousPortrait;
+import com.art.elastic.vo.SearchResult;
 import com.art.web.component.elastic.IndexComponent;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
+
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 新增名人索引
  * @author wslixiaoliang
  */
 @Component
+@Slf4j
 public class IndexFamousComponent {
 
     @Autowired
     private IndexComponent indexFamousComponent;
     @Reference
     private IFamousPortraitSV famousPortraitSV;
-    private static Logger LOGGER  = Logger.getLogger(IndexFamousComponent.class);
     private static int count = 0;
 
     public SearchResult indexFamous(List<String> famousIds)
@@ -41,7 +41,7 @@ public class IndexFamousComponent {
         List<FamousPortrait> famousList = getFamous(famousIds);//查询portraitList
         List<Map<String,Object>> documents = cfgIndexColumn(famousList);//组装索引字段
 
-        if(null== documents || documents.isEmpty()){
+        if(CollectionUtils.isEmpty(documents)){
             return searchResult;
         }
         for( Map<String,Object> document:documents){
@@ -54,7 +54,7 @@ public class IndexFamousComponent {
                         searchResult.setTotalCount(count);
                     }
                 }catch(IOException e){
-                    LOGGER.error("新增索引失败：IO异常"+e);
+                    log.error("新增索引失败,IO异常:{}",e.getMessage());
                 }
             }
         }
@@ -76,15 +76,15 @@ public class IndexFamousComponent {
                 famousPortraitList = famousPortraitSV.getfamousListByIds(famousMap);
             }
         }catch(Exception e){
-            LOGGER.error("查询失败"+e);
+            log.error("查询失败:{}",e.getMessage());
         }
         return famousPortraitList;
     }
 
     /**
      * 组装索引字段
-     * @param famousPortraitList
-     * @return
+     * @param famousPortraitList famousPortraitList
+     * @return documents
      */
     private List<Map<String,Object>> cfgIndexColumn(List<FamousPortrait> famousPortraitList){
         List<Map<String,Object>> documents = new ArrayList<>();

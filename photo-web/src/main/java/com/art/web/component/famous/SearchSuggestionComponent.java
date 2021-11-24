@@ -4,9 +4,10 @@
 
 package com.art.web.component.famous;
 
-import com.art.beans.elastic.SearchResult;
-import com.art.util.SearchConstans;
+import com.art.elastic.util.SearchConstans;
+import com.art.elastic.vo.SearchResult;
 import com.art.web.component.elastic.SearchComponent;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.Map;
@@ -16,8 +17,8 @@ import java.util.Map;
  * @author wslixiaoliang
  */
 @Component
+@Slf4j
 public class SearchSuggestionComponent {
-
 
     @Autowired
     SearchComponent searchComponent;
