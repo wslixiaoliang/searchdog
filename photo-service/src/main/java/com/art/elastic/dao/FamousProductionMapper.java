@@ -1,6 +1,11 @@
 package com.art.elastic.dao;
 
 import com.art.elastic.vo.FamousProduction;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +13,7 @@ import java.util.Map;
  * 世界名人作品DAO
  * @author wslixiaoliang
  */
-public interface FamousProductionDAO {
+public interface FamousProductionMapper {
 
     /**
      * 名人作品：条件查询

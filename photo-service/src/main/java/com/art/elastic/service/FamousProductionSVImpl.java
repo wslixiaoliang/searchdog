@@ -5,7 +5,7 @@
 package com.art.elastic.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.art.elastic.dao.FamousProductionDAO;
+import com.art.elastic.dao.FamousProductionMapper;
 import com.art.elastic.vo.FamousProduction;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.Map;
 public class FamousProductionSVImpl implements IFamousProductionSV{
 
     @Autowired
-    private FamousProductionDAO dao;
+    private FamousProductionMapper dao;
     /**
      * 名人作品：条件查询
      * @param map

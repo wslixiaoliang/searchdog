@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.art.elastic.dao.FamousPortraitDAO">
+<mapper namespace="com.art.elastic.dao.FamousPortraitMapper">
     <resultMap id="portrait" type="com.art.elastic.vo.FamousPortrait">
         <id column="PORTRAIT_ID" property="portraitId"/><!--肖像ID-->
         <result column="PORTRAIT_NAME" property="portraitName"/><!--肖像名称-->

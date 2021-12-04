@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.art.elastic.dao.FamousSuggestionsDAO">
+<mapper namespace="com.art.elastic.dao.FamousSuggestionsMapper">
     <resultMap id="suggestion" type="com.art.elastic.vo.Suggestion">
         <id column="SUGGESTION_ID" property="suggestionId"/><!--提示词ID-->
         <result column="SUGGESTION_NAME" property="suggestionName"/><!--提示词名称-->

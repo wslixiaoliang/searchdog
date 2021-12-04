@@ -34,10 +34,10 @@ public class FileDownloadController {
                 return "上传文件为空";
             }
             String fileName = file.getOriginalFilename();
-            log.info("上传肖像名称为：{}"+fileName);
+            logger.info("上传肖像名称为：{}"+fileName);
             // 获取文件的后缀名abc.png
             String suffixName = fileName.substring(fileName.lastIndexOf("."));//包含"."
-            log.info("文件的后缀名为：{}"+suffixName);
+            logger.info("文件的后缀名为：{}"+suffixName);
             //设置文件的存储路径
             String filedPath = "E:\\famous\\portrait";
             String path = filedPath + suffixName;
@@ -49,9 +49,9 @@ public class FileDownloadController {
             file.transferTo(portrait);//写入文件
             return MESSAGE_SUCCESS;
         }catch (IllegalStateException e) {
-            log.error("上传失败:{}",e.getMessage());
+            logger.error("上传失败:{}",e.getMessage());
         }catch(IOException e){
-            log.error(e.getMessage());
+            logger.error(e.getMessage());
         }
         return MESSAGE_FAILURE;
     }
@@ -85,22 +85,22 @@ public class FileDownloadController {
                         os.write(buffer, 0, i);//从0写到i,一次写1024个字节;
                         i = bis.read(buffer);
                     }
-                    log.info("肖像名称为:{}"+fileName+"下载成功");
+                    logger.info("肖像名称为:{}"+fileName+"下载成功");
                 } catch (Exception e) {
-                    log.error("肖像下载失败:{}",e.getMessage());
+                    logger.error("肖像下载失败:{}",e.getMessage());
                 } finally {
                     if (bis != null) {
                         try {
                             bis.close();
                         } catch (IOException e) {
-                            log.error(e.getMessage());
+                            logger.error(e.getMessage());
                         }
                     }
                     if (fis != null) {
                         try {
                             fis.close();
                         } catch (IOException e) {
-                            log.error(e.getMessage());
+                            logger.error(e.getMessage());
                         }
                     }
                 }
@@ -137,22 +137,22 @@ public class FileDownloadController {
                         os.write(buffer, 0, i);//从0写到i,一次写1024个字节;
                         i = bis.read(buffer);
                     }
-                    log.info("用户头像名称为:{}"+fileName+"下载成功");
+                    logger.info("用户头像名称为:{}"+fileName+"下载成功");
                 } catch (Exception e) {
-                    log.error("用户头像下载失败:{}",e.getMessage());
+                    logger.error("用户头像下载失败:{}",e.getMessage());
                 } finally {
                     if (bis != null) {
                         try {
                             bis.close();
                         } catch (IOException e) {
-                            log.error(e.getMessage());
+                            logger.error(e.getMessage());
                         }
                     }
                     if (fis != null) {
                         try {
                             fis.close();
                         } catch (IOException e) {
-                            log.error(e.getMessage());
+                            logger.error(e.getMessage());
                         }
                     }
                 }

@@ -58,13 +58,13 @@ public class SuggestionController {
                 result.setSuggestions(strings);//list转array
                 result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
                 result.setReturnMessage("查询成功");
-                log.info("查询成功");
+                logger.info("查询成功");
             }else{
                 result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
                 result.setReturnMessage("查询失败");
             }
         } catch (Exception e) {
-            log.error("查询失败:{}",e.getMessage());
+            logger.error("查询失败:{}",e.getMessage());
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }

@@ -1,10 +1,8 @@
 package com.art.elastic.service;
 
-import com.art.ServiceApplication;
+import com.art.elastic.ServiceApplication;
 import com.art.elastic.vo.FamousPortrait;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,14 +35,14 @@ public class FamousPortraitSVImplTest {
         List<FamousPortrait> portraitList = famousPortraitSV.getPortraitInfos(map);
         if(null!=portraitList && !portraitList.isEmpty()){
             for(FamousPortrait portrait:portraitList){
-                log.info("---------info-----------"+portrait.getPortraitId()+"--------------------");
-                log.info("---------info-----------"+portrait.getPortraitName()+"--------------------");
-                log.info("---------info-----------"+portrait.getChineseName()+"--------------------");
-                log.info("---------info-----------"+portrait.getRelativeLocation()+"--------------------");
-                log.error("---------error-----------"+portrait.getPortraitId()+"--------------------");
-                log.error("---------error-----------"+portrait.getPortraitName()+"--------------------");
-                log.error("---------error-----------"+portrait.getChineseName()+"--------------------");
-                log.error("---------error-----------"+portrait.getRelativeLocation()+"--------------------");
+                logger.info("---------info-----------"+portrait.getPortraitId()+"--------------------");
+                logger.info("---------info-----------"+portrait.getPortraitName()+"--------------------");
+                logger.info("---------info-----------"+portrait.getChineseName()+"--------------------");
+                logger.info("---------info-----------"+portrait.getRelativeLocation()+"--------------------");
+                logger.error("---------error-----------"+portrait.getPortraitId()+"--------------------");
+                logger.error("---------error-----------"+portrait.getPortraitName()+"--------------------");
+                logger.error("---------error-----------"+portrait.getChineseName()+"--------------------");
+                logger.error("---------error-----------"+portrait.getRelativeLocation()+"--------------------");
             }
         }
     }

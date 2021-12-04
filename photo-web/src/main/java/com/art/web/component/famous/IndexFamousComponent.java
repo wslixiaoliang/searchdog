@@ -54,7 +54,7 @@ public class IndexFamousComponent {
                         searchResult.setTotalCount(count);
                     }
                 }catch(IOException e){
-                    log.error("新增索引失败,IO异常:{}",e.getMessage());
+                    logger.error("新增索引失败,IO异常:{}",e.getMessage());
                 }
             }
         }
@@ -76,7 +76,7 @@ public class IndexFamousComponent {
                 famousPortraitList = famousPortraitSV.getfamousListByIds(famousMap);
             }
         }catch(Exception e){
-            log.error("查询失败:{}",e.getMessage());
+            logger.error("查询失败:{}",e.getMessage());
         }
         return famousPortraitList;
     }

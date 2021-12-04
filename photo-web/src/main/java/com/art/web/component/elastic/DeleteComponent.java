@@ -42,9 +42,9 @@ public class DeleteComponent {
             searchResult.setStatus(status);
             searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             searchResult.setReturnMsg("文档删除成功");
-            log.info("文档删除成功……");
+            logger.info("文档删除成功……");
         }catch(Exception e){
-            log.error("文档删除失败: {}",e.getMessage());
+            logger.error("文档删除失败: {}",e.getMessage());
             searchResult.setStatus(SearchConstans.DELETE_FAILURE_STATUS);
             searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             searchResult.setReturnMsg("文档删除失败");

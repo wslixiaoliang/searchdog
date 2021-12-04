@@ -1,6 +1,6 @@
 package com.art.elastic.service;
 
-import com.art.ServiceApplication;
+import com.art.elastic.ServiceApplication;
 import com.art.elastic.vo.FamousProduction;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -34,11 +34,11 @@ public class FamousProductionSVImplTest {
         List<FamousProduction> productionList = productionSV.getProductionInfos(map);
         if(null!=productionList && !productionList.isEmpty()){
             for(FamousProduction production:productionList){
-                log.info("famousId:{}",production.getFamousId());
-                log.info("productionId:{}",production.getProductionId());
-                log.info("productionName:{}",production.getProductionName());
-                log.info("publishedYear:{}",production.getPublishedYear());
-                log.info("productionContent:{}",production.getProductionContent());
+                logger.info("famousId:{}",production.getFamousId());
+                logger.info("productionId:{}",production.getProductionId());
+                logger.info("productionName:{}",production.getProductionName());
+                logger.info("publishedYear:{}",production.getPublishedYear());
+                logger.info("productionContent:{}",production.getProductionContent());
             }
         }
     }

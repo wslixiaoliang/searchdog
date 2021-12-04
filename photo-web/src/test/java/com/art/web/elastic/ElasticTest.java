@@ -3,6 +3,7 @@ package com.art.web.elastic;
 import com.art.elastic.vo.SearchResult;
 import com.art.web.WebApplication;
 import com.art.web.component.elastic.SearchComponent;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,13 +21,13 @@ import java.util.Map;
  *
  * @author wslixiaoliang
  */
+@Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = WebApplication.class)
 public class ElasticTest {
 
     @Autowired(required = false)
     private SearchComponent searchDocumentsComponent;
-    private static final Logger LOGGER = Logger.getLogger(ElasticTest.class);
 
     @Test
     public void testSearch() throws IOException {
@@ -47,12 +48,12 @@ public class ElasticTest {
 
 //        System.out.println("新增结果：======================"+createResult);
 //        System.out.println("主键查询结果：======================"+searchIdResult);
-        System.out.println("字段查询结果：======================" + searchResult.getDocuments());
+        logger.info("字段查询结果：======================" + searchResult.getDocuments());
 //        System.out.println("删除结果：======================"+deleteResult);
 
 //        LOGGER.info("新增结果：======================"+createResult);
 //        LOGGER.info("主键查询结果：======================"+searchIdResult);
-        LOGGER.info("字段查询结果：======================" + searchResult);
+        logger.info("字段查询结果：======================" + searchResult);
 //        LOGGER.info("删除结果：======================"+deleteResult);
 
     }

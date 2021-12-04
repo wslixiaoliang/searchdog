@@ -103,9 +103,9 @@ public class SearchComponent {
             searchResult.setDocuments(list);
             searchResult.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             searchResult.setReturnMsg("查询成功");
-            log.info("查询成功");
+            logger.info("查询成功");
         }catch(Exception e){
-            log.error("查询失败:{}",e.getMessage());
+            logger.error("查询失败:{}",e.getMessage());
             searchResult.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             searchResult.setReturnMsg("查询失败");
         }

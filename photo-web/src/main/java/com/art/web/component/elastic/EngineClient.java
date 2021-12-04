@@ -51,9 +51,9 @@ public class EngineClient {
                 try{
                     //创建访问es服务器的客户端
                     client.addTransportAddresses(new TransportAddress(InetAddress.getByName(address),port));
-                    log.info("客户端：{} "+str+"连接成功");
+                    logger.info("客户端：{} "+str+"连接成功");
                 }catch(UnknownHostException e){
-                    log.error("客户端连接失败:{} "+e.getMessage());
+                    logger.error("客户端连接失败:{} "+e.getMessage());
                 }
             }
         }

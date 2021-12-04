@@ -65,12 +65,12 @@ public class IndexSuggestionComponent {
                 searchResult = indexComponent.createOrUpdating(SearchConstans.Suggestions.INDEX_NAME,SearchConstans.Suggestions.INDEX_TYPE,suggestionId,document);
                 if(SearchConstans.SUCESSS_RETURN_CODE.equals(searchResult.getReturnCode())){
                     count++;
-                    log.info("新增索引成功");
+                    logger.info("新增索引成功");
                 }else{
-                    log.error("新增索引失败");
+                    logger.error("新增索引失败");
                 }
             } catch (IOException e) {
-                log.error("新增索引失败:{}",e.getMessage());
+                logger.error("新增索引失败:{}",e.getMessage());
             }
         }
         searchResult.setTotalCount(count);
@@ -91,7 +91,7 @@ public class IndexSuggestionComponent {
                 suggestionList = suggestionSV.getSuggestions(map);
             }
         }catch(Exception e){
-            log.error("查询失败:{}",e.getMessage());
+            logger.error("查询失败:{}",e.getMessage());
         }
         return suggestionList;
     }

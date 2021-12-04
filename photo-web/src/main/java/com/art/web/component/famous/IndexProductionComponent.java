@@ -51,7 +51,7 @@ public class IndexProductionComponent {
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
-                        log.error("新增失败:{}",e.getMessage());
+                        logger.error("新增失败:{}",e.getMessage());
                     }
                 }
             }
@@ -72,7 +72,7 @@ public class IndexProductionComponent {
         try{
             productionList = famousProductionSV.getProductionById(param);
         }catch(Exception e){
-            log.error("查询失败:{}",e.getMessage());
+            logger.error("查询失败:{}",e.getMessage());
         }
         return productionList;
     }

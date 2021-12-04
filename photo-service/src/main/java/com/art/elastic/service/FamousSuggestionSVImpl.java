@@ -5,7 +5,7 @@
 package com.art.elastic.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.art.elastic.dao.FamousSuggestionsDAO;
+import com.art.elastic.dao.FamousSuggestionsMapper;
 import com.art.elastic.vo.Suggestion;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.Map;
 public class FamousSuggestionSVImpl implements IFamousSuggestionSV{
 
     @Autowired
-    FamousSuggestionsDAO dao;
+    FamousSuggestionsMapper dao;
 
     /**
      * 根据Id查询 搜索提示词

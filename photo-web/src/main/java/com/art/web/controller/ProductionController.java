@@ -15,7 +15,6 @@ import com.art.elastic.vo.Result;
 import com.art.elastic.vo.SearchResult;
 import com.art.web.component.famous.SearchProductionComponent;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -77,7 +76,7 @@ public class ProductionController {
             result.setReturnMessage("查询成功");
 
         }catch(Exception e){
-            log.error("查询失败:{}",e.getMessage());
+            logger.error("查询失败:{}",e.getMessage());
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }
@@ -134,7 +133,7 @@ public class ProductionController {
                 replaceHighLightContent(productions,searchkeyword);
             }
         }catch(Exception e){
-            log.error("查询失败:{}",e.getMessage());
+            logger.error("查询失败:{}",e.getMessage());
         }
         return productions;
     }

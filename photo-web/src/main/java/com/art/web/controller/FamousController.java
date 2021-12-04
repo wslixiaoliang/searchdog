@@ -53,7 +53,7 @@ public class FamousController {
             result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             result.setReturnMessage("查询成功");
         } catch (Exception e) {
-            log.info("查询失败:{}",e.getMessage());
+            logger.info("查询失败:{}",e.getMessage());
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }

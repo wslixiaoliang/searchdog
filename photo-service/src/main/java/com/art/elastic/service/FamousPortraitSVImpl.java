@@ -5,7 +5,7 @@
 package com.art.elastic.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.art.elastic.dao.FamousPortraitDAO;
+import com.art.elastic.dao.FamousPortraitMapper;
 import com.art.elastic.vo.FamousPortrait;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
@@ -19,7 +19,7 @@ import java.util.Map;
 public class FamousPortraitSVImpl implements IFamousPortraitSV{
 
     @Autowired
-    private FamousPortraitDAO dao;
+    private FamousPortraitMapper dao;
 
     /**
      * 主键查询
