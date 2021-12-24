@@ -2,7 +2,7 @@
  * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
  */
 
-package com.art.web.component.famous;
+package com.art.elastic.service.component.famous;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.elastic.service.IFamousSuggestionSV;
@@ -11,10 +11,8 @@ import com.art.elastic.util.SearchConstans;
 import com.art.elastic.util.StringUtil;
 import com.art.elastic.vo.SearchResult;
 import com.art.elastic.vo.Suggestion;
-import com.art.web.component.elastic.IndexComponent;
+import com.art.elastic.service.component.elastic.IndexComponent;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;

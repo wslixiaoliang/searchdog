@@ -1,8 +1,9 @@
-package com.art.web.controller;
+package com.art.elastic.service.controller;
 
+import com.art.elastic.service.FamousController;
 import com.art.elastic.vo.FamousPortrait;
 import com.art.elastic.util.StringUtil;
-import com.art.web.WebApplication;
+import com.art.elastic.WebApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

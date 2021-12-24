@@ -2,7 +2,7 @@
  * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
  */
 
-package com.art.web.component.elastic;
+package com.art.elastic.service.component.elastic;
 
 import com.art.elastic.util.SearchConstans;
 import com.art.elastic.util.StringUtil;

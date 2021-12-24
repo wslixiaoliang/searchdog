@@ -1,10 +1,10 @@
-package com.art.web.component;
+package com.art.elastic.service.component;
 
 import com.art.elastic.vo.SearchResult;
-import com.art.web.WebApplication;
-import com.art.web.component.famous.IndexProductionComponent;
-import com.art.web.component.famous.IndexFamousComponent;
-import com.art.web.component.famous.IndexSuggestionComponent;
+import com.art.elastic.WebApplication;
+import com.art.elastic.service.component.famous.IndexProductionComponent;
+import com.art.elastic.service.component.famous.IndexFamousComponent;
+import com.art.elastic.service.component.famous.IndexSuggestionComponent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,9 @@
 package com.art.web.elastic;
 
 import com.art.elastic.vo.SearchResult;
-import com.art.web.WebApplication;
-import com.art.web.component.elastic.SearchComponent;
+import com.art.elastic.WebApplication;
+import com.art.elastic.service.component.elastic.SearchComponent;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
