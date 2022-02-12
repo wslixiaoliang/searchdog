@@ -2,7 +2,7 @@
  * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
  */
 
-package com.art.elastic.service.component.elastic;
+package com.art.elastic.web.component.elastic;
 
 import com.art.elastic.util.SearchConstans;
 import com.art.elastic.util.StringUtil;
@@ -51,7 +51,7 @@ public class EngineClient {
                 try{
                     //创建访问es服务器的客户端
                     client.addTransportAddresses(new TransportAddress(InetAddress.getByName(address),port));
-                    logger.info("客户端：{} "+str+"连接成功");
+                    logger.info("客户端:"+str+"连接成功");
                 }catch(UnknownHostException e){
                     logger.error("客户端连接失败:{} "+e.getMessage());
                 }

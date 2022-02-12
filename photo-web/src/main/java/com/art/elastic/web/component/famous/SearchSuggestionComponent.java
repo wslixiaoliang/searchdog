@@ -2,11 +2,11 @@
  * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
  */
 
-package com.art.elastic.service.component.famous;
+package com.art.elastic.web.component.famous;
 
 import com.art.elastic.util.SearchConstans;
 import com.art.elastic.vo.SearchResult;
-import com.art.elastic.service.component.elastic.SearchComponent;
+import com.art.elastic.web.component.elastic.SearchComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

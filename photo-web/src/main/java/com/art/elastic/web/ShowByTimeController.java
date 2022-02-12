@@ -2,7 +2,7 @@
  * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
  */
 
-package com.art.elastic.service;
+package com.art.elastic.web;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

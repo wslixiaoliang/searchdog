@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.art.elastic</groupId>
 		<artifactId>photo-parent</artifactId>
-		<version>1.0.0-RELEASE</version>
+		<version>2.0.0-RELEASE</version>
 	</parent>
 
 	<groupId>com.art.elastic.service</groupId>
@@ -20,16 +20,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		<!--dubbo集成 @Service @Reference-->
-		<dependency>
-			<groupId>io.dubbo.springboot</groupId>
-			<artifactId>spring-boot-starter-dubbo</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-		</dependency>
-
 		<!--mybatis集成-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
@@ -39,7 +29,15 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-
+		<!--dubbo集成 @Service @Reference-->
+		<dependency>
+			<groupId>io.dubbo.springboot</groupId>
+			<artifactId>spring-boot-starter-dubbo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+		</dependency>
 		<!--日志集成 @Slf4j-->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -53,7 +51,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 		</dependency>
-
 		<!--junit集成 @Test-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -65,13 +62,11 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<!-- lombok @Data -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-
 		<!--other-->
 		<dependency>
 			<groupId>com.vaadin.external.google</groupId>

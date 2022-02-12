@@ -1,6 +1,6 @@
-package com.art.elastic.service.controller;
+package com.art.elastic.web.controller;
 
-import com.art.elastic.service.FamousController;
+import com.art.elastic.web.FamousController;
 import com.art.elastic.vo.FamousPortrait;
 import com.art.elastic.util.StringUtil;
 import com.art.elastic.WebApplication;

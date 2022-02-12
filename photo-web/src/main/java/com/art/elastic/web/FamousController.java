@@ -2,7 +2,7 @@
  * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
  */
 
-package com.art.elastic.service;
+package com.art.elastic.web;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.art.elastic.service.IFamousPortraitSV;
@@ -10,7 +10,7 @@ import com.art.elastic.util.SearchConstans;
 import com.art.elastic.util.StringUtil;
 import com.art.elastic.vo.FamousPortrait;
 import com.art.elastic.vo.Result;
-import com.art.elastic.service.component.famous.SearchFamousComponent;
+import com.art.elastic.web.component.famous.SearchFamousComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +33,7 @@ public class FamousController {
     private SearchFamousComponent searchFamousComponent;
     @Reference
     private IFamousPortraitSV famousPortraitSV;
+
     /**
      * 管理页面：条件查询
      */
@@ -52,7 +53,7 @@ public class FamousController {
             result.setReturnCode(SearchConstans.SUCESSS_RETURN_CODE);
             result.setReturnMessage("查询成功");
         } catch (Exception e) {
-            logger.info("查询失败:{}",e.getMessage());
+            logger.error("查询失败:{}",e.getMessage());
             result.setReturnCode(SearchConstans.FAILURE_RETURN_CODE);
             result.setReturnMessage("查询失败");
         }

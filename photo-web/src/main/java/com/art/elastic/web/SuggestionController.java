@@ -2,7 +2,7 @@
  * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
  */
 
-package com.art.elastic.service;
+package com.art.elastic.web;
 
 import com.art.elastic.util.CommonUtil;
 import com.art.elastic.util.SearchConstans;
@@ -10,7 +10,7 @@ import com.art.elastic.util.StringUtil;
 import com.art.elastic.vo.SearchResult;
 import com.art.elastic.vo.SuggestResult;
 import com.art.elastic.vo.Suggestion;
-import com.art.elastic.service.component.famous.SearchSuggestionComponent;
+import com.art.elastic.web.component.famous.SearchSuggestionComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

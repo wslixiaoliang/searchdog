@@ -2,7 +2,7 @@
  * Copyright (c) 1989-2020 Wslixiaoliang@Searching.Co.Ltd. All rights reserved.
  */
 
-package com.art.elastic.service;
+package com.art.elastic.web;
 
 import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
@@ -13,7 +13,7 @@ import com.art.elastic.util.StringUtil;
 import com.art.elastic.vo.FamousProduction;
 import com.art.elastic.vo.Result;
 import com.art.elastic.vo.SearchResult;
-import com.art.elastic.service.component.famous.SearchProductionComponent;
+import com.art.elastic.web.component.famous.SearchProductionComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,11 +31,10 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/production")
 public class ProductionController {
-
-    @Reference
-    private IFamousProductionSV productionSV;
     @Autowired
     SearchProductionComponent searchProductionComponent;
+    @Reference
+    IFamousProductionSV productionSV;
     private static final String INCLUDES=  "productionId,portraitName,chineseName,englishName,productionName,publishedYear,summaryInfo,productionContent";
     private static final String EXCLUDES = "famousId,createTime";
     /**
@@ -133,7 +132,7 @@ public class ProductionController {
                 replaceHighLightContent(productions,searchkeyword);
             }
         }catch(Exception e){
-            logger.error("查询失败:{}",e.getMessage(),e);
+            logger.error("查询失败:{}",e.getMessage());
         }
         return productions;
     }

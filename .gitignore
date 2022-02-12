@@ -3,11 +3,10 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
+/.idea/
 *.iml
 out
 gen
 *.class
 *.png
 */target/*
-!/photo-service/
