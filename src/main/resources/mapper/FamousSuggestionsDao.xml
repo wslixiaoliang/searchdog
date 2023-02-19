@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.art.elastic.dao.FamousSuggestionsDao">
+    <resultMap id="suggestion" type="com.art.elastic.vo.Suggestion">
+        <id column="SUGGESTION_ID" property="suggestionId"/><!--提示词ID-->
+        <result column="SUGGESTION_NAME" property="suggestionName"/><!--提示词名称-->
+        <result column="CLICK_TIMES" property="clickTimes"/><!--点击量-->
+    </resultMap>
+
+    <!--名人肖像基本查询sql-->
+    <sql id="portraitBaseSql">
+    SELECT
+    SUGGESTION_ID,
+    SUGGESTION_NAME,
+    CLICK_TIMES
+    FROM famous_suggestion
+    </sql>
+    <!--多主键查询-->
+    <select id="getSuggestions" resultMap="suggestion" parameterType="java.util.Map">
+        <include refid="portraitBaseSql" />
+        <if test="null!=suggestionList and suggestionList.size()> 0">
+            WHERE SUGGESTION_ID IN
+            <foreach collection="suggestionList" item="suggestionId" index="index" open="(" separator="," close=")">
+                #{suggestionId}
+            </foreach>
+        </if>
+    </select>
+</mapper>

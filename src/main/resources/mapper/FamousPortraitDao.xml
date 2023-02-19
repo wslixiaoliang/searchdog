@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.art.elastic.dao.FamousPortraitDao">
+    <resultMap id="portrait" type="com.art.elastic.vo.FamousPortrait">
+        <id column="PORTRAIT_ID" property="portraitId"/><!--肖像ID-->
+        <result column="PORTRAIT_NAME" property="portraitName"/><!--肖像名称-->
+        <result column="RELATIVE_LOCATION" property="relativeLocation"/><!--相对位置-->
+        <result column="FAMOUS_ID" property="famousId"/><!--名人ID-->
+        <result column="CHINESE_NAME"  property="chineseName"/><!--中文名-->
+        <result column="ENGLISH_NAME"  property="englishName"/><!--英文名-->
+        <result column="SEX"  property="sex"/><!--性别-->
+        <result column="CAREER"  property="career"/><!--职业-->
+        <result column="ACHIEVEMENT"  property="achievement"/><!--主要成就-->
+        <result column="HONOR"  property="honor"/><!--获得奖项-->
+        <result column="COUNTRY"  property="country"/><!--国籍-->
+        <result column="BIRTH_YEAR"  property="birthYear"/><!--出生年月-->
+        <result column="SUMMARY_INFO"  property="summaryInfo"/><!--简介-->
+
+    </resultMap>
+
+    <!--名人肖像基本查询sql-->
+    <sql id="portraitBaseSql">
+    SELECT
+        a.PORTRAIT_ID,
+        a.PORTRAIT_NAME,
+        a.RELATIVE_LOCATION,
+        b.FAMOUS_ID,
+        b.CHINESE_NAME,
+        b.ENGLISH_NAME,
+        b.SEX,
+        b.CAREER,
+        b.ACHIEVEMENT,
+        b.HONOR,
+        b.COUNTRY,
+        b.BIRTH_YEAR,
+        b.SUMMARY_INFO
+    FROM famous_portrait a,famous_of_world b
+    WHERE a.FAMOUS_ID = b.FAMOUS_ID
+    </sql>
+
+    <!--条件查询-->
+    <select id="getPortraitInfos" resultMap="portrait">
+        <include refid="portraitBaseSql" />
+        <if test="null!=chineseName and chineseName!=''">
+            AND b.CHINESE_NAME LIKE concat("%",#{chineseName},"%")
+        </if>
+        <if test="null!=englishName and englishName!=''">
+            AND b.ENGLISH_NAME LIKE concat("%",#{englishName},"%")
+        </if>
+        <if test="null!=country and country!=''">
+            AND b.COUNTRY LIKE concat("%",#{country},"%")
+        </if>
+        <if test="null!=career and career!=''">
+            AND b.CAREER LIKE concat("%",#{career},"%")
+        </if>
+        <if test="null!=sex and sex!=''">
+            AND b.SEX = #{sex}
+        </if>
+        limit #{start},#{limit}
+    </select>
+
+    <!--主键查询-->
+    <select id="getPortraitById" resultMap="portrait" parameterType="java.util.Map">
+        <include refid="portraitBaseSql" />
+        <if test="null!=famousId and famousId!=''">
+            AND FAMOUS_ID=#{famousId}
+        </if>
+    </select>
+
+    <!--多主键查询-->
+    <select id="getfamousListByIds" resultMap="portrait" parameterType="java.util.Map">
+        <include refid="portraitBaseSql" />
+        <if test="null!=famousList and famousList.size()> 0">
+            AND b.FAMOUS_ID IN
+            <foreach collection="famousList" item="famousId" index="index" open="(" separator="," close=")">
+                #{famousId}
+            </foreach>
+        </if>
+    </select>
+    <!--count查询-->
+    <select id="getFamousCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select count(*) from famous_of_world a
+        where 1=1
+        <if test="null!=chineseName and chineseName!=''">
+            AND a.CHINESE_NAME LIKE concat("%",#{chineseName},"%")
+        </if>
+        <if test="null!=englishName and englishName!=''">
+            AND a.ENGLISH_NAME LIKE concat("%",#{englishName},"%")
+        </if>
+        <if test="null!=country and country!=''">
+            AND a.COUNTRY LIKE concat("%",#{country},"%")
+        </if>
+        <if test="null!=career and career!=''">
+            AND a.CAREER LIKE concat("%",#{career},"%")
+        </if>
+        <if test="null!=sex and sex!=''">
+            AND a.SEX = #{sex}
+        </if>
+    </select>
+
+
+</mapper>
