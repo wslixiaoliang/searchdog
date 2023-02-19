@@ -4,7 +4,10 @@
 
 package com.art.elastic.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +16,8 @@ import java.util.Map;
  * 搜索引擎结果集
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SearchResult implements Serializable{
     private static final long serialVersionUID = 693213281152163875L;
     private List<Map<String, Object>> documents;//结果集

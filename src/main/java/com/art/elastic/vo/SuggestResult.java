@@ -4,7 +4,9 @@
 
 package com.art.elastic.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -14,6 +16,8 @@ import java.io.Serializable;
  * @author wslixiaoliang
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SuggestResult implements Serializable {
 
     private String [] suggestions;

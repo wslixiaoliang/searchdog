@@ -4,7 +4,10 @@
 
 package com.art.elastic.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -13,6 +16,8 @@ import java.io.Serializable;
  * @author wslixiaoliang
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class FamousPortrait implements Serializable{
 
     private static final long serialVersionUID = -7636370179239356829L;
@@ -29,11 +34,6 @@ public class FamousPortrait implements Serializable{
     private String country;//国籍
     private String birthYear;//出生年月
     private String summaryInfo;//简介
-
-
-    //无参构造方法
-    public FamousPortrait() {
-    }
 
     //有参构造方法
     public FamousPortrait(String portraitName,long famousId,String chineseName, String englishName, String sex, String career, String achievement, String honor, String country, String birthYear) {

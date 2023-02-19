@@ -4,7 +4,9 @@
 
 package com.art.elastic.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,8 +17,9 @@ import java.util.List;
  * @author wslixiaoliang
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Result<T> implements Serializable{
-
     private static final long serialVersionUID = 4049838581798497729L;
     private List<T> beans;
     private int count;

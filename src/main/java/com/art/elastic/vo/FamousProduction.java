@@ -4,7 +4,9 @@
 
 package com.art.elastic.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -12,6 +14,8 @@ import java.io.Serializable;
  * 世界名人作品bean
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class FamousProduction implements Serializable {
 
     private static final long serialVersionUID = -4356991497765224784L;
@@ -24,10 +28,6 @@ public class FamousProduction implements Serializable {
     private String publishedYear;//发表年份
     private String summaryInfo;//作品摘要
     private String productionContent;//作品内容
-
-    //无参构造方法
-    public FamousProduction() {
-    }
 
     //有参构造方法
     public FamousProduction(long productionId, String portraitName, String chineseName, String englishName, String productionName, String publishedYear, String summaryInfo, String productionContent) {

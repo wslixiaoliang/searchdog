@@ -30,9 +30,6 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/portrait")
 public class PortraitController {
-
-    @Autowired
-    private IFamousPortraitSV famousPortraitSV;
     @Autowired
     SearchFamousComponent searchFamousComponent;
     private static final String INCLUDES=  "famousId,portraitName,chineseName,englishName,achievement,birthYear,summaryInfo";
